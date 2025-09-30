@@ -50,9 +50,69 @@ function Layout({
       }), /* @__PURE__ */ jsx("meta", {
         name: "viewport",
         content: "width=device-width, initial-scale=1"
-      }), /* @__PURE__ */ jsx(Meta, {}), /* @__PURE__ */ jsx(Links, {})]
+      }), /* @__PURE__ */ jsx("meta", {
+        name: "theme-color",
+        content: "#4ecdc4"
+      }), /* @__PURE__ */ jsx("meta", {
+        name: "description",
+        content: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
+      }), /* @__PURE__ */ jsx("meta", {
+        name: "robots",
+        content: "index,follow"
+      }), /* @__PURE__ */ jsx("meta", {
+        property: "og:type",
+        content: "website"
+      }), /* @__PURE__ */ jsx("meta", {
+        property: "og:title",
+        content: "Level Up Training - Outdoor Personal Training in The Hague"
+      }), /* @__PURE__ */ jsx("meta", {
+        property: "og:description",
+        content: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
+      }), /* @__PURE__ */ jsx("meta", {
+        name: "twitter:card",
+        content: "summary_large_image"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "canonical",
+        href: "https://leveluptraining.nl"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "dns-prefetch",
+        href: "//fonts.googleapis.com"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "preload",
+        href: "/images/strength-training.jpg",
+        as: "image",
+        fetchPriority: "high"
+      }), /* @__PURE__ */ jsx(Meta, {}), /* @__PURE__ */ jsx(Links, {}), /* @__PURE__ */ jsx("style", {
+        children: `
+          .skip-link { 
+            position: absolute; 
+            top: -40px; 
+            left: 6px; 
+            background: #4ecdc4; 
+            color: white; 
+            padding: 8px; 
+            text-decoration: none; 
+            border-radius: 0 0 8px 8px;
+            z-index: 1000;
+          }
+          .skip-link:focus { 
+            top: 0; 
+          }
+        `
+      })]
     }), /* @__PURE__ */ jsxs("body", {
-      children: [children, /* @__PURE__ */ jsx(ScrollRestoration, {}), /* @__PURE__ */ jsx(Scripts, {})]
+      children: [/* @__PURE__ */ jsx("a", {
+        href: "#main-content",
+        className: "skip-link",
+        children: "Skip to main content"
+      }), children, /* @__PURE__ */ jsx(ScrollRestoration, {}), /* @__PURE__ */ jsx(Scripts, {})]
     })]
   });
 }
@@ -171,19 +231,51 @@ const HeaderSection = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  return /* @__PURE__ */ jsx("header", { children: /* @__PURE__ */ jsxs("nav", { children: [
+  return /* @__PURE__ */ jsx("header", { children: /* @__PURE__ */ jsxs("nav", { role: "navigation", "aria-label": "Main navigation", children: [
     /* @__PURE__ */ jsx("div", { className: "logo", children: "Level Up" }),
-    /* @__PURE__ */ jsxs("div", { className: "language-selector", children: [
-      /* @__PURE__ */ jsx("button", { onClick: () => changeLanguage("en"), children: "EN" }),
-      /* @__PURE__ */ jsx("button", { onClick: () => changeLanguage("nl"), children: "NL" }),
-      /* @__PURE__ */ jsx("button", { onClick: () => changeLanguage("es"), children: "ES" })
-    ] }),
-    /* @__PURE__ */ jsxs("ul", { children: [
-      /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#hero", children: t("nav.home") }) }),
-      /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#trainings", children: t("nav.trainings") }) }),
-      /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#schedule", children: t("nav.schedule") }) }),
-      /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#pricing", children: t("nav.pricing") }) }),
-      /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx("a", { href: "#signup", children: t("nav.contact") }) })
+    /* @__PURE__ */ jsxs(
+      "div",
+      {
+        className: "language-selector",
+        role: "group",
+        "aria-label": "Language selection",
+        children: [
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => changeLanguage("en"),
+              "aria-label": "Switch to English",
+              type: "button",
+              children: "EN"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => changeLanguage("nl"),
+              "aria-label": "Switch to Dutch",
+              type: "button",
+              children: "NL"
+            }
+          ),
+          /* @__PURE__ */ jsx(
+            "button",
+            {
+              onClick: () => changeLanguage("es"),
+              "aria-label": "Switch to Spanish",
+              type: "button",
+              children: "ES"
+            }
+          )
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxs("ul", { role: "menubar", children: [
+      /* @__PURE__ */ jsx("li", { role: "none", children: /* @__PURE__ */ jsx("a", { href: "#hero", role: "menuitem", children: t("nav.home") }) }),
+      /* @__PURE__ */ jsx("li", { role: "none", children: /* @__PURE__ */ jsx("a", { href: "#trainings", role: "menuitem", children: t("nav.trainings") }) }),
+      /* @__PURE__ */ jsx("li", { role: "none", children: /* @__PURE__ */ jsx("a", { href: "#schedule", role: "menuitem", children: t("nav.schedule") }) }),
+      /* @__PURE__ */ jsx("li", { role: "none", children: /* @__PURE__ */ jsx("a", { href: "#pricing", role: "menuitem", children: t("nav.pricing") }) }),
+      /* @__PURE__ */ jsx("li", { role: "none", children: /* @__PURE__ */ jsx("a", { href: "#signup", role: "menuitem", children: t("nav.contact") }) })
     ] })
   ] }) });
 };
@@ -765,6 +857,8 @@ const main = UNSAFE_withComponentProps(function MainLayout() {
     }), /* @__PURE__ */ jsxs("div", {
       className: "app",
       children: [/* @__PURE__ */ jsx(HeaderSection, {}), /* @__PURE__ */ jsx("main", {
+        id: "main-content",
+        role: "main",
         children: /* @__PURE__ */ jsx(Outlet, {})
       }), /* @__PURE__ */ jsx(FooterSection, {})]
     })]
@@ -786,8 +880,12 @@ const HeroSection = () => {
     /* @__PURE__ */ jsx("div", { className: "hero-image", children: /* @__PURE__ */ jsx(
       "img",
       {
-        src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        alt: "Outdoor fitness training group"
+        src: "/images/strength-training.jpg",
+        alt: "Professional strength training session outdoors",
+        fetchPriority: "high",
+        decoding: "sync",
+        width: "800",
+        height: "600"
       }
     ) })
   ] });
@@ -798,46 +896,36 @@ const TrainingCard = ({
   imageSrc,
   imageAlt
 }) => {
-  console.log("TrainingCard imageSrc:", imageSrc);
   return /* @__PURE__ */ jsxs("div", { className: "training", children: [
     /* @__PURE__ */ jsx("div", { className: "training-image", children: /* @__PURE__ */ jsx(
       "img",
       {
         src: imageSrc,
         alt: imageAlt,
-        width: 800,
-        height: 600,
-        loading: "eager",
+        loading: "lazy",
+        decoding: "async",
+        width: "800",
+        height: "600",
         style: {
           width: "100%",
-          height: "100%",
+          height: "200px",
           objectFit: "cover",
-          borderRadius: "8px"
+          borderRadius: "8px",
+          display: "block",
+          backgroundColor: "#f0f0f0"
         },
-        onLoad: () => console.log("Image loaded:", imageSrc),
-        onError: () => console.error("Image failed to load:", imageSrc)
+        onLoad: () => {
+        },
+        onError: () => {
+        }
       }
     ) }),
     /* @__PURE__ */ jsx("h3", { children: title }),
     /* @__PURE__ */ jsx("p", { children: description })
   ] });
 };
-const strengthTrainingImg = "/assets/strength-training-DcDDA0Vz.jpg";
-const runningTrainingImg = "/assets/running-training-CMb3FdBq.jpg";
-const parentChildTrainingImg = "/assets/parent-child-training-BBdrpnFg.jpg";
 const TrainingsSection = () => {
   const { t } = useTranslation();
-  console.log("Imported image URLs:", {
-    strengthTrainingImg,
-    runningTrainingImg,
-    parentChildTrainingImg
-  });
-  const getImageSrc = (importedImg, fallbackPath) => {
-    if (typeof importedImg === "string" && importedImg.length > 0) {
-      return importedImg;
-    }
-    return fallbackPath;
-  };
   return /* @__PURE__ */ jsxs("section", { id: "trainings", className: "trainings", children: [
     /* @__PURE__ */ jsx("h2", { children: t("trainings.title") }),
     /* @__PURE__ */ jsxs("div", { className: "trainings-grid", children: [
@@ -846,10 +934,7 @@ const TrainingsSection = () => {
         {
           title: t("trainings.level1.title"),
           description: t("trainings.level1.desc"),
-          imageSrc: getImageSrc(
-            strengthTrainingImg,
-            "/images/strength-training.jpg"
-          ),
+          imageSrc: "/images/strength-training.jpg",
           imageAlt: t("trainings.level1.imageAlt")
         }
       ),
@@ -858,10 +943,7 @@ const TrainingsSection = () => {
         {
           title: t("trainings.level2.title"),
           description: t("trainings.level2.desc"),
-          imageSrc: getImageSrc(
-            runningTrainingImg,
-            "/images/running-training.jpg"
-          ),
+          imageSrc: "/images/running-training.jpg",
           imageAlt: t("trainings.level2.imageAlt")
         }
       ),
@@ -870,10 +952,7 @@ const TrainingsSection = () => {
         {
           title: t("trainings.level3.title"),
           description: t("trainings.level3.desc"),
-          imageSrc: getImageSrc(
-            parentChildTrainingImg,
-            "/images/parent-child-training.jpg"
-          ),
+          imageSrc: "/images/parent-child-training.jpg",
           imageAlt: t("trainings.level3.imageAlt")
         }
       )
@@ -1064,20 +1143,25 @@ const home = UNSAFE_withComponentProps(function Home() {
     return () => clearTimeout(timeoutId);
   }, [location.hash]);
   return /* @__PURE__ */ jsxs(Fragment, {
-    children: [/* @__PURE__ */ jsx("div", {
+    children: [/* @__PURE__ */ jsx("section", {
       id: "hero",
+      "aria-labelledby": "hero-title",
       children: /* @__PURE__ */ jsx(HeroSection, {})
-    }), /* @__PURE__ */ jsx("div", {
+    }), /* @__PURE__ */ jsx("section", {
       id: "trainings",
+      "aria-labelledby": "trainings-title",
       children: /* @__PURE__ */ jsx(TrainingsSection, {})
-    }), /* @__PURE__ */ jsx("div", {
+    }), /* @__PURE__ */ jsx("section", {
       id: "schedule",
+      "aria-labelledby": "schedule-title",
       children: /* @__PURE__ */ jsx(ScheduleSection, {})
-    }), /* @__PURE__ */ jsx("div", {
+    }), /* @__PURE__ */ jsx("section", {
       id: "pricing",
+      "aria-labelledby": "pricing-title",
       children: /* @__PURE__ */ jsx(PricingSection, {})
-    }), /* @__PURE__ */ jsx("div", {
+    }), /* @__PURE__ */ jsx("section", {
       id: "signup",
+      "aria-labelledby": "signup-title",
       children: /* @__PURE__ */ jsx(SignupSection, {})
     })]
   });
@@ -1086,13 +1170,13 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: home
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-ChXygwmd.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-CE-wSZer.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-CFH16Rjp.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-175dacaa.js", "version": "175dacaa", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-Bb6jmEcs.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-B3xky_Ya.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-gdjcSgnH.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-403d6277.js", "version": "403d6277", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
 const ssr = true;
 const isSpaMode = false;
-const prerender = ["/"];
+const prerender = [];
 const routeDiscovery = { "mode": "lazy", "manifestPath": "/__manifest" };
 const publicPath = "/";
 const entry = { module: entryServer };

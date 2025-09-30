@@ -10,28 +10,60 @@ const HeaderSection = () => {
 
   return (
     <header>
-      <nav>
+      <nav role="navigation" aria-label="Main navigation">
         <div className="logo">Level Up</div>
-        <div className="language-selector">
-          <button onClick={() => changeLanguage("en")}>EN</button>
-          <button onClick={() => changeLanguage("nl")}>NL</button>
-          <button onClick={() => changeLanguage("es")}>ES</button>
+        <div
+          className="language-selector"
+          role="group"
+          aria-label="Language selection"
+        >
+          <button
+            onClick={() => changeLanguage("en")}
+            aria-label="Switch to English"
+            type="button"
+          >
+            EN
+          </button>
+          <button
+            onClick={() => changeLanguage("nl")}
+            aria-label="Switch to Dutch"
+            type="button"
+          >
+            NL
+          </button>
+          <button
+            onClick={() => changeLanguage("es")}
+            aria-label="Switch to Spanish"
+            type="button"
+          >
+            ES
+          </button>
         </div>
-        <ul>
-          <li>
-            <a href="#hero">{t("nav.home")}</a>
+        <ul role="menubar">
+          <li role="none">
+            <a href="#hero" role="menuitem">
+              {t("nav.home")}
+            </a>
           </li>
-          <li>
-            <a href="#trainings">{t("nav.trainings")}</a>
+          <li role="none">
+            <a href="#trainings" role="menuitem">
+              {t("nav.trainings")}
+            </a>
           </li>
-          <li>
-            <a href="#schedule">{t("nav.schedule")}</a>
+          <li role="none">
+            <a href="#schedule" role="menuitem">
+              {t("nav.schedule")}
+            </a>
           </li>
-          <li>
-            <a href="#pricing">{t("nav.pricing")}</a>
+          <li role="none">
+            <a href="#pricing" role="menuitem">
+              {t("nav.pricing")}
+            </a>
           </li>
-          <li>
-            <a href="#signup">{t("nav.contact")}</a>
+          <li role="none">
+            <a href="#signup" role="menuitem">
+              {t("nav.contact")}
+            </a>
           </li>
         </ul>
       </nav>

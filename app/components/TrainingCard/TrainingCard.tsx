@@ -7,16 +7,16 @@ const TrainingCard = ({
   imageSrc,
   imageAlt,
 }: TrainingCardProps) => {
-  // Debug: Log the image source
-  console.log("TrainingCard imageSrc:", imageSrc);
-  
   return (
     <div className="training">
       <div className="training-image">
         <img
           src={imageSrc}
           alt={imageAlt}
-          loading="eager"
+          loading="lazy"
+          decoding="async"
+          width="800"
+          height="600"
           style={{
             width: "100%",
             height: "200px",
@@ -25,8 +25,8 @@ const TrainingCard = ({
             display: "block",
             backgroundColor: "#f0f0f0",
           }}
-          onLoad={() => console.log("Image loaded:", imageSrc)}
-          onError={() => console.error("Image failed to load:", imageSrc)}
+          onLoad={() => {}}
+          onError={() => {}}
         />
       </div>
       <h3>{title}</h3>

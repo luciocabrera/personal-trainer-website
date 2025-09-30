@@ -32,21 +32,21 @@ export default function Home() {
 
   return (
     <>
-      <div id="hero">
+      <section id="hero" aria-labelledby="hero-title">
         <HeroSection />
-      </div>
-      <div id="trainings">
+      </section>
+      <section id="trainings" aria-labelledby="trainings-title">
         <TrainingsSection />
-      </div>
-      <div id="schedule">
+      </section>
+      <section id="schedule" aria-labelledby="schedule-title">
         <ScheduleSection />
-      </div>
-      <div id="pricing">
+      </section>
+      <section id="pricing" aria-labelledby="pricing-title">
         <PricingSection />
-      </div>
-      <div id="signup">
+      </section>
+      <section id="signup" aria-labelledby="signup-title">
         <SignupSection />
-      </div>
+      </section>
     </>
   );
 }

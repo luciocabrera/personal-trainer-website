@@ -14,7 +14,7 @@ export default function MainLayout() {
       />
       <div className="app">
         <HeaderSection />
-        <main>
+        <main id="main-content" role="main">
           <Outlet />
         </main>
         <FooterSection />
