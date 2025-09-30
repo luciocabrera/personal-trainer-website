@@ -8,13 +8,14 @@
     "build": "react-router build",
     "start": "npx @react-router/serve ./build/server/index.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "npm run build && npm run start"
   },
   "dependencies": {
     "@react-router/dev": "^7.9.3",
     "@react-router/node": "^7.9.3",
     "@react-router/serve": "^7.9.3",
     "i18next": "^25.5.2",
+    "isbot": "^5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-i18next": "^16.0.0",
