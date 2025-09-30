@@ -1,0 +1,12 @@
+export { HeroSection } from "./HeroSection";
+export { TrainingsSection } from "./TrainingsSection";
+export { ScheduleSection } from "./ScheduleSection";
+export { PricingSection } from "./PricingSection";
+export { SignupSection } from "./SignupSection";
+export { HeaderSection } from "./HeaderSection";
+export { FooterSection } from "./FooterSection";
+export { LocationCard } from "./LocationCard";
+export { TrainingCard } from "./TrainingCard";
+export { LazyImage } from "./LazyImage";
+export { SEOHead } from "./SEOHead";
+export * from "./Icons";
