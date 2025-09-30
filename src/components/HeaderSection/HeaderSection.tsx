@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import i18n from "../../i18n";
 
 const HeaderSection = () => {
@@ -19,19 +20,19 @@ const HeaderSection = () => {
         </div>
         <ul>
           <li>
-            <a href="#hero">{t("nav.home")}</a>
+            <Link to="/#hero">{t("nav.home")}</Link>
           </li>
           <li>
-            <a href="#trainings">{t("nav.trainings")}</a>
+            <Link to="/#trainings">{t("nav.trainings")}</Link>
           </li>
           <li>
-            <a href="#schedule">{t("nav.schedule")}</a>
+            <Link to="/#schedule">{t("nav.schedule")}</Link>
           </li>
           <li>
-            <a href="#pricing">{t("nav.pricing")}</a>
+            <Link to="/#pricing">{t("nav.pricing")}</Link>
           </li>
           <li>
-            <a href="#signup">{t("nav.contact")}</a>
+            <Link to="/#signup">{t("nav.contact")}</Link>
           </li>
         </ul>
       </nav>
