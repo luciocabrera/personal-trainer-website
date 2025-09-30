@@ -4,12 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "start": "npx @react-router/serve ./build/server/index.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-router/dev": "^7.9.3",
+    "@react-router/node": "^7.9.3",
+    "@react-router/serve": "^7.9.3",
     "i18next": "^25.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

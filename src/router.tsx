@@ -1,11 +1,11 @@
-import { createHashRouter, type RouteObject } from 'react-router-dom';
-import { RootLayout } from './components/layouts/RootLayout';
-import { HomePage } from './pages/HomePage';
-import { ErrorPage } from './pages/ErrorPage';
+import { createHashRouter, type RouteObject } from "react-router-dom";
+import { RootLayout } from "./components/layouts/RootLayout";
+import { HomePage } from "./pages/HomePage";
+import { ErrorPage } from "./pages/ErrorPage";
 
 const routes: RouteObject[] = [
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
@@ -15,23 +15,23 @@ const routes: RouteObject[] = [
       },
       // Hash-based routes for smooth section navigation
       {
-        path: 'hero',
+        path: "hero",
         element: <HomePage />,
       },
       {
-        path: 'trainings',
+        path: "trainings",
         element: <HomePage />,
       },
       {
-        path: 'schedule',
+        path: "schedule",
         element: <HomePage />,
       },
       {
-        path: 'pricing',
+        path: "pricing",
         element: <HomePage />,
       },
       {
-        path: 'signup',
+        path: "signup",
         element: <HomePage />,
       },
     ],
