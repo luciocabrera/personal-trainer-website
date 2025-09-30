@@ -31,6 +31,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://leveluptraining.nl" />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
 
         {/* Resource hints for better performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

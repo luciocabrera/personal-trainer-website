@@ -75,6 +75,17 @@ function Layout({
         rel: "canonical",
         href: "https://leveluptraining.nl"
       }), /* @__PURE__ */ jsx("link", {
+        rel: "icon",
+        href: "/favicon.svg",
+        type: "image/svg+xml"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "icon",
+        href: "/favicon.svg",
+        sizes: "any"
+      }), /* @__PURE__ */ jsx("link", {
+        rel: "apple-touch-icon",
+        href: "/favicon.svg"
+      }), /* @__PURE__ */ jsx("link", {
         rel: "dns-prefetch",
         href: "//fonts.googleapis.com"
       }), /* @__PURE__ */ jsx("link", {
@@ -1170,7 +1181,7 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: home
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-Bb6jmEcs.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-B3xky_Ya.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-gdjcSgnH.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-403d6277.js", "version": "403d6277", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-41YJFb5G.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-B3xky_Ya.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-gdjcSgnH.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-685f61d0.js", "version": "685f61d0", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
