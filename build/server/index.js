@@ -5,7 +5,7 @@ import { renderToPipeableStream } from "react-dom/server";
 import { ServerRouter, UNSAFE_withComponentProps, Outlet, UNSAFE_withErrorBoundaryProps, isRouteErrorResponse, Meta, Links, ScrollRestoration, Scripts, useLocation } from "react-router";
 import { initReactI18next, useTranslation } from "react-i18next";
 import i18n from "i18next";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 function handleRequest(request, responseStatusCode, responseHeaders, routerContext, loadContext) {
   return new Promise((resolve, reject) => {
     const { pipe, abort } = renderToPipeableStream(
@@ -792,69 +792,30 @@ const HeroSection = () => {
     ) })
   ] });
 };
-const ImageWithSkeleton = ({
-  src,
-  alt,
-  className,
-  width,
-  height,
-  loading = "lazy"
-}) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-  console.log("ImageWithSkeleton rendering with src:", src, typeof src);
-  const handleLoad = () => {
-    console.log("Image loaded successfully:", src);
-    setIsLoading(false);
-  };
-  const handleError = () => {
-    console.error("Image failed to load:", src);
-    setHasError(true);
-    setIsLoading(false);
-  };
-  return /* @__PURE__ */ jsxs("div", { className: `image-with-skeleton ${className || ""}`, children: [
-    isLoading && /* @__PURE__ */ jsx("div", { className: "image-skeleton", children: /* @__PURE__ */ jsx("div", { className: "skeleton-shimmer" }) }),
-    /* @__PURE__ */ jsx(
-      "img",
-      {
-        src,
-        alt,
-        width,
-        height,
-        loading,
-        onLoad: handleLoad,
-        onError: handleError,
-        style: {
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: "8px",
-          display: isLoading || hasError ? "none" : "block",
-          backfaceVisibility: "hidden"
-        }
-      }
-    ),
-    hasError && /* @__PURE__ */ jsxs("div", { className: "image-error", children: [
-      /* @__PURE__ */ jsx("div", { className: "error-icon", children: "📷" }),
-      /* @__PURE__ */ jsx("span", { children: "Image unavailable" })
-    ] })
-  ] });
-};
 const TrainingCard = ({
   title,
   description,
   imageSrc,
   imageAlt
 }) => {
+  console.log("TrainingCard imageSrc:", imageSrc);
   return /* @__PURE__ */ jsxs("div", { className: "training", children: [
     /* @__PURE__ */ jsx("div", { className: "training-image", children: /* @__PURE__ */ jsx(
-      ImageWithSkeleton,
+      "img",
       {
         src: imageSrc,
         alt: imageAlt,
         width: 800,
         height: 600,
-        loading: "eager"
+        loading: "eager",
+        style: {
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          borderRadius: "8px"
+        },
+        onLoad: () => console.log("Image loaded:", imageSrc),
+        onError: () => console.error("Image failed to load:", imageSrc)
       }
     ) }),
     /* @__PURE__ */ jsx("h3", { children: title }),
@@ -1125,7 +1086,7 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: home
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-ChXygwmd.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-CE-wSZer.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-DQsDtHJE.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-4553f2a3.js", "version": "4553f2a3", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-CtO-VVj0.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-ChXygwmd.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/root-Dtn62Xmo.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-CE-wSZer.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/main-BeEpN_fr.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-CFH16Rjp.js", "imports": ["/assets/chunk-NISHYRIK-ZbW7QuV4.js", "/assets/InstagramIcon-Co2k_kmy.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": ["/assets/home-BwNDt0tH.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-175dacaa.js", "version": "175dacaa", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
