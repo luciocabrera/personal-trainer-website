@@ -38,9 +38,9 @@ export function ErrorBoundary({ error }: { error: Error }) {
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? "404" : "Error";
     details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+      error.status === 404 ?
+        "The requested page could not be found."
+      : error.statusText || details;
   } else if (error instanceof Error) {
     details = error.message;
     stack = error.stack;
@@ -51,13 +51,15 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre style={{
-          padding: "2rem",
-          background: "hsla(10, 50%, 50%, 0.1)",
-          color: "red",
-          overflow: "auto",
-          maxWidth: "100%",
-        }}>
+        <pre
+          style={{
+            padding: "2rem",
+            background: "hsla(10, 50%, 50%, 0.1)",
+            color: "red",
+            overflow: "auto",
+            maxWidth: "100%",
+          }}
+        >
           {stack}
         </pre>
       )}
