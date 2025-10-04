@@ -1,5 +1,6 @@
-import "./TrainingCard.css";
+import * as stylex from "@stylexjs/stylex";
 import type { TrainingCardProps } from "./TrainingCard.types";
+import { styles } from "./TrainingCard.stylex";
 
 const TrainingCard = ({
   title,
@@ -8,8 +9,20 @@ const TrainingCard = ({
   imageAlt,
 }: TrainingCardProps) => {
   return (
-    <div className="training">
-      <div className="training-image">
+    <div
+      {...stylex.props(
+        styles.training,
+        styles.trainingMobile,
+        styles.trainingSmallMobile
+      )}
+    >
+      <div
+        {...stylex.props(
+          styles.trainingImage,
+          styles.trainingImageMobile,
+          styles.trainingImageSmallMobile
+        )}
+      >
         <img
           src={imageSrc}
           alt={imageAlt}
@@ -17,20 +30,33 @@ const TrainingCard = ({
           decoding="async"
           width="800"
           height="600"
-          style={{
-            width: "100%",
-            height: "200px",
-            objectFit: "cover",
-            borderRadius: "8px",
-            display: "block",
-            backgroundColor: "#f0f0f0",
-          }}
+          {...stylex.props(
+            styles.trainingImageImg,
+            styles.trainingImageImgMobile,
+            styles.trainingImageImgSmallMobile
+          )}
           onLoad={() => {}}
           onError={() => {}}
         />
       </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3
+        {...stylex.props(
+          styles.trainingTitle,
+          styles.trainingTitleMobile,
+          styles.trainingTitleSmallMobile
+        )}
+      >
+        {title}
+      </h3>
+      <p
+        {...stylex.props(
+          styles.trainingDescription,
+          styles.trainingDescriptionMobile,
+          styles.trainingDescriptionSmallMobile
+        )}
+      >
+        {description}
+      </p>
     </div>
   );
 };

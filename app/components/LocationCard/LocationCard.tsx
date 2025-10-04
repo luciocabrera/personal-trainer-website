@@ -1,4 +1,6 @@
+import * as stylex from "@stylexjs/stylex";
 import type { LocationCardProps } from "./LocationCard.types";
+import { styles } from "./LocationCard.stylex";
 
 const LocationCard = ({
   title,
@@ -12,24 +14,75 @@ const LocationCard = ({
   comingSoonText = "*COMING SOON*",
 }: LocationCardProps) => {
   return (
-    <div className="location-card">
-      <h4>{title}</h4>
-      <div className="location-details">
+    <div {...stylex.props(styles.locationCard)}>
+      <h4 {...stylex.props(styles.locationCardTitle)}>{title}</h4>
+      <div {...stylex.props(styles.locationDetails)}>
         {isComingSoon && (
-          <div className="training-time coming-soon">{comingSoonText}</div>
+          <div
+            {...stylex.props(
+              styles.locationDetailsDiv,
+              styles.locationDetailsDivMobile,
+              styles.trainingTime,
+              styles.trainingTimeMobile,
+              styles.comingSoon,
+              styles.comingSoonMobile
+            )}
+          >
+            {comingSoonText}
+          </div>
         )}
-        <div className="training-time">{time}</div>
-        <div className="training-type">{type}</div>
-        <div className="training-capacity">{capacity}</div>
-        <div className="training-location">{location}</div>
-        {dates && <div className="training-dates">{dates}</div>}
+        <div
+          {...stylex.props(
+            styles.locationDetailsDiv,
+            styles.locationDetailsDivMobile,
+            styles.trainingTime,
+            styles.trainingTimeMobile
+          )}
+        >
+          {time}
+        </div>
+        <div
+          {...stylex.props(
+            styles.locationDetailsDiv,
+            styles.locationDetailsDivMobile,
+            styles.trainingType,
+            styles.trainingTypeMobile
+          )}
+        >
+          {type}
+        </div>
+        <div
+          {...stylex.props(
+            styles.locationDetailsDiv,
+            styles.locationDetailsDivMobile,
+            styles.trainingCapacity
+          )}
+        >
+          {capacity}
+        </div>
+        <div
+          {...stylex.props(
+            styles.locationDetailsDiv,
+            styles.locationDetailsDivMobile,
+            styles.trainingLocation
+          )}
+        >
+          {location}
+        </div>
+        {dates && (
+          <div
+            {...stylex.props(styles.trainingDates, styles.trainingDatesMobile)}
+          >
+            {dates}
+          </div>
+        )}
       </div>
-      <div className="map-container">
+      <div {...stylex.props(styles.mapContainer)}>
         <iframe
           src={mapSrc}
           width="100%"
           height="200"
-          style={{ border: 0, borderRadius: "8px" }}
+          {...stylex.props(styles.mapIframe)}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

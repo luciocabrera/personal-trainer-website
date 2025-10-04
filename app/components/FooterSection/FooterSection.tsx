@@ -1,14 +1,21 @@
 import { useTranslation } from "react-i18next";
+import * as stylex from "@stylexjs/stylex";
 import { EmailIcon, InstagramIcon } from "../Icons";
+import { styles } from "./FooterSection.stylex";
 
 const FooterSection = () => {
   const { t } = useTranslation();
 
   return (
-    <footer>
-      <div className="footer-content">
-        <div className="footer-contacts">
-          <a href="mailto:info@leveluptraining.nl" className="footer-link">
+    <footer {...stylex.props(styles.footer)}>
+      <div {...stylex.props(styles.footerContent)}>
+        <div
+          {...stylex.props(styles.footerContacts, styles.footerContactsMobile)}
+        >
+          <a
+            href="mailto:info@leveluptraining.nl"
+            {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
+          >
             <EmailIcon width={18} height={18} />
             info@leveluptraining.nl
           </a>
@@ -16,7 +23,7 @@ const FooterSection = () => {
             href="https://instagram.com/leveluptraining"
             target="_blank"
             rel="noopener noreferrer"
-            className="footer-link"
+            {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
           >
             <InstagramIcon width={18} height={18} />
             @leveluptraining

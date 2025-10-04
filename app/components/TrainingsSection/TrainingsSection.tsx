@@ -1,13 +1,18 @@
 import { useTranslation } from "react-i18next";
+import * as stylex from "@stylexjs/stylex";
 import { TrainingCard } from "../TrainingCard";
+import { styles } from "./TrainingsSection.stylex";
 
 const TrainingsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="trainings" className="trainings">
-      <h2>{t("trainings.title")}</h2>
-      <div className="trainings-grid">
+    <section
+      id="trainings"
+      {...stylex.props(styles.trainings, styles.trainingsMobile)}
+    >
+      <h2 {...stylex.props(styles.trainingsTitle)}>{t("trainings.title")}</h2>
+      <div {...stylex.props(styles.trainingsGrid, styles.trainingsGridMobile)}>
         <TrainingCard
           title={t("trainings.level1.title")}
           description={t("trainings.level1.desc")}

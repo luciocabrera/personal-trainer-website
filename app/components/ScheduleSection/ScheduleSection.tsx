@@ -1,16 +1,25 @@
 import { useTranslation } from "react-i18next";
+import * as stylex from "@stylexjs/stylex";
 import { LocationCard } from "../LocationCard";
+import { styles } from "./ScheduleSection.stylex";
 
 const ScheduleSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="schedule" className="schedule">
-      <h2>{t("schedule.title")}</h2>
+    <section
+      id="schedule"
+      {...stylex.props(styles.schedule, styles.scheduleMobile)}
+    >
+      <h2 {...stylex.props(styles.scheduleTitle)}>{t("schedule.title")}</h2>
 
-      <div className="locations-section">
-        <h3>{t("schedule.locationsTitle")}</h3>
-        <div className="locations-grid">
+      <div {...stylex.props(styles.locationsSection)}>
+        <h3 {...stylex.props(styles.locationsSectionTitle)}>
+          {t("schedule.locationsTitle")}
+        </h3>
+        <div
+          {...stylex.props(styles.locationsGrid, styles.locationsGridMobile)}
+        >
           <LocationCard
             title={t("schedule.locations.peacePalace.title")}
             time={t("schedule.locations.peacePalace.time")}

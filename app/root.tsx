@@ -7,10 +7,12 @@ import {
   Links,
 } from "react-router";
 import "./root.css";
+import * as stylex from "@stylexjs/stylex";
+import { globalStyles } from "./global.stylex";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" {...stylex.props(globalStyles.html)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,7 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }
         `}</style>
       </head>
-      <body>
+      <body {...stylex.props(globalStyles.body)}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
