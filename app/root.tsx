@@ -31,7 +31,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://leveluptraining.nl" />
-        
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.svg" sizes="any" />
@@ -47,9 +47,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
 
         {/* Preload critical resources - LCP Image with high priority */}
-        <link 
-          rel="preload" 
-          href="/images/strength-training.jpg" 
+        <link
+          rel="preload"
+          href="/images/strength-training.jpg"
           as="image"
           fetchPriority="high"
         />

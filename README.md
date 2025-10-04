@@ -82,6 +82,7 @@ This will download all necessary dependencies. It may take a few minutes.
 ### Method 1: Development Mode (Recommended for Development)
 
 1. **Start the development server:**
+
    ```bash
    npm run dev
    ```
@@ -96,13 +97,15 @@ This will download all necessary dependencies. It may take a few minutes.
 ### Method 2: Production Mode (Recommended for Testing)
 
 1. **Build the application:**
+
    ```bash
    npm run build
    ```
-   
+
    This creates optimized files for production. Wait for it to complete.
 
 2. **Start the production server:**
+
    ```bash
    npm start
    ```
@@ -138,6 +141,7 @@ docker build -t personal-trainer-app .
 ```
 
 This command:
+
 - `docker build` - Creates a Docker image
 - `-t personal-trainer-app` - Gives it the name "personal-trainer-app"
 - `.` - Uses the current directory
@@ -169,26 +173,31 @@ Open your browser and go to: http://localhost:3000
 ### Docker Management Commands
 
 #### Check if container is running:
+
 ```bash
 docker ps
 ```
 
 #### View container logs:
+
 ```bash
 docker logs personal-trainer-container
 ```
 
 #### Stop the container:
+
 ```bash
 docker stop personal-trainer-container
 ```
 
 #### Remove the container:
+
 ```bash
 docker rm personal-trainer-container
 ```
 
 #### Remove the image (to free up space):
+
 ```bash
 docker rmi personal-trainer-app
 ```
@@ -212,18 +221,19 @@ personal-trainer/
 
 ## 🛠️ Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install all dependencies |
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm start` | Start production server |
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `npm install`     | Install all dependencies          |
+| `npm run dev`     | Start development server          |
+| `npm run build`   | Build for production              |
+| `npm start`       | Start production server           |
 | `npm run preview` | Build and start production server |
-| `npm run lint` | Check code for errors |
+| `npm run lint`    | Check code for errors             |
 
 ## 🌐 Multi-Language Support
 
 The website supports three languages:
+
 - **English (EN)** - Default language
 - **Dutch (NL)** - Nederlandse taal
 - **Spanish (ES)** - Idioma español
@@ -249,30 +259,36 @@ Users can switch languages using the language selector in the navigation bar.
 ### Common Issues and Solutions
 
 #### "npm not found" or "node not found"
+
 - **Solution:** Install Node.js from https://nodejs.org/
 
 #### "Port 3000 is already in use"
+
 - **Solution:** Either stop other applications using port 3000, or change the port:
   ```bash
   PORT=3001 npm start
   ```
 
 #### "Permission denied" errors on Mac/Linux
+
 - **Solution:** Try running with `sudo` (not recommended) or fix Node.js permissions:
   ```bash
   sudo chown -R $(whoami) ~/.npm
   ```
 
 #### Docker "command not found"
+
 - **Solution:** Install Docker Desktop from https://www.docker.com/
 
 #### Website not loading in browser
+
 1. **Check the terminal** - Look for error messages
 2. **Try a different port** - Maybe 3000 is occupied
 3. **Clear browser cache** - Press Ctrl+F5 (or Cmd+Shift+R on Mac)
 4. **Check firewall** - Make sure port 3000 isn't blocked
 
 #### Build fails with memory errors
+
 - **Solution:** Increase Node.js memory:
   ```bash
   export NODE_OPTIONS="--max-old-space-size=4096"

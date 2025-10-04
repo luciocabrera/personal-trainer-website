@@ -16,7 +16,7 @@ console.log("Starting production server");
 // Serve static files
 app.use(
   "/assets",
-  express.static("build/client/assets", { immutable: true, maxAge: "1y" }),
+  express.static("build/client/assets", { immutable: true, maxAge: "1y" })
 );
 app.use(morgan("tiny"));
 app.use(express.static("build/client", { maxAge: "1h" }));
@@ -31,7 +31,7 @@ app.get("/favicon.ico", (req, res) => {
 app.use(
   createRequestHandler({
     build: () => import(BUILD_PATH),
-  }),
+  })
 );
 
 app.listen(PORT, "0.0.0.0", () => {
