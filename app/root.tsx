@@ -6,6 +6,7 @@ import {
   Meta,
   Links,
 } from "react-router";
+import { BRAND } from "@/constants/brand";
 import "./root.css";
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./root.stylex";
@@ -17,27 +18,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#4ecdc4" />
-        <meta
-          name="description"
-          content="Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
-        />
+        <meta name="description" content={BRAND.description} />
         <meta name="robots" content="index,follow" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Level Up Training - Outdoor Personal Training in The Hague"
+          content={`${BRAND.name} - ${BRAND.tagline}`}
         />
-        <meta
-          property="og:description"
-          content="Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
-        />
+        <meta property="og:description" content={BRAND.description} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://leveluptraining.nl" />
+        <link rel="canonical" href={BRAND.url} />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.svg" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
+
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
 
         {/* Resource hints for better performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

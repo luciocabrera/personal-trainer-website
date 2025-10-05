@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import { TrainingCard } from "../TrainingCard";
+import { TrainingCard } from "@/components/TrainingCard";
 import { styles } from "./TrainingsSection.stylex";
 
 const TrainingsSection = () => {

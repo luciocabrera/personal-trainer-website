@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import { EmailIcon, InstagramIcon } from "../Icons";
+import { EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./FooterSection.stylex";
+import { BRAND } from "@/constants/brand";
 
 const FooterSection = () => {
   const { t } = useTranslation();
@@ -13,20 +14,20 @@ const FooterSection = () => {
           {...stylex.props(styles.footerContacts, styles.footerContactsMobile)}
         >
           <a
-            href="mailto:info@leveluptraining.nl"
+            href={`mailto:${BRAND.email}`}
             {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
           >
             <EmailIcon width={18} height={18} />
-            info@leveluptraining.nl
+            {BRAND.email}
           </a>
           <a
-            href="https://instagram.com/leveluptraining"
+            href={BRAND.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
             {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
           >
             <InstagramIcon width={18} height={18} />
-            @leveluptraining
+            {BRAND.instagram.handle}
           </a>
         </div>
         <p>{t("footer.copyright")}</p>

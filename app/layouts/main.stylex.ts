@@ -18,14 +18,14 @@ export const styles = stylex.create({
   // Main content area
   main: {
     padding: "2rem",
-    marginTop: "80px",
+    paddingTop: "calc(80px + 2rem)", // Header height + content padding
     flex: 1,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     "@media (max-width: 768px)": {
       padding: "1rem",
-      marginTop: "180px",
+      paddingTop: "calc(140px + 1rem)", // Mobile header height + content padding
     },
   },
 });

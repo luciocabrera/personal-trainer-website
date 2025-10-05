@@ -8,9 +8,9 @@
   },
   "hero": {
     "title": "OUTDOOR TRAININGEN",
-    "subtitle": "LEVEL UP",
+    "subtitle": "DESI4FIT",
     "tagline": "KRACHT - CONDITIE - FLEXIBILITEIT",
-    "description": "Wil je in kleine groepen werken aan een betere conditie en aan meer kracht en flexibiliteit? Je bent welkom bij Level Up! In alle weersomstandigheden werk je buiten aan jouw sportdoelen."
+    "description": "Wil je in kleine groepen werken aan een betere conditie en aan meer kracht en flexibiliteit? Je bent welkom bij Desi4Fit! In alle weersomstandigheden werk je buiten aan jouw sportdoelen."
   },
   "trainings": {
     "title": "Welke training past bij jou?",
@@ -90,9 +90,9 @@
     "signupNow": "Meld je nu aan",
     "nice": "Leuk dat je je wil aanmelden! Dat kan via onderstaand formulier",
     "questions": "Vragen?",
-    "email": "info@leveluptraining.nl",
-    "instagram": "@leveluptraining",
-    "follow": "Volg Level Up",
+    "email": "info@desi4fit.nl",
+    "instagram": "@desi4fit",
+    "follow": "Volg Desi4Fit",
     "contactUs": "Neem contact op:"
   },
   "form": {
@@ -102,6 +102,6 @@
     "submit": "Verzenden"
   },
   "footer": {
-    "copyright": "© 2025 Level Up Training"
+    "copyright": "© 2025 Desi4Fit"
   }
 }

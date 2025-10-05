@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-import { HeroSection } from "../components/HeroSection";
-import { TrainingsSection } from "../components/TrainingsSection";
-import { ScheduleSection } from "../components/ScheduleSection";
-import { PricingSection } from "../components/PricingSection";
-import { SignupSection } from "../components/SignupSection";
+import { HeroSection } from "@/components/HeroSection";
+import { TrainingsSection } from "@/components/TrainingsSection";
+import { ScheduleSection } from "@/components/ScheduleSection";
+import { PricingSection } from "@/components/PricingSection";
+import { SignupSection } from "@/components/SignupSection";
 
 export default function Home() {
   const location = useLocation();

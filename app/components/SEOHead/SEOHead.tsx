@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import type { SEOHeadProps } from "./SEOHead.types";
+import { BRAND } from "@/constants/brand";
 
 const SEOHead = ({
   title,
   description,
   keywords,
-  ogImage = "https://leveluptraining.nl/og-image.jpg",
-  url = "https://leveluptraining.nl/",
+  ogImage = BRAND.ogImage,
+  url = BRAND.url,
   locale,
 }: SEOHeadProps) => {
   const { i18n } = useTranslation();

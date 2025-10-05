@@ -39,6 +39,18 @@ const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   __proto__: null,
   default: handleRequest
 }, Symbol.toStringTag, { value: "Module" }));
+const BRAND = {
+  name: "Desi4Fit",
+  tagline: "Professional outdoor personal training in The Hague",
+  description: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training.",
+  url: "https://desi4fit.nl",
+  email: "info@desi4fit.nl",
+  instagram: {
+    handle: "@desi4fit",
+    url: "https://instagram.com/desi4fit"
+  },
+  ogImage: "https://desi4fit.nl/og-image.jpg"
+};
 const styles$a = {
   html: {
     scrollBehavior: "xkcv6ua",
@@ -108,7 +120,7 @@ function Layout(t0) {
         content: "#4ecdc4"
       }), /* @__PURE__ */ jsx("meta", {
         name: "description",
-        content: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
+        content: BRAND.description
       }), /* @__PURE__ */ jsx("meta", {
         name: "robots",
         content: "index,follow"
@@ -117,16 +129,16 @@ function Layout(t0) {
         content: "website"
       }), /* @__PURE__ */ jsx("meta", {
         property: "og:title",
-        content: "Level Up Training - Outdoor Personal Training in The Hague"
+        content: `${BRAND.name} - ${BRAND.tagline}`
       }), /* @__PURE__ */ jsx("meta", {
         property: "og:description",
-        content: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training."
+        content: BRAND.description
       }), /* @__PURE__ */ jsx("meta", {
         name: "twitter:card",
         content: "summary_large_image"
       }), /* @__PURE__ */ jsx("link", {
         rel: "canonical",
-        href: "https://leveluptraining.nl"
+        href: BRAND.url
       }), /* @__PURE__ */ jsx("link", {
         rel: "icon",
         href: "/favicon.svg",
@@ -298,13 +310,13 @@ const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   default: root
 }, Symbol.toStringTag, { value: "Module" }));
 const nav$2 = { "home": "Home", "trainings": "Trainings", "schedule": "Schedule", "pricing": "Pricing", "contact": "Contact" };
-const hero$2 = { "title": "OUTDOOR TRAININGS", "subtitle": "LEVEL UP", "tagline": "STRENGTH - CONDITION - FLEXIBILITY", "description": "Do you want to work in small groups on better condition and more strength and flexibility? You are welcome at Level Up! In all weather conditions you work outside on your sports goals." };
+const hero$2 = { "title": "OUTDOOR TRAININGS", "subtitle": "DESI4FIT", "tagline": "STRENGTH - CONDITION - FLEXIBILITY", "description": "Do you want to work in small groups on better condition and more strength and flexibility? You are welcome at Desi4Fit! In all weather conditions you work outside on your sports goals." };
 const trainings$2 = { "title": "Which training suits you?", "level1": { "title": "Level 1 Strength, Condition & Flexibility", "desc": "A combination of HIIT, strength training and exercises for mobility and flexibility. Duration: 60 minutes", "imageAlt": "Strength and conditioning training" }, "level2": { "title": "Level 2 Strength & Run", "desc": "A training where running and strength training are combined and there is also attention to mobility. Duration: 70 minutes", "imageAlt": "Running and strength training" }, "level3": { "title": "Level 3 Parent+Child training", "desc": "Together with your child (+/- 4-10 years) work on strength and condition with the main goal of fun and cooperation. Duration: 60 minutes", "imageAlt": "Parent and child fitness training" } };
 const schedule$2 = { "title": "The Schedule", "locationsTitle": "Training Locations", "comingSoon": "*COMING SOON*", "locations": { "peacePalace": { "title": "Peace Palace (Vredespaleis)", "time": "Monday evening 20:00", "type": "Level 2: Strength & Run", "capacity": "Maximum 10 participants", "location": "Location (autumn/winter): At the Peace Palace" }, "scheveningse": { "title": "Scheveningse Bosjes", "time": "Friday morning 8:00", "type": "Level 1: Strength, condition", "capacity": "Maximum 10 participants", "location": "Location (autumn/winter): Scheveningse Bosjes (TBA)" }, "indischMonument": { "title": "Indisch Monument", "time": "Sunday morning 9:00", "type": "Level 3: parent+child training", "capacity": "Child participates free (1x per 3 weeks)", "location": "Location: At the Indisch Monument", "dates": "Dates 2025: 26/10, 9/11, 30/11 and 21/12" }, "verademing": { "title": "De Verademing", "time": "Wednesday morning 9:00", "type": "Level 1: Strength, condition", "capacity": "Maximum 10 participants", "location": "Location (autumn/winter): De Verademing" } } };
 const pricing$2 = { "title": "How do you join?", "strip10": { "title": "Strip card 10", "desc": "Sign up and use a strip card for 10 lessons (all levels). Price: €135" }, "strip20": { "title": "Strip card 20", "desc": "Sign up and use a strip card for 20 lessons (all levels). Price: €240" }, "single": { "title": "Single lesson", "desc": "A single lesson costs €15" }, "unlimited": { "title": "Unlimited training", "desc": "Do you want to train unlimited for a fixed amount per month? Indicate this on the registration form. Try a lesson once? Nice! You can sign up for a free trial week. €72 /month" } };
-const signup$2 = { "title": "Sign up? Questions?", "signupNow": "Sign up now", "nice": "Nice that you want to sign up! You can do this via the form below", "questions": "Questions?", "email": "info@leveluptraining.nl", "instagram": "@leveluptraining", "follow": "Follow Level Up", "contactUs": "Contact us:" };
+const signup$2 = { "title": "Sign up? Questions?", "signupNow": "Sign up now", "nice": "Nice that you want to sign up! You can do this via the form below", "questions": "Questions?", "email": "info@desi4fit.nl", "instagram": "@desi4fit", "follow": "Follow Desi4Fit", "contactUs": "Contact us:" };
 const form$2 = { "name": "Name", "email": "Email", "message": "Message", "submit": "Submit" };
-const footer$2 = { "copyright": "© 2025 Level Up Training" };
+const footer$2 = { "copyright": "© 2025 Desi4Fit" };
 const en = {
   nav: nav$2,
   hero: hero$2,
@@ -316,13 +328,13 @@ const en = {
   footer: footer$2
 };
 const nav$1 = { "home": "Home", "trainings": "Trainingen", "schedule": "Rooster", "pricing": "Prijzen", "contact": "Contact" };
-const hero$1 = { "title": "OUTDOOR TRAININGEN", "subtitle": "LEVEL UP", "tagline": "KRACHT - CONDITIE - FLEXIBILITEIT", "description": "Wil je in kleine groepen werken aan een betere conditie en aan meer kracht en flexibiliteit? Je bent welkom bij Level Up! In alle weersomstandigheden werk je buiten aan jouw sportdoelen." };
+const hero$1 = { "title": "OUTDOOR TRAININGEN", "subtitle": "DESI4FIT", "tagline": "KRACHT - CONDITIE - FLEXIBILITEIT", "description": "Wil je in kleine groepen werken aan een betere conditie en aan meer kracht en flexibiliteit? Je bent welkom bij Desi4Fit! In alle weersomstandigheden werk je buiten aan jouw sportdoelen." };
 const trainings$1 = { "title": "Welke training past bij jou?", "level1": { "title": "Level 1 Kracht, Conditie & Flexibiliteit", "desc": "Een combinatie van HIIT, krachttraining en oefeningen voor mobiliteit en flexibiliteit. Duur: 60 minuten", "imageAlt": "Kracht- en conditietraining" }, "level2": { "title": "Level 2 Kracht & Run", "desc": "Een training waarbij loop- en krachttraining worden gecombineerd en er ook aandacht is voor mobiliteit. Duur: 70 minuten", "imageAlt": "Hardlopen en krachttraining" }, "level3": { "title": "Level 3 Ouder+Kind training", "desc": "Samen met je kind (+/- 4-10 jaar) werken aan kracht en conditie met als belangrijkste doel plezier en samenwerking. Duur: 60 minuten", "imageAlt": "Ouder en kind fitnesstraining" } };
 const schedule$1 = { "title": "Het Rooster", "locationsTitle": "Trainingslocaties", "comingSoon": "*BINNENKORT*", "locations": { "peacePalace": { "title": "Vredespaleis (Peace Palace)", "time": "Maandagavond 20:00", "type": "Level 2: Kracht & Run", "capacity": "Maximaal 10 deelnemers", "location": "Locatie (herfst/winter): Bij het Vredespaleis" }, "scheveningse": { "title": "Scheveningse Bosjes", "time": "Vrijdagochtend 8:00", "type": "Level 1: Kracht, conditie", "capacity": "Maximaal 10 deelnemers", "location": "Locatie (herfst/winter): Scheveningse Bosjes (TBA)" }, "indischMonument": { "title": "Indisch Monument", "time": "Zondagochtend 9:00", "type": "Level 3: ouder+kind training", "capacity": "Kind neemt gratis deel (1x per 3 weken)", "location": "Locatie: Bij het Indisch Monument", "dates": "Data 2025: 26/10, 9/11, 30/11 en 21/12" }, "verademing": { "title": "De Verademing", "time": "Woensdagochtend 9:00", "type": "Level 1: Kracht, conditie", "capacity": "Maximaal 10 deelnemers", "location": "Locatie (herfst/winter): De Verademing" } } };
 const pricing$1 = { "title": "Hoe doe je mee?", "strip10": { "title": "Strippenkaart 10", "desc": "Meld je aan en gebruik een strippenkaart voor 10 lessen (alle levels). Prijs: €135" }, "strip20": { "title": "Strippenkaart 20", "desc": "Meld je aan en gebruik een strippenkaart voor 20 lessen (alle levels). Prijs: €240" }, "single": { "title": "Losse les", "desc": "Een losse les kost €15,-" }, "unlimited": { "title": "Onbeperkt trainen", "desc": "Wil je onbeperkt kunnen trainen voor een vast bedrag per maand? Geef dit aan op het aanmeldformulier. Een keer een les proberen? Leuk! Je kan je aanmelden voor een gratis proefweek. €72,- /maand" } };
-const signup$1 = { "title": "Aanmelden? Vragen?", "signupNow": "Meld je nu aan", "nice": "Leuk dat je je wil aanmelden! Dat kan via onderstaand formulier", "questions": "Vragen?", "email": "info@leveluptraining.nl", "instagram": "@leveluptraining", "follow": "Volg Level Up", "contactUs": "Neem contact op:" };
+const signup$1 = { "title": "Aanmelden? Vragen?", "signupNow": "Meld je nu aan", "nice": "Leuk dat je je wil aanmelden! Dat kan via onderstaand formulier", "questions": "Vragen?", "email": "info@desi4fit.nl", "instagram": "@desi4fit", "follow": "Volg Desi4Fit", "contactUs": "Neem contact op:" };
 const form$1 = { "name": "Naam", "email": "E-mail", "message": "Bericht", "submit": "Verzenden" };
-const footer$1 = { "copyright": "© 2025 Level Up Training" };
+const footer$1 = { "copyright": "© 2025 Desi4Fit" };
 const nl = {
   nav: nav$1,
   hero: hero$1,
@@ -334,13 +346,13 @@ const nl = {
   footer: footer$1
 };
 const nav = { "home": "Inicio", "trainings": "Entrenamientos", "schedule": "Horario", "pricing": "Precios", "contact": "Contacto" };
-const hero = { "title": "ENTRENAMIENTOS AL AIRE LIBRE", "subtitle": "LEVEL UP", "tagline": "FUERZA - CONDICIÓN - FLEXIBILIDAD", "description": "¿Quieres trabajar en grupos pequeños en una mejor condición y más fuerza y flexibilidad? ¡Eres bienvenido en Level Up! En todas las condiciones climáticas trabajas al aire libre en tus objetivos deportivos." };
+const hero = { "title": "ENTRENAMIENTOS AL AIRE LIBRE", "subtitle": "DESI4FIT", "tagline": "FUERZA - CONDICIÓN - FLEXIBILIDAD", "description": "¿Quieres trabajar en grupos pequeños en una mejor condición y más fuerza y flexibilidad? ¡Eres bienvenido en Desi4Fit! En todas las condiciones climáticas trabajas al aire libre en tus objetivos deportivos." };
 const trainings = { "title": "¿Cuál entrenamiento te conviene?", "level1": { "title": "Nivel 1 Fuerza, Condición y Flexibilidad", "desc": "Una combinación de HIIT, entrenamiento de fuerza y ejercicios para movilidad y flexibilidad. Duración: 60 minutos", "imageAlt": "Entrenamiento de fuerza y acondicionamiento" }, "level2": { "title": "Nivel 2 Fuerza y Carrera", "desc": "Un entrenamiento donde se combinan carrera y entrenamiento de fuerza y también hay atención a la movilidad. Duración: 70 minutos", "imageAlt": "Carrera y entrenamiento de fuerza" }, "level3": { "title": "Nivel 3 Entrenamiento Padre+Hijo", "desc": "Juntos con tu hijo (+/- 4-10 años) trabajar en fuerza y condición con el objetivo principal de diversión y cooperación. Duración: 60 minutos", "imageAlt": "Entrenamiento de fitness padre e hijo" } };
 const schedule = { "title": "El Horario", "locationsTitle": "Ubicaciones de Entrenamiento", "comingSoon": "*PRÓXIMAMENTE*", "locations": { "peacePalace": { "title": "Palacio de la Paz (Vredespaleis)", "time": "Lunes por la noche 20:00", "type": "Nivel 2: Fuerza y Carrera", "capacity": "Máximo 10 participantes", "location": "Ubicación (otoño/invierno): En el Palacio de la Paz" }, "scheveningse": { "title": "Scheveningse Bosjes", "time": "Viernes por la mañana 8:00", "type": "Nivel 1: Fuerza, condición", "capacity": "Máximo 10 participantes", "location": "Ubicación (otoño/invierno): Scheveningse Bosjes (TBA)" }, "indischMonument": { "title": "Monumento Indisch", "time": "Domingo por la mañana 9:00", "type": "Nivel 3: entrenamiento padre+hijo", "capacity": "El niño participa gratis (1x por 3 semanas)", "location": "Ubicación: En el Monumento Indisch", "dates": "Fechas 2025: 26/10, 9/11, 30/11 y 21/12" }, "verademing": { "title": "De Verademing", "time": "Miércoles por la mañana 9:00", "type": "Nivel 1: Fuerza, condición", "capacity": "Máximo 10 participantes", "location": "Ubicación (otoño/invierno): De Verademing" } } };
 const pricing = { "title": "¿Cómo te unes?", "strip10": { "title": "Tarjeta de tiras 10", "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones (todos los niveles). Precio: €135" }, "strip20": { "title": "Tarjeta de tiras 20", "desc": "Regístrate y usa una tarjeta de tiras para 20 lecciones (todos los niveles). Precio: €240" }, "single": { "title": "Lección individual", "desc": "Una lección individual cuesta €15" }, "unlimited": { "title": "Entrenamiento ilimitado", "desc": "¿Quieres entrenar ilimitadamente por una cantidad fija al mes? Indícalo en el formulario de registro. ¿Probar una lección una vez? ¡Genial! Puedes registrarte para una semana de prueba gratuita. €72 /mes" } };
-const signup = { "title": "¿Registrarse? ¿Preguntas?", "signupNow": "Regístrate ahora", "nice": "¡Genial que quieras registrarte! Puedes hacerlo a través del formulario a continuación", "questions": "¿Preguntas?", "email": "info@leveluptraining.nl", "instagram": "@leveluptraining", "follow": "Sigue Level Up", "contactUs": "Contáctanos:" };
+const signup = { "title": "¿Registrarse? ¿Preguntas?", "signupNow": "Regístrate ahora", "nice": "¡Genial que quieras registrarte! Puedes hacerlo a través del formulario a continuación", "questions": "¿Preguntas?", "email": "info@desi4fit.nl", "instagram": "@desi4fit", "follow": "Sigue Desi4Fit", "contactUs": "Contáctanos:" };
 const form = { "name": "Nombre", "email": "Correo electrónico", "message": "Mensaje", "submit": "Enviar" };
-const footer = { "copyright": "© 2025 Level Up Training" };
+const footer = { "copyright": "© 2025 Desi4Fit" };
 const es = {
   nav,
   hero,
@@ -406,7 +418,6 @@ const styles$9 = {
   },
   nav: {
     display: "x78zum5",
-    justifyContent: "x1qughib",
     alignItems: "x6s0dn4",
     maxWidth: "x1ikqzku",
     margin: "x19bbpc0",
@@ -429,11 +440,13 @@ const styles$9 = {
     paddingBottom: null,
     width: "xh8yej3",
     boxSizing: "x9f619",
+    position: "x1n2onr6",
     $$css: true
   },
   logo: {
     fontSize: "xngnso2",
     fontWeight: "x117nqv4",
+    flexShrink: "x2lah0s",
     $$css: true
   },
   languageSelector: {
@@ -441,6 +454,15 @@ const styles$9 = {
     gap: "x13z6uf9",
     rowGap: null,
     columnGap: null,
+    alignItems: "x6s0dn4",
+    justifyContent: "xl56j7k",
+    flexShrink: "x2lah0s",
+    position: "x10l6tqk",
+    right: "x1u62bzc",
+    insetInlineStart: null,
+    insetInlineEnd: null,
+    top: "xwa60dl",
+    transform: "x1cb1t30",
     $$css: true
   },
   languageButton: {
@@ -503,13 +525,24 @@ const styles$9 = {
     borderTopRightRadius: null,
     borderBottomLeftRadius: null,
     borderBottomRightRadius: null,
-    transition: "xdr7xzh",
+    transition: "xvmlhl4",
     transitionBehavior: null,
     transitionDelay: null,
     transitionDuration: null,
     transitionProperty: null,
     transitionTimingFunction: null,
+    fontSize: "xkpwil5",
+    fontWeight: "xk50ysn",
+    minWidth: "xj9j1fp",
+    textAlign: "x2b8uid",
+    flexShrink: "x2lah0s",
     ":hover_backgroundColor": "x1vm225t",
+    $$css: true
+  },
+  languageButtonActive: {
+    backgroundColor: "xh4b7qa",
+    fontWeight: "x1s688f",
+    boxShadow: "x1d57205",
     $$css: true
   },
   menuList: {
@@ -521,7 +554,7 @@ const styles$9 = {
     gap: "x8fetqu",
     rowGap: null,
     columnGap: null,
-    margin: "x1ghz6dp",
+    margin: "x19bbpc0",
     marginInline: null,
     marginInlineStart: null,
     marginLeft: null,
@@ -535,10 +568,17 @@ const styles$9 = {
     paddingStart: null,
     paddingLeft: null,
     paddingEnd: null,
-    paddingRight: null,
     paddingBlock: null,
     paddingTop: null,
     paddingBottom: null,
+    flex: "x98rzlu",
+    flexGrow: null,
+    flexShrink: null,
+    flexBasis: null,
+    justifyContent: "xl56j7k",
+    paddingRight: "xn2xcvq",
+    paddingInlineStart: null,
+    paddingInlineEnd: null,
     $$css: true
   },
   menuLink: {
@@ -580,6 +620,17 @@ const styles$9 = {
     "@media (max-width: 768px)_gap": "x1x97ot6",
     "@media (max-width: 768px)_rowGap": null,
     "@media (max-width: 768px)_columnGap": null,
+    "@media (max-width: 768px)_paddingBottom": "x8w9acq",
+    $$css: true
+  },
+  languageSelectorMobile: {
+    "@media (max-width: 768px)_position": "xvg4tll",
+    "@media (max-width: 768px)_transform": "x1rcofiu",
+    "@media (max-width: 768px)_right": "x1pqqmkp",
+    "@media (max-width: 768px)_insetInlineStart": null,
+    "@media (max-width: 768px)_insetInlineEnd": null,
+    "@media (max-width: 768px)_top": "xo1okw5",
+    "@media (max-width: 768px)_order": "xxztd4q",
     $$css: true
   },
   menuListMobile: {
@@ -587,14 +638,20 @@ const styles$9 = {
     "@media (max-width: 768px)_gap": "x188u2ca",
     "@media (max-width: 768px)_rowGap": null,
     "@media (max-width: 768px)_columnGap": null,
+    "@media (max-width: 768px)_paddingRight": "xro3qtu",
+    "@media (max-width: 768px)_paddingInlineStart": null,
+    "@media (max-width: 768px)_paddingInlineEnd": null,
+    "@media (max-width: 768px)_textAlign": "xsx4d6k",
     $$css: true
   }
 };
 const HeaderSection = () => {
-  const $ = c(42);
+  const $ = c(58);
   const {
-    t
+    t,
+    i18n: i18nInstance
   } = useTranslation();
+  const currentLanguage = i18nInstance.language;
   const changeLanguage = _temp$2;
   let t0;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
@@ -610,9 +667,9 @@ const HeaderSection = () => {
     t1 = stylex.props(styles$9.nav, styles$9.navMobile);
     t2 = /* @__PURE__ */ jsx("div", {
       ...stylex.props(styles$9.logo),
-      children: "Level Up"
+      children: BRAND.name
     });
-    t3 = stylex.props(styles$9.languageSelector);
+    t3 = stylex.props(styles$9.languageSelector, styles$9.languageSelectorMobile);
     $[1] = t1;
     $[2] = t2;
     $[3] = t3;
@@ -629,244 +686,296 @@ const HeaderSection = () => {
     t4 = $[4];
   }
   let t5;
+  if ($[5] !== currentLanguage) {
+    t5 = stylex.props(styles$9.languageButton, currentLanguage === "en" && styles$9.languageButtonActive);
+    $[5] = currentLanguage;
+    $[6] = t5;
+  } else {
+    t5 = $[6];
+  }
   let t6;
-  if ($[5] === Symbol.for("react.memo_cache_sentinel")) {
-    t5 = /* @__PURE__ */ jsx("button", {
+  if ($[7] !== t5) {
+    t6 = /* @__PURE__ */ jsx("button", {
       onClick: t4,
       "aria-label": "Switch to English",
       type: "button",
-      ...stylex.props(styles$9.languageButton),
+      ...t5,
       children: "EN"
     });
-    t6 = () => changeLanguage("nl");
-    $[5] = t5;
-    $[6] = t6;
+    $[7] = t5;
+    $[8] = t6;
   } else {
-    t5 = $[5];
-    t6 = $[6];
+    t6 = $[8];
   }
   let t7;
-  let t8;
-  if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
-    t7 = /* @__PURE__ */ jsx("button", {
-      onClick: t6,
-      "aria-label": "Switch to Dutch",
-      type: "button",
-      ...stylex.props(styles$9.languageButton),
-      children: "NL"
-    });
-    t8 = () => changeLanguage("es");
-    $[7] = t7;
-    $[8] = t8;
+  if ($[9] === Symbol.for("react.memo_cache_sentinel")) {
+    t7 = () => changeLanguage("nl");
+    $[9] = t7;
   } else {
-    t7 = $[7];
-    t8 = $[8];
+    t7 = $[9];
+  }
+  let t8;
+  if ($[10] !== currentLanguage) {
+    t8 = stylex.props(styles$9.languageButton, currentLanguage === "nl" && styles$9.languageButtonActive);
+    $[10] = currentLanguage;
+    $[11] = t8;
+  } else {
+    t8 = $[11];
   }
   let t9;
-  if ($[9] === Symbol.for("react.memo_cache_sentinel")) {
-    t9 = /* @__PURE__ */ jsxs("div", {
+  if ($[12] !== t8) {
+    t9 = /* @__PURE__ */ jsx("button", {
+      onClick: t7,
+      "aria-label": "Switch to Dutch",
+      type: "button",
+      ...t8,
+      children: "NL"
+    });
+    $[12] = t8;
+    $[13] = t9;
+  } else {
+    t9 = $[13];
+  }
+  let t10;
+  if ($[14] === Symbol.for("react.memo_cache_sentinel")) {
+    t10 = () => changeLanguage("es");
+    $[14] = t10;
+  } else {
+    t10 = $[14];
+  }
+  let t11;
+  if ($[15] !== currentLanguage) {
+    t11 = stylex.props(styles$9.languageButton, currentLanguage === "es" && styles$9.languageButtonActive);
+    $[15] = currentLanguage;
+    $[16] = t11;
+  } else {
+    t11 = $[16];
+  }
+  let t12;
+  if ($[17] !== t11) {
+    t12 = /* @__PURE__ */ jsx("button", {
+      onClick: t10,
+      "aria-label": "Switch to Spanish",
+      type: "button",
+      ...t11,
+      children: "ES"
+    });
+    $[17] = t11;
+    $[18] = t12;
+  } else {
+    t12 = $[18];
+  }
+  let t13;
+  if ($[19] !== t12 || $[20] !== t6 || $[21] !== t9) {
+    t13 = /* @__PURE__ */ jsxs("div", {
       ...t3,
       role: "group",
       "aria-label": "Language selection",
-      children: [t5, t7, /* @__PURE__ */ jsx("button", {
-        onClick: t8,
-        "aria-label": "Switch to Spanish",
-        type: "button",
-        ...stylex.props(styles$9.languageButton),
-        children: "ES"
-      })]
+      children: [t6, t9, t12]
     });
-    $[9] = t9;
+    $[19] = t12;
+    $[20] = t6;
+    $[21] = t9;
+    $[22] = t13;
   } else {
-    t9 = $[9];
+    t13 = $[22];
   }
-  let t10;
-  if ($[10] === Symbol.for("react.memo_cache_sentinel")) {
-    t10 = stylex.props(styles$9.menuList, styles$9.menuListMobile);
-    $[10] = t10;
+  let t14;
+  if ($[23] === Symbol.for("react.memo_cache_sentinel")) {
+    t14 = stylex.props(styles$9.menuList, styles$9.menuListMobile);
+    $[23] = t14;
   } else {
-    t10 = $[10];
+    t14 = $[23];
   }
-  let t11;
-  if ($[11] === Symbol.for("react.memo_cache_sentinel")) {
-    t11 = stylex.props(styles$9.menuLink);
-    $[11] = t11;
+  let t15;
+  if ($[24] === Symbol.for("react.memo_cache_sentinel")) {
+    t15 = stylex.props(styles$9.menuLink);
+    $[24] = t15;
   } else {
-    t11 = $[11];
+    t15 = $[24];
   }
-  let t12;
-  if ($[12] !== t) {
-    t12 = t("nav.home");
-    $[12] = t;
-    $[13] = t12;
+  let t16;
+  if ($[25] !== t) {
+    t16 = t("nav.home");
+    $[25] = t;
+    $[26] = t16;
   } else {
-    t12 = $[13];
+    t16 = $[26];
   }
-  let t13;
-  if ($[14] !== t12) {
-    t13 = /* @__PURE__ */ jsx("li", {
+  let t17;
+  if ($[27] !== t16) {
+    t17 = /* @__PURE__ */ jsx("li", {
       role: "none",
       children: /* @__PURE__ */ jsx("a", {
         href: "#hero",
         role: "menuitem",
-        ...t11,
-        children: t12
+        ...t15,
+        children: t16
       })
     });
-    $[14] = t12;
-    $[15] = t13;
+    $[27] = t16;
+    $[28] = t17;
   } else {
-    t13 = $[15];
+    t17 = $[28];
   }
-  let t14;
-  if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
-    t14 = stylex.props(styles$9.menuLink);
-    $[16] = t14;
+  let t18;
+  if ($[29] === Symbol.for("react.memo_cache_sentinel")) {
+    t18 = stylex.props(styles$9.menuLink);
+    $[29] = t18;
   } else {
-    t14 = $[16];
+    t18 = $[29];
   }
-  let t15;
-  if ($[17] !== t) {
-    t15 = t("nav.trainings");
-    $[17] = t;
-    $[18] = t15;
+  let t19;
+  if ($[30] !== t) {
+    t19 = t("nav.trainings");
+    $[30] = t;
+    $[31] = t19;
   } else {
-    t15 = $[18];
+    t19 = $[31];
   }
-  let t16;
-  if ($[19] !== t15) {
-    t16 = /* @__PURE__ */ jsx("li", {
+  let t20;
+  if ($[32] !== t19) {
+    t20 = /* @__PURE__ */ jsx("li", {
       role: "none",
       children: /* @__PURE__ */ jsx("a", {
         href: "#trainings",
         role: "menuitem",
-        ...t14,
-        children: t15
+        ...t18,
+        children: t19
       })
     });
-    $[19] = t15;
-    $[20] = t16;
+    $[32] = t19;
+    $[33] = t20;
   } else {
-    t16 = $[20];
+    t20 = $[33];
   }
-  let t17;
-  if ($[21] === Symbol.for("react.memo_cache_sentinel")) {
-    t17 = stylex.props(styles$9.menuLink);
-    $[21] = t17;
+  let t21;
+  if ($[34] === Symbol.for("react.memo_cache_sentinel")) {
+    t21 = stylex.props(styles$9.menuLink);
+    $[34] = t21;
   } else {
-    t17 = $[21];
+    t21 = $[34];
   }
-  let t18;
-  if ($[22] !== t) {
-    t18 = t("nav.schedule");
-    $[22] = t;
-    $[23] = t18;
+  let t22;
+  if ($[35] !== t) {
+    t22 = t("nav.schedule");
+    $[35] = t;
+    $[36] = t22;
   } else {
-    t18 = $[23];
+    t22 = $[36];
   }
-  let t19;
-  if ($[24] !== t18) {
-    t19 = /* @__PURE__ */ jsx("li", {
+  let t23;
+  if ($[37] !== t22) {
+    t23 = /* @__PURE__ */ jsx("li", {
       role: "none",
       children: /* @__PURE__ */ jsx("a", {
         href: "#schedule",
         role: "menuitem",
-        ...t17,
-        children: t18
+        ...t21,
+        children: t22
       })
     });
-    $[24] = t18;
-    $[25] = t19;
+    $[37] = t22;
+    $[38] = t23;
   } else {
-    t19 = $[25];
+    t23 = $[38];
   }
-  let t20;
-  if ($[26] === Symbol.for("react.memo_cache_sentinel")) {
-    t20 = stylex.props(styles$9.menuLink);
-    $[26] = t20;
+  let t24;
+  if ($[39] === Symbol.for("react.memo_cache_sentinel")) {
+    t24 = stylex.props(styles$9.menuLink);
+    $[39] = t24;
   } else {
-    t20 = $[26];
+    t24 = $[39];
   }
-  let t21;
-  if ($[27] !== t) {
-    t21 = t("nav.pricing");
-    $[27] = t;
-    $[28] = t21;
+  let t25;
+  if ($[40] !== t) {
+    t25 = t("nav.pricing");
+    $[40] = t;
+    $[41] = t25;
   } else {
-    t21 = $[28];
+    t25 = $[41];
   }
-  let t22;
-  if ($[29] !== t21) {
-    t22 = /* @__PURE__ */ jsx("li", {
+  let t26;
+  if ($[42] !== t25) {
+    t26 = /* @__PURE__ */ jsx("li", {
       role: "none",
       children: /* @__PURE__ */ jsx("a", {
         href: "#pricing",
         role: "menuitem",
-        ...t20,
-        children: t21
+        ...t24,
+        children: t25
       })
     });
-    $[29] = t21;
-    $[30] = t22;
+    $[42] = t25;
+    $[43] = t26;
   } else {
-    t22 = $[30];
+    t26 = $[43];
   }
-  let t23;
-  if ($[31] === Symbol.for("react.memo_cache_sentinel")) {
-    t23 = stylex.props(styles$9.menuLink);
-    $[31] = t23;
+  let t27;
+  if ($[44] === Symbol.for("react.memo_cache_sentinel")) {
+    t27 = stylex.props(styles$9.menuLink);
+    $[44] = t27;
   } else {
-    t23 = $[31];
+    t27 = $[44];
   }
-  let t24;
-  if ($[32] !== t) {
-    t24 = t("nav.contact");
-    $[32] = t;
-    $[33] = t24;
+  let t28;
+  if ($[45] !== t) {
+    t28 = t("nav.contact");
+    $[45] = t;
+    $[46] = t28;
   } else {
-    t24 = $[33];
+    t28 = $[46];
   }
-  let t25;
-  if ($[34] !== t24) {
-    t25 = /* @__PURE__ */ jsx("li", {
+  let t29;
+  if ($[47] !== t28) {
+    t29 = /* @__PURE__ */ jsx("li", {
       role: "none",
       children: /* @__PURE__ */ jsx("a", {
         href: "#signup",
         role: "menuitem",
-        ...t23,
-        children: t24
+        ...t27,
+        children: t28
       })
     });
-    $[34] = t24;
-    $[35] = t25;
+    $[47] = t28;
+    $[48] = t29;
   } else {
-    t25 = $[35];
+    t29 = $[48];
   }
-  let t26;
-  if ($[36] !== t13 || $[37] !== t16 || $[38] !== t19 || $[39] !== t22 || $[40] !== t25) {
-    t26 = /* @__PURE__ */ jsx("header", {
+  let t30;
+  if ($[49] !== t17 || $[50] !== t20 || $[51] !== t23 || $[52] !== t26 || $[53] !== t29) {
+    t30 = /* @__PURE__ */ jsxs("ul", {
+      role: "menubar",
+      ...t14,
+      children: [t17, t20, t23, t26, t29]
+    });
+    $[49] = t17;
+    $[50] = t20;
+    $[51] = t23;
+    $[52] = t26;
+    $[53] = t29;
+    $[54] = t30;
+  } else {
+    t30 = $[54];
+  }
+  let t31;
+  if ($[55] !== t13 || $[56] !== t30) {
+    t31 = /* @__PURE__ */ jsx("header", {
       ...t0,
       children: /* @__PURE__ */ jsxs("nav", {
         role: "navigation",
         "aria-label": "Main navigation",
         ...t1,
-        children: [t2, t9, /* @__PURE__ */ jsxs("ul", {
-          role: "menubar",
-          ...t10,
-          children: [t13, t16, t19, t22, t25]
-        })]
+        children: [t2, t13, t30]
       })
     });
-    $[36] = t13;
-    $[37] = t16;
-    $[38] = t19;
-    $[39] = t22;
-    $[40] = t25;
-    $[41] = t26;
+    $[55] = t13;
+    $[56] = t30;
+    $[57] = t31;
   } else {
-    t26 = $[41];
+    t31 = $[57];
   }
-  return t26;
+  return t31;
 };
 function _temp$2(lng) {
   i18n.changeLanguage(lng);
@@ -1433,12 +1542,12 @@ const FooterSection = () => {
   let t3;
   if ($[3] === Symbol.for("react.memo_cache_sentinel")) {
     t3 = /* @__PURE__ */ jsxs("a", {
-      href: "mailto:info@leveluptraining.nl",
+      href: `mailto:${BRAND.email}`,
       ...stylex.props(styles$8.footerLink, styles$8.footerLinkMobile),
       children: [/* @__PURE__ */ jsx(EmailIcon, {
         width: 18,
         height: 18
-      }), "info@leveluptraining.nl"]
+      }), BRAND.email]
     });
     $[3] = t3;
   } else {
@@ -1449,14 +1558,14 @@ const FooterSection = () => {
     t4 = /* @__PURE__ */ jsxs("div", {
       ...t2,
       children: [t3, /* @__PURE__ */ jsxs("a", {
-        href: "https://instagram.com/leveluptraining",
+        href: BRAND.instagram.url,
         target: "_blank",
         rel: "noopener noreferrer",
         ...stylex.props(styles$8.footerLink, styles$8.footerLinkMobile),
         children: [/* @__PURE__ */ jsx(InstagramIcon, {
           width: 18,
           height: 18
-        }), "@leveluptraining"]
+        }), BRAND.instagram.handle]
       })]
     });
     $[4] = t4;
@@ -1499,8 +1608,8 @@ const SEOHead = (t0) => {
     url: t2,
     locale
   } = t0;
-  const ogImage = t1 === void 0 ? "https://leveluptraining.nl/og-image.jpg" : t1;
-  const url = t2 === void 0 ? "https://leveluptraining.nl/" : t2;
+  const ogImage = t1 === void 0 ? BRAND.ogImage : t1;
+  const url = t2 === void 0 ? BRAND.url : t2;
   const {
     i18n: i18n2
   } = useTranslation();
@@ -1632,8 +1741,8 @@ const MainLayout = () => {
   let t2;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
     t0 = /* @__PURE__ */ jsx(SEOHead, {
-      title: "Level Up Training - Outdoor Personal Training in The Hague",
-      description: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training. Try a free trial week!",
+      title: `${BRAND.name} - ${BRAND.tagline}`,
+      description: `${BRAND.description} Try a free trial week!`,
       keywords: "personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training"
     });
     t1 = stylex.props(styles$7.app);
@@ -5126,7 +5235,7 @@ const SignupSection = () => {
   let t32;
   if ($[53] !== t31) {
     t32 = /* @__PURE__ */ jsxs("a", {
-      href: "mailto:info@leveluptraining.nl",
+      href: `mailto:${BRAND.email}`,
       ...t29,
       children: [t30, /* @__PURE__ */ jsx("span", {
         children: t31
@@ -5162,7 +5271,7 @@ const SignupSection = () => {
   let t36;
   if ($[59] !== t35) {
     t36 = /* @__PURE__ */ jsxs("a", {
-      href: "https://instagram.com/leveluptraining",
+      href: BRAND.instagram.url,
       target: "_blank",
       rel: "noopener noreferrer",
       ...t33,
@@ -5349,7 +5458,7 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: home
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-mBydkK4D.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-BsNwGEO-.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js", "/assets/stylex-DhFcWJjZ.js"], "css": ["/assets/root-Cn-LKyTh.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-Dl8ViA20.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-DhFcWJjZ.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Bq8kZdDI.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-uNwqnDGZ.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-DhFcWJjZ.js", "/assets/InstagramIcon-Bq8kZdDI.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-96dbc5be.js", "version": "96dbc5be", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-BJpFc5La.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-DHjIX-po.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-fdLy3QjX.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-DHjIX-po.js", "/assets/i18nInstance-CHFDjdcJ.js", "/assets/stylex-BmucT9SC.js"], "css": ["/assets/root-CaseWRBR.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-DZlj1KXa.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-BmucT9SC.js", "/assets/i18n-DHjIX-po.js", "/assets/InstagramIcon-CqxkMoJa.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-D27NAE47.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-BmucT9SC.js", "/assets/InstagramIcon-CqxkMoJa.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-7196030f.js", "version": "7196030f", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };

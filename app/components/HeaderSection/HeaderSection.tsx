@@ -1,10 +1,12 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import i18n from "../../i18n";
+import i18n from "@/i18n";
 import { styles } from "./HeaderSection.stylex";
+import { BRAND } from "@/constants/brand";
 
 const HeaderSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n: i18nInstance } = useTranslation();
+  const currentLanguage = i18nInstance.language;
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -17,9 +19,12 @@ const HeaderSection = () => {
         aria-label="Main navigation"
         {...stylex.props(styles.nav, styles.navMobile)}
       >
-        <div {...stylex.props(styles.logo)}>Level Up</div>
+        <div {...stylex.props(styles.logo)}>{BRAND.name}</div>
         <div
-          {...stylex.props(styles.languageSelector)}
+          {...stylex.props(
+            styles.languageSelector,
+            styles.languageSelectorMobile
+          )}
           role="group"
           aria-label="Language selection"
         >
@@ -27,7 +32,10 @@ const HeaderSection = () => {
             onClick={() => changeLanguage("en")}
             aria-label="Switch to English"
             type="button"
-            {...stylex.props(styles.languageButton)}
+            {...stylex.props(
+              styles.languageButton,
+              currentLanguage === "en" && styles.languageButtonActive
+            )}
           >
             EN
           </button>
@@ -35,7 +43,10 @@ const HeaderSection = () => {
             onClick={() => changeLanguage("nl")}
             aria-label="Switch to Dutch"
             type="button"
-            {...stylex.props(styles.languageButton)}
+            {...stylex.props(
+              styles.languageButton,
+              currentLanguage === "nl" && styles.languageButtonActive
+            )}
           >
             NL
           </button>
@@ -43,7 +54,10 @@ const HeaderSection = () => {
             onClick={() => changeLanguage("es")}
             aria-label="Switch to Spanish"
             type="button"
-            {...stylex.props(styles.languageButton)}
+            {...stylex.props(
+              styles.languageButton,
+              currentLanguage === "es" && styles.languageButtonActive
+            )}
           >
             ES
           </button>

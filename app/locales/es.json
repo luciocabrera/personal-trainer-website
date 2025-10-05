@@ -8,9 +8,9 @@
   },
   "hero": {
     "title": "ENTRENAMIENTOS AL AIRE LIBRE",
-    "subtitle": "LEVEL UP",
+    "subtitle": "DESI4FIT",
     "tagline": "FUERZA - CONDICIÓN - FLEXIBILIDAD",
-    "description": "¿Quieres trabajar en grupos pequeños en una mejor condición y más fuerza y flexibilidad? ¡Eres bienvenido en Level Up! En todas las condiciones climáticas trabajas al aire libre en tus objetivos deportivos."
+    "description": "¿Quieres trabajar en grupos pequeños en una mejor condición y más fuerza y flexibilidad? ¡Eres bienvenido en Desi4Fit! En todas las condiciones climáticas trabajas al aire libre en tus objetivos deportivos."
   },
   "trainings": {
     "title": "¿Cuál entrenamiento te conviene?",
@@ -90,9 +90,9 @@
     "signupNow": "Regístrate ahora",
     "nice": "¡Genial que quieras registrarte! Puedes hacerlo a través del formulario a continuación",
     "questions": "¿Preguntas?",
-    "email": "info@leveluptraining.nl",
-    "instagram": "@leveluptraining",
-    "follow": "Sigue Level Up",
+    "email": "info@desi4fit.nl",
+    "instagram": "@desi4fit",
+    "follow": "Sigue Desi4Fit",
     "contactUs": "Contáctanos:"
   },
   "form": {
@@ -102,6 +102,6 @@
     "submit": "Enviar"
   },
   "footer": {
-    "copyright": "© 2025 Level Up Training"
+    "copyright": "© 2025 Desi4Fit"
   }
 }

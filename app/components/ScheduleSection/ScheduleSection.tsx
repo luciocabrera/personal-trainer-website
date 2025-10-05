@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import { LocationCard } from "../LocationCard";
+import { LocationCard } from "@/components/LocationCard";
 import { styles } from "./ScheduleSection.stylex";
 
 const ScheduleSection = () => {

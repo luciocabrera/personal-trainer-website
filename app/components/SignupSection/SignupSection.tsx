@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import { SignupIcon, EmailIcon, InstagramIcon } from "../Icons";
+import { SignupIcon, EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./SignupSection.stylex";
+import { BRAND } from "@/constants/brand";
 
 const SignupSection = () => {
   const { t } = useTranslation();
@@ -54,7 +55,7 @@ const SignupSection = () => {
             {...stylex.props(styles.contactLinks, styles.contactLinksMobile)}
           >
             <a
-              href="mailto:info@leveluptraining.nl"
+              href={`mailto:${BRAND.email}`}
               {...stylex.props(
                 styles.contactLink,
                 styles.emailLink,
@@ -68,7 +69,7 @@ const SignupSection = () => {
             </a>
 
             <a
-              href="https://instagram.com/leveluptraining"
+              href={BRAND.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
               {...stylex.props(
