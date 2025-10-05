@@ -18,6 +18,7 @@ export const styles = stylex.create({
   // Main content area
   main: {
     padding: "2rem",
+    gap: "2rem",
     paddingTop: "calc(80px + 2rem)", // Header height + content padding
     flex: 1,
     display: "flex",

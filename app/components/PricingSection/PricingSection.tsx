@@ -8,11 +8,11 @@ const PricingSection = () => {
 
   return (
     <section
-      id="pricing"
+      id="pricing-section"
       {...stylex.props(styles.pricing, styles.pricingMobile)}
     >
       <h2 {...stylex.props(styles.pricingTitle)}>{t("pricing.title")}</h2>
-      <div {...stylex.props(styles.pricingImage)}>
+      <div id="pricing-image" {...stylex.props(styles.pricingImage)}>
         {/* Custom SVG: Membership/joining icon with fitness elements */}
         <div
           {...stylex.props(

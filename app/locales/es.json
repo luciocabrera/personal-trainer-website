@@ -15,54 +15,50 @@
   "trainings": {
     "title": "¿Cuál entrenamiento te conviene?",
     "level1": {
-      "title": "Nivel 1 Fuerza, Condición y Flexibilidad",
-      "desc": "Una combinación de HIIT, entrenamiento de fuerza y ejercicios para movilidad y flexibilidad. Duración: 60 minutos",
-      "imageAlt": "Entrenamiento de fuerza y acondicionamiento"
+      "title": "Entrenamiento Personal",
+      "desc": "Sesiones de entrenamiento personalizadas uno a uno adaptadas a tus objetivos específicos y nivel de fitness. Obtén máxima atención y los resultados más rápidos con entrenamientos personalizados. Duración: 60 minutos",
+      "imageAlt": "Sesión de entrenamiento personal"
     },
     "level2": {
-      "title": "Nivel 2 Fuerza y Carrera",
-      "desc": "Un entrenamiento donde se combinan carrera y entrenamiento de fuerza y también hay atención a la movilidad. Duración: 70 minutos",
-      "imageAlt": "Carrera y entrenamiento de fuerza"
+      "title": "Entrenamiento en Dúo",
+      "desc": "Entrena junto con un amigo, pareja o familiar. Comparte la motivación mientras recibes atención personalizada de tu entrenador. Perfecto para parejas o compañeros de entrenamiento. Duración: 60 minutos",
+      "imageAlt": "Sesión de entrenamiento en dúo con dos personas"
     },
     "level3": {
-      "title": "Nivel 3 Entrenamiento Padre+Hijo",
-      "desc": "Juntos con tu hijo (+/- 4-10 años) trabajar en fuerza y condición con el objetivo principal de diversión y cooperación. Duración: 60 minutos",
-      "imageAlt": "Entrenamiento de fitness padre e hijo"
+      "title": "Entrenamiento en Grupo Pequeño",
+      "desc": "Únete a un grupo pequeño de 3-6 personas para entrenamientos dinámicos y energéticos al aire libre. Experimenta el poder de la motivación grupal manteniendo instrucción de calidad. Duración: 60 minutos",
+      "imageAlt": "Entrenamiento al aire libre en grupo pequeño"
     }
   },
   "schedule": {
     "title": "El Horario",
-    "locationsTitle": "Ubicaciones de Entrenamiento",
-    "comingSoon": "*PRÓXIMAMENTE*",
-    "locations": {
-      "peacePalace": {
-        "title": "Palacio de la Paz (Vredespaleis)",
-        "time": "Lunes por la noche 20:00",
-        "type": "Nivel 2: Fuerza y Carrera",
-        "capacity": "Máximo 10 participantes",
-        "location": "Ubicación (otoño/invierno): En el Palacio de la Paz"
+    "subtitle": "Horario de Entrenamiento en Grupo Pequeño",
+    "onDemandTitle": "Entrenamiento Personal y en Dúo",
+    "onDemandDesc": "Disponible bajo demanda - Contáctanos para programar tus sesiones personalizadas",
+    "contactInfo": "Contacto: info@desi4fit.nl o @desi4fit",
+    "locationsTitle": "Ubicación de Entrenamiento",
+    "location": "Estación Voorburg",
+    "locationNote": "Horario fijo solo para Entrenamiento en Grupo Pequeño",
+    "sessions": {
+      "tuesday": {
+        "day": "Martes",
+        "time": "20:00",
+        "description": "Entrenamiento en Grupo Pequeño nocturno"
       },
-      "scheveningse": {
-        "title": "Scheveningse Bosjes",
-        "time": "Viernes por la mañana 8:00",
-        "type": "Nivel 1: Fuerza, condición",
-        "capacity": "Máximo 10 participantes",
-        "location": "Ubicación (otoño/invierno): Scheveningse Bosjes (TBA)"
+      "wednesdayMorning": {
+        "day": "Miércoles",
+        "time": "08:00",
+        "description": "Entrenamiento en Grupo Pequeño temprano"
       },
-      "indischMonument": {
-        "title": "Monumento Indisch",
-        "time": "Domingo por la mañana 9:00",
-        "type": "Nivel 3: entrenamiento padre+hijo",
-        "capacity": "El niño participa gratis (1x por 3 semanas)",
-        "location": "Ubicación: En el Monumento Indisch",
-        "dates": "Fechas 2025: 26/10, 9/11, 30/11 y 21/12"
+      "wednesdayLate": {
+        "day": "Miércoles",
+        "time": "09:00",
+        "description": "Entrenamiento en Grupo Pequeño matutino"
       },
-      "verademing": {
-        "title": "De Verademing",
-        "time": "Miércoles por la mañana 9:00",
-        "type": "Nivel 1: Fuerza, condición",
-        "capacity": "Máximo 10 participantes",
-        "location": "Ubicación (otoño/invierno): De Verademing"
+      "friday": {
+        "day": "Viernes",
+        "time": "09:00",
+        "description": "Entrenamiento en Grupo Pequeño matutino"
       }
     }
   },

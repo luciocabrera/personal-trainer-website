@@ -15,54 +15,50 @@
   "trainings": {
     "title": "Welke training past bij jou?",
     "level1": {
-      "title": "Level 1 Kracht, Conditie & Flexibiliteit",
-      "desc": "Een combinatie van HIIT, krachttraining en oefeningen voor mobiliteit en flexibiliteit. Duur: 60 minuten",
-      "imageAlt": "Kracht- en conditietraining"
+      "title": "Personal Training",
+      "desc": "Eén-op-één gepersonaliseerde trainingen op maat van jouw specifieke doelen en fitnessniveau. Krijg maximale aandacht en de snelste resultaten met maatwerk workouts. Duur: 60 minuten",
+      "imageAlt": "Personal training sessie"
     },
     "level2": {
-      "title": "Level 2 Kracht & Run",
-      "desc": "Een training waarbij loop- en krachttraining worden gecombineerd en er ook aandacht is voor mobiliteit. Duur: 70 minuten",
-      "imageAlt": "Hardlopen en krachttraining"
+      "title": "Duo Training",
+      "desc": "Train samen met een vriend, partner of familielid. Deel de motivatie terwijl je nog steeds persoonlijke aandacht krijgt van je trainer. Perfect voor koppels of workout buddies. Duur: 60 minuten",
+      "imageAlt": "Duo training sessie met twee personen"
     },
     "level3": {
-      "title": "Level 3 Ouder+Kind training",
-      "desc": "Samen met je kind (+/- 4-10 jaar) werken aan kracht en conditie met als belangrijkste doel plezier en samenwerking. Duur: 60 minuten",
-      "imageAlt": "Ouder en kind fitnesstraining"
+      "title": "Small Group Training",
+      "desc": "Sluit je aan bij een kleine groep van 3-6 personen voor dynamische en energieke outdoor workouts. Ervaar de kracht van groepsmotivatie met behoud van kwaliteitsonderricht. Duur: 60 minuten",
+      "imageAlt": "Kleine groep outdoor training"
     }
   },
   "schedule": {
     "title": "Het Rooster",
-    "locationsTitle": "Trainingslocaties",
-    "comingSoon": "*BINNENKORT*",
-    "locations": {
-      "peacePalace": {
-        "title": "Vredespaleis (Peace Palace)",
-        "time": "Maandagavond 20:00",
-        "type": "Level 2: Kracht & Run",
-        "capacity": "Maximaal 10 deelnemers",
-        "location": "Locatie (herfst/winter): Bij het Vredespaleis"
+    "subtitle": "Small Group Training Rooster",
+    "onDemandTitle": "Personal Training & Duo Training",
+    "onDemandDesc": "Beschikbaar op aanvraag - Neem contact op om je gepersonaliseerde sessies in te plannen",
+    "contactInfo": "Contact: info@desi4fit.nl of @desi4fit",
+    "locationsTitle": "Trainingslocatie",
+    "location": "Station Voorburg",
+    "locationNote": "Vast rooster alleen voor Small Group Training",
+    "sessions": {
+      "tuesday": {
+        "day": "Dinsdag",
+        "time": "20:00",
+        "description": "Avond Small Group Training"
       },
-      "scheveningse": {
-        "title": "Scheveningse Bosjes",
-        "time": "Vrijdagochtend 8:00",
-        "type": "Level 1: Kracht, conditie",
-        "capacity": "Maximaal 10 deelnemers",
-        "location": "Locatie (herfst/winter): Scheveningse Bosjes (TBA)"
+      "wednesdayMorning": {
+        "day": "Woensdag",
+        "time": "08:00",
+        "description": "Vroege ochtend Small Group Training"
       },
-      "indischMonument": {
-        "title": "Indisch Monument",
-        "time": "Zondagochtend 9:00",
-        "type": "Level 3: ouder+kind training",
-        "capacity": "Kind neemt gratis deel (1x per 3 weken)",
-        "location": "Locatie: Bij het Indisch Monument",
-        "dates": "Data 2025: 26/10, 9/11, 30/11 en 21/12"
+      "wednesdayLate": {
+        "day": "Woensdag",
+        "time": "09:00",
+        "description": "Ochtend Small Group Training"
       },
-      "verademing": {
-        "title": "De Verademing",
-        "time": "Woensdagochtend 9:00",
-        "type": "Level 1: Kracht, conditie",
-        "capacity": "Maximaal 10 deelnemers",
-        "location": "Locatie (herfst/winter): De Verademing"
+      "friday": {
+        "day": "Vrijdag",
+        "time": "09:00",
+        "description": "Ochtend Small Group Training"
       }
     }
   },

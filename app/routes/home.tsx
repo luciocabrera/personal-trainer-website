@@ -32,21 +32,21 @@ export default function Home() {
 
   return (
     <>
-      <section id="hero" aria-labelledby="hero-title">
-        <HeroSection />
-      </section>
-      <section id="trainings" aria-labelledby="trainings-title">
-        <TrainingsSection />
-      </section>
-      <section id="schedule" aria-labelledby="schedule-title">
-        <ScheduleSection />
-      </section>
-      <section id="pricing" aria-labelledby="pricing-title">
-        <PricingSection />
-      </section>
-      <section id="signup" aria-labelledby="signup-title">
-        <SignupSection />
-      </section>
+      {/* <section id="hero" aria-labelledby="hero-title"> */}
+      <HeroSection />
+      {/* </section> */}
+      {/* <section id="trainings" aria-labelledby="trainings-title"> */}
+      <TrainingsSection />
+      {/* </section> */}
+      {/* <section id="schedule" aria-labelledby="schedule-title"> */}
+      <ScheduleSection />
+      {/* </section> */}
+      {/* <section id="pricing" aria-labelledby="pricing-title"> */}
+      <PricingSection />
+      {/* </section> */}
+      {/* <section id="signup" aria-labelledby="signup-title"> */}
+      <SignupSection />
+      {/* </section> */}
     </>
   );
 }

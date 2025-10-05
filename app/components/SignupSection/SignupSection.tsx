@@ -8,9 +8,12 @@ const SignupSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="signup" {...stylex.props(styles.signup, styles.signupMobile)}>
+    <section
+      id="signup-section"
+      {...stylex.props(styles.signup, styles.signupMobile)}
+    >
       <h2 {...stylex.props(styles.signupTitle)}>{t("signup.title")}</h2>
-      <div {...stylex.props(styles.signupImage)}>
+      <div id="signup-image" {...stylex.props(styles.signupImage)}>
         {/* Clean icon approach: Contact/signup representation */}
         <div
           {...stylex.props(
@@ -48,7 +51,7 @@ const SignupSection = () => {
             {t("form.submit")}
           </button>
         </form>
-
+        {/* 
         <div {...stylex.props(styles.contactSection)}>
           <p {...stylex.props(styles.contactTitle)}>{t("signup.contactUs")}</p>
           <div
@@ -85,7 +88,7 @@ const SignupSection = () => {
             </a>
           </div>
           <p {...stylex.props(styles.followText)}>{t("signup.follow")}</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
