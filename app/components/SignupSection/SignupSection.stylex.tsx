@@ -8,8 +8,12 @@ const floatAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   signup: {
-    marginBottom: "2rem",
-    padding: "2rem",
+    padding: 0,
+    margin: 0,
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "column",
+    gap: 0,
     background: "rgba(255, 255, 255, 0.95)",
     borderRadius: "20px",
     backdropFilter: "blur(10px)",
@@ -19,32 +23,39 @@ export const styles = stylex.create({
 
   signupTitle: {
     textAlign: "center",
-    marginBottom: "1rem",
-    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
+    // margin: "-2rem -2rem 2rem -2rem",
+    padding: "2rem",
+    background: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M50 15L60 35H40L50 15ZM85 50L75 30H95L85 50ZM15 50L25 70H5L15 50ZM50 85L40 65H60L50 85Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
+    backgroundSize: "cover, 100px 100px",
+    backgroundRepeat: "no-repeat, repeat",
+    color: "white",
+    borderRadius: "20px 20px 0 0",
     fontSize: "2.2rem",
     fontWeight: "bold",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+    position: "relative",
+    margin: 0,
   },
 
   signupImage: {
     textAlign: "center",
-    marginBottom: "2rem",
   },
 
   signupIconContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "300px",
     background:
       "linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))",
-    borderRadius: "15px",
     backdropFilter: "blur(10px)",
     border: "1px solid rgba(255, 107, 107, 0.2)",
     margin: "0 auto",
-    maxWidth: "600px",
+    width: "100%",
+    maxWidth: "100%",
+    height: "250px",
   },
 
   signupIconSvg: {

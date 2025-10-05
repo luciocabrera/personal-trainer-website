@@ -8,43 +8,63 @@ const pulseAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   pricing: {
-    marginBottom: "2rem",
-    padding: "2rem",
+    // marginBottom: "2rem",
+    padding: 0,
+    margin: 0,
     background: "rgba(255, 255, 255, 0.95)",
     borderRadius: "20px",
     backdropFilter: "blur(10px)",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     border: "1px solid rgba(255, 255, 255, 0.3)",
+    gap: 0,
   },
 
   pricingTitle: {
     textAlign: "center",
-    marginBottom: "1rem",
-    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
+    // margin: "-2rem -2rem 2rem -2rem",
+    padding: "2rem",
+    background: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 10c16.569 0 30 13.431 30 30s-13.431 30-30 30S10 56.569 10 40 23.431 10 40 10zm0 4c-14.359 0-26 11.641-26 26s11.641 26 26 26 26-11.641 26-26S54.359 14 40 14z'/%3E%3Cpath d='M30 30h20v20H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
+    backgroundSize: "cover, 80px 80px",
+    backgroundRepeat: "no-repeat, repeat",
+    color: "white",
+    borderRadius: "20px 20px 0 0",
     fontSize: "2.2rem",
     fontWeight: "bold",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
+    position: "relative",
+    "::after": {
+      content: "",
+      position: "absolute",
+      bottom: "-8px",
+      left: "50%",
+      transform: "translateX(-50%)",
+      width: "80px",
+      height: "4px",
+      background: "rgba(255, 255, 255, 0.4)",
+      borderRadius: "2px",
+    },
+    margin: 0,
   },
 
   pricingImage: {
     textAlign: "center",
-    marginBottom: "2rem",
   },
 
   pricingIconContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "300px",
     background:
       "linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(78, 205, 196, 0.1))",
-    borderRadius: "15px",
     backdropFilter: "blur(10px)",
     border: "1px solid rgba(255, 149, 0, 0.2)",
     margin: "0 auto",
-    maxWidth: "600px",
+    width: "100%",
+    maxWidth: "100%",
+    height: "250px",
   },
 
   pricingIconSvg: {
@@ -59,6 +79,7 @@ export const styles = stylex.create({
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
     gap: "1.5rem",
+    padding: "2rem",
   },
 
   price: {
