@@ -51,7 +51,7 @@ const ScheduleSection = () => {
         <h3 {...stylex.props(styles.locationsSectionTitle)}>
           {t("schedule.subtitle")}
         </h3>
-        
+
         <h4 {...stylex.props(styles.locationTitle)}>
           {t("schedule.location")}
         </h4>
