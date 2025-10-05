@@ -21,7 +21,6 @@ export const styles = stylex.create({
 
   pricingTitle: {
     textAlign: "center",
-    // margin: "-2rem -2rem 2rem -2rem",
     padding: "2rem",
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
