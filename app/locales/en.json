@@ -15,54 +15,50 @@
   "trainings": {
     "title": "Which training suits you?",
     "level1": {
-      "title": "Level 1 Strength, Condition & Flexibility",
-      "desc": "A combination of HIIT, strength training and exercises for mobility and flexibility. Duration: 60 minutes",
-      "imageAlt": "Strength and conditioning training"
+      "title": "Personal Training",
+      "desc": "One-on-one personalized training sessions tailored to your specific goals and fitness level. Get maximum attention and fastest results with customized workouts. Duration: 60 minutes",
+      "imageAlt": "Personal training session"
     },
     "level2": {
-      "title": "Level 2 Strength & Run",
-      "desc": "A training where running and strength training are combined and there is also attention to mobility. Duration: 70 minutes",
-      "imageAlt": "Running and strength training"
+      "title": "Duo Training",
+      "desc": "Train together with a friend, partner, or family member. Share the motivation while still receiving personalized attention from your trainer. Perfect for couples or workout buddies. Duration: 60 minutes",
+      "imageAlt": "Duo training session with two people"
     },
     "level3": {
-      "title": "Level 3 Parent+Child training",
-      "desc": "Together with your child (+/- 4-10 years) work on strength and condition with the main goal of fun and cooperation. Duration: 60 minutes",
-      "imageAlt": "Parent and child fitness training"
+      "title": "Small Group Training",
+      "desc": "Join a small group of 3-6 people for dynamic and energetic outdoor workouts. Experience the power of group motivation while maintaining quality instruction. Duration: 60 minutes",
+      "imageAlt": "Small group outdoor training"
     }
   },
   "schedule": {
     "title": "The Schedule",
-    "locationsTitle": "Training Locations",
-    "comingSoon": "*COMING SOON*",
-    "locations": {
-      "peacePalace": {
-        "title": "Peace Palace (Vredespaleis)",
-        "time": "Monday evening 20:00",
-        "type": "Level 2: Strength & Run",
-        "capacity": "Maximum 10 participants",
-        "location": "Location (autumn/winter): At the Peace Palace"
+    "subtitle": "Small Group Training Schedule",
+    "onDemandTitle": "Personal Training & Duo Training",
+    "onDemandDesc": "Available on demand - Contact us to schedule your personalized sessions",
+    "contactInfo": "Contact: info@desi4fit.nl or @desi4fit",
+    "locationsTitle": "Training Location",
+    "location": "Voorburg Station",
+    "locationNote": "Fixed schedule for Small Group Training only",
+    "sessions": {
+      "tuesday": {
+        "day": "Tuesday",
+        "time": "20:00",
+        "description": "Evening Small Group Training"
       },
-      "scheveningse": {
-        "title": "Scheveningse Bosjes",
-        "time": "Friday morning 8:00",
-        "type": "Level 1: Strength, condition",
-        "capacity": "Maximum 10 participants",
-        "location": "Location (autumn/winter): Scheveningse Bosjes (TBA)"
+      "wednesdayMorning": {
+        "day": "Wednesday",
+        "time": "08:00",
+        "description": "Early morning Small Group Training"
       },
-      "indischMonument": {
-        "title": "Indisch Monument",
-        "time": "Sunday morning 9:00",
-        "type": "Level 3: parent+child training",
-        "capacity": "Child participates free (1x per 3 weeks)",
-        "location": "Location: At the Indisch Monument",
-        "dates": "Dates 2025: 26/10, 9/11, 30/11 and 21/12"
+      "wednesdayLate": {
+        "day": "Wednesday",
+        "time": "09:00",
+        "description": "Morning Small Group Training"
       },
-      "verademing": {
-        "title": "De Verademing",
-        "time": "Wednesday morning 9:00",
-        "type": "Level 1: Strength, condition",
-        "capacity": "Maximum 10 participants",
-        "location": "Location (autumn/winter): De Verademing"
+      "friday": {
+        "day": "Friday",
+        "time": "09:00",
+        "description": "Morning Small Group Training"
       }
     }
   },

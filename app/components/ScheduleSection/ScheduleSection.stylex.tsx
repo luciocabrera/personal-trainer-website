@@ -22,8 +22,54 @@ export const styles = stylex.create({
     fontWeight: "bold",
   },
 
+  // On-demand training section
+  onDemandSection: {
+    background: "linear-gradient(135deg, #ff6b6b10, #4ecdc410)",
+    borderRadius: "15px",
+    padding: "2rem",
+    marginBottom: "3rem",
+    textAlign: "center",
+    border: "2px solid rgba(78, 205, 196, 0.3)",
+  },
+
+  onDemandTitle: {
+    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    fontSize: "2rem",
+    fontWeight: "bold",
+    marginBottom: "1rem",
+  },
+
+  onDemandDesc: {
+    fontSize: "1.2rem",
+    color: "#555",
+    marginBottom: "1rem",
+    lineHeight: "1.6",
+  },
+
+  contactInfo: {
+    fontSize: "1.1rem",
+    fontWeight: "600",
+    color: "#ff6b6b",
+    marginBottom: "0",
+  },
+
   locationsSection: {
     margin: "2rem 0",
+  },
+
+  locationNote: {
+    textAlign: "center",
+    fontSize: "0.95rem",
+    color: "#666",
+    fontStyle: "italic",
+    marginBottom: "2rem",
+    padding: "0.75rem",
+    background: "rgba(78, 205, 196, 0.1)",
+    borderRadius: "8px",
+    border: "1px solid rgba(78, 205, 196, 0.2)",
   },
 
   locationsSectionTitle: {
@@ -44,6 +90,79 @@ export const styles = stylex.create({
     marginBottom: "2rem",
     alignItems: "stretch",
     overflow: "visible",
+  },
+
+  singleLocationCard: {
+    background: "rgba(255, 255, 255, 0.9)",
+    borderRadius: "15px",
+    padding: "2rem",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+    border: "1px solid rgba(78, 205, 196, 0.2)",
+  },
+
+  locationTitle: {
+    textAlign: "center",
+    marginBottom: "2rem",
+    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    fontSize: "1.8rem",
+    fontWeight: "bold",
+  },
+
+  sessionsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    gap: "1rem",
+    marginBottom: "2rem",
+  },
+
+  sessionCard: {
+    background: "linear-gradient(135deg, #ff6b6b10, #4ecdc410)",
+    borderRadius: "10px",
+    padding: "1.5rem",
+    textAlign: "center",
+    border: "1px solid rgba(78, 205, 196, 0.3)",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    ":hover": {
+      transform: "translateY(-2px)",
+      boxShadow: "0 6px 25px rgba(78, 205, 196, 0.2)",
+    },
+  },
+
+  sessionDay: {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: "0.5rem",
+  },
+
+  sessionTime: {
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
+    marginBottom: "0.5rem",
+  },
+
+  sessionDescription: {
+    fontSize: "0.9rem",
+    color: "#666",
+    fontStyle: "italic",
+  },
+
+  mapContainer: {
+    borderRadius: "10px",
+    overflow: "hidden",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+  },
+
+  mapIframe: {
+    border: "none",
+    borderRadius: "10px",
   },
 
   // Mobile responsive styles

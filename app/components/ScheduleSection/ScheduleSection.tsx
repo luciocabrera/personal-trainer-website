@@ -1,10 +1,32 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import { LocationCard } from "@/components/LocationCard";
 import { styles } from "./ScheduleSection.stylex";
 
 const ScheduleSection = () => {
   const { t } = useTranslation();
+
+  const sessions = [
+    {
+      day: t("schedule.sessions.tuesday.day"),
+      time: t("schedule.sessions.tuesday.time"),
+      description: t("schedule.sessions.tuesday.description"),
+    },
+    {
+      day: t("schedule.sessions.wednesdayMorning.day"),
+      time: t("schedule.sessions.wednesdayMorning.time"),
+      description: t("schedule.sessions.wednesdayMorning.description"),
+    },
+    {
+      day: t("schedule.sessions.wednesdayLate.day"),
+      time: t("schedule.sessions.wednesdayLate.time"),
+      description: t("schedule.sessions.wednesdayLate.description"),
+    },
+    {
+      day: t("schedule.sessions.friday.day"),
+      time: t("schedule.sessions.friday.time"),
+      description: t("schedule.sessions.friday.description"),
+    },
+  ];
 
   return (
     <section
@@ -13,51 +35,47 @@ const ScheduleSection = () => {
     >
       <h2 {...stylex.props(styles.scheduleTitle)}>{t("schedule.title")}</h2>
 
+      {/* On-demand training section */}
+      <div {...stylex.props(styles.onDemandSection)}>
+        <h3 {...stylex.props(styles.onDemandTitle)}>{t("schedule.onDemandTitle")}</h3>
+        <p {...stylex.props(styles.onDemandDesc)}>{t("schedule.onDemandDesc")}</p>
+        <p {...stylex.props(styles.contactInfo)}>{t("schedule.contactInfo")}</p>
+      </div>
+
+      {/* Fixed schedule section */}
       <div {...stylex.props(styles.locationsSection)}>
         <h3 {...stylex.props(styles.locationsSectionTitle)}>
-          {t("schedule.locationsTitle")}
+          {t("schedule.subtitle")}
         </h3>
-        <div
-          {...stylex.props(styles.locationsGrid, styles.locationsGridMobile)}
-        >
-          <LocationCard
-            title={t("schedule.locations.peacePalace.title")}
-            time={t("schedule.locations.peacePalace.time")}
-            type={t("schedule.locations.peacePalace.type")}
-            capacity={t("schedule.locations.peacePalace.capacity")}
-            location={t("schedule.locations.peacePalace.location")}
-            mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.8934567890!2d4.287647315708086!3d52.10516097972684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b6a7e1b02a59%3A0x5f1b6a7e1b02a59!2sPeace%20Palace%2C%20Carnegieplein%202%2C%202517%20KJ%20The%20Hague%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1695123456789"
-          />
+        
+        <div {...stylex.props(styles.singleLocationCard)}>
+          <h4 {...stylex.props(styles.locationTitle)}>{t("schedule.location")}</h4>
+          <p {...stylex.props(styles.locationNote)}>{t("schedule.locationNote")}</p>
+          
+          <div {...stylex.props(styles.sessionsGrid)}>
+            {sessions.map((session, index) => (
+              <div key={index} {...stylex.props(styles.sessionCard)}>
+                <div {...stylex.props(styles.sessionDay)}>{session.day}</div>
+                <div {...stylex.props(styles.sessionTime)}>{session.time}</div>
+                <div {...stylex.props(styles.sessionDescription)}>{session.description}</div>
+              </div>
+            ))}
+          </div>
 
-          <LocationCard
-            title={t("schedule.locations.scheveningse.title")}
-            time={t("schedule.locations.scheveningse.time")}
-            type={t("schedule.locations.scheveningse.type")}
-            capacity={t("schedule.locations.scheveningse.capacity")}
-            location={t("schedule.locations.scheveningse.location")}
-            mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1677.3326386195881!2d4.335391910669067!3d52.0488124708928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b6f4c5d05b47%3A0xc9bfa2760dec51c3!2s2282%20JR%20Rijswijk!5e1!3m2!1sen!2snl!4v1759050133365!5m2!1sen!2snl"
-          />
-
-          <LocationCard
-            title={t("schedule.locations.indischMonument.title")}
-            time={t("schedule.locations.indischMonument.time")}
-            type={t("schedule.locations.indischMonument.type")}
-            capacity={t("schedule.locations.indischMonument.capacity")}
-            location={t("schedule.locations.indischMonument.location")}
-            mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.123!2d4.301234!3d52.098765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b8d5e6f7a8b9%3A0x1a2b3c4d5e6f7a8b!2sIndisch%20Monument%2C%20The%20Hague%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1695123456791"
-            dates={t("schedule.locations.indischMonument.dates")}
-          />
-
-          <LocationCard
-            title={t("schedule.locations.verademing.title")}
-            time={t("schedule.locations.verademing.time")}
-            type={t("schedule.locations.verademing.type")}
-            capacity={t("schedule.locations.verademing.capacity")}
-            location={t("schedule.locations.verademing.location")}
-            mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.456!2d4.283456!3d52.087654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b9e1f2a3b4c5%3A0x6d7e8f9a0b1c2d3e!2sDe%20Verademing%2C%20The%20Hague%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1695123456792"
-            isComingSoon={true}
-            comingSoonText={t("schedule.comingSoon")}
-          />
+          <div {...stylex.props(styles.mapContainer)}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.2936842105!2d4.3587!3d52.0747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7a0f1234567%3A0x123456789abcdef0!2sVoorburg%20Station%2C%20Voorburg%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1695123456793"
+              width="100%"
+              height="300"
+              title="Interactive map showing Voorburg Station location"
+              aria-label="Map for Voorburg Station location"
+              {...stylex.props(styles.mapIframe)}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </section>

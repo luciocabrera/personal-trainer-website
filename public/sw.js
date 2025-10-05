@@ -1,11 +1,30 @@
 // Basic service worker for Desi4Fit Personal Training
-const CACHE_NAME = "desi4fit-v1";
+const CACHE_NAME = "desi4fit-v3";
 const urlsToCache = ["/", "/manifest.json", "/favicon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
+  // Force the waiting service worker to become the active service worker
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          // Delete old caches
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+  // Claim all clients immediately
+  return self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
