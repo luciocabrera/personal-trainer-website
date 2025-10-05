@@ -8,7 +8,6 @@ const pulseAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   pricing: {
-    // marginBottom: "2rem",
     padding: 0,
     margin: 0,
     background: "rgba(255, 255, 255, 0.95)",
