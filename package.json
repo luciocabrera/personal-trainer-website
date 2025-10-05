@@ -20,8 +20,9 @@
     "typegen": "react-router typegen"
   },
   "dependencies": {
+    "@react-router/node": "^7.9.3",
     "@react-router/serve": "^7.9.3",
-    "@stylexjs/stylex": "^0.9.3",
+    "@stylexjs/stylex": "^0.16.1",
     "i18next": "^25.5.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
