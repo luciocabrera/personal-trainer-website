@@ -8,11 +8,11 @@ import {
 } from "react-router";
 import "./root.css";
 import * as stylex from "@stylexjs/stylex";
-import { globalStyles } from "./global.stylex";
+import { styles } from "./root.stylex";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" {...stylex.props(globalStyles.html)}>
+    <html lang="en" {...stylex.props(styles.html)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,7 +75,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }
         `}</style>
       </head>
-      <body {...stylex.props(globalStyles.body)}>
+      <body {...stylex.props(styles.body)}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

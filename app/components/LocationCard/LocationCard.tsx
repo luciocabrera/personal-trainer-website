@@ -82,10 +82,13 @@ const LocationCard = ({
           src={mapSrc}
           width="100%"
           height="200"
+          title={`Interactive map showing location of ${title} training sessions at ${location}`}
+          aria-label={`Map for ${title} location`}
           {...stylex.props(styles.mapIframe)}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          tabIndex={0}
         />
       </div>
     </div>

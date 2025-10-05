@@ -1,0 +1,50 @@
+services:
+  app:
+    build: .
+    container_name: personal-trainer-app
+    restart: unless-stopped
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    # Only expose to internal network, not to host
+    # ports:
+    #   - "3000:3000"
+
+  nginx:
+    image: nginx:alpine
+    container_name: personal-trainer-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  # Optional: Automatic SSL certificate management with Let's Encrypt
+  certbot:
+    image: certbot/certbot
+    container_name: personal-trainer-certbot
+    volumes:
+      - ./ssl:/etc/letsencrypt
+      - ./logs/letsencrypt:/var/log/letsencrypt
+      - ./nginx/html:/var/www/html
+    # Run certbot manually or via cron
+    # Example: docker-compose run --rm certbot certonly --webroot -w /var/www/html -d yourdomain.com
+    profiles:
+      - tools
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  ssl-certs:
+  nginx-logs:

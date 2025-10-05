@@ -39,7 +39,7 @@ const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   __proto__: null,
   default: handleRequest
 }, Symbol.toStringTag, { value: "Module" }));
-const globalStyles = {
+const styles$a = {
   html: {
     scrollBehavior: "xkcv6ua",
     scrollPaddingTop: "x5ho148",
@@ -84,59 +84,6 @@ const globalStyles = {
     display: "x78zum5",
     flexDirection: "xdt5ytf",
     $$css: true
-  },
-  app: {
-    maxWidth: "x1ikqzku",
-    width: "xh8yej3",
-    margin: "x19bbpc0",
-    marginInline: null,
-    marginInlineStart: null,
-    marginLeft: null,
-    marginInlineEnd: null,
-    marginRight: null,
-    marginBlock: null,
-    marginTop: null,
-    marginBottom: null,
-    backgroundColor: "x12peec7",
-    boxShadow: "xfbm4y6",
-    position: "x1n2onr6",
-    flex: "x98rzlu",
-    flexGrow: null,
-    flexShrink: null,
-    flexBasis: null,
-    display: "x78zum5",
-    flexDirection: "xdt5ytf",
-    $$css: true
-  },
-  main: {
-    padding: "xr6jg0x",
-    paddingInline: null,
-    paddingStart: null,
-    paddingLeft: null,
-    paddingEnd: null,
-    paddingRight: null,
-    paddingBlock: null,
-    paddingTop: null,
-    paddingBottom: null,
-    marginTop: "x1pdq3kb",
-    flex: "x98rzlu",
-    flexGrow: null,
-    flexShrink: null,
-    flexBasis: null,
-    display: "x78zum5",
-    flexDirection: "xdt5ytf",
-    justifyContent: "xl56j7k",
-    "@media (max-width: 768px)_padding": "x1kyy2cf",
-    "@media (max-width: 768px)_paddingInline": null,
-    "@media (max-width: 768px)_paddingStart": null,
-    "@media (max-width: 768px)_paddingLeft": null,
-    "@media (max-width: 768px)_paddingEnd": null,
-    "@media (max-width: 768px)_paddingRight": null,
-    "@media (max-width: 768px)_paddingBlock": null,
-    "@media (max-width: 768px)_paddingTop": null,
-    "@media (max-width: 768px)_paddingBottom": null,
-    "@media (max-width: 768px)_marginTop": "x1082xb5",
-    $$css: true
   }
 };
 function Layout(t0) {
@@ -149,7 +96,7 @@ function Layout(t0) {
   let t3;
   let t4;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
-    t1 = stylex.props(globalStyles.html);
+    t1 = stylex.props(styles$a.html);
     t2 = /* @__PURE__ */ jsxs("head", {
       children: [/* @__PURE__ */ jsx("meta", {
         charSet: "utf-8"
@@ -210,7 +157,7 @@ function Layout(t0) {
         children: "\n          .skip-link { \n            position: absolute; \n            top: -40px; \n            left: 6px; \n            background: #4ecdc4; \n            color: white; \n            padding: 8px; \n            text-decoration: none; \n            border-radius: 0 0 8px 8px;\n            z-index: 1000;\n          }\n          .skip-link:focus { \n            top: 0; \n          }\n        "
       })]
     });
-    t3 = stylex.props(globalStyles.body);
+    t3 = stylex.props(styles$a.body);
     t4 = /* @__PURE__ */ jsx("a", {
       href: "#main-content",
       className: "skip-link",
@@ -423,7 +370,7 @@ i18n.use(initReactI18next).init({
     escapeValue: false
   }
 });
-const styles$8 = {
+const styles$9 = {
   header: {
     background: "x19s1j8i",
     backgroundAttachment: null,
@@ -651,7 +598,7 @@ const HeaderSection = () => {
   const changeLanguage = _temp$2;
   let t0;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
-    t0 = stylex.props(styles$8.header);
+    t0 = stylex.props(styles$9.header);
     $[0] = t0;
   } else {
     t0 = $[0];
@@ -660,12 +607,12 @@ const HeaderSection = () => {
   let t2;
   let t3;
   if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
-    t1 = stylex.props(styles$8.nav, styles$8.navMobile);
+    t1 = stylex.props(styles$9.nav, styles$9.navMobile);
     t2 = /* @__PURE__ */ jsx("div", {
-      ...stylex.props(styles$8.logo),
+      ...stylex.props(styles$9.logo),
       children: "Level Up"
     });
-    t3 = stylex.props(styles$8.languageSelector);
+    t3 = stylex.props(styles$9.languageSelector);
     $[1] = t1;
     $[2] = t2;
     $[3] = t3;
@@ -688,7 +635,7 @@ const HeaderSection = () => {
       onClick: t4,
       "aria-label": "Switch to English",
       type: "button",
-      ...stylex.props(styles$8.languageButton),
+      ...stylex.props(styles$9.languageButton),
       children: "EN"
     });
     t6 = () => changeLanguage("nl");
@@ -705,7 +652,7 @@ const HeaderSection = () => {
       onClick: t6,
       "aria-label": "Switch to Dutch",
       type: "button",
-      ...stylex.props(styles$8.languageButton),
+      ...stylex.props(styles$9.languageButton),
       children: "NL"
     });
     t8 = () => changeLanguage("es");
@@ -725,7 +672,7 @@ const HeaderSection = () => {
         onClick: t8,
         "aria-label": "Switch to Spanish",
         type: "button",
-        ...stylex.props(styles$8.languageButton),
+        ...stylex.props(styles$9.languageButton),
         children: "ES"
       })]
     });
@@ -735,14 +682,14 @@ const HeaderSection = () => {
   }
   let t10;
   if ($[10] === Symbol.for("react.memo_cache_sentinel")) {
-    t10 = stylex.props(styles$8.menuList, styles$8.menuListMobile);
+    t10 = stylex.props(styles$9.menuList, styles$9.menuListMobile);
     $[10] = t10;
   } else {
     t10 = $[10];
   }
   let t11;
   if ($[11] === Symbol.for("react.memo_cache_sentinel")) {
-    t11 = stylex.props(styles$8.menuLink);
+    t11 = stylex.props(styles$9.menuLink);
     $[11] = t11;
   } else {
     t11 = $[11];
@@ -773,7 +720,7 @@ const HeaderSection = () => {
   }
   let t14;
   if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
-    t14 = stylex.props(styles$8.menuLink);
+    t14 = stylex.props(styles$9.menuLink);
     $[16] = t14;
   } else {
     t14 = $[16];
@@ -804,7 +751,7 @@ const HeaderSection = () => {
   }
   let t17;
   if ($[21] === Symbol.for("react.memo_cache_sentinel")) {
-    t17 = stylex.props(styles$8.menuLink);
+    t17 = stylex.props(styles$9.menuLink);
     $[21] = t17;
   } else {
     t17 = $[21];
@@ -835,7 +782,7 @@ const HeaderSection = () => {
   }
   let t20;
   if ($[26] === Symbol.for("react.memo_cache_sentinel")) {
-    t20 = stylex.props(styles$8.menuLink);
+    t20 = stylex.props(styles$9.menuLink);
     $[26] = t20;
   } else {
     t20 = $[26];
@@ -866,7 +813,7 @@ const HeaderSection = () => {
   }
   let t23;
   if ($[31] === Symbol.for("react.memo_cache_sentinel")) {
-    t23 = stylex.props(styles$8.menuLink);
+    t23 = stylex.props(styles$9.menuLink);
     $[31] = t23;
   } else {
     t23 = $[31];
@@ -1328,7 +1275,7 @@ const InstagramIcon = (t0) => {
   }
   return t4;
 };
-const styles$7 = {
+const styles$8 = {
   footer: {
     background: "x1hjnl9c",
     backgroundAttachment: null,
@@ -1472,9 +1419,9 @@ const FooterSection = () => {
   let t1;
   let t2;
   if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
-    t0 = stylex.props(styles$7.footer);
-    t1 = stylex.props(styles$7.footerContent);
-    t2 = stylex.props(styles$7.footerContacts, styles$7.footerContactsMobile);
+    t0 = stylex.props(styles$8.footer);
+    t1 = stylex.props(styles$8.footerContent);
+    t2 = stylex.props(styles$8.footerContacts, styles$8.footerContactsMobile);
     $[0] = t0;
     $[1] = t1;
     $[2] = t2;
@@ -1487,7 +1434,7 @@ const FooterSection = () => {
   if ($[3] === Symbol.for("react.memo_cache_sentinel")) {
     t3 = /* @__PURE__ */ jsxs("a", {
       href: "mailto:info@leveluptraining.nl",
-      ...stylex.props(styles$7.footerLink, styles$7.footerLinkMobile),
+      ...stylex.props(styles$8.footerLink, styles$8.footerLinkMobile),
       children: [/* @__PURE__ */ jsx(EmailIcon, {
         width: 18,
         height: 18
@@ -1505,7 +1452,7 @@ const FooterSection = () => {
         href: "https://instagram.com/leveluptraining",
         target: "_blank",
         rel: "noopener noreferrer",
-        ...stylex.props(styles$7.footerLink, styles$7.footerLinkMobile),
+        ...stylex.props(styles$8.footerLink, styles$8.footerLinkMobile),
         children: [/* @__PURE__ */ jsx(InstagramIcon, {
           width: 18,
           height: 18
@@ -1623,7 +1570,62 @@ function _temp$1(name, content) {
   }
   meta.setAttribute("content", content);
 }
-const main = UNSAFE_withComponentProps(function MainLayout() {
+const styles$7 = {
+  app: {
+    maxWidth: "x1ikqzku",
+    width: "xh8yej3",
+    margin: "x19bbpc0",
+    marginInline: null,
+    marginInlineStart: null,
+    marginLeft: null,
+    marginInlineEnd: null,
+    marginRight: null,
+    marginBlock: null,
+    marginTop: null,
+    marginBottom: null,
+    backgroundColor: "x12peec7",
+    boxShadow: "xfbm4y6",
+    position: "x1n2onr6",
+    flex: "x98rzlu",
+    flexGrow: null,
+    flexShrink: null,
+    flexBasis: null,
+    display: "x78zum5",
+    flexDirection: "xdt5ytf",
+    $$css: true
+  },
+  main: {
+    padding: "xr6jg0x",
+    paddingInline: null,
+    paddingStart: null,
+    paddingLeft: null,
+    paddingEnd: null,
+    paddingRight: null,
+    paddingBlock: null,
+    paddingTop: null,
+    paddingBottom: null,
+    marginTop: "x1pdq3kb",
+    flex: "x98rzlu",
+    flexGrow: null,
+    flexShrink: null,
+    flexBasis: null,
+    display: "x78zum5",
+    flexDirection: "xdt5ytf",
+    justifyContent: "xl56j7k",
+    "@media (max-width: 768px)_padding": "x1kyy2cf",
+    "@media (max-width: 768px)_paddingInline": null,
+    "@media (max-width: 768px)_paddingStart": null,
+    "@media (max-width: 768px)_paddingLeft": null,
+    "@media (max-width: 768px)_paddingEnd": null,
+    "@media (max-width: 768px)_paddingRight": null,
+    "@media (max-width: 768px)_paddingBlock": null,
+    "@media (max-width: 768px)_paddingTop": null,
+    "@media (max-width: 768px)_paddingBottom": null,
+    "@media (max-width: 768px)_marginTop": "x1082xb5",
+    $$css: true
+  }
+};
+const MainLayout = () => {
   const $ = c(4);
   let t0;
   let t1;
@@ -1634,7 +1636,7 @@ const main = UNSAFE_withComponentProps(function MainLayout() {
       description: "Professional outdoor personal training in The Hague. Small groups, all weather conditions. Strength, condition & flexibility training. Try a free trial week!",
       keywords: "personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training"
     });
-    t1 = stylex.props(globalStyles.app);
+    t1 = stylex.props(styles$7.app);
     t2 = /* @__PURE__ */ jsx(HeaderSection, {});
     $[0] = t0;
     $[1] = t1;
@@ -1652,7 +1654,7 @@ const main = UNSAFE_withComponentProps(function MainLayout() {
         children: [t2, /* @__PURE__ */ jsx("main", {
           id: "main-content",
           role: "main",
-          ...stylex.props(globalStyles.main),
+          ...stylex.props(styles$7.main),
           children: /* @__PURE__ */ jsx(Outlet, {})
         }), /* @__PURE__ */ jsx(FooterSection, {})]
       })]
@@ -1662,7 +1664,8 @@ const main = UNSAFE_withComponentProps(function MainLayout() {
     t3 = $[3];
   }
   return t3;
-});
+};
+const main = UNSAFE_withComponentProps(MainLayout);
 const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: main
@@ -2892,7 +2895,7 @@ const styles$3 = {
   }
 };
 const LocationCard = (t0) => {
-  const $ = c(37);
+  const $ = c(39);
   const {
     title,
     time,
@@ -3053,46 +3056,53 @@ const LocationCard = (t0) => {
   } else {
     t18 = $[29];
   }
-  let t19;
+  const t19 = `Interactive map showing location of ${title} training sessions at ${location}`;
+  const t20 = `Map for ${title} location`;
+  let t21;
   if ($[30] === Symbol.for("react.memo_cache_sentinel")) {
-    t19 = stylex.props(styles$3.mapIframe);
-    $[30] = t19;
+    t21 = stylex.props(styles$3.mapIframe);
+    $[30] = t21;
   } else {
-    t19 = $[30];
+    t21 = $[30];
   }
-  let t20;
-  if ($[31] !== mapSrc) {
-    t20 = /* @__PURE__ */ jsx("div", {
+  let t22;
+  if ($[31] !== mapSrc || $[32] !== t19 || $[33] !== t20) {
+    t22 = /* @__PURE__ */ jsx("div", {
       ...t18,
       children: /* @__PURE__ */ jsx("iframe", {
         src: mapSrc,
         width: "100%",
         height: "200",
-        ...t19,
+        title: t19,
+        "aria-label": t20,
+        ...t21,
         allowFullScreen: true,
         loading: "lazy",
-        referrerPolicy: "no-referrer-when-downgrade"
+        referrerPolicy: "no-referrer-when-downgrade",
+        tabIndex: 0
       })
     });
     $[31] = mapSrc;
-    $[32] = t20;
+    $[32] = t19;
+    $[33] = t20;
+    $[34] = t22;
   } else {
-    t20 = $[32];
+    t22 = $[34];
   }
-  let t21;
-  if ($[33] !== t17 || $[34] !== t20 || $[35] !== t5) {
-    t21 = /* @__PURE__ */ jsxs("div", {
+  let t23;
+  if ($[35] !== t17 || $[36] !== t22 || $[37] !== t5) {
+    t23 = /* @__PURE__ */ jsxs("div", {
       ...t3,
-      children: [t5, t17, t20]
+      children: [t5, t17, t22]
     });
-    $[33] = t17;
-    $[34] = t20;
-    $[35] = t5;
-    $[36] = t21;
+    $[35] = t17;
+    $[36] = t22;
+    $[37] = t5;
+    $[38] = t23;
   } else {
-    t21 = $[36];
+    t23 = $[38];
   }
-  return t21;
+  return t23;
 };
 const styles$2 = {
   schedule: {
@@ -5339,7 +5349,7 @@ const route2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   default: home
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-mBydkK4D.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-BpfZRjGS.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js", "/assets/stylex-CvhpDsAr.js", "/assets/global.stylex-BikvLSyb.js"], "css": ["/assets/root-Cn-LKyTh.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-BcNIeCpA.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-CvhpDsAr.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-CoL8tSOu.js", "/assets/global.stylex-BikvLSyb.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-B5rF-gQn.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-CvhpDsAr.js", "/assets/InstagramIcon-CoL8tSOu.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-320386e3.js", "version": "320386e3", "sri": void 0 };
+const serverManifest = { "entry": { "module": "/assets/entry.client-mBydkK4D.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": true, "module": "/assets/root-BsNwGEO-.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/i18n-CTG4v3OK.js", "/assets/i18nInstance-CHFDjdcJ.js", "/assets/stylex-DhFcWJjZ.js"], "css": ["/assets/root-Cn-LKyTh.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "layouts/main": { "id": "layouts/main", "parentId": "root", "path": void 0, "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/main-Dl8ViA20.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-DhFcWJjZ.js", "/assets/i18n-CTG4v3OK.js", "/assets/InstagramIcon-Bq8kZdDI.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "layouts/main", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasClientMiddleware": false, "hasErrorBoundary": false, "module": "/assets/home-uNwqnDGZ.js", "imports": ["/assets/chunk-NISHYRIK-BUbHN9cH.js", "/assets/stylex-DhFcWJjZ.js", "/assets/InstagramIcon-Bq8kZdDI.js", "/assets/i18nInstance-CHFDjdcJ.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "clientMiddlewareModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-96dbc5be.js", "version": "96dbc5be", "sri": void 0 };
 const assetsBuildDirectory = "build/client";
 const basename = "/";
 const future = { "v8_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_subResourceIntegrity": false, "unstable_viteEnvironmentApi": false };
