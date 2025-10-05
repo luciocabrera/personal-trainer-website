@@ -43,8 +43,8 @@ export default function Home() {
       {/* </section> */}
       {/* <section id="pricing" aria-labelledby="pricing-title"> */}
       <PricingSection />
-      {/* </section>
-      <section id="signup" aria-labelledby="signup-title"> */}
+      {/* </section> */}
+      {/* <section id="signup" aria-labelledby="signup-title"> */}
       <SignupSection />
       {/* </section> */}
     </>
