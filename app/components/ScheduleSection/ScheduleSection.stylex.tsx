@@ -193,7 +193,7 @@ export const styles = stylex.create({
   },
 
   sessionCard: {
-    background: "linear-gradient(135deg, #ff6b6b10, #4ecdc410)",
+    background: "linear-gradient(135deg, #ff6b6b1a, #4ecdc41a)",
     borderRadius: "10px",
     padding: "1.5rem",
     textAlign: "center",
