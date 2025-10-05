@@ -2,19 +2,20 @@ import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
   schedule: {
-    marginBottom: "2rem",
-    padding: "2rem",
+    padding: 0,
+    margin: 0,
     background: "rgba(255, 255, 255, 0.95)",
     borderRadius: "20px",
     backdropFilter: "blur(10px)",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     border: "1px solid rgba(255, 255, 255, 0.3)",
     overflow: "visible",
+    gap: 0,
   },
 
   scheduleTitle: {
     textAlign: "center",
-    margin: "-2rem -2rem 2rem -2rem",
+    // margin: "-2rem -2rem 2rem -2rem",
     padding: "2rem",
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
@@ -39,6 +40,35 @@ export const styles = stylex.create({
       background: "rgba(255, 255, 255, 0.4)",
       borderRadius: "2px",
     },
+    margin: 0,
+  },
+
+  scheduleImage: {
+    textAlign: "center",
+  },
+
+  scheduleIconContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background:
+      "linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(255, 107, 107, 0.1))",
+
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(102, 126, 234, 0.2)",
+    margin: "0 auto",
+    width: "100%",
+    maxWidth: "100%",
+    height: "250px",
+  },
+
+  scheduleIconSvg: {
+    maxWidth: "100%",
+    height: "auto",
+    willChange: "transform",
+  },
+  sectionContent: {
+    padding: "2rem",
   },
 
   onDemandTitle: {
@@ -220,6 +250,23 @@ export const styles = stylex.create({
   locationsGridMobile: {
     "@media (max-width: 768px)": {
       gridTemplateColumns: "1fr",
+    },
+  },
+
+  scheduleIconContainerMobile: {
+    "@media (max-width: 768px)": {
+      width: "100%",
+      maxWidth: "100%",
+      height: "250px",
+      margin: 0,
+    },
+  },
+
+  scheduleIconSvgMobile: {
+    "@media (max-width: 768px)": {
+      width: "90%",
+      maxWidth: "300px",
+      height: "auto",
     },
   },
 });
