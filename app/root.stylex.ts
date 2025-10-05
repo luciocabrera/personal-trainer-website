@@ -5,13 +5,9 @@ export const styles = stylex.create({
     scrollBehavior: "smooth",
     scrollPaddingTop: "100px",
     overflowX: "hidden",
-    // Medium mobile screens (tablets)
-    "@media (max-width: 768px) and (min-width: 481px)": {
-      scrollPaddingTop: "160px",
-    },
-    // Small mobile screens (phones)
-    "@media (max-width: 480px)": {
-      scrollPaddingTop: "120px",
+    // Mobile screens
+    "@media (max-width: 768px)": {
+      scrollPaddingTop: "80px",
     },
   },
   body: {
