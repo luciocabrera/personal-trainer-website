@@ -19,17 +19,43 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#4ecdc4" />
+        
+        {/* Primary Meta Tags */}
+        <title>{`${BRAND.name} - ${BRAND.tagline}`}</title>
+        <meta name="title" content={`${BRAND.name} - ${BRAND.tagline}`} />
         <meta name="description" content={BRAND.description} />
-        <meta name="robots" content="index,follow" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={`${BRAND.name} - ${BRAND.tagline}`}
-        />
-        <meta property="og:description" content={BRAND.description} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="keywords" content="personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="author" content={BRAND.name} />
         <link rel="canonical" href={BRAND.url} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={BRAND.url} />
+        <meta property="og:title" content={`${BRAND.name} - ${BRAND.tagline}`} />
+        <meta property="og:description" content={BRAND.description} />
+        <meta property="og:image" content={`${BRAND.url}/og-image.jpg`} />
+        <meta property="og:image:alt" content={`${BRAND.name} - Outdoor fitness training session`} />
+        <meta property="og:site_name" content={BRAND.name} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="nl_NL" />
+        <meta property="og:locale:alternate" content="es_ES" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={BRAND.url} />
+        <meta name="twitter:title" content={`${BRAND.name} - ${BRAND.tagline}`} />
+        <meta name="twitter:description" content={BRAND.description} />
+        <meta name="twitter:image" content={`${BRAND.url}/og-image.jpg`} />
+        <meta name="twitter:image:alt" content={`${BRAND.name} - Outdoor fitness training session`} />
+
+        {/* Additional Meta Tags */}
+        <meta name="theme-color" content="#4ecdc4" />
+        <meta name="msapplication-TileColor" content="#4ecdc4" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content={BRAND.name} />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -47,6 +73,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://www.google.com" />
 
         {/* Preload critical resources - LCP Image with high priority */}
         <link
@@ -58,6 +86,72 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <Meta />
         <Links />
+        
+        {/* Structured Data for Local Business */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "${BRAND.name}",
+            "description": "${BRAND.description}",
+            "url": "${BRAND.url}",
+            "telephone": "+31-123-456-789",
+            "email": "${BRAND.email}",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Various outdoor locations",
+              "addressLocality": "The Hague",
+              "addressCountry": "Netherlands"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "52.0705",
+              "longitude": "4.3007"
+            },
+            "openingHours": [
+              "Mo 20:00-21:10",
+              "Fr 08:00-09:00",
+              "Su 09:00-10:00",
+              "We 09:00-10:00"
+            ],
+            "priceRange": "€15-€240",
+            "paymentAccepted": "Cash, Bank Transfer",
+            "currenciesAccepted": "EUR",
+            "areaServed": "The Hague, Netherlands",
+            "serviceType": "Personal Training",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Training Programs",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Level 1: Strength, Condition & Flexibility",
+                    "description": "HIIT, strength training and mobility exercises"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Level 2: Strength & Run",
+                    "description": "Running combined with strength training"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Level 3: Parent+Child Training",
+                    "description": "Family fitness with focus on fun and cooperation"
+                  }
+                }
+              ]
+            }
+          }`}
+        </script>
+        
         <style>{`
           .skip-link { 
             position: absolute; 
