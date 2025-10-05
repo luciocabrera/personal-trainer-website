@@ -23,9 +23,15 @@ export const styles = stylex.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    "@media (max-width: 768px)": {
+    // Medium mobile screens (tablets)
+    "@media (max-width: 768px) and (min-width: 481px)": {
       padding: "1rem",
-      paddingTop: "calc(180px + 1rem)", // Mobile header height + content padding
+      paddingTop: "calc(140px + 1rem)", // Medium mobile header height + content padding
+    },
+    // Small mobile screens (phones) - much less padding needed
+    "@media (max-width: 480px)": {
+      padding: "1rem",
+      paddingTop: "calc(100px + 1rem)", // Small mobile header height + content padding
     },
   },
 });
