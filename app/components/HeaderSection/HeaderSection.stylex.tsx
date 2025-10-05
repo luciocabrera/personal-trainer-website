@@ -4,14 +4,25 @@ export const styles = stylex.create({
   header: {
     background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
     color: "white",
-    padding: "1rem 0",
+    padding: "1rem 2rem",
     position: "fixed",
     width: "100%",
     top: 0,
     left: 0,
-    zIndex: 100,
+    right: 0,
+    zIndex: 1000,
     boxSizing: "border-box",
     boxShadow: "0 2px 20px rgba(255, 107, 107, 0.3)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "80px", // Minimum header height for desktop
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+      gap: "1rem",
+      paddingBottom: "1rem",
+      minHeight: "140px", // Fixed minimum height for mobile to prevent overlap
+    },
   },
 
   nav: {
@@ -23,6 +34,15 @@ export const styles = stylex.create({
     width: "100%",
     boxSizing: "border-box",
     position: "relative",
+  },
+
+  navMobile: {
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+      gap: "1rem",
+      alignItems: "center",
+      padding: "1rem",
+    },
   },
 
   logo: {
@@ -84,31 +104,13 @@ export const styles = stylex.create({
     padding: "0.5rem",
     borderRadius: "3px",
     transition: "background-color 0.3s",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "inherit",
+    fontFamily: "inherit",
     ":hover": {
       backgroundColor: "rgba(255, 255, 255, 0.1)",
-    },
-  },
-
-  // Mobile responsive styles
-  header: {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
-    backdropFilter: "blur(10px)",
-    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-    padding: "1rem 2rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    minHeight: "80px", // Minimum header height for desktop
-    "@media (max-width: 768px)": {
-      flexDirection: "column",
-      gap: "1rem",
-      paddingBottom: "1rem",
-      minHeight: "140px", // Fixed minimum height for mobile to prevent overlap
     },
   },
 

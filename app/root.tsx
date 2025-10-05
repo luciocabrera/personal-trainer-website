@@ -10,6 +10,8 @@ import { BRAND } from "@/constants/brand";
 import "./root.css";
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./root.stylex";
+// Initialize i18n
+import "@/i18n";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

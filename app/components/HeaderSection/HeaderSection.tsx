@@ -67,45 +67,69 @@ const HeaderSection = () => {
           {...stylex.props(styles.menuList, styles.menuListMobile)}
         >
           <li role="none">
-            <a href="#hero" role="menuitem" {...stylex.props(styles.menuLink)}>
-              {t("nav.home")}
-            </a>
-          </li>
-          <li role="none">
-            <a
-              href="#trainings"
+            <button
               role="menuitem"
               {...stylex.props(styles.menuLink)}
+              onClick={() =>
+                document
+                  .getElementById("hero")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              {t("nav.home")}
+            </button>
+          </li>
+          <li role="none">
+            <button
+              role="menuitem"
+              {...stylex.props(styles.menuLink)}
+              onClick={() =>
+                document
+                  .getElementById("trainings")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               {t("nav.trainings")}
-            </a>
+            </button>
           </li>
           <li role="none">
-            <a
-              href="#schedule"
+            <button
               role="menuitem"
               {...stylex.props(styles.menuLink)}
+              onClick={() =>
+                document
+                  .getElementById("schedule")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               {t("nav.schedule")}
-            </a>
+            </button>
           </li>
           <li role="none">
-            <a
-              href="#pricing"
+            <button
               role="menuitem"
               {...stylex.props(styles.menuLink)}
+              onClick={() =>
+                document
+                  .getElementById("pricing")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               {t("nav.pricing")}
-            </a>
+            </button>
           </li>
           <li role="none">
-            <a
-              href="#signup"
+            <button
               role="menuitem"
               {...stylex.props(styles.menuLink)}
+              onClick={() =>
+                document
+                  .getElementById("signup")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               {t("nav.contact")}
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
