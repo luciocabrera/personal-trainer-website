@@ -22,31 +22,23 @@ export const styles = stylex.create({
     fontWeight: "bold",
   },
 
-  // On-demand training section
-  onDemandSection: {
-    background: "linear-gradient(135deg, #ff6b6b10, #4ecdc410)",
-    borderRadius: "15px",
-    padding: "2rem",
-    marginBottom: "3rem",
-    textAlign: "center",
-    border: "2px solid rgba(78, 205, 196, 0.3)",
-  },
-
   onDemandTitle: {
+    textAlign: "center",
+    marginBottom: "1.5rem",
     background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
     fontSize: "2rem",
     fontWeight: "bold",
-    marginBottom: "1rem",
   },
 
   onDemandDesc: {
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     color: "#555",
-    marginBottom: "1rem",
+    marginBottom: "1.5rem",
     lineHeight: "1.6",
+    textAlign: "center",
   },
 
   contactInfo: {
@@ -54,6 +46,11 @@ export const styles = stylex.create({
     fontWeight: "600",
     color: "#ff6b6b",
     marginBottom: "0",
+    textAlign: "center",
+    padding: "1rem",
+    background: "rgba(255, 107, 107, 0.1)",
+    borderRadius: "8px",
+    border: "1px solid rgba(255, 107, 107, 0.2)",
   },
 
   locationsSection: {
@@ -96,6 +93,7 @@ export const styles = stylex.create({
     background: "rgba(255, 255, 255, 0.9)",
     borderRadius: "15px",
     padding: "2rem",
+    marginBottom: "2rem",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
     border: "1px solid rgba(78, 205, 196, 0.2)",
   },
