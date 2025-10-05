@@ -21,7 +21,7 @@ export const styles = stylex.create({
       flexDirection: "column",
       gap: "1rem",
       paddingBottom: "1rem",
-      minHeight: "140px", // Fixed minimum height for mobile to prevent overlap
+      minHeight: "180px", // Increased height for mobile to accommodate vertical layout
     },
   },
 

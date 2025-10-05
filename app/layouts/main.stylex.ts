@@ -25,7 +25,7 @@ export const styles = stylex.create({
     justifyContent: "center",
     "@media (max-width: 768px)": {
       padding: "1rem",
-      paddingTop: "calc(140px + 1rem)", // Mobile header height + content padding
+      paddingTop: "calc(180px + 1rem)", // Mobile header height + content padding
     },
   },
 });
