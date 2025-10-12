@@ -8,7 +8,7 @@ const PricingSection = () => {
 
   return (
     <section
-      id="pricing-section"
+      id="pricing"
       {...stylex.props(styles.pricing, styles.pricingMobile)}
     >
       <h2 {...stylex.props(styles.pricingTitle)}>{t("pricing.title")}</h2>

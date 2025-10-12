@@ -183,6 +183,26 @@ export const styles = stylex.create({
     color: "#666",
   },
 
+  messageBox: {
+    padding: "1rem",
+    borderRadius: "8px",
+    marginBottom: "1rem",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+
+  successMessage: {
+    backgroundColor: "rgba(76, 175, 80, 0.1)",
+    color: "#2e7d32",
+    border: "1px solid rgba(76, 175, 80, 0.3)",
+  },
+
+  errorMessage: {
+    backgroundColor: "rgba(244, 67, 54, 0.1)",
+    color: "#c62828",
+    border: "1px solid rgba(244, 67, 54, 0.3)",
+  },
+
   // Mobile responsive styles
   signupMobile: {
     "@media (max-width: 768px)": {

@@ -8,11 +8,15 @@ const pulseAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   disclaimer: {
-    color: "red",
-    border: "1px solid red",
-    padding: "0.5rem 1rem",
-    borderRadius: "0.8rem",
-    background: "#ff000017",
+    fontSize: "1.1rem",
+    fontWeight: "600",
+    color: "#ff6b6b",
+    marginBottom: "0",
+    textAlign: "center",
+    padding: "1rem",
+    background: "rgba(255, 107, 107, 0.1)",
+    borderRadius: "8px",
+    border: "1px solid rgba(255, 107, 107, 0.2)",
   },
   pricing: {
     padding: 0,

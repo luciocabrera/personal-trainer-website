@@ -29,7 +29,7 @@ const ScheduleSection = () => {
   ];
 
   return (
-    <>
+    <section id="schedule">
       {/* Fixed schedule section */}
       <div {...stylex.props(styles.singleLocationCard)}>
         <h3 {...stylex.props(styles.locationsSectionTitle)}>
@@ -79,7 +79,7 @@ const ScheduleSection = () => {
         </p>
         <p {...stylex.props(styles.contactInfo)}>{t("schedule.contactInfo")}</p>
       </div>
-    </>
+    </section>
   );
 };
 
