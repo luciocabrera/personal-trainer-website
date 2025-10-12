@@ -7,8 +7,16 @@ import { ScheduleSection } from "@/components/ScheduleSection";
 import { PricingSection } from "@/components/PricingSection";
 import { SignupSection } from "@/components/SignupSection";
 import { sendContactEmail } from "@/services/emailService";
+import {
+  getServerTranslation,
+  getLanguageFromRequest,
+} from "@/utils/serverI18n";
 
 export async function action({ request }: ActionFunctionArgs) {
+  // Get user's language preference
+  const language = getLanguageFromRequest(request);
+  const { t } = getServerTranslation(language);
+
   const formData = await request.formData();
   const name = formData.get("name");
   const email = formData.get("email");
@@ -17,7 +25,7 @@ export async function action({ request }: ActionFunctionArgs) {
   // Basic validation
   if (!name || !email || !message) {
     return {
-      error: "Alle velden zijn verplicht",
+      error: t("form.validation.required"),
       success: false,
     };
   }
@@ -26,7 +34,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email.toString())) {
     return {
-      error: "Ongeldig e-mailadres",
+      error: t("form.validation.invalidEmail"),
       success: false,
     };
   }
@@ -48,8 +56,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     return {
       success: true,
-      message:
-        "Bedankt voor je bericht! We hebben je aanvraag ontvangen en nemen zo snel mogelijk contact met je op.",
+      message: t("form.success.message"),
     };
   } catch (error) {
     console.error("Form submission error:", error);
@@ -59,10 +66,7 @@ export async function action({ request }: ActionFunctionArgs) {
       error instanceof Error && error.message.includes("Failed to send email");
 
     return {
-      error:
-        isEmailError ?
-          "Er is een probleem opgetreden bij het verzenden van je bericht. Probeer het later opnieuw of stuur direct een e-mail naar desi4fit@gmail.com"
-        : "Er is iets misgegaan. Probeer het later opnieuw of stuur een e-mail naar desi4fit@gmail.com",
+      error: isEmailError ? t("form.error.email") : t("form.error.general"),
       success: false,
     };
   }

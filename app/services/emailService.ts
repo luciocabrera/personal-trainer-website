@@ -1,7 +1,7 @@
 /**
  * Email service for sending contact form submissions
  */
-import nodemailer, { type Transporter } from "nodemailer";
+import type { Transporter } from "nodemailer";
 
 export interface EmailData {
   name: string;
@@ -10,13 +10,16 @@ export interface EmailData {
 }
 
 // Email configuration - using environment variables for security
-const createTransporter = () => {
+const createTransporter = async () => {
+  // Dynamic import to fix bundler issues
+  const nodemailer = (await import("nodemailer")).default;
+
   // Support multiple email providers
   const emailProvider = process.env.EMAIL_PROVIDER || "gmail";
 
   switch (emailProvider) {
     case "gmail":
-      return nodemailer.createTransporter({
+      return nodemailer.createTransport({
         service: "gmail",
         auth: {
           user: process.env.GMAIL_USER,
@@ -25,7 +28,7 @@ const createTransporter = () => {
       });
 
     case "smtp":
-      return nodemailer.createTransporter({
+      return nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: parseInt(process.env.SMTP_PORT || "587"),
         secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
@@ -36,7 +39,7 @@ const createTransporter = () => {
       });
 
     case "outlook":
-      return nodemailer.createTransporter({
+      return nodemailer.createTransport({
         service: "hotmail",
         auth: {
           user: process.env.OUTLOOK_USER,
@@ -51,7 +54,7 @@ const createTransporter = () => {
 
 export const sendContactEmail = async (data: EmailData): Promise<void> => {
   try {
-    const transporter = createTransporter();
+    const transporter = await createTransporter();
 
     // Email content
     const mailOptions = {
@@ -198,7 +201,7 @@ Dit is een automatisch gegenereerd bericht. Reageer niet op deze e-mail.
 // Test email configuration
 export const testEmailConfig = async (): Promise<boolean> => {
   try {
-    const transporter = createTransporter();
+    const transporter = await createTransporter();
     await transporter.verify();
     console.log("Email configuration is valid");
     return true;

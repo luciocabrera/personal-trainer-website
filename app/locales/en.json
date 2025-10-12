@@ -88,7 +88,19 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "submit": "Submit"
+    "submit": "Submit",
+    "validation": {
+      "required": "All fields are required",
+      "invalidEmail": "Invalid email address"
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "Thank you for your message! We have received your request and will contact you as soon as possible."
+    },
+    "error": {
+      "email": "There was a problem sending your message. Please try again later or send an email directly to desi4fit@gmail.com",
+      "general": "Something went wrong. Please try again later or send an email to desi4fit@gmail.com"
+    }
   },
   "footer": {
     "copyright": "© 2025 Desi4Fit"

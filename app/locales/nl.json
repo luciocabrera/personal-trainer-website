@@ -88,7 +88,19 @@
     "name": "Naam",
     "email": "E-mail",
     "message": "Bericht",
-    "submit": "Verzenden"
+    "submit": "Verzenden",
+    "validation": {
+      "required": "Alle velden zijn verplicht",
+      "invalidEmail": "Ongeldig e-mailadres"
+    },
+    "success": {
+      "title": "Bericht verzonden!",
+      "message": "Bedankt voor je bericht! We hebben je aanvraag ontvangen en nemen zo snel mogelijk contact met je op."
+    },
+    "error": {
+      "email": "Er is een probleem opgetreden bij het verzenden van je bericht. Probeer het later opnieuw of stuur direct een e-mail naar desi4fit@gmail.com",
+      "general": "Er is iets misgegaan. Probeer het later opnieuw of stuur een e-mail naar desi4fit@gmail.com"
+    }
   },
   "footer": {
     "copyright": "© 2025 Desi4Fit"
