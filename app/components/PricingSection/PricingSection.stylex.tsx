@@ -7,6 +7,13 @@ const pulseAnimation = stylex.keyframes({
 });
 
 export const styles = stylex.create({
+  disclaimer: {
+    color: "red",
+    border: "1px solid red",
+    padding: "0.5rem 1rem",
+    borderRadius: "0.8rem",
+    background: "#ff000017",
+  },
   pricing: {
     padding: 0,
     margin: 0,

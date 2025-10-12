@@ -36,24 +36,15 @@ const PricingSection = () => {
             {t("pricing.strip10.title")}
           </h3>
           <p>{t("pricing.strip10.desc")}</p>
-        </div>
-        <div {...stylex.props(styles.price)}>
-          <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.strip20.title")}
-          </h3>
-          <p>{t("pricing.strip20.desc")}</p>
+          <p {...stylex.props(styles.disclaimer)}>
+            {t("pricing.strip10.disclaimer")}
+          </p>
         </div>
         <div {...stylex.props(styles.price)}>
           <h3 {...stylex.props(styles.priceTitle)}>
             {t("pricing.single.title")}
           </h3>
           <p>{t("pricing.single.desc")}</p>
-        </div>
-        <div {...stylex.props(styles.price)}>
-          <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.unlimited.title")}
-          </h3>
-          <p>{t("pricing.unlimited.desc")}</p>
         </div>
       </div>
     </section>

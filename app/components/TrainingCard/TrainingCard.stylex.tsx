@@ -21,7 +21,7 @@ export const styles = stylex.create({
 
   trainingImage: {
     width: "100%",
-    height: "200px",
+    height: "250px",
     borderRadius: "8px",
     overflow: "hidden",
     background: "#f0f0f0",
@@ -30,7 +30,7 @@ export const styles = stylex.create({
 
   trainingImageImg: {
     width: "100%",
-    height: "200px",
+    height: "250px",
     objectFit: "cover",
     borderRadius: "8px",
     display: "block",
@@ -67,13 +67,13 @@ export const styles = stylex.create({
 
   trainingImageMobile: {
     "@media (max-width: 768px)": {
-      height: "150px",
+      height: "100%",
     },
   },
 
   trainingImageImgMobile: {
     "@media (max-width: 768px)": {
-      height: "150px",
+      height: "100%",
     },
   },
 
@@ -99,13 +99,13 @@ export const styles = stylex.create({
 
   trainingImageSmallMobile: {
     "@media (max-width: 480px)": {
-      height: "120px",
+      height: "100%",
     },
   },
 
   trainingImageImgSmallMobile: {
     "@media (max-width: 480px)": {
-      height: "120px",
+      height: "100%",
     },
   },
 

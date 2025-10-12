@@ -16,19 +16,19 @@ const TrainingsSection = () => {
         <TrainingCard
           title={t("trainings.level1.title")}
           description={t("trainings.level1.desc")}
-          imageSrc="/images/strength-training.jpg"
+          imageSrc="/images/single_training.jpeg"
           imageAlt={t("trainings.level1.imageAlt")}
         />
         <TrainingCard
           title={t("trainings.level2.title")}
           description={t("trainings.level2.desc")}
-          imageSrc="/images/running-training.jpg"
+          imageSrc="/images/duo_training.jpeg"
           imageAlt={t("trainings.level2.imageAlt")}
         />
         <TrainingCard
           title={t("trainings.level3.title")}
           description={t("trainings.level3.desc")}
-          imageSrc="/images/parent-child-training.jpg"
+          imageSrc="/images/small_group_training.jpeg"
           imageAlt={t("trainings.level3.imageAlt")}
         />
       </div>

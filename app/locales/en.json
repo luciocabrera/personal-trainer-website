@@ -26,7 +26,7 @@
     },
     "level3": {
       "title": "Small Group Training",
-      "desc": "Join a small group of 3-6 people for dynamic and energetic outdoor workouts. Experience the power of group motivation while maintaining quality instruction. Duration: 60 minutes",
+      "desc": "Join a small group of 3-10 people for dynamic and energetic outdoor workouts. Experience the power of group motivation while maintaining quality instruction. Duration: 60 minutes",
       "imageAlt": "Small group outdoor training"
     }
   },
@@ -66,19 +66,12 @@
     "title": "How do you join?",
     "strip10": {
       "title": "Strip card 10",
-      "desc": "Sign up and use a strip card for 10 lessons (all levels). Price: €135"
-    },
-    "strip20": {
-      "title": "Strip card 20",
-      "desc": "Sign up and use a strip card for 20 lessons (all levels). Price: €240"
+      "desc": "Sign up and use a strip card for 10 lessons (all levels). Price: €135",
+      "disclaimer": "Valid for 6 months after purchase"
     },
     "single": {
       "title": "Single lesson",
       "desc": "A single lesson costs €15"
-    },
-    "unlimited": {
-      "title": "Unlimited training",
-      "desc": "Do you want to train unlimited for a fixed amount per month? Indicate this on the registration form. Try a lesson once? Nice! You can sign up for a free trial week. €72 /month"
     }
   },
   "signup": {

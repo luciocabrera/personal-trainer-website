@@ -19,7 +19,7 @@ const HeroSection = () => {
       <div {...stylex.props(styles.heroImage)}>
         {/* LCP Image: Optimized for Largest Contentful Paint using local image */}
         <img
-          src="/images/strength-training.jpg"
+          src="/images/hero.jpeg"
           alt="Professional strength training session outdoors"
           fetchPriority="high"
           decoding="sync"

@@ -24,7 +24,7 @@ export const styles = stylex.create({
 
   heroImageImg: {
     width: "100%",
-    height: "300px",
+    // height: "300px",
     objectFit: "cover",
     borderRadius: "10px",
     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
@@ -67,7 +67,8 @@ export const styles = stylex.create({
 
   heroImageImgMobile: {
     "@media (max-width: 768px)": {
-      height: "200px",
+      // height: "200px",
+      width: "100%",
     },
   },
 });

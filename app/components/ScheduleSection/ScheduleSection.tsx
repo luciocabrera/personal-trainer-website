@@ -92,8 +92,21 @@ const ScheduleSection = () => {
           </div>
 
           <div {...stylex.props(styles.mapContainer)}>
-            <iframe
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.2936842105!2d4.3587!3d52.0747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7a0f1234567%3A0x123456789abcdef0!2sVoorburg%20Station%2C%20Voorburg%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1695123456793"
+              width="100%"
+              height="300"
+              title="Interactive map showing Voorburg Station location"
+              aria-label="Map for Voorburg Station location"
+              {...stylex.props(styles.mapIframe)}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              tabIndex={0}
+            /> */}
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d153.2968825497753!2d4.360616655041655!3d52.06607342909638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e1!4m3!3m2!1d52.066126!2d4.3606169999999995!4m5!1s0x47c5b64cfb99935f%3A0x66ef456f0ce88342!2sOFM.%20Voorburg%20Mensperience%20Store%2C%20Herenstraat%2C%20Voorburg%2C%20Netherlands!3m2!1d52.0660039!2d4.360985299999999!5e0!3m2!1sen!2sus!4v1760278146653!5m2!1sen!2sus"
               width="100%"
               height="300"
               title="Interactive map showing Voorburg Station location"

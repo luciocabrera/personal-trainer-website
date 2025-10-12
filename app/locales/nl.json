@@ -26,7 +26,7 @@
     },
     "level3": {
       "title": "Small Group Training",
-      "desc": "Sluit je aan bij een kleine groep van 3-6 personen voor dynamische en energieke outdoor workouts. Ervaar de kracht van groepsmotivatie met behoud van kwaliteitsonderricht. Duur: 60 minuten",
+      "desc": "Sluit je aan bij een kleine groep van 3-10 personen voor dynamische en energieke outdoor workouts. Ervaar de kracht van groepsmotivatie met behoud van kwaliteitsonderricht. Duur: 60 minuten",
       "imageAlt": "Kleine groep outdoor training"
     }
   },
@@ -66,19 +66,12 @@
     "title": "Hoe doe je mee?",
     "strip10": {
       "title": "Strippenkaart 10",
-      "desc": "Meld je aan en gebruik een strippenkaart voor 10 lessen (alle levels). Prijs: €135"
-    },
-    "strip20": {
-      "title": "Strippenkaart 20",
-      "desc": "Meld je aan en gebruik een strippenkaart voor 20 lessen (alle levels). Prijs: €240"
+      "desc": "Meld je aan en gebruik een strippenkaart voor 10 lessen (alle levels). Prijs: €135",
+      "disclaimer": "Geldig voor 6 maanden na aankoop"
     },
     "single": {
       "title": "Losse les",
       "desc": "Een losse les kost €15,-"
-    },
-    "unlimited": {
-      "title": "Onbeperkt trainen",
-      "desc": "Wil je onbeperkt kunnen trainen voor een vast bedrag per maand? Geef dit aan op het aanmeldformulier. Een keer een les proberen? Leuk! Je kan je aanmelden voor een gratis proefweek. €72,- /maand"
     }
   },
   "signup": {

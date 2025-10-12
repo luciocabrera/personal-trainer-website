@@ -26,7 +26,7 @@
     },
     "level3": {
       "title": "Entrenamiento en Grupo Pequeño",
-      "desc": "Únete a un grupo pequeño de 3-6 personas para entrenamientos dinámicos y energéticos al aire libre. Experimenta el poder de la motivación grupal manteniendo instrucción de calidad. Duración: 60 minutos",
+      "desc": "Únete a un grupo pequeño de 3-10 personas para entrenamientos dinámicos y energéticos al aire libre. Experimenta el poder de la motivación grupal manteniendo instrucción de calidad. Duración: 60 minutos",
       "imageAlt": "Entrenamiento al aire libre en grupo pequeño"
     }
   },
@@ -66,19 +66,12 @@
     "title": "¿Cómo te unes?",
     "strip10": {
       "title": "Tarjeta de tiras 10",
-      "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones (todos los niveles). Precio: €135"
-    },
-    "strip20": {
-      "title": "Tarjeta de tiras 20",
-      "desc": "Regístrate y usa una tarjeta de tiras para 20 lecciones (todos los niveles). Precio: €240"
+      "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones (todos los niveles). Precio: €135",
+      "disclaimer": "Válido por 6 meses después de la compra"
     },
     "single": {
       "title": "Lección individual",
       "desc": "Una lección individual cuesta €15"
-    },
-    "unlimited": {
-      "title": "Entrenamiento ilimitado",
-      "desc": "¿Quieres entrenar ilimitadamente por una cantidad fija al mes? Indícalo en el formulario de registro. ¿Probar una lección una vez? ¡Genial! Puedes registrarte para una semana de prueba gratuita. €72 /mes"
     }
   },
   "signup": {
