@@ -15,7 +15,7 @@ import "@/i18n";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" {...stylex.props(styles.html)}>
+    <html lang="nl" {...stylex.props(styles.html)}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,10 +26,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="description" content={BRAND.description} />
         <meta
           name="keywords"
-          content="personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training"
+          content="personal training, outdoor training, fitness, Den Haag, Nederland, krachttraining, HIIT, ouder kind training, Voorburg, outdoor fitness, buitentraining"
         />
         <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
+        <meta name="language" content="Dutch" />
         <meta name="author" content={BRAND.name} />
         <link rel="canonical" href={BRAND.url} />
 
@@ -47,8 +47,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content={`${BRAND.name} - Outdoor fitness training session`}
         />
         <meta property="og:site_name" content={BRAND.name} />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:locale:alternate" content="nl_NL" />
+        <meta property="og:locale" content="nl_NL" />
+        <meta property="og:locale:alternate" content="en_US" />
         <meta property="og:locale:alternate" content="es_ES" />
 
         {/* Twitter Card */}
@@ -114,9 +114,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
             "email": "${BRAND.email}",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Various outdoor locations",
-              "addressLocality": "The Hague",
-              "addressCountry": "Netherlands"
+              "streetAddress": "Verschillende outdoor locaties",
+              "addressLocality": "Den Haag",
+              "addressCountry": "Nederland"
             },
             "geo": {
               "@type": "GeoCoordinates",
@@ -132,34 +132,34 @@ export function Layout({ children }: { children: React.ReactNode }) {
             "priceRange": "€15-€240",
             "paymentAccepted": "Cash, Bank Transfer",
             "currenciesAccepted": "EUR",
-            "areaServed": "The Hague, Netherlands",
+            "areaServed": "Den Haag, Nederland",
             "serviceType": "Personal Training",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Training Programs",
+              "name": "Training Programma's",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Level 1: Strength, Condition & Flexibility",
-                    "description": "HIIT, strength training and mobility exercises"
+                    "name": "Personal Training",
+                    "description": "Eén-op-één gepersonaliseerde trainingen op maat van jouw specifieke doelen"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Level 2: Strength & Run",
-                    "description": "Running combined with strength training"
+                    "name": "Duo Training",
+                    "description": "Train samen met een vriend, partner of familielid"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Level 3: Parent+Child Training",
-                    "description": "Family fitness with focus on fun and cooperation"
+                    "name": "Small Group Training",
+                    "description": "Kleine groep van 3-10 personen voor dynamische outdoor workouts"
                   }
                 }
               ]
