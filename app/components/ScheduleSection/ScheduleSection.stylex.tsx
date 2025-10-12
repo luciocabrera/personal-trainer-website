@@ -66,10 +66,6 @@ export const styles = stylex.create({
     height: "auto",
     willChange: "transform",
   },
-  sectionContent: {
-    padding: "2rem",
-  },
-
   onDemandTitle: {
     textAlign: "center",
     margin: "-2rem -2rem 1.5rem -2rem",

@@ -19,12 +19,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         {/* Primary Meta Tags */}
         <title>{`${BRAND.name} - ${BRAND.tagline}`}</title>
         <meta name="title" content={`${BRAND.name} - ${BRAND.tagline}`} />
         <meta name="description" content={BRAND.description} />
-        <meta name="keywords" content="personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training" />
+        <meta
+          name="keywords"
+          content="personal training, outdoor training, fitness, The Hague, Netherlands, strength training, HIIT, parent child training"
+        />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
         <meta name="author" content={BRAND.name} />
@@ -33,10 +36,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={BRAND.url} />
-        <meta property="og:title" content={`${BRAND.name} - ${BRAND.tagline}`} />
+        <meta
+          property="og:title"
+          content={`${BRAND.name} - ${BRAND.tagline}`}
+        />
         <meta property="og:description" content={BRAND.description} />
         <meta property="og:image" content={`${BRAND.url}/og-image.jpg`} />
-        <meta property="og:image:alt" content={`${BRAND.name} - Outdoor fitness training session`} />
+        <meta
+          property="og:image:alt"
+          content={`${BRAND.name} - Outdoor fitness training session`}
+        />
         <meta property="og:site_name" content={BRAND.name} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="nl_NL" />
@@ -45,10 +54,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={BRAND.url} />
-        <meta name="twitter:title" content={`${BRAND.name} - ${BRAND.tagline}`} />
+        <meta
+          name="twitter:title"
+          content={`${BRAND.name} - ${BRAND.tagline}`}
+        />
         <meta name="twitter:description" content={BRAND.description} />
         <meta name="twitter:image" content={`${BRAND.url}/og-image.jpg`} />
-        <meta name="twitter:image:alt" content={`${BRAND.name} - Outdoor fitness training session`} />
+        <meta
+          name="twitter:image:alt"
+          content={`${BRAND.name} - Outdoor fitness training session`}
+        />
 
         {/* Additional Meta Tags */}
         <meta name="theme-color" content="#4ecdc4" />
@@ -79,14 +94,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Preload critical resources - LCP Image with high priority */}
         <link
           rel="preload"
-          href="/images/strength-training.jpg"
+          href="/images/hero.jpeg"
           as="image"
           fetchPriority="high"
         />
 
         <Meta />
         <Links />
-        
+
         {/* Structured Data for Local Business */}
         <script type="application/ld+json">
           {`{
@@ -151,7 +166,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             }
           }`}
         </script>
-        
+
         <style>{`
           .skip-link { 
             position: absolute; 
