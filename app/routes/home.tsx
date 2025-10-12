@@ -6,6 +6,7 @@ import { TrainingsSection } from "@/components/TrainingsSection";
 import { ScheduleSection } from "@/components/ScheduleSection";
 import { PricingSection } from "@/components/PricingSection";
 import { SignupSection } from "@/components/SignupSection";
+import { sendContactEmail } from "@/services/emailService";
 
 export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
@@ -31,44 +32,37 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   try {
-    // For now, we'll just log the form data
-    // In production, you'd send this to an email service like:
-    // - Nodemailer with SMTP
-    // - SendGrid API
-    // - Mailgun API
-    // - Railway's email service
-
-    console.log("Contact form submission:", {
+    // Send email using the email service
+    await sendContactEmail({
       name: name.toString(),
       email: email.toString(),
       message: message.toString(),
-      timestamp: new Date().toISOString(),
     });
 
-    // TODO: Replace with actual email sending logic
-    // Example with Nodemailer:
-    /*
-    await sendEmail({
-      to: "desi4fit@gmail.com",
-      subject: `Nieuwe contactaanvraag van ${name}`,
-      text: `
-        Naam: ${name}
-        E-mail: ${email}
-        Bericht: ${message}
-      `
+    // Log successful submission
+    console.log("Contact form submission successful:", {
+      name: name.toString(),
+      email: email.toString(),
+      timestamp: new Date().toISOString(),
     });
-    */
 
     return {
       success: true,
       message:
-        "Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.",
+        "Bedankt voor je bericht! We hebben je aanvraag ontvangen en nemen zo snel mogelijk contact met je op.",
     };
   } catch (error) {
     console.error("Form submission error:", error);
+
+    // Return different error messages based on error type
+    const isEmailError =
+      error instanceof Error && error.message.includes("Failed to send email");
+
     return {
       error:
-        "Er is iets misgegaan. Probeer het later opnieuw of stuur een e-mail naar desi4fit@gmail.com",
+        isEmailError ?
+          "Er is een probleem opgetreden bij het verzenden van je bericht. Probeer het later opnieuw of stuur direct een e-mail naar desi4fit@gmail.com"
+        : "Er is iets misgegaan. Probeer het later opnieuw of stuur een e-mail naar desi4fit@gmail.com",
       success: false,
     };
   }
