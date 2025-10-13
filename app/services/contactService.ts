@@ -5,13 +5,15 @@ export interface ContactFormData {
   message: string;
 }
 
-export const handleContactSubmission = async (data: ContactFormData): Promise<void> => {
+export const handleContactSubmission = async (
+  data: ContactFormData
+): Promise<void> => {
   console.log("📝 Processing contact form submission");
   console.log("Name:", data.name);
   console.log("Email:", data.email);
   console.log("Message length:", data.message.length);
   console.log("Timestamp:", new Date().toISOString());
-  
+
   // Success! Contact is "saved" (for now just logged)
   console.log("✅ Contact form submission processed successfully!");
 };

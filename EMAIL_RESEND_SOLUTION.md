@@ -66,13 +66,16 @@ yarn dev
 **Error**: `You can only send testing emails to your own email address`
 
 ### 🎯 **Solution 1: Verify Domain (Recommended)**
+
 1. Go to https://resend.com/domains
 2. Add domain: `desi4fit.nl`
 3. Add DNS records (TXT, MX, CNAME)
 4. Update `from` address to: `contact@desi4fit.nl`
 
 ### 🗄️ **Solution 2: Save to Database (Your Idea!)**
+
 Save contact submissions to PostgreSQL and process later:
+
 - ✅ Always works (no email service dependencies)
 - ✅ Never lose submissions
 - ✅ Can send emails in batches later
