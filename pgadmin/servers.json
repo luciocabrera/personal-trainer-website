@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Personal Trainer DB",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "personal_trainer",
+      "Username": "admin",
+      "PassFile": "/tmp/pgpassfile",
+      "SSLMode": "prefer"
+    }
+  }
+}

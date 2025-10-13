@@ -6,7 +6,7 @@ import { TrainingsSection } from "@/components/TrainingsSection";
 import { ScheduleSection } from "@/components/ScheduleSection";
 import { PricingSection } from "@/components/PricingSection";
 import { SignupSection } from "@/components/SignupSection";
-import { sendContactEmail } from "@/services/emailService";
+import { handleContactSubmission } from "@/services/contactService";
 import {
   getServerTranslation,
   getLanguageFromRequest,
@@ -40,8 +40,8 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   try {
-    // Send email using the email service
-    await sendContactEmail({
+    // Process contact submission (database-first approach)
+    await handleContactSubmission({
       name: name.toString(),
       email: email.toString(),
       message: message.toString(),
