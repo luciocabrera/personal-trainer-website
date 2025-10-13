@@ -8,7 +8,7 @@ export interface EmailData {
 const sendViaResend = async (data: EmailData): Promise<void> => {
   const { Resend } = await import("resend");
   const resend = new Resend(process.env.RESEND_API_KEY);
-  
+
   const result = await resend.emails.send({
     from: "Desi4Fit <onboarding@resend.dev>",
     to: [process.env.EMAIL_TO || "desi4fit@gmail.com"],
@@ -70,7 +70,7 @@ export const sendContactEmail = async (data: EmailData): Promise<void> => {
   try {
     await sendViaSMTP(data);
   } catch (error: any) {
-    if (error.code === 'ETIMEDOUT' && process.env.RESEND_API_KEY) {
+    if (error.code === "ETIMEDOUT" && process.env.RESEND_API_KEY) {
       console.log("SMTP timeout, using Resend fallback");
       await sendViaResend(data);
     } else {
