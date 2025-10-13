@@ -13,7 +13,7 @@ The `.env` file containing sensitive information was accidentally committed to t
 ### 🔐 **Sensitive Data That Was Exposed (Now Removed):**
 
 - Gmail app passwords
-- Database passwords  
+- Database passwords
 - Resend API keys
 - pgAdmin credentials
 
