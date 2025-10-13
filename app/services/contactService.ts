@@ -1,3 +1,5 @@
+import { query } from "@/utils/database";
+
 // Simple contact form handler - database first approach
 export interface ContactFormData {
   name: string;
@@ -14,8 +16,39 @@ export const handleContactSubmission = async (
   console.log("Message length:", data.message.length);
   console.log("Timestamp:", new Date().toISOString());
 
-  // Success! Contact is "saved" (for now just logged)
-  console.log("✅ Contact form submission processed successfully!");
+  try {
+    // Insert contact message into PostgreSQL database
+    const result = await query(
+      `INSERT INTO contact_messages (name, email, message, status, created_at, updated_at) 
+       VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) 
+       RETURNING id, created_at`,
+      [data.name, data.email, data.message, "new"]
+    );
+
+    const insertedRecord = result.rows[0];
+
+    console.log("💾 Contact message saved to database:", {
+      id: insertedRecord.id,
+      created_at: insertedRecord.created_at,
+      name: data.name,
+      email: data.email,
+    });
+
+    console.log("✅ Contact form submission processed successfully!");
+  } catch (error) {
+    console.error("❌ Database error saving contact message:", error);
+
+    // Log the contact for debugging even if DB fails
+    console.log("📋 Contact details (DB save failed):", {
+      name: data.name,
+      email: data.email,
+      message: data.message.substring(0, 100) + "...",
+      timestamp: new Date().toISOString(),
+    });
+
+    // Re-throw error so the form can show appropriate error message
+    throw new Error("Failed to save contact message to database");
+  }
 };
 
 export const testContactService = (): boolean => {
