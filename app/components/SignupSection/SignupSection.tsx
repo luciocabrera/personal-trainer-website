@@ -31,7 +31,7 @@ const SignupSection = () => {
   }, [actionData?.success]);
 
   return (
-    <section id="signup" {...stylex.props(styles.signup)}>
+    <section id="signup" {...stylex.props(styles.signup, styles.signupMobile)}>
       <h2 {...stylex.props(styles.signupTitle)}>{t("signup.title")}</h2>
       <div id="signup-image" {...stylex.props(styles.signupImage)}>
         {/* Clean icon approach: Contact/signup representation */}
@@ -49,7 +49,7 @@ const SignupSection = () => {
         </div>
       </div>
 
-      <div {...stylex.props(styles.signupForm)}>
+      <div {...stylex.props(styles.signupForm, styles.signupFormMobile)}>
         {/* Success/Error Messages with Confetti - Show at top of form area */}
         {showMessage && actionData && (
           <>

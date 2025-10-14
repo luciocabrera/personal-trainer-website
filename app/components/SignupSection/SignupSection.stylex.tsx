@@ -204,11 +204,27 @@ export const styles = stylex.create({
   },
 
   // Mobile responsive styles
-  // signupMobile: {
-  //   "@media (max-width: 768px)": {
-  //     padding: "1rem",
-  //   },
-  // },
+  signupMobile: {
+    "@media (max-width: 768px)": {
+      margin: "0 1rem",
+      borderRadius: "15px",
+    },
+    "@media (max-width: 480px)": {
+      margin: "0 0.5rem",
+      borderRadius: "12px",
+    },
+  },
+
+  signupFormMobile: {
+    "@media (max-width: 768px)": {
+      padding: "0 1rem",
+      marginTop: "1.5rem",
+    },
+    "@media (max-width: 480px)": {
+      padding: "0 0.5rem",
+      marginTop: "1rem",
+    },
+  },
 
   signupIconContainerMobile: {
     "@media (max-width: 768px)": {

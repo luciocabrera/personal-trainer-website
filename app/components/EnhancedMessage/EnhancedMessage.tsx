@@ -75,6 +75,22 @@ const styles = stylex.create({
     fontSize: "1.1rem",
     fontWeight: "600",
     padding: "1.5rem 2rem",
+
+    // Mobile responsive styles
+    "@media (max-width: 768px)": {
+      fontSize: "1rem",
+      padding: "1rem 1.5rem",
+      marginBottom: "1.5rem",
+      border: "1px solid rgba(76, 175, 80, 0.6)",
+      boxShadow: "0 4px 16px rgba(76, 175, 80, 0.3)",
+    },
+
+    "@media (max-width: 480px)": {
+      fontSize: "0.95rem",
+      padding: "0.875rem 1rem",
+      marginBottom: "1rem",
+      borderRadius: "6px",
+    },
   },
 
   messageBoxSlideIn: {
@@ -127,6 +143,23 @@ const styles = stylex.create({
     ":hover": {
       opacity: 1,
       backgroundColor: "rgba(0, 0, 0, 0.1)",
+    },
+
+    // Mobile responsive styles for better touch targets
+    "@media (max-width: 768px)": {
+      top: "0.5rem",
+      right: "0.5rem",
+      width: "28px",
+      height: "28px",
+      fontSize: "1.3rem",
+    },
+
+    "@media (max-width: 480px)": {
+      top: "0.375rem",
+      right: "0.375rem",
+      width: "32px",
+      height: "32px",
+      fontSize: "1.4rem",
     },
   },
 });
