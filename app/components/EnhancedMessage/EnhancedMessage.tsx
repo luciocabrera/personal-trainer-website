@@ -23,6 +23,28 @@ const slideOut = stylex.keyframes({
   },
 });
 
+const slideInFixed = stylex.keyframes({
+  "0%": {
+    transform: "scale(0.9)",
+    opacity: 0,
+  },
+  "100%": {
+    transform: "scale(1)",
+    opacity: 1,
+  },
+});
+
+const slideOutFixed = stylex.keyframes({
+  "0%": {
+    transform: "scale(1)",
+    opacity: 1,
+  },
+  "100%": {
+    transform: "scale(0.9)",
+    opacity: 0,
+  },
+});
+
 const styles = stylex.create({
   messageBox: {
     padding: "1rem 1.5rem",
@@ -37,12 +59,38 @@ const styles = stylex.create({
     animationFillMode: "forwards",
   },
 
+  messageBoxFixed: {
+    position: "relative",
+    top: "0",
+    left: "0",
+    transform: "none",
+    zIndex: 100,
+    maxWidth: "100%",
+    width: "100%",
+    marginBottom: "2rem",
+    marginTop: "0",
+    boxShadow: "0 8px 32px rgba(76, 175, 80, 0.3)",
+    border: "2px solid rgba(76, 175, 80, 0.6)",
+    backgroundColor: "rgba(76, 175, 80, 0.15)",
+    fontSize: "1.1rem",
+    fontWeight: "600",
+    padding: "1.5rem 2rem",
+  },
+
   messageBoxSlideIn: {
     animationName: slideIn,
   },
 
   messageBoxSlideOut: {
     animationName: slideOut,
+  },
+
+  messageBoxSlideInFixed: {
+    animationName: slideInFixed,
+  },
+
+  messageBoxSlideOutFixed: {
+    animationName: slideOutFixed,
   },
 
   successMessage: {
@@ -89,6 +137,7 @@ interface EnhancedMessageProps {
   onDismiss?: () => void;
   autoHide?: boolean;
   autoHideDelay?: number;
+  showAtTop?: boolean;
 }
 
 const EnhancedMessage = ({
@@ -97,6 +146,7 @@ const EnhancedMessage = ({
   onDismiss,
   autoHide = false,
   autoHideDelay = 5000,
+  showAtTop = false,
 }: EnhancedMessageProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -128,7 +178,13 @@ const EnhancedMessage = ({
     <div
       {...stylex.props(
         styles.messageBox,
-        isAnimatingOut ? styles.messageBoxSlideOut : styles.messageBoxSlideIn,
+        showAtTop && styles.messageBoxFixed,
+        // Use different animations for fixed vs regular positioning
+        showAtTop ?
+          isAnimatingOut ? styles.messageBoxSlideOutFixed
+          : styles.messageBoxSlideInFixed
+        : isAnimatingOut ? styles.messageBoxSlideOut
+        : styles.messageBoxSlideIn,
         type === "success" ? styles.successMessage : styles.errorMessage
       )}
     >

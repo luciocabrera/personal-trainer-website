@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useActionData, Form, useNavigation } from "react-router";
+import { useEffect, useRef } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { SignupIcon, EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./SignupSection.stylex";
@@ -13,6 +14,7 @@ const SignupSection = () => {
     | { success?: boolean; message?: string; error?: string }
     | undefined;
   const navigation = useNavigation();
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Show success/error message when form is submitted
   const showMessage = Boolean(actionData);
@@ -20,8 +22,16 @@ const SignupSection = () => {
   // Check if form is being submitted
   const isSubmitting = navigation.state === "submitting";
 
+  // Handle successful form submission - clear form only
+  useEffect(() => {
+    if (actionData?.success && formRef.current) {
+      // Clear the form
+      formRef.current.reset();
+    }
+  }, [actionData?.success]);
+
   return (
-    <section id="signup" {...stylex.props(styles.signup, styles.signupMobile)}>
+    <section id="signup" {...stylex.props(styles.signup)}>
       <h2 {...stylex.props(styles.signupTitle)}>{t("signup.title")}</h2>
       <div id="signup-image" {...stylex.props(styles.signupImage)}>
         {/* Clean icon approach: Contact/signup representation */}
@@ -40,10 +50,7 @@ const SignupSection = () => {
       </div>
 
       <div {...stylex.props(styles.signupForm)}>
-        <p>{t("signup.signupNow")}</p>
-        <p>{t("signup.nice")}</p>
-
-        {/* Success/Error Messages with Confetti */}
+        {/* Success/Error Messages with Confetti - Show at top of form area */}
         {showMessage && actionData && (
           <>
             <EnhancedMessage
@@ -52,13 +59,21 @@ const SignupSection = () => {
               }
               type={actionData.success ? "success" : "error"}
               autoHide={true}
-              autoHideDelay={actionData.success ? 8000 : 6000}
+              autoHideDelay={actionData.success ? 10000 : 6000}
+              showAtTop={actionData.success} // Enhanced styling for success messages
             />
             <Confetti isActive={Boolean(actionData.success)} />
           </>
         )}
 
-        <Form method="post" {...stylex.props(styles.signupFormElement)}>
+        <p>{t("signup.signupNow")}</p>
+        <p>{t("signup.nice")}</p>
+
+        <Form
+          method="post"
+          ref={formRef}
+          {...stylex.props(styles.signupFormElement)}
+        >
           <input
             type="text"
             name="name"
@@ -88,7 +103,7 @@ const SignupSection = () => {
             {...stylex.props(styles.formButton)}
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Verzenden..." : t("form.submit")}
+            {isSubmitting ? t("form.submitting") : t("form.submit")}
           </button>
         </Form>
 
@@ -130,44 +145,6 @@ const SignupSection = () => {
           </div>
           <p {...stylex.props(styles.followText)}>{t("signup.follow")}</p>
         </div>
-        {/* 
-        <div {...stylex.props(styles.contactSection)}>
-          <p {...stylex.props(styles.contactTitle)}>{t("signup.contactUs")}</p>
-          <div
-            {...stylex.props(styles.contactLinks, styles.contactLinksMobile)}
-          >
-            <a
-              href={`mailto:${BRAND.email}`}
-              {...stylex.props(
-                styles.contactLink,
-                styles.emailLink,
-                styles.contactLinkMobile
-              )}
-            >
-              <div {...stylex.props(styles.contactLinkIcon)}>
-                <EmailIcon />
-              </div>
-              <span>{t("signup.email")}</span>
-            </a>
-
-            <a
-              href={BRAND.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              {...stylex.props(
-                styles.contactLink,
-                styles.instagramLink,
-                styles.contactLinkMobile
-              )}
-            >
-              <div {...stylex.props(styles.contactLinkIcon)}>
-                <InstagramIcon />
-              </div>
-              <span>{t("signup.instagram")}</span>
-            </a>
-          </div>
-          <p {...stylex.props(styles.followText)}>{t("signup.follow")}</p>
-        </div> */}
       </div>
     </section>
   );

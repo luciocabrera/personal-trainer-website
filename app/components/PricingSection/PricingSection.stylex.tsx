@@ -116,11 +116,11 @@ export const styles = stylex.create({
   },
 
   // Mobile responsive styles
-  pricingMobile: {
-    "@media (max-width: 768px)": {
-      padding: "1rem",
-    },
-  },
+  // pricingMobile: {
+  //   "@media (max-width: 768px)": {
+  //     padding: "1rem",
+  //   },
+  // },
 
   pricingGridMobile: {
     "@media (max-width: 768px)": {

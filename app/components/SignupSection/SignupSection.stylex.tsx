@@ -204,11 +204,11 @@ export const styles = stylex.create({
   },
 
   // Mobile responsive styles
-  signupMobile: {
-    "@media (max-width: 768px)": {
-      padding: "1rem",
-    },
-  },
+  // signupMobile: {
+  //   "@media (max-width: 768px)": {
+  //     padding: "1rem",
+  //   },
+  // },
 
   signupIconContainerMobile: {
     "@media (max-width: 768px)": {

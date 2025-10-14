@@ -7,10 +7,7 @@ const PricingSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section
-      id="pricing"
-      {...stylex.props(styles.pricing, styles.pricingMobile)}
-    >
+    <section id="pricing" {...stylex.props(styles.pricing)}>
       <h2 {...stylex.props(styles.pricingTitle)}>{t("pricing.title")}</h2>
       <div id="pricing-image" {...stylex.props(styles.pricingImage)}>
         {/* Custom SVG: Membership/joining icon with fitness elements */}

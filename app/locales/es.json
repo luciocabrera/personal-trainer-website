@@ -79,7 +79,7 @@
     "signupNow": "Regístrate ahora",
     "nice": "¡Genial que quieras registrarte! Puedes hacerlo a través del formulario a continuación",
     "questions": "¿Preguntas?",
-    "email": "info@desi4fit.nl",
+    "email": "desi4fit@gmail.com",
     "instagram": "@desi4fit",
     "follow": "Sigue Desi4Fit",
     "contactUs": "Contáctanos:"
@@ -89,6 +89,7 @@
     "email": "Correo electrónico",
     "message": "Mensaje",
     "submit": "Enviar",
+    "submitting": "Enviando...",
     "validation": {
       "required": "Todos los campos son obligatorios",
       "invalidEmail": "Dirección de correo electrónico inválida"
