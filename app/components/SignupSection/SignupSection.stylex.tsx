@@ -19,6 +19,14 @@ export const styles = stylex.create({
     backdropFilter: "blur(10px)",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     border: "1px solid rgba(255, 255, 255, 0.3)",
+
+    // Prevent form expansion on mobile input focus
+    "@media (max-width: 768px)": {
+      minHeight: "auto",
+      overflow: "visible",
+      transform: "translateZ(0)", // Hardware acceleration
+      willChange: "auto",
+    },
   },
 
   signupTitle: {
@@ -79,6 +87,18 @@ export const styles = stylex.create({
     gap: "1rem",
     maxWidth: "400px",
     margin: "0 auto",
+
+    // Mobile-specific form container improvements
+    "@media (max-width: 768px)": {
+      maxWidth: "100%",
+      padding: "0 1rem",
+      gap: "1.25rem",
+    },
+
+    "@media (max-width: 480px)": {
+      padding: "0 0.5rem",
+      gap: "1rem",
+    },
   },
 
   formInput: {
@@ -87,6 +107,24 @@ export const styles = stylex.create({
     borderRadius: "3px",
     width: "100%",
     boxSizing: "border-box",
+    fontSize: "16px", // Prevent mobile zoom on iOS
+    fontFamily: "inherit",
+    lineHeight: "1.4",
+
+    // Mobile-specific improvements
+    "@media (max-width: 768px)": {
+      fontSize: "16px", // Critical: prevents zoom on iOS Safari
+      padding: "0.75rem",
+      borderRadius: "8px",
+      border: "2px solid #ddd",
+      transition: "border-color 0.3s ease",
+    },
+
+    ":focus": {
+      outline: "none",
+      borderColor: "#4ecdc4",
+      boxShadow: "0 0 0 3px rgba(78, 205, 196, 0.1)",
+    },
   },
 
   formTextarea: {
@@ -95,6 +133,27 @@ export const styles = stylex.create({
     borderRadius: "3px",
     width: "100%",
     boxSizing: "border-box",
+    fontSize: "16px", // Prevent mobile zoom on iOS
+    fontFamily: "inherit",
+    lineHeight: "1.4",
+    resize: "vertical",
+    minHeight: "100px",
+
+    // Mobile-specific improvements
+    "@media (max-width: 768px)": {
+      fontSize: "16px", // Critical: prevents zoom on iOS Safari
+      padding: "0.75rem",
+      borderRadius: "8px",
+      border: "2px solid #ddd",
+      minHeight: "120px",
+      transition: "border-color 0.3s ease",
+    },
+
+    ":focus": {
+      outline: "none",
+      borderColor: "#4ecdc4",
+      boxShadow: "0 0 0 3px rgba(78, 205, 196, 0.1)",
+    },
   },
 
   formButton: {

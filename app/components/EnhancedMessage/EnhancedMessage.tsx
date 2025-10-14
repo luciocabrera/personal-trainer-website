@@ -57,6 +57,20 @@ const styles = stylex.create({
     animationDuration: "0.3s",
     animationTimingFunction: "ease-out",
     animationFillMode: "forwards",
+    wordWrap: "break-word",
+    overflowWrap: "break-word",
+    hyphens: "auto",
+
+    // Mobile responsive base styles
+    "@media (max-width: 768px)": {
+      textAlign: "left", // Better readability on mobile
+      lineHeight: "1.4",
+    },
+
+    "@media (max-width: 480px)": {
+      fontWeight: "600", // Slightly lighter weight for better mobile readability
+      textAlign: "left",
+    },
   },
 
   messageBoxFixed: {
@@ -113,12 +127,43 @@ const styles = stylex.create({
     backgroundColor: "rgba(76, 175, 80, 0.1)",
     color: "#2e7d32",
     border: "1px solid rgba(76, 175, 80, 0.3)",
+
+    // Mobile responsive styles for success messages (when not using messageBoxFixed)
+    "@media (max-width: 768px)": {
+      fontSize: "0.95rem",
+      lineHeight: "1.3",
+    },
+
+    "@media (max-width: 480px)": {
+      fontSize: "0.9rem",
+      lineHeight: "1.25",
+    },
   },
 
   errorMessage: {
     backgroundColor: "rgba(244, 67, 54, 0.1)",
     color: "#c62828",
     border: "1px solid rgba(244, 67, 54, 0.3)",
+
+    // Mobile responsive styles for error messages
+    "@media (max-width: 768px)": {
+      fontSize: "0.9rem",
+      padding: "0.875rem 1rem",
+      marginBottom: "1rem",
+      border: "1px solid rgba(244, 67, 54, 0.4)",
+      backgroundColor: "rgba(244, 67, 54, 0.08)",
+      lineHeight: "1.3",
+    },
+
+    "@media (max-width: 480px)": {
+      fontSize: "0.85rem",
+      padding: "0.75rem 0.875rem",
+      marginBottom: "0.875rem",
+      borderRadius: "6px",
+      lineHeight: "1.25",
+      maxWidth: "100%",
+      wordWrap: "break-word",
+    },
   },
 
   dismissButton: {
