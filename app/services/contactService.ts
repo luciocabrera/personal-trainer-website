@@ -35,17 +35,18 @@ export const handleContactSubmission = async (
       email: data.email,
     });
 
-    // Send email notification immediately after database save
-    try {
-      await sendContactEmail(data);
-      console.log("📧 Email notification sent successfully!");
-    } catch (emailError) {
-      console.error(
-        "⚠️ Email sending failed, but contact was saved:",
-        emailError
-      );
-      // Don't throw error - contact was saved successfully, email failure is secondary
-    }
+    // Send email notification asynchronously (non-blocking)
+    sendContactEmail(data)
+      .then(() => {
+        console.log("📧 Email notification sent successfully!");
+      })
+      .catch((emailError) => {
+        console.error(
+          "⚠️ Email sending failed (non-critical):",
+          emailError?.message || emailError
+        );
+        // Email failure doesn't affect user experience - just log it
+      });
 
     console.log("✅ Contact form submission processed successfully!");
   } catch (error) {

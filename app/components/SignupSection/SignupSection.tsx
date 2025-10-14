@@ -4,6 +4,8 @@ import * as stylex from "@stylexjs/stylex";
 import { SignupIcon, EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./SignupSection.stylex";
 import { BRAND } from "@/constants/brand";
+import EnhancedMessage from "@/components/EnhancedMessage/EnhancedMessage";
+import Confetti from "@/components/Confetti/Confetti";
 
 const SignupSection = () => {
   const { t } = useTranslation();
@@ -41,16 +43,19 @@ const SignupSection = () => {
         <p>{t("signup.signupNow")}</p>
         <p>{t("signup.nice")}</p>
 
-        {/* Success/Error Messages */}
+        {/* Success/Error Messages with Confetti */}
         {showMessage && actionData && (
-          <div
-            {...stylex.props(
-              styles.messageBox,
-              actionData.success ? styles.successMessage : styles.errorMessage
-            )}
-          >
-            {actionData.success ? actionData.message : actionData.error}
-          </div>
+          <>
+            <EnhancedMessage
+              message={
+                actionData.success ? actionData.message! : actionData.error!
+              }
+              type={actionData.success ? "success" : "error"}
+              autoHide={true}
+              autoHideDelay={actionData.success ? 8000 : 6000}
+            />
+            <Confetti isActive={Boolean(actionData.success)} />
+          </>
         )}
 
         <Form method="post" {...stylex.props(styles.signupFormElement)}>

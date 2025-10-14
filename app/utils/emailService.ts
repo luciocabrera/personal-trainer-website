@@ -87,6 +87,7 @@ export const sendContactEmail = async (data: EmailData): Promise<void> => {
     }
   } catch (error) {
     console.error("❌ Error sending email:", error);
-    throw new Error("Failed to send email notification");
+    // Re-throw for logging but don't crash the application
+    throw error;
   }
 };

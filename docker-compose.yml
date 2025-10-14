@@ -37,10 +37,8 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
+      - ./nginx.local.conf:/etc/nginx/nginx.conf:ro
       - ./logs/nginx:/var/log/nginx
     depends_on:
       - app
@@ -52,6 +50,8 @@ services:
     image: postgres:18-alpine
     container_name: personal-trainer-postgres
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-personal_trainer}
       POSTGRES_USER: ${POSTGRES_USER:-admin}
@@ -79,8 +79,10 @@ services:
     image: dpage/pgadmin4:latest
     container_name: personal-trainer-pgadmin
     restart: unless-stopped
+    env_file:
+      - .env
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@personal-trainer.com}
+      PGADMIN_DEFAULT_EMAIL: ${PGLADMIN_EMAIL:-admin@personal-trainer.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
       PGADMIN_CONFIG_SERVER_MODE: "False"
       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"

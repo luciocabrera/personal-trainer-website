@@ -61,12 +61,9 @@ export async function action({ request }: ActionFunctionArgs) {
   } catch (error) {
     console.error("Form submission error:", error);
 
-    // Return different error messages based on error type
-    const isEmailError =
-      error instanceof Error && error.message.includes("Failed to send email");
-
+    // Since email is non-blocking, this error is only for database failures
     return {
-      error: isEmailError ? t("form.error.email") : t("form.error.general"),
+      error: t("form.error.general"),
       success: false,
     };
   }
