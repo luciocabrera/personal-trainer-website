@@ -1,9 +1,11 @@
 # 🌊 DigitalOcean Droplet Deployment Guide
 
 ## Overview
+
 Deploy the Personal Trainer app with PostgreSQL database to a DigitalOcean Droplet using Docker Compose.
 
 ## 💰 Cost Estimate
+
 - **Droplet**: $4-6/month (512MB-1GB RAM)
 - **Domain**: Already configured (desi4fit.nl)
 - **SSL**: Free (Let's Encrypt)
@@ -12,10 +14,12 @@ Deploy the Personal Trainer app with PostgreSQL database to a DigitalOcean Dropl
 ## 🛠️ Prerequisites
 
 ### 1. DigitalOcean Account
+
 - Sign up at [digitalocean.com](https://digitalocean.com)
 - Add payment method
 
 ### 2. Domain Configuration
+
 - Point desi4fit.nl to DigitalOcean nameservers (if not already done)
 - Or update A records to droplet IP
 
@@ -73,6 +77,7 @@ nano .env
 ```
 
 **Required .env values**:
+
 ```env
 # Database Configuration
 POSTGRES_DB=personal_trainer
@@ -135,6 +140,7 @@ sudo ufw status
 ## 🔧 Production Optimizations
 
 ### 1. Environment Security
+
 ```bash
 # Secure .env file
 chmod 600 .env
@@ -142,6 +148,7 @@ chown deploy:deploy .env
 ```
 
 ### 2. Database Backup
+
 ```bash
 # Create backup script
 cat > backup-db.sh << 'EOF'
@@ -157,6 +164,7 @@ crontab -e
 ```
 
 ### 3. Log Rotation
+
 ```bash
 # Configure Docker log rotation
 sudo tee /etc/docker/daemon.json > /dev/null <<EOF
@@ -175,6 +183,7 @@ sudo systemctl restart docker
 ## 📊 Monitoring & Maintenance
 
 ### Health Checks
+
 ```bash
 # Check all services
 docker-compose ps
@@ -190,6 +199,7 @@ docker-compose logs --tail=50 -f app
 ```
 
 ### Updates
+
 ```bash
 # Pull latest changes
 git pull origin main
@@ -204,6 +214,7 @@ docker image prune -f
 ## 🌐 DNS Configuration
 
 ### Option 1: DigitalOcean DNS (Recommended)
+
 1. Go to DigitalOcean Dashboard → Networking → Domains
 2. Add domain: `desi4fit.nl`
 3. Create A records:
@@ -211,7 +222,9 @@ docker image prune -f
    - `www` → Droplet IP
 
 ### Option 2: Current DNS Provider
+
 Update A records to point to your droplet IP:
+
 ```
 desi4fit.nl     A    your-droplet-ip
 www.desi4fit.nl A    your-droplet-ip
@@ -232,23 +245,27 @@ www.desi4fit.nl A    your-droplet-ip
 ### Common Issues
 
 1. **SSL Certificate Issues**
+
 ```bash
 sudo certbot renew --force-renewal
 ```
 
 2. **Database Connection Issues**
+
 ```bash
 docker-compose logs postgres
 docker-compose restart postgres
 ```
 
 3. **App Not Starting**
+
 ```bash
 docker-compose logs app
 docker-compose build --no-cache app
 ```
 
 4. **Out of Disk Space**
+
 ```bash
 docker system prune -af
 sudo apt autoremove -y
@@ -257,6 +274,7 @@ sudo apt autoremove -y
 ## 🎉 Success Verification
 
 After deployment, verify:
+
 - [ ] https://desi4fit.nl loads correctly
 - [ ] Contact form works and saves to database
 - [ ] SSL certificate is valid (green lock in browser)
