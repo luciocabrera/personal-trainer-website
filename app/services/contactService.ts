@@ -1,4 +1,5 @@
 import { query } from "@/utils/database";
+import { sendContactEmail } from "@/utils/emailService";
 
 // Simple contact form handler - database first approach
 export interface ContactFormData {
@@ -33,6 +34,18 @@ export const handleContactSubmission = async (
       name: data.name,
       email: data.email,
     });
+
+    // Send email notification immediately after database save
+    try {
+      await sendContactEmail(data);
+      console.log("📧 Email notification sent successfully!");
+    } catch (emailError) {
+      console.error(
+        "⚠️ Email sending failed, but contact was saved:",
+        emailError
+      );
+      // Don't throw error - contact was saved successfully, email failure is secondary
+    }
 
     console.log("✅ Contact form submission processed successfully!");
   } catch (error) {
