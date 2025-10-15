@@ -9,7 +9,7 @@
   "hero": {
     "title": "OUTDOOR TRAININGS",
     "subtitle": "DESI4FIT",
-    "tagline": "STRENGTH - CONDITION - FLEXIBILITY",
+    "tagline": "STRENGTH - CONDITION ",
     "description": "Do you want to join small group training with strength training and cardio while taking into account everyone's abilities and injuries? Effective, accessible and friendly! Thanks to the station's covered area, training continues even in bad weather."
   },
   "trainings": {
@@ -66,7 +66,7 @@
     "title": "How do you join?",
     "strip10": {
       "title": "Strip card 10",
-      "desc": "Sign up and use a strip card for 10 lessons (all levels). Price: €135",
+      "desc": "Sign up and use a strip card for 10 lessons. Price: €135",
       "disclaimer": "Valid for 6 months after purchase"
     },
     "single": {

@@ -9,7 +9,7 @@
   "hero": {
     "title": "ENTRENAMIENTOS AL AIRE LIBRE",
     "subtitle": "DESI4FIT",
-    "tagline": "FUERZA - CONDICIÓN - FLEXIBILIDAD",
+    "tagline": "FUERZA - CONDICIÓN",
     "description": "¿Quieres participar en entrenamiento en grupo pequeño con entrenamiento de fuerza y cardio, teniendo en cuenta las capacidades y lesiones de cada uno? ¡Efectivo, accesible y amigable! Gracias a la cubierta de la estación, el entrenamiento continúa incluso con mal tiempo."
   },
   "trainings": {
@@ -66,7 +66,7 @@
     "title": "¿Cómo te unes?",
     "strip10": {
       "title": "Tarjeta de tiras 10",
-      "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones (todos los niveles). Precio: €135",
+      "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones. Precio: €135",
       "disclaimer": "Válido por 6 meses después de la compra"
     },
     "single": {
