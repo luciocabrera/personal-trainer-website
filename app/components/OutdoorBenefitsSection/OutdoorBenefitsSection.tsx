@@ -39,7 +39,7 @@ const OutdoorBenefitsSection = () => {
         <div {...stylex.props(styles.content)}>
           <div {...stylex.props(styles.imageContainer)}>
             <img
-              src="/images/outdoor_benefits.jpeg"
+              src="/images/outdoors.jpeg"
               alt={t("outdoorBenefits.imageAlt")}
               width="600"
               height="400"
