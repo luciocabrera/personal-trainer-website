@@ -105,5 +105,21 @@
   },
   "footer": {
     "copyright": "© 2025 Desi4Fit"
+  },
+  "email": {
+    "adminSubject": "New contact form from",
+    "adminTitle": "New Contact Form Submission",
+    "adminNameLabel": "Name",
+    "adminEmailLabel": "Email",
+    "adminMessageLabel": "Message",
+    "adminFooter": "Sent from Desi4Fit Personal Trainer Website",
+    "autoReplySubject": "Thank you for your message - Desi4Fit",
+    "autoReplyTitle": "Thank you for your message!",
+    "autoReplyGreeting": "Hello",
+    "autoReplyThankYou": "Thank you for your interest in Desi4Fit! We have received your message and will contact you as soon as possible.",
+    "autoReplyYourMessage": "Your message",
+    "autoReplyClosing": "Best regards,",
+    "autoReplyTeam": "The Desi4Fit Team",
+    "autoReplyDisclaimer": "This is an automated confirmation. Please do not reply to this email."
   }
 }

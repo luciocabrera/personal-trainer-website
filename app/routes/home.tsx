@@ -42,12 +42,33 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   try {
+    // Prepare email translations
+    const emailTranslations = {
+      adminSubject: t("email.adminSubject"),
+      adminTitle: t("email.adminTitle"),
+      adminNameLabel: t("email.adminNameLabel"),
+      adminEmailLabel: t("email.adminEmailLabel"),
+      adminMessageLabel: t("email.adminMessageLabel"),
+      adminFooter: t("email.adminFooter"),
+      autoReplySubject: t("email.autoReplySubject"),
+      autoReplyTitle: t("email.autoReplyTitle"),
+      autoReplyGreeting: t("email.autoReplyGreeting"),
+      autoReplyThankYou: t("email.autoReplyThankYou"),
+      autoReplyYourMessage: t("email.autoReplyYourMessage"),
+      autoReplyClosing: t("email.autoReplyClosing"),
+      autoReplyTeam: t("email.autoReplyTeam"),
+      autoReplyDisclaimer: t("email.autoReplyDisclaimer"),
+    };
+
     // Process contact submission (database-first approach)
-    await handleContactSubmission({
-      name: name.toString(),
-      email: email.toString(),
-      message: message.toString(),
-    });
+    await handleContactSubmission(
+      {
+        name: name.toString(),
+        email: email.toString(),
+        message: message.toString(),
+      },
+      emailTranslations
+    );
 
     // Log successful submission
     console.log("Contact form submission successful:", {

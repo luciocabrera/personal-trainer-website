@@ -7,6 +7,23 @@ export interface EmailData {
   message: string;
 }
 
+export interface EmailTranslations {
+  adminSubject: string;
+  adminTitle: string;
+  adminNameLabel: string;
+  adminEmailLabel: string;
+  adminMessageLabel: string;
+  adminFooter: string;
+  autoReplySubject: string;
+  autoReplyTitle: string;
+  autoReplyGreeting: string;
+  autoReplyThankYou: string;
+  autoReplyYourMessage: string;
+  autoReplyClosing: string;
+  autoReplyTeam: string;
+  autoReplyDisclaimer: string;
+}
+
 // Create Resend instance
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -22,16 +39,19 @@ const createTransporter = () => {
 };
 
 // Send contact form email using Resend (with Gmail fallback)
-export const sendContactEmail = async (data: EmailData): Promise<void> => {
+export const sendContactEmail = async (
+  data: EmailData,
+  translations: EmailTranslations
+): Promise<void> => {
   const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() || "resend";
 
   try {
     console.log(`📧 Preparing to send contact email via ${emailProvider}...`);
 
     if (emailProvider === "resend") {
-      await sendWithResend(data);
+      await sendWithResend(data, translations);
     } else if (emailProvider === "gmail") {
-      await sendWithGmail(data);
+      await sendWithGmail(data, translations);
     } else {
       throw new Error(`Unsupported email provider: ${emailProvider}`);
     }
@@ -41,7 +61,7 @@ export const sendContactEmail = async (data: EmailData): Promise<void> => {
     if (emailProvider === "resend") {
       console.log("🔄 Resend failed, trying Gmail fallback...");
       try {
-        await sendWithGmail(data);
+        await sendWithGmail(data, translations);
         console.log("✅ Gmail fallback successful");
       } catch (fallbackError) {
         console.error("❌ Gmail fallback also failed:", fallbackError);
@@ -54,22 +74,25 @@ export const sendContactEmail = async (data: EmailData): Promise<void> => {
 };
 
 // Send emails using Resend SDK
-const sendWithResend = async (data: EmailData): Promise<void> => {
+const sendWithResend = async (
+  data: EmailData,
+  translations: EmailTranslations
+): Promise<void> => {
   // 1️⃣ Send notification to admin
   await resend.emails.send({
     from: process.env.EMAIL_FROM || "Contact Form <noreply@desi4fit.nl>",
     to: process.env.EMAIL_TO || "info@desi4fit.nl",
-    subject: `New Contact Form Submission from ${data.name}`,
+    subject: `${translations.adminSubject} ${data.name}`,
     html: `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${data.name}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Message:</strong></p>
+      <h2>${translations.adminTitle}</h2>
+      <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
+      <p><strong>${translations.adminEmailLabel}:</strong> ${data.email}</p>
+      <p><strong>${translations.adminMessageLabel}:</strong></p>
       <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
         ${data.message.replace(/\n/g, "<br>")}
       </p>
       <hr>
-      <p><em>Sent from Desi4Fit Personal Trainer Website</em></p>
+      <p><em>${translations.adminFooter}</em></p>
     `,
   });
   console.log("✅ Admin notification email sent via Resend");
@@ -79,18 +102,18 @@ const sendWithResend = async (data: EmailData): Promise<void> => {
     await resend.emails.send({
       from: process.env.EMAIL_FROM || "Desi4Fit <noreply@desi4fit.nl>",
       to: data.email,
-      subject: "Bedankt voor je bericht - Desi4Fit",
+      subject: translations.autoReplySubject,
       html: `
-        <h2>Bedankt voor je bericht!</h2>
-        <p>Hallo ${data.name},</p>
-        <p>Bedankt voor je interesse in Desi4Fit! We hebben je bericht ontvangen en nemen zo snel mogelijk contact met je op.</p>
-        <p><strong>Jouw bericht:</strong></p>
+        <h2>${translations.autoReplyTitle}</h2>
+        <p>${translations.autoReplyGreeting} ${data.name},</p>
+        <p>${translations.autoReplyThankYou}</p>
+        <p><strong>${translations.autoReplyYourMessage}:</strong></p>
         <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
           ${data.message.replace(/\n/g, "<br>")}
         </p>
-        <p>Met vriendelijke groet,<br>Het Desi4Fit Team</p>
+        <p>${translations.autoReplyClosing}<br>${translations.autoReplyTeam}</p>
         <hr>
-        <p style="color: #666; font-size: 0.9em;"><em>Dit is een automatische bevestiging. Gelieve niet te antwoorden op deze email.</em></p>
+        <p style="color: #666; font-size: 0.9em;"><em>${translations.autoReplyDisclaimer}</em></p>
       `,
     });
     console.log("✅ Auto-reply email sent via Resend");
@@ -98,24 +121,27 @@ const sendWithResend = async (data: EmailData): Promise<void> => {
 };
 
 // Send emails using Gmail (fallback method)
-const sendWithGmail = async (data: EmailData): Promise<void> => {
+const sendWithGmail = async (
+  data: EmailData,
+  translations: EmailTranslations
+): Promise<void> => {
   const transporter = createTransporter();
 
   // Email to admin
   const adminMailOptions = {
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
-    subject: `New Contact Form Submission from ${data.name}`,
+    subject: `${translations.adminSubject} ${data.name}`,
     html: `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${data.name}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
-      <p><strong>Message:</strong></p>
+      <h2>${translations.adminTitle}</h2>
+      <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
+      <p><strong>${translations.adminEmailLabel}:</strong> ${data.email}</p>
+      <p><strong>${translations.adminMessageLabel}:</strong></p>
       <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
         ${data.message.replace(/\n/g, "<br>")}
       </p>
       <hr>
-      <p><em>Sent from Desi4Fit Personal Trainer Website</em></p>
+      <p><em>${translations.adminFooter}</em></p>
     `,
   };
 
@@ -127,18 +153,18 @@ const sendWithGmail = async (data: EmailData): Promise<void> => {
     const autoReplyOptions = {
       from: process.env.EMAIL_FROM,
       to: data.email,
-      subject: "Bedankt voor je bericht - Desi4Fit",
+      subject: translations.autoReplySubject,
       html: `
-        <h2>Bedankt voor je bericht!</h2>
-        <p>Hallo ${data.name},</p>
-        <p>Bedankt voor je interesse in Desi4Fit! We hebben je bericht ontvangen en nemen zo snel mogelijk contact met je op.</p>
-        <p><strong>Jouw bericht:</strong></p>
+        <h2>${translations.autoReplyTitle}</h2>
+        <p>${translations.autoReplyGreeting} ${data.name},</p>
+        <p>${translations.autoReplyThankYou}</p>
+        <p><strong>${translations.autoReplyYourMessage}:</strong></p>
         <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
           ${data.message.replace(/\n/g, "<br>")}
         </p>
-        <p>Met vriendelijke groet,<br>Het Desi4Fit Team</p>
+        <p>${translations.autoReplyClosing}<br>${translations.autoReplyTeam}</p>
         <hr>
-        <p style="color: #666; font-size: 0.9em;"><em>Dit is een automatische bevestiging. Gelieve niet te antwoorden op deze email.</em></p>
+        <p style="color: #666; font-size: 0.9em;"><em>${translations.autoReplyDisclaimer}</em></p>
       `,
     };
 

@@ -1,5 +1,5 @@
 import { query } from "@/utils/database";
-import { sendContactEmail } from "@/utils/emailService";
+import { sendContactEmail, type EmailTranslations } from "@/utils/emailService";
 
 // Simple contact form handler - database first approach
 export interface ContactFormData {
@@ -9,7 +9,8 @@ export interface ContactFormData {
 }
 
 export const handleContactSubmission = async (
-  data: ContactFormData
+  data: ContactFormData,
+  emailTranslations: EmailTranslations
 ): Promise<void> => {
   console.log("📝 Processing contact form submission");
   console.log("Name:", data.name);
@@ -36,7 +37,7 @@ export const handleContactSubmission = async (
     });
 
     // Send email notification asynchronously (non-blocking)
-    sendContactEmail(data)
+    sendContactEmail(data, emailTranslations)
       .then(() => {
         console.log("📧 Email notification sent successfully!");
       })

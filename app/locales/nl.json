@@ -105,5 +105,21 @@
   },
   "footer": {
     "copyright": "© 2025 Desi4Fit"
+  },
+  "email": {
+    "adminSubject": "Nieuw contactformulier van",
+    "adminTitle": "Nieuw contactformulier inzending",
+    "adminNameLabel": "Naam",
+    "adminEmailLabel": "E-mail",
+    "adminMessageLabel": "Bericht",
+    "adminFooter": "Verzonden vanaf Desi4Fit Personal Trainer Website",
+    "autoReplySubject": "Bedankt voor je bericht - Desi4Fit",
+    "autoReplyTitle": "Bedankt voor je bericht!",
+    "autoReplyGreeting": "Hallo",
+    "autoReplyThankYou": "Bedankt voor je interesse in Desi4Fit! We hebben je bericht ontvangen en nemen zo snel mogelijk contact met je op.",
+    "autoReplyYourMessage": "Jouw bericht",
+    "autoReplyClosing": "Met vriendelijke groet,",
+    "autoReplyTeam": "Het Desi4Fit Team",
+    "autoReplyDisclaimer": "Dit is een automatische bevestiging. Gelieve niet te antwoorden op deze email."
   }
 }

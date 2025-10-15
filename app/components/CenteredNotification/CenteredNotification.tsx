@@ -86,13 +86,13 @@ const styles = stylex.create({
     },
   },
   successNotification: {
-    backgroundColor: "rgba(76, 175, 80, 0.05)",
-    borderColor: "rgba(76, 175, 80, 0.8)",
+    backgroundColor: "rgba(76, 175, 80, 0.15)",
+    borderColor: "rgba(76, 175, 80, 0.9)",
   },
 
   errorNotification: {
-    backgroundColor: "rgba(244, 67, 54, 0.05)",
-    borderColor: "rgba(244, 67, 54, 0.8)",
+    backgroundColor: "rgba(244, 67, 54, 0.15)",
+    borderColor: "rgba(244, 67, 54, 0.9)",
   },
 
   message: {
