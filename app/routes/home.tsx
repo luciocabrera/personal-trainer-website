@@ -3,6 +3,7 @@ import { useLocation, useActionData } from "react-router";
 import type { ActionFunctionArgs } from "react-router";
 import { HeroSection } from "@/components/HeroSection";
 import { TrainingsSection } from "@/components/TrainingsSection";
+import { OutdoorBenefitsSection } from "@/components/OutdoorBenefitsSection";
 import { ScheduleSection } from "@/components/ScheduleSection";
 import { PricingSection } from "@/components/PricingSection";
 import { SignupSection } from "@/components/SignupSection";
@@ -132,6 +133,7 @@ export default function Home() {
     <>
       <HeroSection />
       <TrainingsSection />
+      <OutdoorBenefitsSection />
       <ScheduleSection />
       <PricingSection />
       <SignupSection />

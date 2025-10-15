@@ -30,6 +30,29 @@
       "imageAlt": "Entrenamiento al aire libre en grupo pequeño"
     }
   },
+  "outdoorBenefits": {
+    "title": "¿Por Qué Entrenar al Aire Libre? 🌳",
+    "subtitle": "El entrenamiento al aire libre ofrece beneficios únicos que no encontrarás en ningún gimnasio. ¡Descubre por qué el aire fresco y la naturaleza hacen tu entrenamiento aún más efectivo!",
+    "imageAlt": "Entrenamiento al aire libre en la naturaleza",
+    "benefits": {
+      "nature": {
+        "title": "Conexión con la Naturaleza",
+        "description": "Entrenar al aire libre mejora tu estado de ánimo y reduce el estrés. La naturaleza proporciona un ambiente relajante que te ayuda a concentrarte mejor en tu entrenamiento."
+      },
+      "vitamin": {
+        "title": "Vitamina D Natural",
+        "description": "¡La luz solar es tu fuente gratuita de vitamina D! Esencial para huesos fuertes, un sistema inmunológico saludable y mejores niveles de energía durante el día."
+      },
+      "mental": {
+        "title": "Claridad Mental",
+        "description": "El ejercicio al aire libre mejora tu salud mental, aumenta la concentración y te da más energía. ¡La combinación perfecta de entrenamiento físico y mental!"
+      },
+      "variety": {
+        "title": "Variedad Infinita",
+        "description": "¡Cada sesión al aire libre es única! Usa elementos naturales como bancos, escaleras y terreno irregular para un entrenamiento funcional que desafía todo tu cuerpo."
+      }
+    }
+  },
   "schedule": {
     "title": "El Horario",
     "subtitle": "Horario de Entrenamiento en Grupo Pequeño",

@@ -30,6 +30,29 @@
       "imageAlt": "Small group outdoor training"
     }
   },
+  "outdoorBenefits": {
+    "title": "Why Train Outdoors? 🌳",
+    "subtitle": "Training outside offers unique benefits you won't find in a gym. Discover why fresh air and nature make your workout even more effective!",
+    "imageAlt": "Outdoor training in nature",
+    "benefits": {
+      "nature": {
+        "title": "Connect with Nature",
+        "description": "Training in the fresh air improves your mood and reduces stress. Nature provides a calming environment that helps you focus better on your workout."
+      },
+      "vitamin": {
+        "title": "Natural Vitamin D",
+        "description": "Sunlight is your free source of vitamin D! Essential for strong bones, a healthy immune system, and better energy levels throughout the day."
+      },
+      "mental": {
+        "title": "Mental Clarity",
+        "description": "Outdoor exercise boosts your mental health, improves concentration, and gives you more energy. The perfect combination of physical and mental training!"
+      },
+      "variety": {
+        "title": "Endless Variety",
+        "description": "Every outdoor session is unique! Use natural elements like benches, stairs, and uneven terrain for functional training that challenges your whole body."
+      }
+    }
+  },
   "schedule": {
     "title": "The Schedule",
     "subtitle": "Small Group Training Schedule",

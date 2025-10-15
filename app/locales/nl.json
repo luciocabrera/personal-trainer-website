@@ -30,6 +30,29 @@
       "imageAlt": "Kleine groep outdoor training"
     }
   },
+  "outdoorBenefits": {
+    "title": "Waarom Buiten Trainen? 🌳",
+    "subtitle": "Buitentraining biedt unieke voordelen die je in geen enkele sportschool vindt. Ontdek waarom frisse lucht en natuur je workout nóg effectiever maken!",
+    "imageAlt": "Outdoor training in de natuur",
+    "benefits": {
+      "nature": {
+        "title": "Verbinding met de Natuur",
+        "description": "Trainen in de buitenlucht verbetert je humeur en vermindert stress. De natuur geeft een rustgevende omgeving waardoor je beter kunt focussen op je workout."
+      },
+      "vitamin": {
+        "title": "Natuurlijke Vitamine D",
+        "description": "Zonlicht is je gratis bron van vitamine D! Essentieel voor sterke botten, een gezond immuunsysteem en meer energie gedurende de dag."
+      },
+      "mental": {
+        "title": "Mentale Helderheid",
+        "description": "Outdoor sporten boost je mentale gezondheid, verbetert je concentratie en geeft je meer energie. De perfecte combinatie van fysieke en mentale training!"
+      },
+      "variety": {
+        "title": "Eindeloze Variatie",
+        "description": "Elke outdoor sessie is uniek! Gebruik natuurlijke elementen zoals bankjes, trappen en oneffen terrein voor functionele training die je hele lichaam uitdaagt."
+      }
+    }
+  },
   "schedule": {
     "title": "Het Rooster",
     "subtitle": "Small Group Training Rooster",
