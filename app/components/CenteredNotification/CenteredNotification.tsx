@@ -86,7 +86,7 @@ const styles = stylex.create({
     },
   },
   successNotification: {
-    backgroundColor: "rgba(76, 175, 80, 0.25)",
+    backgroundColor: "rgba(245, 247, 248, 1)",
     borderColor: "rgba(76, 175, 80, 1)",
   },
 
