@@ -53,6 +53,15 @@ const HeaderSection = () => {
             <button
               role="menuitem"
               {...stylex.props(styles.menuLink)}
+              onClick={() => handleMenuClick("outdoor-benefits")}
+            >
+              {t("nav.outdoorBenefits")}
+            </button>
+          </li>
+          <li role="none">
+            <button
+              role="menuitem"
+              {...stylex.props(styles.menuLink)}
               onClick={() => handleMenuClick("schedule")}
             >
               {t("nav.schedule")}
@@ -217,6 +226,15 @@ const HeaderSection = () => {
                   onClick={() => handleMenuClick("trainings")}
                 >
                   {t("nav.trainings")}
+                </button>
+              </li>
+              <li role="none">
+                <button
+                  role="menuitem"
+                  {...stylex.props(styles.mobileMenuLink)}
+                  onClick={() => handleMenuClick("outdoor-benefits")}
+                >
+                  {t("nav.outdoorBenefits")}
                 </button>
               </li>
               <li role="none">

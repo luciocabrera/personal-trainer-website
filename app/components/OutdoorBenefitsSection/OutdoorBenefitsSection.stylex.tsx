@@ -79,7 +79,8 @@ export const styles = stylex.create({
   },
 
   benefitCard: {
-    background: "linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1))",
+    background:
+      "linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1))",
     borderRadius: "12px",
     padding: "1.5rem",
     border: "1px solid rgba(78, 205, 196, 0.2)",
