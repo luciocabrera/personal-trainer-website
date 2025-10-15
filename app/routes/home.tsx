@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { useEffect, useState } from "react";
+import { useLocation, useActionData } from "react-router";
 import type { ActionFunctionArgs } from "react-router";
 import { HeroSection } from "@/components/HeroSection";
 import { TrainingsSection } from "@/components/TrainingsSection";
 import { ScheduleSection } from "@/components/ScheduleSection";
 import { PricingSection } from "@/components/PricingSection";
 import { SignupSection } from "@/components/SignupSection";
+import CenteredNotification from "@/components/CenteredNotification/CenteredNotification";
+import Confetti from "@/components/Confetti/Confetti";
 import { handleContactSubmission } from "@/services/contactService";
 import {
   getServerTranslation,
@@ -71,6 +73,11 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Home() {
   const location = useLocation();
+  const actionData = useActionData() as
+    | { success?: boolean; message?: string; error?: string }
+    | undefined;
+
+  const [notificationDismissed, setNotificationDismissed] = useState(false);
 
   // Smooth scroll to section based on hash
   useEffect(() => {
@@ -93,6 +100,13 @@ export default function Home() {
     return () => clearTimeout(timeoutId);
   }, [location.hash]);
 
+  const handleCloseNotification = () => {
+    setNotificationDismissed(true);
+  };
+
+  // Show notification if we have actionData and it hasn't been dismissed
+  const showNotification = actionData && !notificationDismissed;
+
   return (
     <>
       <HeroSection />
@@ -100,6 +114,21 @@ export default function Home() {
       <ScheduleSection />
       <PricingSection />
       <SignupSection />
+
+      {/* Centered Success/Error Notification */}
+      {showNotification && (
+        <CenteredNotification
+          message={actionData.success ? actionData.message! : actionData.error!}
+          type={actionData.success ? "success" : "error"}
+          isVisible={Boolean(showNotification)}
+          onClose={handleCloseNotification}
+          autoHide={true}
+          autoHideDelay={actionData.success ? 10000 : 6000}
+        />
+      )}
+
+      {/* Confetti for successful submissions */}
+      {showNotification && actionData?.success && <Confetti isActive={true} />}
     </>
   );
 }

@@ -5,8 +5,6 @@ import * as stylex from "@stylexjs/stylex";
 import { SignupIcon, EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./SignupSection.stylex";
 import { BRAND } from "@/constants/brand";
-import EnhancedMessage from "@/components/EnhancedMessage/EnhancedMessage";
-import Confetti from "@/components/Confetti/Confetti";
 
 const SignupSection = () => {
   const { t } = useTranslation();
@@ -15,9 +13,6 @@ const SignupSection = () => {
     | undefined;
   const navigation = useNavigation();
   const formRef = useRef<HTMLFormElement>(null);
-
-  // Show success/error message when form is submitted
-  const showMessage = Boolean(actionData);
 
   // Check if form is being submitted
   const isSubmitting = navigation.state === "submitting";
@@ -50,22 +45,6 @@ const SignupSection = () => {
       </div>
 
       <div {...stylex.props(styles.signupForm, styles.signupFormMobile)}>
-        {/* Success/Error Messages with Confetti - Show at top of form area */}
-        {showMessage && actionData && (
-          <>
-            <EnhancedMessage
-              message={
-                actionData.success ? actionData.message! : actionData.error!
-              }
-              type={actionData.success ? "success" : "error"}
-              autoHide={true}
-              autoHideDelay={actionData.success ? 10000 : 6000}
-              showAtTop={actionData.success} // Enhanced styling for success messages
-            />
-            <Confetti isActive={Boolean(actionData.success)} />
-          </>
-        )}
-
         <p>{t("signup.signupNow")}</p>
         <p>{t("signup.nice")}</p>
 
