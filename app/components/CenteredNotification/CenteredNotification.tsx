@@ -86,13 +86,13 @@ const styles = stylex.create({
     },
   },
   successNotification: {
-    backgroundColor: "rgba(76, 175, 80, 0.15)",
-    borderColor: "rgba(76, 175, 80, 0.9)",
+    backgroundColor: "rgba(76, 175, 80, 0.25)",
+    borderColor: "rgba(76, 175, 80, 1)",
   },
 
   errorNotification: {
-    backgroundColor: "rgba(244, 67, 54, 0.15)",
-    borderColor: "rgba(244, 67, 54, 0.9)",
+    backgroundColor: "rgba(244, 67, 54, 0.25)",
+    borderColor: "rgba(244, 67, 54, 1)",
   },
 
   message: {
@@ -121,21 +121,24 @@ const styles = stylex.create({
   },
 
   closeButton: {
-    backgroundColor: "#4ecdc4",
+    background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
     color: "white",
     border: "none",
-    borderRadius: "6px",
-    padding: "0.75rem 1.5rem",
+    borderRadius: "25px",
+    padding: "0.8rem 1.5rem",
     fontSize: "1rem",
-    fontWeight: "600",
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    letterSpacing: "1px",
     cursor: "pointer",
     transition: "all 0.3s ease",
     minWidth: "100px",
+    boxShadow: "0 4px 15px rgba(255, 107, 107, 0.4)",
 
     ":hover": {
-      backgroundColor: "#26a69a",
-      transform: "translateY(-1px)",
-      boxShadow: "0 4px 12px rgba(78, 205, 196, 0.4)",
+      background: "linear-gradient(135deg, #ff5252, #26a69a)",
+      transform: "translateY(-2px)",
+      boxShadow: "0 8px 25px rgba(255, 107, 107, 0.6)",
     },
 
     ":active": {
@@ -143,18 +146,20 @@ const styles = stylex.create({
     },
 
     "@media (max-width: 480px)": {
-      padding: "0.625rem 1.25rem",
+      padding: "0.7rem 1.25rem",
       fontSize: "0.9rem",
       minWidth: "80px",
+      letterSpacing: "0.5px",
     },
   },
 
   errorCloseButton: {
-    backgroundColor: "#f44336",
+    background: "linear-gradient(135deg, #f44336, #ff6b6b)",
+    boxShadow: "0 4px 15px rgba(244, 67, 54, 0.4)",
 
     ":hover": {
-      backgroundColor: "#d32f2f",
-      boxShadow: "0 4px 12px rgba(244, 67, 54, 0.4)",
+      background: "linear-gradient(135deg, #d32f2f, #ff5252)",
+      boxShadow: "0 8px 25px rgba(244, 67, 54, 0.6)",
     },
   },
 
