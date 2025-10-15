@@ -3,6 +3,7 @@ import * as stylex from "@stylexjs/stylex";
 import { EmailIcon, InstagramIcon } from "@/components/Icons";
 import { styles } from "./FooterSection.stylex";
 import { BRAND } from "@/constants/brand";
+import packageJson from "../../../package.json";
 
 const FooterSection = () => {
   const { t } = useTranslation();
@@ -30,7 +31,10 @@ const FooterSection = () => {
             {BRAND.instagram.handle}
           </a>
         </div>
-        <p>{t("footer.copyright")}</p>
+        <div {...stylex.props(styles.footerBottom)}>
+          <p>{t("footer.copyright")}</p>
+          <p {...stylex.props(styles.version)}>v{packageJson.version}</p>
+        </div>
       </div>
     </footer>
   );

@@ -60,4 +60,28 @@ export const styles = stylex.create({
       padding: "0.4rem 0.8rem",
     },
   },
+
+  footerBottom: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "1rem",
+    flexWrap: "wrap",
+
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+      gap: "0.25rem",
+    },
+  },
+
+  version: {
+    fontSize: "0.7rem",
+    opacity: 0.6,
+    fontFamily: "monospace",
+    margin: 0,
+
+    "@media (max-width: 768px)": {
+      fontSize: "0.65rem",
+    },
+  },
 });

@@ -107,19 +107,19 @@
     "copyright": "© 2025 Desi4Fit"
   },
   "email": {
-    "adminSubject": "Nuevo formulario de contacto de",
-    "adminTitle": "Nueva Solicitud de Formulario de Contacto",
-    "adminNameLabel": "Nombre",
-    "adminEmailLabel": "Correo electrónico",
-    "adminMessageLabel": "Mensaje",
-    "adminFooter": "Enviado desde el sitio web de Desi4Fit Personal Trainer",
-    "autoReplySubject": "Gracias por tu mensaje - Desi4Fit",
-    "autoReplyTitle": "¡Gracias por tu mensaje!",
-    "autoReplyGreeting": "Hola",
-    "autoReplyThankYou": "¡Gracias por tu interés en Desi4Fit! Hemos recibido tu mensaje y te contactaremos lo antes posible.",
-    "autoReplyYourMessage": "Tu mensaje",
-    "autoReplyClosing": "Saludos cordiales,",
-    "autoReplyTeam": "El Equipo Desi4Fit",
-    "autoReplyDisclaimer": "Esta es una confirmación automática. Por favor no respondas a este correo."
+    "adminSubject": "🏋️‍♂️ Nuevo formulario de contacto de",
+    "adminTitle": "📩 Nueva Solicitud de Formulario de Contacto",
+    "adminNameLabel": "👤 Nombre",
+    "adminEmailLabel": "📧 Correo electrónico",
+    "adminMessageLabel": "💬 Mensaje",
+    "adminFooter": "🌟 Enviado desde el sitio web de Desi4Fit Personal Trainer",
+    "autoReplySubject": "🙏 Gracias por tu mensaje - Desi4Fit",
+    "autoReplyTitle": "🎉 ¡Gracias por tu mensaje!",
+    "autoReplyGreeting": "👋 Hola",
+    "autoReplyThankYou": "💪 ¡Gracias por tu interés en Desi4Fit! Hemos recibido tu mensaje y te contactaremos lo antes posible.",
+    "autoReplyYourMessage": "📝 Tu mensaje",
+    "autoReplyClosing": "🤝 Saludos cordiales,",
+    "autoReplyTeam": "🏆 El Equipo Desi4Fit",
+    "autoReplyDisclaimer": "🤖 Esta es una confirmación automática. Por favor no respondas a este correo."
   }
 }
