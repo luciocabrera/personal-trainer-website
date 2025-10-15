@@ -42,6 +42,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
         <meta property="og:description" content={BRAND.description} />
         <meta property="og:image" content={`${BRAND.url}/og-image.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta
           property="og:image:alt"
           content={`${BRAND.name} - Outdoor fitness training session`}
