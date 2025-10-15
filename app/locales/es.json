@@ -10,23 +10,23 @@
     "title": "ENTRENAMIENTOS AL AIRE LIBRE",
     "subtitle": "DESI4FIT",
     "tagline": "FUERZA - CONDICIÓN",
-    "description": "¿Quieres participar en entrenamiento en grupo pequeño con entrenamiento de fuerza y cardio, teniendo en cuenta las capacidades y lesiones de cada uno? ¡Efectivo, accesible y amigable! Gracias a la cubierta de la estación, el entrenamiento continúa incluso con mal tiempo."
+    "description": "¿Listo para un nuevo comienzo? ¡Únete a nuestro entrenamiento en grupo pequeño y experimenta la mezcla perfecta de entrenamiento de fuerza y cardio! Nos adaptamos al nivel y lesiones de cada uno, para que puedas entrenar de forma segura y efectiva. ¡Accesible, divertido y orientado a resultados! Llueva o haga sol - gracias a la cubierta de la estación, entrenamos con cualquier clima! ☀️🌧️"
   },
   "trainings": {
     "title": "¿Cuál entrenamiento te conviene?",
     "level1": {
       "title": "Entrenamiento Personal",
-      "desc": "Sesiones de entrenamiento personalizadas uno a uno adaptadas a tus objetivos específicos y nivel de fitness. Obtén máxima atención y los resultados más rápidos con entrenamientos personalizados. Duración: 60 minutos",
+      "desc": "¡Tus metas, tu ritmo, tu éxito! Disfruta de sesiones exclusivas uno a uno completamente adaptadas a tus deseos y nivel de fitness. Con máxima atención personal y entrenamientos personalizados, alcanzarás tus objetivos más rápido que nunca. Duración: ¡60 minutos de puro enfoque en ti! 💪",
       "imageAlt": "Sesión de entrenamiento personal"
     },
     "level2": {
       "title": "Entrenamiento en Dúo",
-      "desc": "Entrena junto con un amigo, pareja o familiar. Comparte la motivación mientras recibes atención personalizada de tu entrenador. Perfecto para parejas o compañeros de entrenamiento. Duración: 60 minutos",
+      "desc": "¡Más fuertes juntos! Entrena con tu amigo, pareja o familiar y convierte el fitness en una experiencia compartida. Comparte la motivación, celebra las victorias juntos, mientras recibes atención personal de tu entrenador. ¡Perfecto para parejas, amigos o compañeros de entrenamiento que les encanta motivarse mutuamente! Duración: ¡60 minutos poniéndose en forma juntos! 🤜🤛",
       "imageAlt": "Sesión de entrenamiento en dúo con dos personas"
     },
     "level3": {
       "title": "Entrenamiento en Grupo Pequeño",
-      "desc": "Únete a un grupo pequeño de 3-10 personas para entrenamientos dinámicos y energéticos al aire libre. Experimenta el poder de la motivación grupal manteniendo instrucción de calidad. Duración: 60 minutos",
+      "desc": "¡Siente la energía! Únete a un grupo unido de 3-10 atletas entusiastas para entrenamientos outdoor dinámicos llenos de energía. Descubre el poder de la motivación grupal mientras te beneficias de instrucción de calidad en un entorno personal. ¡Entrenar juntos, crecer juntos! Duración: ¡60 minutos de poder grupal! 🔥",
       "imageAlt": "Entrenamiento al aire libre en grupo pequeño"
     }
   },
@@ -65,19 +65,19 @@
   "pricing": {
     "title": "¿Cómo te unes?",
     "strip10": {
-      "title": "Tarjeta de tiras 10",
-      "desc": "Regístrate y usa una tarjeta de tiras para 10 lecciones. Precio: €135",
+      "title": "Pase de 10 Sesiones",
+      "desc": "¡Flexible y económico! Compra un pase para 10 sesiones y entrena cuando te convenga. Perfecto para quienes quieren ejercitarse regularmente sin compromisos fijos. Precio: €135 - ¡eso es solo €13,50 por sesión! 🎯",
       "disclaimer": "Válido por 6 meses después de la compra"
     },
     "single": {
-      "title": "Lección individual",
-      "desc": "Una lección individual cuesta €15"
+      "title": "Sesión Individual",
+      "desc": "¿Quieres probarnos primero? ¡Únete a una sesión individual por solo €15 y descubre si Desi4Fit es para ti! 🌟"
     }
   },
   "signup": {
-    "title": "¿Registrarse? ¿Preguntas?",
+    "title": "¿Listo para Comenzar? 🚀",
     "signupNow": "Regístrate ahora",
-    "nice": "¡Genial que quieras registrarte! Puedes hacerlo a través del formulario a continuación",
+    "nice": "¡Qué bueno que te interesa! Completa el formulario y te contactaremos pronto. ¡Sin compromisos, solo conocernos! 😊",
     "questions": "¿Preguntas?",
     "email": "desi4fit@gmail.com",
     "instagram": "@desi4fit",

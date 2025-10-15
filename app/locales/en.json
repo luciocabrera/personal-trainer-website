@@ -9,24 +9,24 @@
   "hero": {
     "title": "OUTDOOR TRAININGS",
     "subtitle": "DESI4FIT",
-    "tagline": "STRENGTH - CONDITION ",
-    "description": "Do you want to join small group training with strength training and cardio while taking into account everyone's abilities and injuries? Effective, accessible and friendly! Thanks to the station's covered area, training continues even in bad weather."
+    "tagline": "STRENGTH - CONDITION",
+    "description": "Ready for a fresh start? Join our small group training and experience the perfect blend of strength training and cardio! We adapt to everyone's level and injuries, so you can train safely and effectively. Accessible, fun, and results-driven! Rain or shine - thanks to the station's covered area, we train in all weather! ☀️🌧️"
   },
   "trainings": {
     "title": "Which training suits you?",
     "level1": {
       "title": "Personal Training",
-      "desc": "One-on-one personalized training sessions tailored to your specific goals and fitness level. Get maximum attention and fastest results with customized workouts. Duration: 60 minutes",
+      "desc": "Your goals, your pace, your success! Enjoy exclusive one-on-one training sessions completely tailored to your wishes and fitness level. With maximum personal attention and customized workouts, you'll reach your goals faster than ever. Duration: 60 minutes of pure focus on you! 💪",
       "imageAlt": "Personal training session"
     },
     "level2": {
       "title": "Duo Training",
-      "desc": "Train together with a friend, partner, or family member. Share the motivation while still receiving personalized attention from your trainer. Perfect for couples or workout buddies. Duration: 60 minutes",
+      "desc": "Stronger together! Train with your friend, partner, or family member and make fitness a shared experience. Share the motivation, celebrate victories together, while still receiving personal attention from your trainer. Perfect for couples, friends, or workout buddies who love to push each other! Duration: 60 minutes getting fit together! 🤜🤛",
       "imageAlt": "Duo training session with two people"
     },
     "level3": {
       "title": "Small Group Training",
-      "desc": "Join a small group of 3-10 people for dynamic and energetic outdoor workouts. Experience the power of group motivation while maintaining quality instruction. Duration: 60 minutes",
+      "desc": "Feel the energy! Join a close-knit group of 3-10 enthusiastic athletes for dynamic outdoor workouts full of energy. Discover the power of group motivation while benefiting from quality instruction in a personal setting. Train together, grow together! Duration: 60 minutes of group power! 🔥",
       "imageAlt": "Small group outdoor training"
     }
   },
@@ -65,19 +65,19 @@
   "pricing": {
     "title": "How do you join?",
     "strip10": {
-      "title": "Strip card 10",
-      "desc": "Sign up and use a strip card for 10 lessons. Price: €135",
+      "title": "10-Session Pass",
+      "desc": "Flexible and affordable! Buy a pass for 10 sessions and train whenever it suits you. Perfect for those who want to exercise regularly without fixed commitments. Price: €135 - that's only €13.50 per session! 🎯",
       "disclaimer": "Valid for 6 months after purchase"
     },
     "single": {
-      "title": "Single lesson",
-      "desc": "A single lesson costs €15"
+      "title": "Single Session",
+      "desc": "Want to try us out first? Join a single session for only €15 and discover if Desi4Fit is right for you! 🌟"
     }
   },
   "signup": {
-    "title": "Sign up? Questions?",
+    "title": "Ready to Start? 🚀",
     "signupNow": "Sign up now",
-    "nice": "Nice that you want to sign up! You can do this via the form below",
+    "nice": "Great that you're interested! Fill in the form and we'll get back to you soon. No commitments, just getting to know each other! 😊",
     "questions": "Questions?",
     "email": "desi4fit@gmail.com",
     "instagram": "@desi4fit",

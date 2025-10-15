@@ -10,23 +10,23 @@
     "title": "OUTDOOR TRAININGEN",
     "subtitle": "DESI4FIT",
     "tagline": "KRACHT - CONDITIE",
-    "description": "Wil je mee doen aan small group training met krachttraining en een stukje conditie en hou daarbij rekening met ieders kunnen en blessures. Effectief, laagdrempelig en gezellig! Door de overkapping van het station gaat dit altijd door, ook bij slecht weer."
+    "description": "Klaar voor een frisse start? Doe mee met onze small group training en ervaar de perfecte mix van krachttraining en conditie! We houden rekening met ieders niveau en blessures, zodat jij veilig kunt trainen. Effectief, laagdrempelig én gezellig! En geen zorgen over het weer - dankzij de overkapping van het station trainen we altijd, kom regen of zonneschijn! ☀️🌧️"
   },
   "trainings": {
     "title": "Welke training past bij jou?",
     "level1": {
       "title": "Personal Training",
-      "desc": "Eén-op-één gepersonaliseerde trainingen op maat van jouw specifieke doelen en fitnessniveau. Krijg maximale aandacht en de snelste resultaten met maatwerk workouts. Duur: 60 minuten",
+      "desc": "Jouw doelen, jouw tempo, jouw succes! Geniet van exclusieve één-op-één trainingen die volledig zijn afgestemd op jouw wensen en fitnessniveau. Met maximale persoonlijke aandacht en maatwerk workouts bereik je jouw doelen sneller dan ooit. Duur: 60 minuten van pure focus op jou! 💪",
       "imageAlt": "Personal training sessie"
     },
     "level2": {
       "title": "Duo Training",
-      "desc": "Train samen met een vriend, partner of familielid. Deel de motivatie terwijl je nog steeds persoonlijke aandacht krijgt van je trainer. Perfect voor koppels of workout buddies. Duur: 60 minuten",
+      "desc": "Samen sterker! Train met je vriend, partner of familielid en maak fitness een gezamenlijke ervaring. Deel de motivatie, vier samen de overwinningen, en ontvang toch persoonlijke aandacht van je trainer. Perfect voor koppels, vrienden of workout buddies die elkaar graag pushen! Duur: 60 minuten samen fit worden! 🤜🤛",
       "imageAlt": "Duo training sessie met twee personen"
     },
     "level3": {
       "title": "Small Group Training",
-      "desc": "Sluit je aan bij een kleine groep van 3-10 personen voor dynamische en energieke outdoor workouts. Ervaar de kracht van groepsmotivatie met behoud van kwaliteitsonderricht. Duur: 60 minuten",
+      "desc": "Voel de energie! Sluit je aan bij een hechte groep van 3-10 enthousiaste sporters voor dynamische outdoor workouts vol energie. Ontdek de kracht van groepsmotivatie terwijl je profiteert van kwaliteitsonderricht in een persoonlijke setting. Samen trainen, samen groeien! Duur: 60 minuten groepspower! 🔥",
       "imageAlt": "Kleine groep outdoor training"
     }
   },
@@ -65,19 +65,19 @@
   "pricing": {
     "title": "Hoe doe je mee?",
     "strip10": {
-      "title": "Strippenkaart 10",
-      "desc": "Meld je aan en gebruik een strippenkaart voor 10 lessen. Prijs: €135",
+      "title": "Strippenkaart 10 Lessen",
+      "desc": "Flexibel en voordelig! Koop een strippenkaart voor 10 lessen en train wanneer het jou uitkomt. Perfect voor wie regelmatig wil sporten zonder vaste verplichtingen. Prijs: €135 - dat is slechts €13,50 per les! 🎯",
       "disclaimer": "Geldig voor 6 maanden na aankoop"
     },
     "single": {
-      "title": "Losse les",
-      "desc": "Een losse les kost €15,-"
+      "title": "Losse Les",
+      "desc": "Wil je eerst even proeven? Doe mee aan een losse les voor slechts €15,- en ontdek of Desi4Fit bij jou past! 🌟"
     }
   },
   "signup": {
-    "title": "Aanmelden? Vragen?",
+    "title": "Klaar om te Beginnen? 🚀",
     "signupNow": "Meld je nu aan",
-    "nice": "Leuk dat je je wil aanmelden! Dat kan via onderstaand formulier",
+    "nice": "Wat leuk dat je interesse hebt! Vul het formulier in en we nemen snel contact met je op. Geen verplichtingen, gewoon kennismaken! 😊",
     "questions": "Vragen?",
     "email": "desi4fit@gmail.com",
     "instagram": "@desi4fit",
