@@ -2,7 +2,7 @@ export const BRAND = {
   name: "Desi4Fit",
   tagline: "Professionele outdoor personal training in Den Haag",
   description:
-    "Professionele outdoor personal training in Den Haag. Kleine groepen, alle weersomstandigheden. Kracht, conditie & flexibiliteit training.",
+    "Klaar voor jouw fitnessdoel? 🏋️‍♂️ Professionele outdoor personal training in Den Haag met kleine groepen. Train in alle weersomstandigheden dankzij onze overdekte locatie! Kracht, conditie en persoonlijke aandacht - dat is Desi4Fit! 💪",
   domain: "desi4fit.nl",
   url: "https://desi4fit.nl",
   email: "desi4fit@gmail.com",
