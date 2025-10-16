@@ -83,28 +83,29 @@ services:
       retries: 5
 
   # pgAdmin for database management (optional - comment out for production)
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: personal-trainer-pgadmin
-    restart: unless-stopped
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@personal-trainer.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
-      PGADMIN_CONFIG_SERVER_MODE: "False"
-      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
-    volumes:
-      - pgadmin_data:/var/lib/pgadmin
-      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
-    ports:
-      - "5050:80"
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - app-network
-    # Uncomment for production security
-    # profiles:
-    #   - tools
+  # Commented out to save resources - uncomment if needed for database management
+  # pgadmin:
+  #   image: dpage/pgadmin4:latest
+  #   container_name: personal-trainer-pgadmin
+  #   restart: unless-stopped
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@personal-trainer.com}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
+  #     PGADMIN_CONFIG_SERVER_MODE: "False"
+  #     PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+  #   volumes:
+  #     - pgadmin_data:/var/lib/pgadmin
+  #     - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+  #   ports:
+  #     - "5050:80"
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #   networks:
+  #     - app-network
+  #   # Uncomment for production security
+  #   # profiles:
+  #   #   - tools
 
   # Optional: Automatic SSL certificate management with Let's Encrypt
   certbot:
