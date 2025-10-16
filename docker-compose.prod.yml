@@ -1,5 +1,9 @@
 services:
   app:
+    # Use pre-built image from GitHub Container Registry (recommended)
+    # Build locally and push: docker build -t ghcr.io/luciocabrera/personal-trainer:latest . && docker push ghcr.io/luciocabrera/personal-trainer:latest
+    image: ghcr.io/luciocabrera/personal-trainer:latest
+    # Fallback to local build if image not available
     build: .
     container_name: personal-trainer-app
     restart: unless-stopped
