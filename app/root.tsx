@@ -26,7 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="description" content={BRAND.description} />
         <meta
           name="keywords"
-          content="personal training, outdoor training, fitness, Den Haag, Nederland, krachttraining, HIIT, ouder kind training, Voorburg, outdoor fitness, buitentraining"
+          content="personal training, outdoor training, fitness, Voorburg, Nederland, krachttraining, HIIT, ouder kind training, Voorburg, outdoor fitness, buitentraining"
         />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="Dutch" />
@@ -85,15 +85,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="manifest" href="/manifest.json" />
 
         {/* Resource hints for better performance */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://maps.googleapis.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" />
 
         {/* Preload critical resources - LCP Image with high priority */}
         <link
@@ -105,6 +100,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <Meta />
         <Links />
+
+        {/* Google Analytics */}
+        {import.meta.env.VITE_GA_MEASUREMENT_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.VITE_GA_MEASUREMENT_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${import.meta.env.VITE_GA_MEASUREMENT_ID}');
+            `,
+              }}
+            />
+          </>
+        )}
 
         {/* Structured Data for Local Business */}
         <script type="application/ld+json">
@@ -119,7 +134,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Verschillende outdoor locaties",
-              "addressLocality": "Den Haag",
+              "addressLocality": "Voorburg",
               "addressCountry": "Nederland"
             },
             "geo": {
@@ -136,7 +151,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             "priceRange": "€15-€240",
             "paymentAccepted": "Cash, Bank Transfer",
             "currenciesAccepted": "EUR",
-            "areaServed": "Den Haag, Nederland",
+            "areaServed": "Voorburg, Nederland",
             "serviceType": "Personal Training",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
