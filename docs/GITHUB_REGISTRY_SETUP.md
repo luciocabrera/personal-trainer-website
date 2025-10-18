@@ -1,6 +1,7 @@
 # GitHub Container Registry Setup Guide
 
 ## 🎯 Goal
+
 Build Docker images on your local machine (with more RAM) and deploy to production without building on the server.
 
 ---
@@ -33,6 +34,7 @@ docker login ghcr.io -u luciocabrera
 ```
 
 **Test it worked:**
+
 ```bash
 docker pull ghcr.io/luciocabrera/test:latest 2>&1 | grep -q "pull access denied" && echo "✓ Login successful" || echo "Already logged in"
 ```
@@ -63,6 +65,7 @@ docker login ghcr.io -u luciocabrera --password-stdin < ~/.github-token
 The app service needs to use the pre-built image instead of building locally.
 
 **Option A: Use image (pull from registry)**
+
 ```yaml
 services:
   app:
@@ -72,11 +75,12 @@ services:
 ```
 
 **Option B: Support both (recommended)**
+
 ```yaml
 services:
   app:
     image: ghcr.io/luciocabrera/personal-trainer:latest
-    build: .  # Fallback to build if needed
+    build: . # Fallback to build if needed
     container_name: personal-trainer-app
     # ... rest of config stays the same
 ```
@@ -96,6 +100,7 @@ chmod +x deploy-with-registry.sh
 ```
 
 This script will:
+
 1. ✅ Build image locally
 2. ✅ Push to GitHub Container Registry
 3. ✅ SSH to server
@@ -108,6 +113,7 @@ This script will:
 ### **Method 2: Manual Steps** (If you want control)
 
 **On Local Machine:**
+
 ```bash
 cd /home/lcabrera/code/vibe/personal-trainer
 
@@ -119,6 +125,7 @@ docker push ghcr.io/luciocabrera/personal-trainer:latest
 ```
 
 **On Production Server:**
+
 ```bash
 # SSH to server
 ssh root@142.93.139.242
@@ -143,12 +150,12 @@ curl https://desi4fit.nl/sitemap.xml
 
 ## ✅ Benefits
 
-| Before (Build on Server) | After (Build Locally) |
-|--------------------------|----------------------|
-| ❌ Server freezes | ✅ No server strain |
-| ❌ 5-10 minutes | ✅ 1-2 minutes deployment |
-| ❌ High memory usage | ✅ Low memory usage |
-| ❌ Risk of crashes | ✅ Stable deployment |
+| Before (Build on Server) | After (Build Locally)     |
+| ------------------------ | ------------------------- |
+| ❌ Server freezes        | ✅ No server strain       |
+| ❌ 5-10 minutes          | ✅ 1-2 minutes deployment |
+| ❌ High memory usage     | ✅ Low memory usage       |
+| ❌ Risk of crashes       | ✅ Stable deployment      |
 
 ---
 
@@ -172,24 +179,28 @@ curl https://desi4fit.nl/sitemap.xml
 ## 🆘 Troubleshooting
 
 ### **"unauthorized: unauthenticated"**
+
 ```bash
 # Re-login
 docker login ghcr.io -u luciocabrera
 ```
 
 ### **"denied: permission_denied"**
+
 ```bash
 # Check token has write:packages scope
 # Create new token with correct permissions
 ```
 
 ### **"Cannot connect to Docker daemon"**
+
 ```bash
 # Make sure Docker is running
 sudo systemctl start docker
 ```
 
 ### **Server still builds instead of pulling**
+
 ```bash
 # Remove build context on server
 cd /root/personal-trainer
@@ -202,6 +213,7 @@ docker compose -f docker-compose.prod.yml up -d --no-build
 ## 📊 Quick Reference
 
 **Build & Deploy:**
+
 ```bash
 # One-liner for quick deployments
 docker build -t ghcr.io/luciocabrera/personal-trainer:latest . && \
@@ -212,6 +224,7 @@ ssh root@142.93.139.242 "cd /root/personal-trainer && \
 ```
 
 **View Images:**
+
 - Your packages: https://github.com/luciocabrera?tab=packages
 - Specific package: https://github.com/luciocabrera/personal-trainer/pkgs/container/personal-trainer
 

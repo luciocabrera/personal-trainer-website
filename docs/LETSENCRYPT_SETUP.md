@@ -26,9 +26,11 @@ This guide explains how to set up free, trusted SSL certificates using Let's Enc
 ### Step 1: Update Email in init-letsencrypt.sh
 
 Edit `init-letsencrypt.sh` and replace:
+
 ```bash
 email="your-email@example.com"
 ```
+
 with your actual email address (used for certificate expiry notifications).
 
 ### Step 2: Upload Files to Production Server
@@ -106,6 +108,7 @@ Certbot automatically renews certificates when they're within 30 days of expiry.
 ### Rate Limits Hit
 
 If you get rate limit errors, edit `init-letsencrypt.sh`:
+
 ```bash
 staging=1  # Enable staging mode for testing
 ```
@@ -153,7 +156,7 @@ docker compose up -d
 ✅ **NordVPN/security software compatible** - Won't be blocked  
 ✅ **Google SEO boost** - HTTPS is a ranking factor  
 ✅ **User trust** - Visitors see the padlock icon  
-✅ **Google Analytics working** - No security blocks  
+✅ **Google Analytics working** - No security blocks
 
 ## Next Steps After Setup
 
@@ -180,6 +183,7 @@ docker compose logs certbot --tail 100
 ## Support
 
 If you encounter issues:
+
 1. Check the troubleshooting section above
 2. Review Docker logs: `docker compose logs`
 3. Verify DNS: `nslookup desi4fit.nl`

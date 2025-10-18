@@ -9,6 +9,8 @@ WORKDIR /app
 RUN npm ci --omit=dev --legacy-peer-deps
 
 FROM node:24-alpine AS build-env
+ARG VITE_GA_MEASUREMENT_ID
+ENV VITE_GA_MEASUREMENT_ID=$VITE_GA_MEASUREMENT_ID
 COPY . /app/
 COPY --from=development-dependencies-env /app/node_modules /app/node_modules
 WORKDIR /app
