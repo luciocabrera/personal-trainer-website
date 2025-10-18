@@ -1,14 +1,16 @@
 services:
   app:
-    build: .
-    container_name: personal-trainer-app
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: personal-trainer-app-local
     restart: unless-stopped
     networks:
       - app-network
     env_file:
-      - .env
+      - ../.env
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - PORT=3000
       # Database Configuration
       - DATABASE_URL=postgresql://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin123}@postgres:5432/${POSTGRES_DB:-personal_trainer}
@@ -17,29 +19,19 @@ services:
       - POSTGRES_DB=${POSTGRES_DB:-personal_trainer}
       - POSTGRES_USER=${POSTGRES_USER:-admin}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-admin123}
-      # Email Configuration
-      - EMAIL_PROVIDER=${EMAIL_PROVIDER}
-      - GMAIL_USER=${GMAIL_USER}
-      - GMAIL_APP_PASSWORD="${GMAIL_APP_PASSWORD}"
-      - EMAIL_TO=${EMAIL_TO}
-      - EMAIL_FROM=${EMAIL_FROM}
-      - SEND_AUTO_REPLY=${SEND_AUTO_REPLY}
-    # Only expose to internal network, not to host
-    # ports:
-    #   - "3000:3000"
     depends_on:
       postgres:
         condition: service_healthy
 
   nginx:
     image: nginx:alpine
-    container_name: personal-trainer-nginx
+    container_name: personal-trainer-nginx-local
     restart: unless-stopped
     ports:
       - "80:80"
     volumes:
-      - ./nginx.local.conf:/etc/nginx/nginx.conf:ro
-      - ./logs/nginx:/var/log/nginx
+      - ../nginx/nginx-local.conf:/etc/nginx/nginx.conf:ro
+      - ../logs/nginx:/var/log/nginx
     depends_on:
       - app
     networks:
@@ -48,10 +40,8 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:18-alpine
-    container_name: personal-trainer-postgres
+    container_name: personal-trainer-postgres-local
     restart: unless-stopped
-    env_file:
-      - .env
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-personal_trainer}
       POSTGRES_USER: ${POSTGRES_USER:-admin}
@@ -59,7 +49,7 @@ services:
       POSTGRES_HOST_AUTH_METHOD: md5
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init-scripts:/docker-entrypoint-initdb.d
+      - ../init-scripts:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
@@ -77,12 +67,10 @@ services:
   # pgAdmin for database management
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: personal-trainer-pgadmin
+    container_name: personal-trainer-pgadmin-local
     restart: unless-stopped
-    env_file:
-      - .env
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGLADMIN_EMAIL:-admin@personal-trainer.com}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@personal-trainer.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
       PGADMIN_CONFIG_SERVER_MODE: "False"
       PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
@@ -97,25 +85,10 @@ services:
     networks:
       - app-network
 
-  # Optional: Automatic SSL certificate management with Let's Encrypt
-  certbot:
-    image: certbot/certbot
-    container_name: personal-trainer-certbot
-    volumes:
-      - ./ssl:/etc/letsencrypt
-      - ./logs/letsencrypt:/var/log/letsencrypt
-      - ./nginx/html:/var/www/html
-    # Run certbot manually or via cron
-    # Example: docker-compose run --rm certbot certonly --webroot -w /var/www/html -d yourdomain.com
-    profiles:
-      - tools
-
 networks:
   app-network:
     driver: bridge
 
 volumes:
-  ssl-certs:
-  nginx-logs:
   postgres_data:
   pgadmin_data:

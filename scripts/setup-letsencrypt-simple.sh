@@ -8,13 +8,11 @@ set -e
 echo "===== Let's Encrypt SSL Setup for desi4fit.nl ====="
 echo ""
 
-# Step 1: Use HTTP-only nginx configuration
-echo "Step 1: Switching to HTTP-only nginx configuration..."
-cp nginx.conf nginx.conf.backup
-cp nginx-http-only.conf nginx.conf
-docker compose restart nginx
-sleep 5
-echo "✓ Nginx now running in HTTP-only mode"
+# Step 1: Ensure nginx is running to serve HTTP challenge
+echo "Step 1: Ensuring nginx is running..."
+docker compose -f docker/docker-compose.prod.yml up -d nginx
+sleep 2
+echo "✓ Nginx running"
 echo ""
 
 # Step 2: Create certbot directories
@@ -36,7 +34,7 @@ echo ""
 
 # Step 4: Request Let's Encrypt certificate
 echo "Step 4: Requesting Let's Encrypt certificate..."
-docker compose run --rm certbot certonly --webroot \
+docker compose -f docker/docker-compose.prod.yml run --rm certbot certonly --webroot \
   -w /var/www/certbot \
   -d desi4fit.nl \
   -d www.desi4fit.nl \
@@ -50,29 +48,27 @@ if [ $? -eq 0 ]; then
   echo "✓ SSL certificate obtained successfully!"
 else
   echo "✗ Failed to obtain SSL certificate"
-  echo "Restoring original nginx configuration..."
-  cp nginx.conf.backup nginx.conf
-  docker compose restart nginx
+  echo "Restarting nginx..."
+  docker compose -f docker/docker-compose.prod.yml restart nginx
   exit 1
 fi
 echo ""
 
 # Step 5: Restore full nginx configuration with HTTPS
 echo "Step 5: Restoring full nginx configuration with HTTPS..."
-cp nginx.conf.backup nginx.conf
-docker compose restart nginx
+docker compose -f docker/docker-compose.prod.yml restart nginx
 sleep 5
 echo "✓ Nginx now running with HTTPS"
 echo ""
 
 # Step 6: Test the certificate
 echo "Step 6: Testing the SSL certificate..."
-docker compose run --rm certbot certificates
+docker compose -f docker/docker-compose.prod.yml run --rm certbot certificates
 
 echo ""
 echo "===== Setup Complete! ====="
 echo "Your website should now be accessible at https://desi4fit.nl"
 echo "Certificates will auto-renew every 90 days"
 echo ""
-echo "To manually renew: docker compose run --rm certbot renew"
-echo "To check certificate expiry: docker compose run --rm certbot certificates"
+echo "To manually renew: docker compose -f docker/docker-compose.prod.yml run --rm certbot renew"
+echo "To check certificate expiry: docker compose -f docker/docker-compose.prod.yml run --rm certbot certificates"

@@ -1,16 +1,18 @@
 services:
   app:
     # Use pre-built image from GitHub Container Registry (recommended)
-    # Build locally and push: docker build -t ghcr.io/luciocabrera/personal-trainer:latest . && docker push ghcr.io/luciocabrera/personal-trainer:latest
+    # Build locally and push: docker build -f docker/Dockerfile -t ghcr.io/luciocabrera/personal-trainer:latest . && docker push ghcr.io/luciocabrera/personal-trainer:latest
     image: ghcr.io/luciocabrera/personal-trainer:latest
     # Fallback to local build if image not available
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: personal-trainer-app
     restart: unless-stopped
     networks:
       - app-network
     env_file:
-      - .env
+      - ../.env
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -50,10 +52,10 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./certbot/conf:/etc/letsencrypt:ro
-      - ./certbot/www:/var/www/certbot:ro
-      - ./logs/nginx:/var/log/nginx
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../certbot/conf:/etc/letsencrypt:ro
+      - ../certbot/www:/var/www/certbot:ro
+      - ../logs/nginx:/var/log/nginx
     depends_on:
       - app
     networks:
@@ -66,8 +68,8 @@ services:
     container_name: personal-trainer-certbot
     restart: unless-stopped
     volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - ../certbot/conf:/etc/letsencrypt
+      - ../certbot/www:/var/www/certbot
     networks:
       - app-network
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
@@ -82,8 +84,8 @@ services:
       POSTGRES_HOST_AUTH_METHOD: md5
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init-scripts:/docker-entrypoint-initdb.d
-      - ./backups:/backups
+      - ../init-scripts:/docker-entrypoint-initdb.d
+      - ../backups:/backups
     ports:
       - "5432:5432"
     networks:
@@ -111,7 +113,7 @@ services:
   #     PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
   #   volumes:
   #     - pgadmin_data:/var/lib/pgadmin
-  #     - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+  #     - ../pgadmin/servers.json:/pgadmin4/servers.json:ro
   #   ports:
   #     - "5050:80"
   #   depends_on:

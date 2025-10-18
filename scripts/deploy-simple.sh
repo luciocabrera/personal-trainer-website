@@ -27,16 +27,16 @@ echo "📦 Memory status:"
 free -h
 echo ""
 
-cd /root/personal-trainer
+cd /root/personal-trainer-website
 
 echo "📥 Pulling latest code..."
 git pull origin main
 
 echo "🔨 Building app (with swap, should not freeze)..."
-docker compose -f docker-compose.prod.yml build app
+docker compose -f docker/docker-compose.prod.yml build app
 
 echo "🔄 Restarting containers..."
-docker compose -f docker-compose.prod.yml up -d
+docker compose -f docker/docker-compose.prod.yml up -d
 
 echo "⏳ Waiting for app to start..."
 sleep 10

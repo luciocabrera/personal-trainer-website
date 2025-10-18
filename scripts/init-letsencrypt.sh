@@ -27,7 +27,7 @@ fi
 echo "### Creating dummy certificate for $domains ..."
 path="/etc/letsencrypt/live/desi4fit.nl"
 mkdir -p "$data_path/conf/live/desi4fit.nl"
-docker compose -f docker-compose.prod.yml run --rm --entrypoint "\
+docker compose -f docker/docker-compose.prod.yml run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1\
     -keyout '$path/privkey.pem' \
     -out '$path/fullchain.pem' \
@@ -35,11 +35,11 @@ docker compose -f docker-compose.prod.yml run --rm --entrypoint "\
 echo
 
 echo "### Starting nginx ..."
-docker compose -f docker-compose.prod.yml up --force-recreate -d nginx
+docker compose -f docker/docker-compose.prod.yml up --force-recreate -d nginx
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
-docker compose -f docker-compose.prod.yml run --rm --entrypoint "\
+docker compose -f docker/docker-compose.prod.yml run --rm --entrypoint "\
   rm -Rf /etc/letsencrypt/live/desi4fit.nl && \
   rm -Rf /etc/letsencrypt/archive/desi4fit.nl && \
   rm -Rf /etc/letsencrypt/renewal/desi4fit.nl.conf" certbot
@@ -61,7 +61,7 @@ esac
 # Enable staging mode if needed
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
-docker compose -f docker-compose.prod.yml run --rm --entrypoint "\
+docker compose -f docker/docker-compose.prod.yml run --rm --entrypoint "\
   certbot certonly --webroot -w /var/www/certbot \
     $staging_arg \
     $email_arg \
@@ -72,4 +72,4 @@ docker compose -f docker-compose.prod.yml run --rm --entrypoint "\
 echo
 
 echo "### Reloading nginx ..."
-docker compose -f docker-compose.prod.yml exec nginx nginx -s reload
+docker compose -f docker/docker-compose.prod.yml exec nginx nginx -s reload

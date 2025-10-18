@@ -24,7 +24,7 @@ IMAGE_NAME="ghcr.io/${GITHUB_USER}/${REPO_NAME}"
 IMAGE_TAG="latest"
 FULL_IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
 SERVER="root@142.93.139.242"
-SERVER_PATH="/root/personal-trainer"
+SERVER_PATH="/root/personal-trainer-website"
 
 # Check if logged into GitHub Container Registry
 echo -e "${YELLOW}Step 1: Checking GitHub Container Registry login...${NC}"
@@ -79,13 +79,13 @@ echo "Pulling Docker image from registry..."
 docker pull ${FULL_IMAGE}
 
 echo "Stopping old containers..."
-docker compose -f docker-compose.prod.yml down app nginx
+docker compose -f docker/docker-compose.prod.yml down app nginx
 
 echo "Starting new containers..."
-docker compose -f docker-compose.prod.yml up -d
+docker compose -f docker/docker-compose.prod.yml up -d
 
 echo "Checking container status..."
-docker compose -f docker-compose.prod.yml ps
+docker compose -f docker/docker-compose.prod.yml ps
 
 echo "Waiting for app to be ready..."
 sleep 10
