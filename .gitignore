@@ -34,3 +34,4 @@ build/server
 .env.production.local
 .env.production
 .env.*
+docker/.env
