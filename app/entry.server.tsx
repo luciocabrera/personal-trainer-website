@@ -22,6 +22,8 @@ export default function handleRequest(
           const stream = createReadableStreamFromReadable(body);
 
           responseHeaders.set("Content-Type", "text/html");
+          responseHeaders.delete("Expires");
+          responseHeaders.delete("Pragma");
 
           resolve(
             new Response(stream, {
