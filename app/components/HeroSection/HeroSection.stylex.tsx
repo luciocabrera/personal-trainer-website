@@ -26,17 +26,15 @@ export const styles = stylex.create({
     flex: 1,
     borderBottomRightRadius: "15px",
     borderTopRightRadius: "15px",
-    height: "100%",
     overflow: "hidden",
+    display: "flex",
   },
 
   heroImageImg: {
     width: "100%",
-    // height: "300px",
+    height: "100%",
     objectFit: "cover",
-    // borderBottomRightRadius: "15px",
-    // borderTopRightRadius: "15px",
-    // boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+    display: "block",
   },
 
   heroTitle: {
@@ -59,6 +57,17 @@ export const styles = stylex.create({
     "@media (max-width: 768px)": {
       flexDirection: "column",
       textAlign: "center",
+      alignItems: "stretch",
+    },
+  },
+
+  heroImageMobile: {
+    "@media (max-width: 768px)": {
+      borderTopRightRadius: "0px",
+      borderTopLeftRadius: "0px",
+      borderBottomRightRadius: "15px",
+      borderBottomLeftRadius: "15px",
+      flex: "0 0 auto",
     },
   },
 
@@ -76,7 +85,7 @@ export const styles = stylex.create({
 
   heroImageImgMobile: {
     "@media (max-width: 768px)": {
-      // height: "200px",
+      height: "250px",
       width: "100%",
     },
   },

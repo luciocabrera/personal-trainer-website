@@ -16,7 +16,7 @@ const HeroSection = () => {
         <p {...stylex.props(styles.heroParagraph)}>{t("hero.tagline")}</p>
         <p {...stylex.props(styles.heroParagraph)}>{t("hero.description")}</p>
       </div>
-      <div {...stylex.props(styles.heroImage)}>
+      <div {...stylex.props(styles.heroImage, styles.heroImageMobile)}>
         {/* LCP Image: Optimized for Largest Contentful Paint using local image */}
         <img
           src="/images/hero.jpeg"
