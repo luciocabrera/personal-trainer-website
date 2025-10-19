@@ -5,29 +5,38 @@ export const styles = stylex.create({
     textAlign: "center",
     background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
     color: "white",
-    padding: "3rem 2rem",
-    marginBottom: "2rem",
+    // padding: "3rem 2rem",
+    // marginBottom: "2rem",
     borderRadius: "15px",
     display: "flex",
     alignItems: "center",
-    gap: "2rem",
+    // gap: "2rem",
     boxShadow: "0 8px 30px rgba(255, 107, 107, 0.4)",
+    padding: 0,
+    margin: 0,
+    gap: 0,
   },
 
   heroContent: {
     flex: 1,
+    padding: "3rem",
   },
 
   heroImage: {
     flex: 1,
+    borderBottomRightRadius: "15px",
+    borderTopRightRadius: "15px",
+    height: "100%",
+    overflow: "hidden",
   },
 
   heroImageImg: {
     width: "100%",
     // height: "300px",
     objectFit: "cover",
-    borderRadius: "10px",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
+    // borderBottomRightRadius: "15px",
+    // borderTopRightRadius: "15px",
+    // boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
   },
 
   heroTitle: {

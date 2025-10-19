@@ -1,13 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
+  trainingBody: { padding: "1.5rem" },
   training: {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
-    padding: "1.5rem",
+
     marginBottom: "1rem",
     borderRadius: "15px",
     boxShadow: "0 5px 25px rgba(78, 205, 196, 0.2)",
@@ -22,7 +23,8 @@ export const styles = stylex.create({
   trainingImage: {
     width: "100%",
     height: "250px",
-    borderRadius: "8px",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
     overflow: "hidden",
     background: "#f0f0f0",
     marginBottom: "1rem",
@@ -32,7 +34,8 @@ export const styles = stylex.create({
     width: "100%",
     height: "250px",
     objectFit: "cover",
-    borderRadius: "8px",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
     display: "block",
     backgroundColor: "#f0f0f0",
   },
@@ -60,7 +63,7 @@ export const styles = stylex.create({
   // Mobile responsive styles
   trainingMobile: {
     "@media (max-width: 768px)": {
-      padding: "16px",
+      // padding: "16px",
       gap: "12px",
     },
   },
@@ -92,7 +95,7 @@ export const styles = stylex.create({
   // Small mobile styles
   trainingSmallMobile: {
     "@media (max-width: 480px)": {
-      padding: "12px",
+      // padding: "12px",
       gap: "10px",
     },
   },

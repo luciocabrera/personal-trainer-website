@@ -26,7 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="description" content={BRAND.description} />
         <meta
           name="keywords"
-          content="personal training, outdoor training, fitness, Voorburg, Nederland, krachttraining, HIIT, ouder kind training, Voorburg, outdoor fitness, buitentraining"
+          content="outdoor training near me, personal training, personal trainer near me, personal training near me, outdoor fitness near Voorburg, personal training Voorburg, outdoor training, fitness, krachttraining, HIIT, ouder kind training, outdoor personal trainer, buitentraining, Voorburg, Duo Training, Small Group Training, training in kleine groepen, kracht en conditie, weerbestendige trainingen, fitness doelen, professionele begeleiding, maatwerk trainingsprogramma's"
         />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="Dutch" />

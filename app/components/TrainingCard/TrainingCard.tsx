@@ -39,24 +39,26 @@ const TrainingCard = ({
           onError={() => {}}
         />
       </div>
-      <h3
-        {...stylex.props(
-          styles.trainingTitle,
-          styles.trainingTitleMobile,
-          styles.trainingTitleSmallMobile
-        )}
-      >
-        {title}
-      </h3>
-      <p
-        {...stylex.props(
-          styles.trainingDescription,
-          styles.trainingDescriptionMobile,
-          styles.trainingDescriptionSmallMobile
-        )}
-      >
-        {description}
-      </p>
+      <div {...stylex.props(styles.trainingBody)}>
+        <h3
+          {...stylex.props(
+            styles.trainingTitle,
+            styles.trainingTitleMobile,
+            styles.trainingTitleSmallMobile
+          )}
+        >
+          {title}
+        </h3>
+        <p
+          {...stylex.props(
+            styles.trainingDescription,
+            styles.trainingDescriptionMobile,
+            styles.trainingDescriptionSmallMobile
+          )}
+        >
+          {description}
+        </p>
+      </div>
     </div>
   );
 };
