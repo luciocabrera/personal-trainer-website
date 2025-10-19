@@ -19,7 +19,7 @@ export const styles = stylex.create({
   heroContent: {
     flex: 1,
     padding: "3rem",
-    minWidth: "380px",
+    minWidth: "calc(380px - 6rem)",
   },
 
   heroImage: {

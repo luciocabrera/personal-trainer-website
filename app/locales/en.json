@@ -14,7 +14,7 @@
     "description": "Ready for a fresh start? Join our small group training and experience the perfect blend of strength training and cardio! We adapt to everyone's level and injuries, so you can train safely and effectively. Accessible, fun, and results-driven! Rain or shine - thanks to the station's covered area, we train in all weather! ☀️🌧️"
   },
   "trainings": {
-    "title": "Which training suits you?",
+    "title": "Which training suits you? 💪",
     "level1": {
       "title": "Personal Training",
       "desc": "Your goals, your pace, your success! Enjoy exclusive one-on-one training sessions completely tailored to your wishes and fitness level. With maximum personal attention and customized workouts, you'll reach your goals faster than ever. Duration: 60 minutes of pure focus on you! 💪",
@@ -55,8 +55,8 @@
     }
   },
   "schedule": {
-    "title": "The Schedule",
-    "subtitle": "Small Group Training Schedule",
+    "title": "The Schedule 📅",
+    "subtitle": "Small Group Training Schedule 📅",
     "onDemandTitle": "Personal Training & Duo Training",
     "onDemandDesc": "Available on demand - Contact us to schedule your personalized sessions",
     "contactInfo": "Contact: desi4fit@gmail.com or @desi4fit",
@@ -87,7 +87,7 @@
     }
   },
   "pricing": {
-    "title": "How do you join?",
+    "title": "How do you join? 🎯",
     "strip10": {
       "title": "10-Session Pass",
       "desc": "Flexible and affordable! Buy a pass for 10 sessions and train whenever it suits you. Perfect for those who want to exercise regularly without fixed commitments. Price: €135 - that's only €13.50 per session! 🎯",

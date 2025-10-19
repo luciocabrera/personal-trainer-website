@@ -14,7 +14,7 @@
     "description": "¿Listo para un nuevo comienzo? ¡Únete a nuestro entrenamiento en grupo pequeño y experimenta la mezcla perfecta de entrenamiento de fuerza y cardio! Nos adaptamos al nivel y lesiones de cada uno, para que puedas entrenar de forma segura y efectiva. ¡Accesible, divertido y orientado a resultados! Llueva o haga sol - gracias a la cubierta de la estación, entrenamos con cualquier clima! ☀️🌧️"
   },
   "trainings": {
-    "title": "¿Cuál entrenamiento te conviene?",
+    "title": "¿Cuál entrenamiento te conviene? 💪",
     "level1": {
       "title": "Entrenamiento Personal",
       "desc": "¡Tus metas, tu ritmo, tu éxito! Disfruta de sesiones exclusivas uno a uno completamente adaptadas a tus deseos y nivel de fitness. Con máxima atención personal y entrenamientos personalizados, alcanzarás tus objetivos más rápido que nunca. Duración: ¡60 minutos de puro enfoque en ti! 💪",
@@ -55,8 +55,8 @@
     }
   },
   "schedule": {
-    "title": "El Horario",
-    "subtitle": "Horario de Entrenamiento en Grupo Pequeño",
+    "title": "El Horario 📅",
+    "subtitle": "Horario de Entrenamiento en Grupo Pequeño 📅",
     "onDemandTitle": "Entrenamiento Personal y en Dúo",
     "onDemandDesc": "Disponible bajo demanda - Contáctanos para programar tus sesiones personalizadas",
     "contactInfo": "Contacto: desi4fit@gmail.com o @desi4fit",
@@ -87,7 +87,7 @@
     }
   },
   "pricing": {
-    "title": "¿Cómo te unes?",
+    "title": "¿Cómo te unes? 🎯",
     "strip10": {
       "title": "Pase de 10 Sesiones",
       "desc": "¡Flexible y económico! Compra un pase para 10 sesiones y entrena cuando te convenga. Perfecto para quienes quieren ejercitarse regularmente sin compromisos fijos. Precio: €135 - ¡eso es solo €13,50 por sesión! 🎯",
