@@ -5,21 +5,21 @@ export const styles = stylex.create({
     textAlign: "center",
     background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
     color: "white",
-    // padding: "3rem 2rem",
-    // marginBottom: "2rem",
     borderRadius: "15px",
     display: "flex",
     alignItems: "center",
-    // gap: "2rem",
     boxShadow: "0 8px 30px rgba(255, 107, 107, 0.4)",
     padding: 0,
     margin: 0,
     gap: 0,
+    containerType: "inline-size",
+    flexWrap: "wrap",
   },
 
   heroContent: {
     flex: 1,
     padding: "3rem",
+    minWidth: "380px",
   },
 
   heroImage: {
@@ -28,6 +28,7 @@ export const styles = stylex.create({
     borderTopRightRadius: "15px",
     overflow: "hidden",
     display: "flex",
+    maxHeight: 680,
   },
 
   heroImageImg: {
@@ -52,41 +53,66 @@ export const styles = stylex.create({
     margin: "1rem 0",
   },
 
-  // Mobile responsive styles
+  // Mobile responsive styles using container queries
   heroMobile: {
-    "@media (max-width: 768px)": {
+    "@container (max-width: 870px)": {
       flexDirection: "column",
       textAlign: "center",
       alignItems: "stretch",
     },
+    // "@media (max-width: 768px)": {
+    //   flexDirection: "column",
+    //   textAlign: "center",
+    //   alignItems: "stretch",
+    // },
   },
 
   heroImageMobile: {
-    "@media (max-width: 768px)": {
+    "@container (max-width: 870px)": {
       borderTopRightRadius: "0px",
       borderTopLeftRadius: "0px",
       borderBottomRightRadius: "15px",
       borderBottomLeftRadius: "15px",
       flex: "0 0 auto",
     },
+    // "@media (max-width: 768px)": {
+    //   borderTopRightRadius: "0px",
+    //   borderTopLeftRadius: "0px",
+    //   borderBottomRightRadius: "15px",
+    //   borderBottomLeftRadius: "15px",
+    //   flex: "0 0 auto",
+    // },
   },
 
   heroTitleMobile: {
+    "@container (max-width: 768px)": {
+      fontSize: "2rem",
+    },
     "@media (max-width: 768px)": {
       fontSize: "2rem",
     },
   },
 
   heroSubtitleMobile: {
+    "@container (max-width: 768px)": {
+      fontSize: "1.5rem",
+    },
     "@media (max-width: 768px)": {
       fontSize: "1.5rem",
     },
   },
 
   heroImageImgMobile: {
-    "@media (max-width: 768px)": {
-      height: "250px",
-      width: "100%",
+    "@container (max-width: 870px)": {
+      // height: "300px",
+      // width: "100%",
+      width: "100cqw",
+    },
+    "@media (max-width: 870px)": {
+      // height: "300px",
+      // width: "100%",
+      maxHeight: 520,
+      width: "100cqw",
     },
   },
 });
