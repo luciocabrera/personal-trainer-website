@@ -33,6 +33,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="author" content={BRAND.name} />
         <link rel="canonical" href={BRAND.url} />
 
+        {/* Bing Webmaster Verification - Get your code from https://www.bing.com/webmasters */}
+        {/* <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> */}
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={BRAND.url} />
@@ -71,15 +74,29 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* Additional Meta Tags */}
         <meta name="theme-color" content="#4ecdc4" />
         <meta name="msapplication-TileColor" content="#4ecdc4" />
+        <meta
+          name="msapplication-TileImage"
+          content="/web-app-manifest-512x512.png"
+        />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content={BRAND.name} />
 
-        {/* Favicon */}
+        {/* Favicon - Multiple formats for maximum compatibility */}
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.svg" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link
+          rel="icon"
+          href="/favicon-96x96.png"
+          sizes="96x96"
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
 
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />

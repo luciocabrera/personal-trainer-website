@@ -1,7 +1,7 @@
 {
-  "name": "Desi4Fit Personal Training",
+  "name": "Desi4Fit - Outdoor Personal Training in Voorburg",
   "short_name": "Desi4Fit",
-  "description": "Premium personal training services in The Hague - Transform your fitness journey with professional outdoor training",
+  "description": "Professional outdoor personal training in Voorburg near Den Haag. Small group training, duo training, and 1-on-1 sessions. Transform your fitness outdoors!",
   "theme_color": "#4ecdc4",
   "background_color": "#ffffff",
   "display": "standalone",
@@ -9,15 +9,42 @@
   "scope": "/",
   "start_url": "/",
   "id": "/",
-  "categories": ["fitness", "health", "lifestyle"],
-  "lang": "en",
+  "categories": ["fitness", "health", "lifestyle", "sports"],
+  "lang": "nl",
   "dir": "ltr",
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
   ]
 }
