@@ -7,6 +7,7 @@ const TrainingCard = ({
   description,
   imageSrc,
   imageAlt,
+  children,
 }: TrainingCardProps) => {
   return (
     <div
@@ -59,6 +60,7 @@ const TrainingCard = ({
           {description}
         </p>
       </div>
+      {children}
     </div>
   );
 };

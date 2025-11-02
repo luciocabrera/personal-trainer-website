@@ -95,7 +95,15 @@
     },
     "single": {
       "title": "Single Session",
-      "desc": "Want to try us out first? Join a single session for only €15 and discover if Desi4Fit is right for you! 🌟"
+      "desc": "Join a single session whenever it suits you – for just €15! Discover how fun and effective outdoor training can be!  🎟️"
+    },
+    "tryout": {
+      "title": "Trial Session",
+      "desc": "Want to try first? Join a trial session for only €10 and discover if Desi4Fit is right for you! 🌟"
+    },
+    "ptduo": {
+      "title": "Personal & Duo Training",
+      "desc": "Experience personalized training tailored to your needs! Train alone or with a partner for just €60. 👥"
     }
   },
   "signup": {

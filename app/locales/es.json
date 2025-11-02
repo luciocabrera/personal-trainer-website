@@ -95,7 +95,15 @@
     },
     "single": {
       "title": "Sesión Individual",
-      "desc": "¿Quieres probarnos primero? ¡Únete a una sesión individual por solo €15 y descubre si Desi4Fit es para ti! 🌟"
+      "desc": "¡Únete a una sesión individual cuando te convenga – por solo €15! ¡Descubre lo divertido y efectivo que puede ser el entrenamiento al aire libre! 🎟️"
+    },
+    "tryout": {
+      "title": "Sesión de Prueba",
+      "desc": "¿Quieres probar primero? ¡Únete a una sesión de prueba por solo €10 y descubre si Desi4Fit es para ti! 🌟"
+    },
+    "ptduo": {
+      "title": "Personal & Duo Training",
+      "desc": "¡Experimenta el entrenamiento personalizado adaptado a tus necesidades! Entrena solo o con un compañero por solo €60. 👥"
     }
   },
   "signup": {

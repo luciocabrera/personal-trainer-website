@@ -11,7 +11,7 @@
     "title": "OUTDOOR TRAININGEN",
     "subtitle": "DESI4FIT",
     "tagline": "KRACHT - CONDITIE",
-    "description": "Klaar voor een frisse start? Doe mee met onze small group training en ervaar de perfecte mix van krachttraining en conditie! We houden rekening met ieders niveau en blessures, zodat jij veilig kunt trainen. Effectief, laagdrempelig én gezellig! En geen zorgen over het weer - dankzij de overkapping van het station trainen we altijd, kom regen of zonneschijn! ☀️🌧️"
+    "description": "Klaar voor een frisse start? Doe mee met onze small group training en ervaar de perfecte mix van krachttraining en conditie! We houden rekening met ieders niveau en blessures, zodat jij veilig kunt trainen. Effectief, laagdrempelig én gezellig! En geen zorgen over het weer - dankzij de overkapping van het station trainen we altijd, regen of zonneschijn! ☀️🌧️"
   },
   "trainings": {
     "title": "Welke training past bij jou? 💪",
@@ -27,7 +27,7 @@
     },
     "level3": {
       "title": "Small Group Training",
-      "desc": "Voel de energie! Sluit je aan bij een hechte groep van 3-10 enthousiaste sporters voor dynamische outdoor workouts vol energie. Ontdek de kracht van groepsmotivatie terwijl je profiteert van kwaliteitsonderricht in een persoonlijke setting. Samen trainen, samen groeien! Duur: 60 minuten groepspower! 🔥",
+      "desc": "Voel de energie! Sluit je aan bij een hechte groep van 3-10 enthousiaste sporters voor dynamische outdoor workouts vol energie. Ontdek de kracht van groepsmotivatie. Samen trainen, samen groeien! Duur: 60 minuten groepspower! 🔥",
       "imageAlt": "Kleine groep outdoor training"
     }
   },
@@ -91,11 +91,19 @@
     "strip10": {
       "title": "Strippenkaart 10 Lessen",
       "desc": "Flexibel en voordelig! Koop een strippenkaart voor 10 lessen en train wanneer het jou uitkomt. Perfect voor wie regelmatig wil sporten zonder vaste verplichtingen. Prijs: €135 - dat is slechts €13,50 per les! 🎯",
-      "disclaimer": "Geldig voor 6 maanden na aankoop"
+      "disclaimer": "Geldig tot 6 maanden na aankoop"
     },
     "single": {
       "title": "Losse Les",
-      "desc": "Wil je eerst even proeven? Doe mee aan een losse les voor slechts €15,- en ontdek of Desi4Fit bij jou past! 🌟"
+      "desc": "Volg een losse les wanneer het jou uitkomt – voor maar €15! Ontdek hoe leuk en effectief trainen in de buitenlucht kan zijn!  🎟️"
+    },
+    "tryout": {
+      "title": "Proefles",
+      "desc": "Wil je eerst even proberen? Doe mee aan een proefles voor slechts €10,- en ontdek of Desi4Fit bij jou past! 🌟"
+    },
+    "ptduo": {
+      "title": "Personal & Duo Training",
+      "desc": "Ervaar persoonlijke training, afgestemd op jouw behoeften! Alleen of met een partner, voor slechts € 60.  👥"
     }
   },
   "signup": {

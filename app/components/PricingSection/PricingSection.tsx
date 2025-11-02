@@ -10,7 +10,6 @@ const PricingSection = () => {
     <section id="pricing" {...stylex.props(styles.pricing)}>
       <h2 {...stylex.props(styles.pricingTitle)}>{t("pricing.title")}</h2>
       <div id="pricing-image" {...stylex.props(styles.pricingImage)}>
-        {/* Custom SVG: Membership/joining icon with fitness elements */}
         <div
           {...stylex.props(
             styles.pricingIconContainer,
@@ -42,6 +41,18 @@ const PricingSection = () => {
             {t("pricing.single.title")}
           </h3>
           <p>{t("pricing.single.desc")}</p>
+        </div>
+        <div {...stylex.props(styles.price)}>
+          <h3 {...stylex.props(styles.priceTitle)}>
+            {t("pricing.tryout.title")}
+          </h3>
+          <p>{t("pricing.tryout.desc")}</p>
+        </div>
+        <div {...stylex.props(styles.price)}>
+          <h3 {...stylex.props(styles.priceTitle)}>
+            {t("pricing.ptduo.title")}
+          </h3>
+          <p>{t("pricing.ptduo.desc")}</p>
         </div>
       </div>
     </section>
