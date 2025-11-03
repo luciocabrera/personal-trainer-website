@@ -15,109 +15,95 @@ export const styles = stylex.create({
     padding: 0,
     textAlign: "center",
   },
-
   heroContent: {
-    flex: 1,
+    flex: "1 1 0%",
     padding: "3rem",
-    // minWidth: "calc(380px - 6rem)",
   },
-
   heroImage: {
     borderBottomRightRadius: "15px",
     borderTopRightRadius: "15px",
     display: "flex",
-    flex: 1,
+    flex: "1 1 0%",
     maxHeight: 680,
     overflow: "hidden",
   },
-
   heroImageImg: {
     display: "block",
     height: "100%",
     objectFit: "cover",
     width: "100%",
   },
-
-  
-heroImageImgMobile: {
-    "@media (max-width: 870px)": {
-      // height: "300px",
-      // width: "100%",
-      maxHeight: 520,
-      width: "100cqw",
+  heroImageImgMobile: {
+    maxHeight: {
+      default: null,
+      "@media (max-width: 870px)": 520,
     },
-    "@container (max-width: 870px)": {
-      // height: "300px",
-      // width: "100%",
-      width: "100cqw",
+    width: {
+      default: null,
+      "@media (max-width: 870px)": "100cqw",
+      "@container (max-width: 870px)": "100cqw",
     },
   },
-
-  
-
-heroImageMobile: {
-    "@container (max-width: 870px)": {
-      borderBottomLeftRadius: "15px",
-      borderBottomRightRadius: "15px",
-      borderTopLeftRadius: "0px",
-      borderTopRightRadius: "0px",
-      flex: "0 0 auto",
+  heroImageMobile: {
+    borderBottomLeftRadius: {
+      default: null,
+      "@container (max-width: 870px)": "15px",
     },
-    // "@media (max-width: 768px)": {
-    //   borderTopRightRadius: "0px",
-    //   borderTopLeftRadius: "0px",
-    //   borderBottomRightRadius: "15px",
-    //   borderBottomLeftRadius: "15px",
-    //   flex: "0 0 auto",
-    // },
-  },
-
-  
-// Mobile responsive styles using container queries
-heroMobile: {
-    "@container (max-width: 870px)": {
-      alignItems: "stretch",
-      flexDirection: "column",
-      textAlign: "center",
+    borderBottomRightRadius: {
+      default: null,
+      "@container (max-width: 870px)": "15px",
     },
-    // "@media (max-width: 768px)": {
-    //   flexDirection: "column",
-    //   textAlign: "center",
-    //   alignItems: "stretch",
-    // },
+    borderTopLeftRadius: {
+      default: null,
+      "@container (max-width: 870px)": "0px",
+    },
+    borderTopRightRadius: {
+      default: null,
+      "@container (max-width: 870px)": "0px",
+    },
+    flex: {
+      default: null,
+      "@container (max-width: 870px)": "0 0 auto",
+    },
   },
-
-  
+  heroMobile: {
+    alignItems: {
+      default: null,
+      "@container (max-width: 870px)": "stretch",
+    },
+    flexDirection: {
+      default: null,
+      "@container (max-width: 870px)": "column",
+    },
+    textAlign: {
+      default: null,
+      "@container (max-width: 870px)": "center",
+    },
+  },
   heroParagraph: {
     fontSize: "1.2rem",
     margin: "1rem 0",
   },
-
   heroSubtitle: {
     fontSize: "2rem",
     margin: "0.5rem 0",
   },
-
   heroSubtitleMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "1.5rem",
-    },
-    "@container (max-width: 768px)": {
-      fontSize: "1.5rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "1.5rem",
+      "@container (max-width: 768px)": "1.5rem",
     },
   },
-
   heroTitle: {
     fontSize: "2.5rem",
     margin: 0,
   },
-
   heroTitleMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "2rem",
-    },
-    "@container (max-width: 768px)": {
-      fontSize: "2rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "2rem",
+      "@container (max-width: 768px)": "2rem",
     },
   },
 });
