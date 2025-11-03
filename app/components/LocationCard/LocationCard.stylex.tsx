@@ -14,27 +14,39 @@ export const styles = stylex.create({
   },
 
   comingSoonMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.75rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.75rem",
     },
   },
 
   locationCard: {
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(78, 205, 196, 0.1))",
-    border: "1px solid rgba(78, 205, 196, 0.3)",
+    borderColor: "rgba(78, 205, 196, 0.3)",
     borderRadius: "15px",
-    boxShadow: "0 8px 30px rgba(78, 205, 196, 0.2)",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    boxShadow: {
+      default: "0 8px 30px rgba(78, 205, 196, 0.2)",
+      ":hover": "0 12px 40px rgba(78, 205, 196, 0.4)",
+    },
     display: "flex",
     flexDirection: "column",
     minHeight: "400px",
     padding: "1.5rem",
+    transform: {
+      default: null,
+      ":hover": "translateY(-5px)",
+    },
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    ":hover": {
-      boxShadow: "0 12px 40px rgba(78, 205, 196, 0.4)",
-      transform: "translateY(-5px)",
-      willChange: "transform",
-      zIndex: 1,
+    willChange: {
+      default: null,
+      ":hover": "transform",
+    },
+    zIndex: {
+      default: null,
+      ":hover": 1,
     },
   },
 
@@ -69,8 +81,9 @@ locationDetailsDiv: {
   
 // Mobile responsive styles
 locationDetailsDivMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.85rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.85rem",
     },
   },
 
@@ -84,8 +97,10 @@ mapContainer: {
 
   
 mapIframe: {
-    border: 0,
+    borderColor: "transparent",
     borderRadius: "8px",
+    borderStyle: "none",
+    borderWidth: 0,
   },
 
   
@@ -108,8 +123,9 @@ trainingDates: {
 
   
 trainingDatesMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.8rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.8rem",
     },
   },
 
@@ -126,8 +142,9 @@ trainingDatesMobile: {
   },
 
   trainingTimeMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.9rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.9rem",
     },
   },
 
@@ -138,8 +155,9 @@ trainingDatesMobile: {
   },
 
   trainingTypeMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.85rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.85rem",
     },
   },
 });
