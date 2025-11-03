@@ -6,7 +6,7 @@ import es from '@/locales/es.json';
 import nl from '@/locales/nl.json';
 
 // Enhanced i18n configuration with optimizations
-i18n.use(initReactI18next).init({
+void i18n.use(initReactI18next).init({
   // Cache translations
   cache: {
     enabled: true,

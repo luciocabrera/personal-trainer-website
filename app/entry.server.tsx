@@ -25,7 +25,7 @@ export default function handleRequest(
           responseStatusCode = 500;
         },
         onShellError(error: unknown) {
-          reject(error);
+          reject(error instanceof Error ? error : new Error(String(error)));
         },
         onShellReady() {
           const body = new PassThrough();

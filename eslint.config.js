@@ -25,7 +25,7 @@ export default [
       '**/*.config.ts',
       'server.js',
       'server-express.js',
-      'scripts/**/*.js', // Exclude JS scripts from TypeScript rules
+      'scripts/**', // Exclude entire scripts folder
     ],
   },
 

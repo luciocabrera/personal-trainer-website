@@ -13,7 +13,7 @@ const HeaderSection = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+    void i18n.changeLanguage(lng);
     setIsMobileMenuOpen(false); // Close mobile menu when changing language
   };
 

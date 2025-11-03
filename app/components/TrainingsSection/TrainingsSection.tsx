@@ -3,9 +3,6 @@ import * as stylex from '@stylexjs/stylex';
 
 import { TrainingCard } from '@/components/TrainingCard';
 
-import { PricingSection } from '../PricingSection';
-import { PricingSectionSingleDuo } from '../PricingSectionSingleDuo';
-
 import { styles } from './TrainingsSection.stylex';
 
 const TrainingsSection = () => {

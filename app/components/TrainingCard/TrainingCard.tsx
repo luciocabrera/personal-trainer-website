@@ -37,8 +37,6 @@ const TrainingCard = ({
             styles.trainingImageImgMobile,
             styles.trainingImageImgSmallMobile
           )}
-          onError={() => {}}
-          onLoad={() => {}}
         />
       </div>
       <div {...stylex.props(styles.trainingBody)}>

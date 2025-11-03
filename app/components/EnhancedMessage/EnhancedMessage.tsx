@@ -60,9 +60,19 @@ const styles = stylex.create({
       width: '32px',
     },
 
-    background: 'none',
-    // Mobile responsive styles for better touch targets
-    '@media (max-width: 768px)': {
+    
+    
+    
+
+
+
+
+
+
+
+background: 'none',
+// Mobile responsive styles for better touch targets
+'@media (max-width: 768px)': {
       right: '0.5rem',
       height: '28px',
       top: '0.5rem',
@@ -107,9 +117,19 @@ const styles = stylex.create({
     },
     backgroundColor: 'rgba(244, 67, 54, 0.1)',
 
-    border: '1px solid rgba(244, 67, 54, 0.3)',
-    // Mobile responsive styles for error messages
-    '@media (max-width: 768px)': {
+    
+    
+    
+
+
+
+
+
+
+
+border: '1px solid rgba(244, 67, 54, 0.3)',
+// Mobile responsive styles for error messages
+'@media (max-width: 768px)': {
       fontSize: '0.9rem',
       marginBottom: '1rem',
       backgroundColor: 'rgba(244, 67, 54, 0.08)',
@@ -122,9 +142,19 @@ const styles = stylex.create({
   },
 
   messageBox: {
-    animationDuration: '0.3s',
-    // Mobile responsive base styles
-    '@media (max-width: 768px)': {
+    
+    
+    
+
+
+
+
+
+
+
+animationDuration: '0.3s',
+// Mobile responsive base styles
+'@media (max-width: 768px)': {
       // Better readability on mobile
       lineHeight: '1.4',
       textAlign: 'left',
@@ -157,9 +187,19 @@ const styles = stylex.create({
   },
 
   messageBoxFixed: {
-    backgroundColor: 'rgba(76, 175, 80, 0.15)',
-    // Mobile responsive styles
-    '@media (max-width: 768px)': {
+    
+    
+    
+
+
+
+
+
+
+
+backgroundColor: 'rgba(76, 175, 80, 0.15)',
+// Mobile responsive styles
+'@media (max-width: 768px)': {
       fontSize: '1rem',
       padding: '1rem 1.5rem',
       marginBottom: '1.5rem',
@@ -216,13 +256,23 @@ const styles = stylex.create({
       lineHeight: '1.25',
     },
 
-    // Mobile responsive styles for success messages (when not using messageBoxFixed)
-    '@media (max-width: 768px)': {
+
+    
+    
+    
+
+
+
+
+
+
+// Mobile responsive styles for success messages (when not using messageBoxFixed)
+'@media (max-width: 768px)': {
       fontSize: '0.95rem',
       lineHeight: '1.3',
     },
 
-    border: '1px solid rgba(76, 175, 80, 0.3)',
+border: '1px solid rgba(76, 175, 80, 0.3)',
 
     color: '#2e7d32',
   },
