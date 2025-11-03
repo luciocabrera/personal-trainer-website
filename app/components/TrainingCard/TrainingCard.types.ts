@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-export type TrainingCardProps = {
+export interface TrainingCardProps {
   children?: ReactNode;
-  title: string;
   description: string;
-  imageSrc: string;
   imageAlt: string;
-};
+  imageSrc: string;
+  title: string;
+}

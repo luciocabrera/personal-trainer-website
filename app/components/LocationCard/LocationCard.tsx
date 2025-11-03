@@ -1,17 +1,18 @@
 import * as stylex from "@stylexjs/stylex";
-import type { LocationCardProps } from "./LocationCard.types";
+
 import { styles } from "./LocationCard.stylex";
+import type { LocationCardProps } from "./LocationCard.types";
 
 const LocationCard = ({
-  title,
-  time,
-  type,
   capacity,
-  location,
-  mapSrc,
+  comingSoonText = "*COMING SOON*",
   dates,
   isComingSoon = false,
-  comingSoonText = "*COMING SOON*",
+  location,
+  mapSrc,
+  time,
+  title,
+  type,
 }: LocationCardProps) => {
   return (
     <div {...stylex.props(styles.locationCard)}>
@@ -79,11 +80,11 @@ const LocationCard = ({
       </div>
       <div {...stylex.props(styles.mapContainer)}>
         <iframe
-          src={mapSrc}
-          width="100%"
-          height="200"
-          title={`Interactive map showing location of ${title} training sessions at ${location}`}
           aria-label={`Map for ${title} location`}
+          height="200"
+          src={mapSrc}
+          title={`Interactive map showing location of ${title} training sessions at ${location}`}
+          width="100%"
           {...stylex.props(styles.mapIframe)}
           allowFullScreen
           loading="lazy"

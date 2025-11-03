@@ -1,5 +1,5 @@
-import { Pool } from "pg";
 import type { PoolClient, QueryResult } from "pg";
+import { Pool } from "pg";
 
 // Database connection pool
 let pool: Pool | null = null;
@@ -8,15 +8,20 @@ let pool: Pool | null = null;
 export const getPool = (): Pool => {
   if (!pool) {
     pool = new Pool({
-      host: process.env.POSTGRES_HOST || "localhost",
-      port: parseInt(process.env.POSTGRES_PORT || "5432"),
-      database: process.env.POSTGRES_DB || "personal_trainer",
-      user: process.env.POSTGRES_USER || "admin",
-      password: process.env.POSTGRES_PASSWORD || "admin123",
-      // Connection pool settings
-      max: 20,
-      idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 2000,
+      database: process.env.POSTGRES_DB || "personal_trainer",
+      host: process.env.POSTGRES_HOST || "localhost",
+      idleTimeoutMillis: 30000,
+      // Connection pool settings
+max: 20,
+      
+      
+password: process.env.POSTGRES_PASSWORD || "admin123",
+      
+
+port: parseInt(process.env.POSTGRES_PORT || "5432"),
+      
+user: process.env.POSTGRES_USER || "admin",
     });
 
     // Handle pool errors

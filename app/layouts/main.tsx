@@ -1,7 +1,9 @@
 import { Outlet } from "react-router";
-import { HeaderSection } from "@/components/HeaderSection";
-import { FooterSection } from "@/components/FooterSection";
 import * as stylex from "@stylexjs/stylex";
+
+import { FooterSection } from "@/components/FooterSection";
+import { HeaderSection } from "@/components/HeaderSection";
+
 import { styles } from "./main.stylex";
 
 const MainLayout = () => (

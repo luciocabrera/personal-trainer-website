@@ -1,13 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
-import type { TrainingCardProps } from "./TrainingCard.types";
+
 import { styles } from "./TrainingCard.stylex";
+import type { TrainingCardProps } from "./TrainingCard.types";
 
 const TrainingCard = ({
-  title,
-  description,
-  imageSrc,
-  imageAlt,
   children,
+  description,
+  imageAlt,
+  imageSrc,
+  title,
 }: TrainingCardProps) => {
   return (
     <div
@@ -25,19 +26,19 @@ const TrainingCard = ({
         )}
       >
         <img
-          src={imageSrc}
           alt={imageAlt}
-          loading="lazy"
           decoding="async"
-          width="800"
           height="600"
+          loading="lazy"
+          src={imageSrc}
+          width="800"
           {...stylex.props(
             styles.trainingImageImg,
             styles.trainingImageImgMobile,
             styles.trainingImageImgSmallMobile
           )}
-          onLoad={() => {}}
           onError={() => {}}
+          onLoad={() => {}}
         />
       </div>
       <div {...stylex.props(styles.trainingBody)}>

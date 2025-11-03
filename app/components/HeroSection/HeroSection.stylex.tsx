@@ -2,18 +2,18 @@ import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
   hero: {
-    textAlign: "center",
-    background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
-    color: "white",
-    borderRadius: "15px",
-    display: "flex",
     alignItems: "center",
+    background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
+    borderRadius: "15px",
     boxShadow: "0 8px 30px rgba(255, 107, 107, 0.4)",
-    padding: 0,
-    margin: 0,
-    gap: 0,
+    color: "white",
     containerType: "inline-size",
+    display: "flex",
     flexWrap: "wrap",
+    gap: 0,
+    margin: 0,
+    textAlign: "center",
+    padding: 0,
   },
 
   heroContent: {
@@ -23,56 +23,44 @@ export const styles = stylex.create({
   },
 
   heroImage: {
-    flex: 1,
     borderBottomRightRadius: "15px",
     borderTopRightRadius: "15px",
-    overflow: "hidden",
     display: "flex",
+    flex: 1,
     maxHeight: 680,
+    overflow: "hidden",
   },
 
   heroImageImg: {
-    width: "100%",
+    display: "block",
     height: "100%",
     objectFit: "cover",
-    display: "block",
+    width: "100%",
   },
 
-  heroTitle: {
-    fontSize: "2.5rem",
-    margin: 0,
-  },
-
-  heroSubtitle: {
-    fontSize: "2rem",
-    margin: "0.5rem 0",
-  },
-
-  heroParagraph: {
-    fontSize: "1.2rem",
-    margin: "1rem 0",
-  },
-
-  // Mobile responsive styles using container queries
-  heroMobile: {
+  
+heroImageImgMobile: {
     "@container (max-width: 870px)": {
-      flexDirection: "column",
-      textAlign: "center",
-      alignItems: "stretch",
+      // height: "300px",
+      // width: "100%",
+      width: "100cqw",
     },
-    // "@media (max-width: 768px)": {
-    //   flexDirection: "column",
-    //   textAlign: "center",
-    //   alignItems: "stretch",
-    // },
+    "@media (max-width: 870px)": {
+      // height: "300px",
+      // width: "100%",
+      maxHeight: 520,
+      width: "100cqw",
+    },
   },
 
-  heroImageMobile: {
+  
+
+heroImageMobile: {
     "@container (max-width: 870px)": {
-      borderTopRightRadius: "0px",
-      borderTopLeftRadius: "0px",
-      borderBottomRightRadius: "15px",
       borderBottomLeftRadius: "15px",
+      borderBottomRightRadius: "15px",
+      borderTopLeftRadius: "0px",
+      borderTopRightRadius: "0px",
       flex: "0 0 auto",
     },
     // "@media (max-width: 768px)": {
@@ -84,13 +72,30 @@ export const styles = stylex.create({
     // },
   },
 
-  heroTitleMobile: {
-    "@container (max-width: 768px)": {
-      fontSize: "2rem",
+  
+// Mobile responsive styles using container queries
+heroMobile: {
+    "@container (max-width: 870px)": {
+      alignItems: "stretch",
+      flexDirection: "column",
+      textAlign: "center",
     },
-    "@media (max-width: 768px)": {
-      fontSize: "2rem",
-    },
+    // "@media (max-width: 768px)": {
+    //   flexDirection: "column",
+    //   textAlign: "center",
+    //   alignItems: "stretch",
+    // },
+  },
+
+  
+  heroParagraph: {
+    fontSize: "1.2rem",
+    margin: "1rem 0",
+  },
+
+  heroSubtitle: {
+    fontSize: "2rem",
+    margin: "0.5rem 0",
   },
 
   heroSubtitleMobile: {
@@ -102,17 +107,17 @@ export const styles = stylex.create({
     },
   },
 
-  heroImageImgMobile: {
-    "@container (max-width: 870px)": {
-      // height: "300px",
-      // width: "100%",
-      width: "100cqw",
+  heroTitle: {
+    fontSize: "2.5rem",
+    margin: 0,
+  },
+
+  heroTitleMobile: {
+    "@container (max-width: 768px)": {
+      fontSize: "2rem",
     },
-    "@media (max-width: 870px)": {
-      // height: "300px",
-      // width: "100%",
-      maxHeight: 520,
-      width: "100cqw",
+    "@media (max-width: 768px)": {
+      fontSize: "2rem",
     },
   },
 });

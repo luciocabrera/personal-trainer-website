@@ -1,16 +1,16 @@
-import { useTranslation } from "react-i18next";
-import { useActionData, Form, useNavigation } from "react-router";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { Form, useActionData, useNavigation } from "react-router";
 import * as stylex from "@stylexjs/stylex";
-import { SignupIcon, EmailIcon, InstagramIcon } from "@/components/Icons";
-import { styles } from "./SignupSection.stylex";
+
+import { EmailIcon, InstagramIcon,SignupIcon } from "@/components/Icons";
 import { BRAND } from "@/constants/brand";
+
+import { styles } from "./SignupSection.stylex";
 
 const SignupSection = () => {
   const { t } = useTranslation();
-  const actionData = useActionData() as
-    | { success?: boolean; message?: string; error?: string }
-    | undefined;
+  const actionData = useActionData();
   const navigation = useNavigation();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -49,34 +49,34 @@ const SignupSection = () => {
         <p>{t("signup.nice")}</p>
 
         <Form
-          method="post"
           ref={formRef}
+          method="post"
           {...stylex.props(styles.signupFormElement)}
         >
           <input
-            type="text"
+            required
             name="name"
             placeholder={t("form.name")}
-            required
+            type="text"
             {...stylex.props(styles.formInput)}
             disabled={isSubmitting}
           />
           <input
-            type="email"
+            required
             name="email"
             placeholder={t("form.email")}
-            required
+            type="email"
             {...stylex.props(styles.formInput)}
             disabled={isSubmitting}
           />
           <textarea
+            required
             name="message"
             placeholder={t("form.message")}
-            required
             rows={4}
             {...stylex.props(styles.formTextarea)}
             disabled={isSubmitting}
-          ></textarea>
+           />
           <button
             type="submit"
             {...stylex.props(styles.formButton)}
@@ -108,8 +108,8 @@ const SignupSection = () => {
 
             <a
               href={BRAND.instagram.url}
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
               {...stylex.props(
                 styles.contactLink,
                 styles.instagramLink,

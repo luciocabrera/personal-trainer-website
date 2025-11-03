@@ -1,105 +1,105 @@
 interface PricingIconProps {
-  width?: number;
-  height?: number;
   className?: string;
+  height?: number;
+  width?: number;
 }
 
 const PricingIcon = ({
-  width = 220,
-  height = 200,
   className,
+  height = 200,
+  width = 220,
 }: PricingIconProps) => {
   return (
     <svg
-      width={width}
+      className={className}
+      fill="none"
       height={height}
       viewBox="0 0 220 200"
-      fill="none"
+      width={width}
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
     >
       {/* Background circles */}
       <circle
         cx="110"
         cy="100"
-        r="90"
         fill="url(#pricingGradient1)"
         opacity="0.1"
+        r="90"
       />
       <circle
         cx="110"
         cy="100"
-        r="70"
         fill="url(#pricingGradient2)"
         opacity="0.15"
+        r="70"
       />
       <circle
         cx="110"
         cy="100"
-        r="50"
         fill="url(#pricingGradient3)"
         opacity="0.2"
+        r="50"
       />
 
       {/* Membership card */}
       <rect
-        x="70"
-        y="60"
-        width="80"
+        fill="url(#pricingGradient4)"
         height="50"
         rx="8"
-        fill="url(#pricingGradient4)"
         stroke="url(#pricingGradient5)"
         strokeWidth="2"
+        width="80"
+        x="70"
+        y="60"
       />
       <rect
-        x="75"
-        y="65"
-        width="70"
+        fill="rgba(255,255,255,0.8)"
         height="8"
         rx="4"
-        fill="rgba(255,255,255,0.8)"
+        width="70"
+        x="75"
+        y="65"
       />
       <rect
+        fill="rgba(255,255,255,0.6)"
+        height="6"
+        rx="3"
+        width="45"
         x="75"
         y="78"
-        width="45"
-        height="6"
-        rx="3"
-        fill="rgba(255,255,255,0.6)"
       />
       <rect
-        x="75"
-        y="88"
-        width="35"
+        fill="rgba(255,255,255,0.6)"
         height="6"
         rx="3"
-        fill="rgba(255,255,255,0.6)"
+        width="35"
+        x="75"
+        y="88"
       />
-      <circle cx="135" cy="85" r="8" fill="rgba(255,255,255,0.8)" />
+      <circle cx="135" cy="85" fill="rgba(255,255,255,0.8)" r="8" />
 
       {/* Fitness elements - dumbbells */}
       <rect
+        fill="url(#pricingGradient6)"
+        height="8"
+        rx="4"
+        width="30"
         x="40"
         y="130"
-        width="30"
-        height="8"
-        rx="4"
-        fill="url(#pricingGradient6)"
       />
-      <circle cx="35" cy="134" r="6" fill="url(#pricingGradient6)" />
-      <circle cx="75" cy="134" r="6" fill="url(#pricingGradient6)" />
+      <circle cx="35" cy="134" fill="url(#pricingGradient6)" r="6" />
+      <circle cx="75" cy="134" fill="url(#pricingGradient6)" r="6" />
 
       <rect
-        x="150"
-        y="130"
-        width="30"
+        fill="url(#pricingGradient6)"
         height="8"
         rx="4"
-        fill="url(#pricingGradient6)"
+        width="30"
+        x="150"
+        y="130"
       />
-      <circle cx="145" cy="134" r="6" fill="url(#pricingGradient6)" />
-      <circle cx="185" cy="134" r="6" fill="url(#pricingGradient6)" />
+      <circle cx="145" cy="134" fill="url(#pricingGradient6)" r="6" />
+      <circle cx="185" cy="134" fill="url(#pricingGradient6)" r="6" />
 
       {/* Trophy/achievement icon */}
       <path
@@ -107,27 +107,27 @@ const PricingIcon = ({
         fill="url(#pricingGradient7)"
       />
       <rect
-        x="100"
-        y="45"
-        width="20"
+        fill="url(#pricingGradient7)"
         height="15"
         rx="2"
-        fill="url(#pricingGradient7)"
+        width="20"
+        x="100"
+        y="45"
       />
       <rect
+        fill="url(#pricingGradient7)"
+        height="8"
+        width="10"
         x="105"
         y="60"
-        width="10"
-        height="8"
-        fill="url(#pricingGradient7)"
       />
       <rect
-        x="102"
-        y="68"
-        width="16"
+        fill="url(#pricingGradient7)"
         height="4"
         rx="2"
-        fill="url(#pricingGradient7)"
+        width="16"
+        x="102"
+        y="68"
       />
 
       {/* Stars */}
@@ -146,8 +146,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient1"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF6B6B" />
@@ -156,8 +156,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient2"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF9500" />
@@ -166,8 +166,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient3"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#4ECDC4" />
@@ -176,8 +176,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient4"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF6B6B" />
@@ -187,8 +187,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient5"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#4ECDC4" />
@@ -197,8 +197,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient6"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF9500" />
@@ -207,8 +207,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient7"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FFD700" />
@@ -217,8 +217,8 @@ const PricingIcon = ({
         <linearGradient
           id="pricingGradient8"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#4ECDC4" />

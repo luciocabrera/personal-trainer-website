@@ -1,60 +1,60 @@
 interface SignupIconProps {
-  width?: number;
-  height?: number;
   className?: string;
+  height?: number;
+  width?: number;
 }
 
 const SignupIcon = ({
-  width = 220,
-  height = 200,
   className,
+  height = 200,
+  width = 220,
 }: SignupIconProps) => {
   return (
     <svg
-      width={width}
+      className={className}
+      fill="none"
       height={height}
       viewBox="0 0 220 200"
-      fill="none"
+      width={width}
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
     >
       {/* Background circles - consistent with pricing */}
       <circle
         cx="110"
         cy="100"
-        r="90"
         fill="url(#signupGradient1)"
         opacity="0.1"
+        r="90"
       />
       <circle
         cx="110"
         cy="100"
-        r="70"
         fill="url(#signupGradient2)"
         opacity="0.15"
+        r="70"
       />
       <circle
         cx="110"
         cy="100"
-        r="50"
         fill="url(#signupGradient3)"
         opacity="0.2"
+        r="50"
       />
 
       {/* Contact/signup representation */}
       <path d="M70 80L110 110L150 80V140H70V80Z" fill="url(#signupGradient4)" />
       <path
         d="M70 80L110 110L150 80"
+        fill="none"
         stroke="url(#signupGradient4)"
         strokeWidth="3"
-        fill="none"
       />
-      <circle cx="110" cy="60" r="15" fill="url(#signupGradient4)" />
+      <circle cx="110" cy="60" fill="url(#signupGradient4)" r="15" />
       <path
         d="M95 45C95 37 102 30 110 30C118 30 125 37 125 45"
+        fill="none"
         stroke="url(#signupGradient4)"
         strokeWidth="3"
-        fill="none"
       />
 
       {/* Decorative stars */}
@@ -78,8 +78,8 @@ const SignupIcon = ({
         <linearGradient
           id="signupGradient1"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF6B6B" />
@@ -88,8 +88,8 @@ const SignupIcon = ({
         <linearGradient
           id="signupGradient2"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF9500" />
@@ -98,8 +98,8 @@ const SignupIcon = ({
         <linearGradient
           id="signupGradient3"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#4ECDC4" />
@@ -108,8 +108,8 @@ const SignupIcon = ({
         <linearGradient
           id="signupGradient4"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FF6B6B" />
@@ -118,8 +118,8 @@ const SignupIcon = ({
         <linearGradient
           id="signupGradient5"
           x1="0%"
-          y1="0%"
           x2="100%"
+          y1="0%"
           y2="100%"
         >
           <stop offset="0%" stopColor="#FFD700" />

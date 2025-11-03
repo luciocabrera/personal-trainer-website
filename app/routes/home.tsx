@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
-import { useLocation, useActionData } from "react-router";
 import type { ActionFunctionArgs } from "react-router";
-import { HeroSection } from "@/components/HeroSection";
-import { TrainingsSection } from "@/components/TrainingsSection";
-import { OutdoorBenefitsSection } from "@/components/OutdoorBenefitsSection";
-import { ScheduleSection } from "@/components/ScheduleSection";
-import { PricingSection } from "@/components/PricingSection";
-import { SignupSection } from "@/components/SignupSection";
+import { useActionData,useLocation } from "react-router";
+
 import CenteredNotification from "@/components/CenteredNotification/CenteredNotification";
 import Confetti from "@/components/Confetti/Confetti";
+import { HeroSection } from "@/components/HeroSection";
+import { OutdoorBenefitsSection } from "@/components/OutdoorBenefitsSection";
+import { PricingSection } from "@/components/PricingSection";
+import { ScheduleSection } from "@/components/ScheduleSection";
+import { SignupSection } from "@/components/SignupSection";
+import { TrainingsSection } from "@/components/TrainingsSection";
 import { handleContactSubmission } from "@/services/contactService";
 import {
-  getServerTranslation,
   getLanguageFromRequest,
+  getServerTranslation,
 } from "@/utils/serverI18n";
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -45,42 +46,42 @@ export async function action({ request }: ActionFunctionArgs) {
   try {
     // Prepare email translations
     const emailTranslations = {
+      adminEmailLabel: t("email.adminEmailLabel"),
+      adminFooter: t("email.adminFooter"),
+      adminMessageLabel: t("email.adminMessageLabel"),
+      adminNameLabel: t("email.adminNameLabel"),
       adminSubject: t("email.adminSubject"),
       adminTitle: t("email.adminTitle"),
-      adminNameLabel: t("email.adminNameLabel"),
-      adminEmailLabel: t("email.adminEmailLabel"),
-      adminMessageLabel: t("email.adminMessageLabel"),
-      adminFooter: t("email.adminFooter"),
-      autoReplySubject: t("email.autoReplySubject"),
-      autoReplyTitle: t("email.autoReplyTitle"),
-      autoReplyGreeting: t("email.autoReplyGreeting"),
-      autoReplyThankYou: t("email.autoReplyThankYou"),
-      autoReplyYourMessage: t("email.autoReplyYourMessage"),
       autoReplyClosing: t("email.autoReplyClosing"),
-      autoReplyTeam: t("email.autoReplyTeam"),
       autoReplyDisclaimer: t("email.autoReplyDisclaimer"),
+      autoReplyGreeting: t("email.autoReplyGreeting"),
+      autoReplySubject: t("email.autoReplySubject"),
+      autoReplyTeam: t("email.autoReplyTeam"),
+      autoReplyThankYou: t("email.autoReplyThankYou"),
+      autoReplyTitle: t("email.autoReplyTitle"),
+      autoReplyYourMessage: t("email.autoReplyYourMessage"),
     };
 
     // Process contact submission (database-first approach)
     await handleContactSubmission(
       {
-        name: name.toString(),
         email: email.toString(),
         message: message.toString(),
+        name: name.toString(),
       },
       emailTranslations
     );
 
     // Log successful submission
     console.log("Contact form submission successful:", {
-      name: name.toString(),
       email: email.toString(),
+      name: name.toString(),
       timestamp: new Date().toISOString(),
     });
 
     return {
-      success: true,
       message: t("form.success.message"),
+      success: true,
     };
   } catch (error) {
     console.error("Form submission error:", error);
@@ -95,9 +96,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Home() {
   const location = useLocation();
-  const actionData = useActionData() as
-    | { success?: boolean; message?: string; error?: string }
-    | undefined;
+  const actionData = useActionData();
 
   const [notificationDismissed, setNotificationDismissed] = useState(false);
 
@@ -141,17 +140,17 @@ export default function Home() {
       {/* Centered Success/Error Notification */}
       {showNotification && (
         <CenteredNotification
+          autoHide
+          autoHideDelay={actionData.success ? 10000 : 6000}
+          isVisible={Boolean(showNotification)}
           message={actionData.success ? actionData.message! : actionData.error!}
           type={actionData.success ? "success" : "error"}
-          isVisible={Boolean(showNotification)}
           onClose={handleCloseNotification}
-          autoHide={true}
-          autoHideDelay={actionData.success ? 10000 : 6000}
         />
       )}
 
       {/* Confetti for successful submissions */}
-      {showNotification && actionData?.success && <Confetti isActive={true} />}
+      {showNotification && actionData?.success && <Confetti isActive />}
     </>
   );
 }

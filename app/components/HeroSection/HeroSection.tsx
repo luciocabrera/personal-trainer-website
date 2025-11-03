@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
+
 import { styles } from "./HeroSection.stylex";
 
 const HeroSection = () => {
@@ -19,12 +20,12 @@ const HeroSection = () => {
       <div {...stylex.props(styles.heroImage, styles.heroImageMobile)}>
         {/* LCP Image: Optimized for Largest Contentful Paint using local image */}
         <img
-          src="/images/hero.jpeg"
           alt="Professional strength training session outdoors"
-          fetchPriority="high"
           decoding="sync"
-          width="800"
+          fetchPriority="high"
           height="600"
+          src="/images/hero.jpeg"
+          width="800"
           {...stylex.props(styles.heroImageImg, styles.heroImageImgMobile)}
         />
       </div>

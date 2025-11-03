@@ -1,11 +1,11 @@
-export type LocationCardProps = {
-  title: string;
-  time: string;
-  type: string;
+export interface LocationCardProps {
   capacity: string;
-  location: string;
-  mapSrc: string;
+  comingSoonText?: string;
   dates?: string;
   isComingSoon?: boolean;
-  comingSoonText?: string;
-};
+  location: string;
+  mapSrc: string;
+  time: string;
+  title: string;
+  type: string;
+}

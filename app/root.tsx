@@ -1,15 +1,19 @@
 import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  isRouteErrorResponse,
-  Meta,
-  Links,
 } from "react-router";
-import { BRAND } from "@/constants/brand";
-import "./root.css";
 import * as stylex from "@stylexjs/stylex";
+
+import { BRAND } from "@/constants/brand";
+
 import { styles } from "./root.stylex";
+
+import "./root.css";
+
 // Initialize i18n
 import "@/i18n";
 
@@ -18,101 +22,101 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="nl" {...stylex.props(styles.html)}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
 
         {/* Primary Meta Tags */}
         <title>{`${BRAND.name} - ${BRAND.tagline}`}</title>
-        <meta name="title" content={`${BRAND.name} - ${BRAND.tagline}`} />
-        <meta name="description" content={BRAND.description} />
+        <meta content={`${BRAND.name} - ${BRAND.tagline}`} name="title" />
+        <meta content={BRAND.description} name="description" />
         <meta
-          name="keywords"
           content="outdoor training near me, personal training, personal trainer near me, personal training near me, outdoor fitness near Voorburg, personal training Voorburg, outdoor training, fitness, krachttraining, HIIT, ouder kind training, outdoor personal trainer, buitentraining, Voorburg, Duo Training, Small Group Training, training in kleine groepen, kracht en conditie, weerbestendige trainingen, fitness doelen, professionele begeleiding, maatwerk trainingsprogramma's"
+          name="keywords"
         />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="Dutch" />
-        <meta name="author" content={BRAND.name} />
-        <link rel="canonical" href={BRAND.url} />
+        <meta content="index, follow" name="robots" />
+        <meta content="Dutch" name="language" />
+        <meta content={BRAND.name} name="author" />
+        <link href={BRAND.url} rel="canonical" />
 
         {/* Bing Webmaster Verification - Get your code from https://www.bing.com/webmasters */}
         {/* <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> */}
 
         {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={BRAND.url} />
+        <meta content="website" property="og:type" />
+        <meta content={BRAND.url} property="og:url" />
         <meta
-          property="og:title"
           content={`${BRAND.name} - ${BRAND.tagline}`}
+          property="og:title"
         />
-        <meta property="og:description" content={BRAND.description} />
-        <meta property="og:image" content={`${BRAND.url}/og-image.jpg`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/jpeg" />
+        <meta content={BRAND.description} property="og:description" />
+        <meta content={`${BRAND.url}/og-image.jpg`} property="og:image" />
+        <meta content="1200" property="og:image:width" />
+        <meta content="630" property="og:image:height" />
+        <meta content="image/jpeg" property="og:image:type" />
         <meta
-          property="og:image:alt"
           content={`${BRAND.name} - Outdoor fitness training session`}
+          property="og:image:alt"
         />
-        <meta property="og:site_name" content={BRAND.name} />
-        <meta property="og:locale" content="nl_NL" />
-        <meta property="og:locale:alternate" content="en_US" />
-        <meta property="og:locale:alternate" content="es_ES" />
+        <meta content={BRAND.name} property="og:site_name" />
+        <meta content="nl_NL" property="og:locale" />
+        <meta content="en_US" property="og:locale:alternate" />
+        <meta content="es_ES" property="og:locale:alternate" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={BRAND.url} />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content={BRAND.url} name="twitter:url" />
         <meta
-          name="twitter:title"
           content={`${BRAND.name} - ${BRAND.tagline}`}
+          name="twitter:title"
         />
-        <meta name="twitter:description" content={BRAND.description} />
-        <meta name="twitter:image" content={`${BRAND.url}/og-image.jpg`} />
+        <meta content={BRAND.description} name="twitter:description" />
+        <meta content={`${BRAND.url}/og-image.jpg`} name="twitter:image" />
         <meta
-          name="twitter:image:alt"
           content={`${BRAND.name} - Outdoor fitness training session`}
+          name="twitter:image:alt"
         />
 
         {/* Additional Meta Tags */}
-        <meta name="theme-color" content="#4ecdc4" />
-        <meta name="msapplication-TileColor" content="#4ecdc4" />
+        <meta content="#4ecdc4" name="theme-color" />
+        <meta content="#4ecdc4" name="msapplication-TileColor" />
         <meta
-          name="msapplication-TileImage"
           content="/web-app-manifest-512x512.png"
+          name="msapplication-TileImage"
         />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content={BRAND.name} />
+        <meta content="yes" name="mobile-web-app-capable" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="default" name="apple-mobile-web-app-status-bar-style" />
+        <meta content={BRAND.name} name="apple-mobile-web-app-title" />
 
         {/* Favicon - Multiple formats for maximum compatibility */}
-        <link rel="icon" href="/favicon.ico" sizes="48x48" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link href="/favicon.ico" rel="icon" sizes="48x48" />
+        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
         <link
-          rel="icon"
           href="/favicon-96x96.png"
+          rel="icon"
           sizes="96x96"
           type="image/png"
         />
         <link
-          rel="apple-touch-icon"
           href="/apple-touch-icon.png"
+          rel="apple-touch-icon"
           sizes="180x180"
         />
 
         {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
+        <link href="/manifest.json" rel="manifest" />
 
         {/* Resource hints for better performance */}
-        <link rel="preconnect" href="https://www.google.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://maps.googleapis.com" />
-        <link rel="preconnect" href="https://maps.gstatic.com" />
+        <link href="https://www.google.com" rel="preconnect" />
+        <link href="https://www.googletagmanager.com" rel="preconnect" />
+        <link href="https://maps.googleapis.com" rel="preconnect" />
+        <link href="https://maps.gstatic.com" rel="preconnect" />
 
         {/* Preload critical resources - LCP Image with high priority */}
         <link
-          rel="preload"
-          href="/images/hero.jpeg"
           as="image"
           fetchPriority="high"
+          href="/images/hero.jpeg"
+          rel="preload"
         />
 
         <Meta />
@@ -221,7 +225,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         `}</style>
       </head>
       <body {...stylex.props(styles.body)}>
-        <a href="#main-content" className="skip-link">
+        <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
         {children}
@@ -259,11 +263,11 @@ export function ErrorBoundary({ error }: { error: Error }) {
       {stack && (
         <pre
           style={{
-            padding: "2rem",
             background: "hsla(10, 50%, 50%, 0.1)",
             color: "red",
-            overflow: "auto",
             maxWidth: "100%",
+            overflow: "auto",
+            padding: "2rem",
           }}
         >
           {stack}

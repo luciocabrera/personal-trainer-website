@@ -2,26 +2,26 @@ import nodemailer from "nodemailer";
 import { Resend } from "resend";
 
 export interface EmailData {
-  name: string;
   email: string;
   message: string;
+  name: string;
 }
 
 export interface EmailTranslations {
+  adminEmailLabel: string;
+  adminFooter: string;
+  adminMessageLabel: string;
+  adminNameLabel: string;
   adminSubject: string;
   adminTitle: string;
-  adminNameLabel: string;
-  adminEmailLabel: string;
-  adminMessageLabel: string;
-  adminFooter: string;
-  autoReplySubject: string;
-  autoReplyTitle: string;
-  autoReplyGreeting: string;
-  autoReplyThankYou: string;
-  autoReplyYourMessage: string;
   autoReplyClosing: string;
-  autoReplyTeam: string;
   autoReplyDisclaimer: string;
+  autoReplyGreeting: string;
+  autoReplySubject: string;
+  autoReplyTeam: string;
+  autoReplyThankYou: string;
+  autoReplyTitle: string;
+  autoReplyYourMessage: string;
 }
 
 // Create Resend instance
@@ -30,11 +30,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 // Create email transporter (for Gmail fallback)
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER,
       pass: process.env.GMAIL_APP_PASSWORD,
+      user: process.env.GMAIL_USER,
     },
+    service: "gmail",
   });
 };
 
@@ -81,8 +81,6 @@ const sendWithResend = async (
   // 1️⃣ Send notification to admin
   await resend.emails.send({
     from: process.env.EMAIL_FROM || "Contact Form <noreply@desi4fit.nl>",
-    to: process.env.EMAIL_TO || "info@desi4fit.nl",
-    subject: `${translations.adminSubject} ${data.name}`,
     html: `
       <h2>${translations.adminTitle}</h2>
       <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
@@ -94,6 +92,8 @@ const sendWithResend = async (
       <hr>
       <p><em>${translations.adminFooter}</em></p>
     `,
+    subject: `${translations.adminSubject} ${data.name}`,
+    to: process.env.EMAIL_TO || "info@desi4fit.nl",
   });
   console.log("✅ Admin notification email sent via Resend");
 
@@ -101,8 +101,6 @@ const sendWithResend = async (
   if (process.env.SEND_AUTO_REPLY === "true") {
     await resend.emails.send({
       from: process.env.EMAIL_FROM || "Desi4Fit <noreply@desi4fit.nl>",
-      to: data.email,
-      subject: translations.autoReplySubject,
       html: `
         <h2>${translations.autoReplyTitle}</h2>
         <p>${translations.autoReplyGreeting} ${data.name},</p>
@@ -115,6 +113,8 @@ const sendWithResend = async (
         <hr>
         <p style="color: #666; font-size: 0.9em;"><em>${translations.autoReplyDisclaimer}</em></p>
       `,
+      subject: translations.autoReplySubject,
+      to: data.email,
     });
     console.log("✅ Auto-reply email sent via Resend");
   }
@@ -130,8 +130,6 @@ const sendWithGmail = async (
   // Email to admin
   const adminMailOptions = {
     from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_TO,
-    subject: `${translations.adminSubject} ${data.name}`,
     html: `
       <h2>${translations.adminTitle}</h2>
       <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
@@ -143,6 +141,8 @@ const sendWithGmail = async (
       <hr>
       <p><em>${translations.adminFooter}</em></p>
     `,
+    subject: `${translations.adminSubject} ${data.name}`,
+    to: process.env.EMAIL_TO,
   };
 
   await transporter.sendMail(adminMailOptions);
@@ -152,8 +152,6 @@ const sendWithGmail = async (
   if (process.env.SEND_AUTO_REPLY === "true") {
     const autoReplyOptions = {
       from: process.env.EMAIL_FROM,
-      to: data.email,
-      subject: translations.autoReplySubject,
       html: `
         <h2>${translations.autoReplyTitle}</h2>
         <p>${translations.autoReplyGreeting} ${data.name},</p>
@@ -166,6 +164,8 @@ const sendWithGmail = async (
         <hr>
         <p style="color: #666; font-size: 0.9em;"><em>${translations.autoReplyDisclaimer}</em></p>
       `,
+      subject: translations.autoReplySubject,
+      to: data.email,
     };
 
     await transporter.sendMail(autoReplyOptions);

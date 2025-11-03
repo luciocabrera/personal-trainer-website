@@ -1,12 +1,14 @@
-import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
-import i18n from "@/i18n";
-import { styles } from "./HeaderSection.stylex";
+
 import { BRAND } from "@/constants/brand";
+import i18n from "@/i18n";
+
+import { styles } from "./HeaderSection.stylex";
 
 const HeaderSection = () => {
-  const { t, i18n: i18nInstance } = useTranslation();
+  const { i18n: i18nInstance, t } = useTranslation();
   const currentLanguage = i18nInstance.language;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -23,8 +25,8 @@ const HeaderSection = () => {
   return (
     <header {...stylex.props(styles.header)}>
       <nav
-        role="navigation"
         aria-label="Main navigation"
+        role="navigation"
         {...stylex.props(styles.nav)}
       >
         <div {...stylex.props(styles.logo)}>{BRAND.name}</div>
@@ -90,13 +92,13 @@ const HeaderSection = () => {
         {/* Desktop Language Selector */}
         <div
           {...stylex.props(styles.languageSelector)}
-          role="group"
           aria-label="Language selection"
+          role="group"
         >
           <button
-            onClick={() => changeLanguage("en")}
             aria-label="Switch to English"
             type="button"
+            onClick={() => changeLanguage("en")}
             {...stylex.props(
               styles.languageButton,
               currentLanguage === "en" && styles.languageButtonActive
@@ -105,9 +107,9 @@ const HeaderSection = () => {
             EN
           </button>
           <button
-            onClick={() => changeLanguage("nl")}
             aria-label="Switch to Dutch"
             type="button"
+            onClick={() => changeLanguage("nl")}
             {...stylex.props(
               styles.languageButton,
               currentLanguage === "nl" && styles.languageButtonActive
@@ -116,9 +118,9 @@ const HeaderSection = () => {
             NL
           </button>
           <button
-            onClick={() => changeLanguage("es")}
             aria-label="Switch to Spanish"
             type="button"
+            onClick={() => changeLanguage("es")}
             {...stylex.props(
               styles.languageButton,
               currentLanguage === "es" && styles.languageButtonActive
@@ -131,29 +133,29 @@ const HeaderSection = () => {
         {/* Mobile Hamburger Button */}
         <button
           {...stylex.props(styles.hamburger)}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           type="button"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span
             {...stylex.props(
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive1
             )}
-          ></span>
+           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive2
             )}
-          ></span>
+           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive3
             )}
-          ></span>
+           />
         </button>
       </nav>
 
@@ -170,13 +172,13 @@ const HeaderSection = () => {
             {/* Mobile Language Selector */}
             <div
               {...stylex.props(styles.mobileLanguageSelector)}
-              role="group"
               aria-label="Language selection"
+              role="group"
             >
               <button
-                onClick={() => changeLanguage("en")}
                 aria-label="Switch to English"
                 type="button"
+                onClick={() => changeLanguage("en")}
                 {...stylex.props(
                   styles.mobileLanguageButton,
                   currentLanguage === "en" && styles.mobileLanguageButtonActive
@@ -185,9 +187,9 @@ const HeaderSection = () => {
                 EN
               </button>
               <button
-                onClick={() => changeLanguage("nl")}
                 aria-label="Switch to Dutch"
                 type="button"
+                onClick={() => changeLanguage("nl")}
                 {...stylex.props(
                   styles.mobileLanguageButton,
                   currentLanguage === "nl" && styles.mobileLanguageButtonActive
@@ -196,9 +198,9 @@ const HeaderSection = () => {
                 NL
               </button>
               <button
-                onClick={() => changeLanguage("es")}
                 aria-label="Switch to Spanish"
                 type="button"
+                onClick={() => changeLanguage("es")}
                 {...stylex.props(
                   styles.mobileLanguageButton,
                   currentLanguage === "es" && styles.mobileLanguageButtonActive

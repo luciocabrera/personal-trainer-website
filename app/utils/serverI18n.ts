@@ -2,15 +2,15 @@
  * Server-side i18n utilities for action functions
  */
 import en from "@/locales/en.json";
-import nl from "@/locales/nl.json";
 import es from "@/locales/es.json";
+import nl from "@/locales/nl.json";
 
-type Language = "en" | "nl" | "es";
+type Language = "en" | "es" | "nl";
 
 const translations = {
   en,
-  nl,
   es,
+  nl,
 };
 
 export const getServerTranslation = (language: Language = "nl") => {

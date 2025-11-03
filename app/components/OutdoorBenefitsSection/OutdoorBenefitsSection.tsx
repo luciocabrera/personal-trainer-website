@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
+
 import { styles } from "./OutdoorBenefitsSection.stylex.tsx";
 
 const OutdoorBenefitsSection = () => {
@@ -7,24 +8,24 @@ const OutdoorBenefitsSection = () => {
 
   const benefits = [
     {
+      description: t("outdoorBenefits.benefits.nature.description"),
       icon: "🌿",
       title: t("outdoorBenefits.benefits.nature.title"),
-      description: t("outdoorBenefits.benefits.nature.description"),
     },
     {
+      description: t("outdoorBenefits.benefits.vitamin.description"),
       icon: "💪",
       title: t("outdoorBenefits.benefits.vitamin.title"),
-      description: t("outdoorBenefits.benefits.vitamin.description"),
     },
     {
+      description: t("outdoorBenefits.benefits.mental.description"),
       icon: "🧘",
       title: t("outdoorBenefits.benefits.mental.title"),
-      description: t("outdoorBenefits.benefits.mental.description"),
     },
     {
+      description: t("outdoorBenefits.benefits.variety.description"),
       icon: "🔥",
       title: t("outdoorBenefits.benefits.variety.title"),
-      description: t("outdoorBenefits.benefits.variety.description"),
     },
   ];
 
@@ -39,11 +40,11 @@ const OutdoorBenefitsSection = () => {
         <div {...stylex.props(styles.content)}>
           <div {...stylex.props(styles.imageContainer)}>
             <img
-              src="/images/outdoors.jpeg"
               alt={t("outdoorBenefits.imageAlt")}
-              width="600"
               height="400"
               loading="lazy"
+              src="/images/outdoors.jpeg"
+              width="600"
               {...stylex.props(styles.image)}
             />
           </div>

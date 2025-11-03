@@ -1,8 +1,8 @@
-import { PassThrough } from "node:stream";
-import type { AppLoadContext, EntryContext } from "react-router";
-import { createReadableStreamFromReadable } from "@react-router/node";
 import { renderToPipeableStream } from "react-dom/server";
+import type { AppLoadContext, EntryContext } from "react-router";
 import { ServerRouter } from "react-router";
+import { createReadableStreamFromReadable } from "@react-router/node";
+import { PassThrough } from "node:stream";
 
 export default function handleRequest(
   request: Request,
@@ -14,9 +14,16 @@ export default function handleRequest(
   loadContext: AppLoadContext
 ) {
   return new Promise((resolve, reject) => {
-    const { pipe, abort } = renderToPipeableStream(
+    const { abort, pipe } = renderToPipeableStream(
       <ServerRouter context={routerContext} url={request.url} />,
       {
+        onError(error: unknown) {
+          console.error(error);
+          responseStatusCode = 500;
+        },
+        onShellError(error: unknown) {
+          reject(error);
+        },
         onShellReady() {
           const body = new PassThrough();
           const stream = createReadableStreamFromReadable(body);
@@ -33,13 +40,6 @@ export default function handleRequest(
           );
 
           pipe(body);
-        },
-        onShellError(error: unknown) {
-          reject(error);
-        },
-        onError(error: unknown) {
-          console.error(error);
-          responseStatusCode = 500;
         },
       }
     );

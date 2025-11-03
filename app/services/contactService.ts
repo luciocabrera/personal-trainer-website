@@ -1,11 +1,11 @@
 import { query } from "@/utils/database";
-import { sendContactEmail, type EmailTranslations } from "@/utils/emailService";
+import { type EmailTranslations,sendContactEmail } from "@/utils/emailService";
 
 // Simple contact form handler - database first approach
 export interface ContactFormData {
-  name: string;
   email: string;
   message: string;
+  name: string;
 }
 
 export const handleContactSubmission = async (
@@ -30,10 +30,10 @@ export const handleContactSubmission = async (
     const insertedRecord = result.rows[0];
 
     console.log("💾 Contact message saved to database:", {
-      id: insertedRecord.id,
       created_at: insertedRecord.created_at,
-      name: data.name,
       email: data.email,
+      id: insertedRecord.id,
+      name: data.name,
     });
 
     // Send email notification asynchronously (non-blocking)
@@ -55,9 +55,9 @@ export const handleContactSubmission = async (
 
     // Log the contact for debugging even if DB fails
     console.log("📋 Contact details (DB save failed):", {
-      name: data.name,
       email: data.email,
-      message: data.message.substring(0, 100) + "...",
+      message: `${data.message.substring(0, 100)  }...`,
+      name: data.name,
       timestamp: new Date().toISOString(),
     });
 

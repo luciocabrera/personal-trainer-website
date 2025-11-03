@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import * as stylex from "@stylexjs/stylex";
+
 import { PricingIcon } from "@/components/Icons";
+
 import { styles } from "./PricingSection.stylex";
 
 const PricingSection = () => {

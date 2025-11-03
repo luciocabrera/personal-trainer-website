@@ -47,9 +47,9 @@ export const generateResponsiveImages = (baseSrc: string) => {
   const baseName = baseSrc.replace(`.${extension}`, "");
 
   return {
+    desktop: baseSrc,
     mobile: `${baseName}-mobile.${extension}`,
     tablet: `${baseName}-tablet.${extension}`,
-    desktop: baseSrc,
     webp: `${baseName}.webp`,
     webpMobile: `${baseName}-mobile.webp`,
   };
