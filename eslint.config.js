@@ -226,7 +226,7 @@ export default [
       // StyleX rules
       "@stylexjs/valid-styles": "error",
       "@stylexjs/sort-keys": [
-        "warn",
+        "error",
         {
           validImports: ["stylex", "@stylexjs/stylex"],
         },
@@ -243,6 +243,24 @@ export default [
       "object-shorthand": ["error", "always"],
       "no-nested-ternary": "warn",
       eqeqeq: ["error", "always"],
+    },
+  },
+
+  // StyleX-specific overrides for .stylex.tsx files
+  {
+    files: [
+      "**/*.stylex.tsx",
+      "**/*.stylex.ts",
+      "**/*.stylex.jsx",
+      "**/*.stylex.js",
+    ],
+    rules: {
+      // Disable general sort-keys rules in favor of StyleX sort-keys
+      "sort-keys": "off",
+      "sort-keys-fix/sort-keys-fix": "off",
+      // StyleX rules take precedence for CSS-in-JS
+      "@stylexjs/valid-styles": "error",
+      "@stylexjs/sort-keys": "error",
     },
   },
 ];
