@@ -4,8 +4,10 @@ export const styles = stylex.create({
   trainings: {
     backdropFilter: "blur(10px)",
     background: "rgba(255, 255, 255, 0.95)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
     borderRadius: "20px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     marginBottom: "2rem",
     padding: "2rem",
@@ -18,21 +20,20 @@ export const styles = stylex.create({
   },
 
   trainingsGridMobile: {
-    "@media (max-width: 768px)": {
-      gridTemplateColumns: "1fr",
+    gridTemplateColumns: {
+      default: null,
+      "@media (max-width: 768px)": "1fr",
     },
   },
 
   
   // Mobile responsive styles
 trainingsMobile: {
-    "@media (max-width: 768px)": {
-      padding: "1rem",
+    padding: {
+      default: null,
+      "@media (max-width: 768px)": "1rem",
     },
-  },
-
-  
-trainingsTitle: {
+  },  trainingsTitle: {
     
     
     
@@ -133,18 +134,7 @@ margin: "-2rem -2rem 2rem -2rem",
 
 
 padding: "2rem",
-"::after": {
-      content: "",
-      bottom: "-8px",
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)",
-      height: "4px",
-      width: "80px",
-      background: "rgba(255, 255, 255, 0.4)",
-      borderRadius: "2px",
-    },
-    position: "relative",
+position: "relative",
     // textAlign: "center",
 // marginBottom: "1rem",
 // background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
@@ -154,5 +144,16 @@ padding: "2rem",
 // fontSize: "2.2rem",
 // fontWeight: "bold",
 textAlign: "center",
+    "::after": {
+      background: "rgba(255, 255, 255, 0.4)",
+      borderRadius: "2px",
+      bottom: "-8px",
+      content: "",
+      height: "4px",
+      left: "50%",
+      position: "absolute",
+      transform: "translateX(-50%)",
+      width: "80px",
+    },
   },
 });
