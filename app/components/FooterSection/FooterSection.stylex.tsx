@@ -12,18 +12,19 @@ export const styles = stylex.create({
   footerBottom: {
     alignItems: "center",
     display: "flex",
-    flexWrap: "wrap",
-    gap: "1rem",
-
-    justifyContent: "center",
-    "@media (max-width: 768px)": {
-      flexDirection: "column",
-      gap: "0.25rem",
+    flexDirection: {
+      default: null,
+      "@media (max-width: 768px)": "column",
     },
+    flexWrap: "wrap",
+    gap: {
+      default: "1rem",
+      "@media (max-width: 768px)": "0.25rem",
+    },
+    justifyContent: "center",
   },
 
-  
-footerContacts: {
+  footerContacts: {
     display: "flex",
     flexWrap: "wrap",
     gap: "2rem",
@@ -31,26 +32,32 @@ footerContacts: {
     marginBottom: "1rem",
   },
 
-  
-// Mobile responsive styles
-footerContactsMobile: {
-    "@media (max-width: 768px)": {
-      alignItems: "center",
-      flexDirection: "column",
-      gap: "0.5rem",
+  // Mobile responsive styles
+  footerContactsMobile: {
+    alignItems: {
+      default: null,
+      "@media (max-width: 768px)": "center",
+    },
+    flexDirection: {
+      default: null,
+      "@media (max-width: 768px)": "column",
+    },
+    gap: {
+      default: null,
+      "@media (max-width: 768px)": "0.5rem",
     },
   },
-
-  
-footerContent: {
+  footerContent: {
     margin: "0 auto",
     maxWidth: "1200px",
   },
 
-  
   footerLink: {
     alignItems: "center",
-    background: "rgba(255, 255, 255, 0.1)",
+    background: {
+      default: "rgba(255, 255, 255, 0.1)",
+      ":hover": "rgba(255, 255, 255, 0.2)",
+    },
     borderRadius: "20px",
     color: "white",
     display: "flex",
@@ -58,11 +65,14 @@ footerContent: {
     gap: "0.5rem",
     padding: "0.5rem 1rem",
     textDecoration: "none",
+    transform: {
+      default: null,
+      ":hover": "translateY(-2px)",
+    },
     transition: "all 0.3s ease",
-    ":hover": {
-      background: "rgba(255, 255, 255, 0.2)",
-      transform: "translateY(-2px)",
-      willChange: "transform",
+    willChange: {
+      default: null,
+      ":hover": "transform",
     },
   },
 
@@ -72,20 +82,23 @@ footerContent: {
   },
 
   footerLinkMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.8rem",
-      padding: "0.4rem 0.8rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.8rem",
+    },
+    padding: {
+      default: null,
+      "@media (max-width: 768px)": "0.4rem 0.8rem",
     },
   },
 
   version: {
     fontFamily: "monospace",
-    fontSize: "0.7rem",
-    margin: 0,
-
-    opacity: 0.6,
-    "@media (max-width: 768px)": {
-      fontSize: "0.65rem",
+    fontSize: {
+      default: "0.7rem",
+      "@media (max-width: 768px)": "0.65rem",
     },
+    margin: 0,
+    opacity: 0.6,
   },
 });
