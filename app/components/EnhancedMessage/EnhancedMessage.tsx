@@ -52,73 +52,97 @@ const styles = stylex.create({
 
     background: 'none',
 
-    border: 'none',
-
+    backgroundColor: {
+      ':hover': 'rgba(0, 0, 0, 0.1)',
+    },
     borderRadius: '50%',
 
+    borderStyle: 'none',
+    borderWidth: 0,
+
     color: 'inherit',
-    ':hover': {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)',
-      opacity: 1,
-    },
 
     cursor: 'pointer',
-    '@media (max-width: 480px)': {
-      fontSize: '1.4rem',
-      height: '32px',
-      right: '0.375rem',
-      top: '0.375rem',
-      width: '32px',
-    },
 
     display: 'flex',
 
-    fontSize: '1.2rem',
-    height: '24px',
+    fontSize: {
+      default: '1.2rem',
+      '@media (max-width: 480px)': '1.4rem',
+      '@media (max-width: 768px)': '1.3rem',
+    },
+    height: {
+      default: '24px',
+      '@media (max-width: 480px)': '32px',
+      '@media (max-width: 768px)': '28px',
+    },
     justifyContent: 'center',
 
-    opacity: 0.7,
+    opacity: {
+      default: 0.7,
+      ':hover': 1,
+    },
     padding: '0.25rem',
     // Mobile responsive styles for better touch targets
-    '@media (max-width: 768px)': {
-      right: '0.5rem',
-      height: '28px',
-      top: '0.5rem',
-      fontSize: '1.3rem',
-      width: '28px',
-    },
     position: 'absolute',
-    right: '0.75rem',
-    top: '0.5rem',
+    right: {
+      default: '0.75rem',
+      '@media (max-width: 480px)': '0.375rem',
+      '@media (max-width: 768px)': '0.5rem',
+    },
+    top: {
+      default: '0.5rem',
+      '@media (max-width: 480px)': '0.375rem',
+      '@media (max-width: 768px)': '0.5rem',
+    },
 
     transition: 'opacity 0.2s ease',
 
-    width: '24px',
+    width: {
+      default: '24px',
+      '@media (max-width: 480px)': '32px',
+      '@media (max-width: 768px)': '28px',
+    },
   },
 
   errorMessage: {
-    backgroundColor: 'rgba(244, 67, 54, 0.1)',
+    backgroundColor: {
+      default: 'rgba(244, 67, 54, 0.1)',
+      '@media (max-width: 768px)': 'rgba(244, 67, 54, 0.08)',
+    },
 
-    border: '1px solid rgba(244, 67, 54, 0.3)',
+    borderColor: {
+      default: 'rgba(244, 67, 54, 0.3)',
+      '@media (max-width: 768px)': 'rgba(244, 67, 54, 0.4)',
+    },
+    borderRadius: {
+      '@media (max-width: 480px)': '6px',
+    },
+    borderStyle: 'solid',
+    borderWidth: '1px',
 
     color: '#c62828',
-    '@media (max-width: 480px)': {
-      borderRadius: '6px',
-      fontSize: '0.85rem',
-      lineHeight: '1.25',
-      marginBottom: '0.875rem',
-      maxWidth: '100%',
-      padding: '0.75rem 0.875rem',
-      wordWrap: 'break-word',
+    fontSize: {
+      '@media (max-width: 480px)': '0.85rem',
+      '@media (max-width: 768px)': '0.9rem',
     },
-    // Mobile responsive styles for error messages
-    '@media (max-width: 768px)': {
-      backgroundColor: 'rgba(244, 67, 54, 0.08)',
-      border: '1px solid rgba(244, 67, 54, 0.4)',
-      fontSize: '0.9rem',
-      lineHeight: '1.3',
-      marginBottom: '1rem',
-      padding: '0.875rem 1rem',
+    lineHeight: {
+      '@media (max-width: 480px)': 1.25,
+      '@media (max-width: 768px)': 1.3,
+    },
+    marginBottom: {
+      '@media (max-width: 480px)': '0.875rem',
+      '@media (max-width: 768px)': '1rem',
+    },
+    maxWidth: {
+      '@media (max-width: 480px)': '100%',
+    },
+    padding: {
+      '@media (max-width: 480px)': '0.75rem 0.875rem',
+      '@media (max-width: 768px)': '0.875rem 1rem',
+    },
+    wordWrap: {
+      '@media (max-width: 480px)': 'break-word',
     },
   },
 
@@ -133,18 +157,14 @@ const styles = stylex.create({
 
     fontSize: '1rem',
 
-    fontWeight: 'bold',
-    // Mobile responsive base styles
-    '@media (max-width: 768px)': {
-      // Better readability on mobile
-      lineHeight: '1.4',
-      textAlign: 'left',
+    fontWeight: {
+      default: 'bold',
+      '@media (max-width: 480px)': 600, // Slightly lighter weight for better mobile readability
     },
-
+    // Mobile responsive base styles
     hyphens: 'auto',
-    '@media (max-width: 480px)': {
-      fontWeight: '600', // Slightly lighter weight for better mobile readability
-      textAlign: 'left',
+    lineHeight: {
+      '@media (max-width: 768px)': 1.4,
     },
     marginBottom: '1rem',
     overflowWrap: 'break-word',
@@ -152,7 +172,11 @@ const styles = stylex.create({
     padding: '1rem 1.5rem',
     position: 'relative',
 
-    textAlign: 'center',
+    textAlign: {
+      default: 'center',
+      '@media (max-width: 480px)': 'left',
+      '@media (max-width: 768px)': 'left', // Better readability on mobile
+    },
 
     wordWrap: 'break-word',
   },
@@ -160,32 +184,45 @@ const styles = stylex.create({
   messageBoxFixed: {
     backgroundColor: 'rgba(76, 175, 80, 0.15)',
 
-    border: '2px solid rgba(76, 175, 80, 0.6)',
+    borderColor: {
+      default: 'rgba(76, 175, 80, 0.6)',
+      '@media (max-width: 768px)': 'rgba(76, 175, 80, 0.6)',
+    },
+    borderRadius: {
+      '@media (max-width: 480px)': '6px',
+    },
+    borderStyle: 'solid',
+    borderWidth: {
+      default: '2px',
+      '@media (max-width: 768px)': '1px',
+    },
 
-    boxShadow: '0 8px 32px rgba(76, 175, 80, 0.3)',
+    boxShadow: {
+      default: '0 8px 32px rgba(76, 175, 80, 0.3)',
+      '@media (max-width: 768px)': '0 4px 16px rgba(76, 175, 80, 0.3)',
+    },
 
-    fontSize: '1.1rem',
-    fontWeight: '600',
+    fontSize: {
+      default: '1.1rem',
+      '@media (max-width: 480px)': '0.95rem',
+      '@media (max-width: 768px)': '1rem',
+    },
+    fontWeight: 600,
     left: '0',
     // Mobile responsive styles
-    '@media (max-width: 768px)': {
-      border: '1px solid rgba(76, 175, 80, 0.6)',
-      fontSize: '1rem',
-      boxShadow: '0 4px 16px rgba(76, 175, 80, 0.3)',
-      marginBottom: '1.5rem',
-      padding: '1rem 1.5rem',
-    },
-    marginBottom: '2rem',
-    '@media (max-width: 480px)': {
-      borderRadius: '6px',
-      fontSize: '0.95rem',
-      marginBottom: '1rem',
-      padding: '0.875rem 1rem',
+    marginBottom: {
+      default: '2rem',
+      '@media (max-width: 480px)': '1rem',
+      '@media (max-width: 768px)': '1.5rem',
     },
 
     marginTop: '0',
     maxWidth: '100%',
-    padding: '1.5rem 2rem',
+    padding: {
+      default: '1.5rem 2rem',
+      '@media (max-width: 480px)': '0.875rem 1rem',
+      '@media (max-width: 768px)': '1rem 1.5rem',
+    },
     position: 'relative',
     top: '0',
     transform: 'none',
@@ -213,19 +250,20 @@ const styles = stylex.create({
   successMessage: {
     backgroundColor: 'rgba(76, 175, 80, 0.1)',
 
-
-    border: '1px solid rgba(76, 175, 80, 0.3)',
+    borderColor: 'rgba(76, 175, 80, 0.3)',
+    borderStyle: 'solid',
+    borderWidth: '1px',
 
     color: '#2e7d32',
-    '@media (max-width: 480px)': {
-      fontSize: '0.9rem',
-      lineHeight: '1.25',
+    fontSize: {
+      '@media (max-width: 480px)': '0.9rem',
+      '@media (max-width: 768px)': '0.95rem',
+    },
+    lineHeight: {
+      '@media (max-width: 480px)': 1.25,
+      '@media (max-width: 768px)': 1.3,
     },
     // Mobile responsive styles for success messages (when not using messageBoxFixed)
-    '@media (max-width: 768px)': {
-      fontSize: '0.95rem',
-      lineHeight: '1.3',
-    },
   },
 });
 
