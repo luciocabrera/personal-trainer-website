@@ -7,7 +7,7 @@ export const styles = stylex.create({
     backgroundColor: "white",
     boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
     display: "flex",
-    flex: 1,
+    flex: "1 1 0%",
     flexDirection: "column",
     margin: "0 auto",
     maxWidth: "1200px",
@@ -17,25 +17,18 @@ export const styles = stylex.create({
 
   // Main content area
   main: {
-
     display: "flex",
-
-    // Header height + content padding
-    flex: 1,
-
+    flex: "1 1 0%", // Header height + content padding
     flexDirection: "column",
-
     gap: "2rem",
-
     justifyContent: "center",
-
-    padding: "2rem",
-
-    paddingTop: "calc(80px + 2rem)",
-    // Mobile screens - much smaller header
-    "@media (max-width: 768px)": {
-      padding: "1rem",
-      paddingTop: "calc(60px + 1rem)", // Mobile header height + content padding
+    padding: {
+      default: "2rem",
+      "@media (max-width: 768px)": "1rem", // Mobile screens - much smaller header
+    },
+    paddingTop: {
+      default: "calc(80px + 2rem)",
+      "@media (max-width: 768px)": "calc(60px + 1rem)", // Mobile header height + content padding
     },
   },
 });

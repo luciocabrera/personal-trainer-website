@@ -14,13 +14,10 @@ export const styles = stylex.create({
   },
   html: {
     overflowX: "hidden",
-
     scrollBehavior: "smooth",
-
-    scrollPaddingTop: "100px",
-    // Mobile screens
-    "@media (max-width: 768px)": {
-      scrollPaddingTop: "80px",
+    scrollPaddingTop: {
+      default: "100px",
+      "@media (max-width: 768px)": "80px", // Mobile screens
     },
   },
 });
