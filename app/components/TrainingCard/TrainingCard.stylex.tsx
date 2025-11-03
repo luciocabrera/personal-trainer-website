@@ -4,19 +4,23 @@ export const styles = stylex.create({
   training: {
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
-    border: "1px solid rgba(78, 205, 196, 0.3)",
+    borderColor: "rgba(78, 205, 196, 0.3)",
     borderRadius: "15px",
-
-    boxShadow: "0 5px 25px rgba(78, 205, 196, 0.2)",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    boxShadow: {
+      default: "0 5px 25px rgba(78, 205, 196, 0.2)",
+      ":hover": "0 10px 40px rgba(78, 205, 196, 0.4)",
+    },
     display: "flex",
     flexDirection: "column",
     gap: "16px",
     marginBottom: "1rem",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    ":hover": {
-      boxShadow: "0 10px 40px rgba(78, 205, 196, 0.4)",
-      transform: "translateY(-5px)",
+    transform: {
+      default: null,
+      ":hover": "translateY(-5px)",
     },
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
   },
   trainingBody: { padding: "1.5rem" },
 
@@ -29,14 +33,16 @@ export const styles = stylex.create({
   },
 
   trainingDescriptionMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.9rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "0.9rem",
     },
   },
 
   trainingDescriptionSmallMobile: {
-    "@media (max-width: 480px)": {
-      fontSize: "0.85rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 480px)": "0.85rem",
     },
   },
 
@@ -63,29 +69,33 @@ export const styles = stylex.create({
 
   
 trainingImageImgMobile: {
-    "@media (max-width: 768px)": {
-      height: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
     },
   },
 
   
 trainingImageImgSmallMobile: {
-    "@media (max-width: 480px)": {
-      height: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 480px)": "100%",
     },
   },
 
   
 trainingImageMobile: {
-    "@media (max-width: 768px)": {
-      height: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
     },
   },
 
   
 trainingImageSmallMobile: {
-    "@media (max-width: 480px)": {
-      height: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 480px)": "100%",
     },
   },
 
@@ -93,20 +103,22 @@ trainingImageSmallMobile: {
   
 // Mobile responsive styles
 trainingMobile: {
-    "@media (max-width: 768px)": {
-      // padding: "16px",
-      gap: "12px",
+    gap: {
+      default: null,
+      "@media (max-width: 768px)": "12px",
     },
+    // padding: "16px",
   },
 
   
 
 // Small mobile styles
 trainingSmallMobile: {
-    "@media (max-width: 480px)": {
-      // padding: "12px",
-      gap: "10px",
+    gap: {
+      default: null,
+      "@media (max-width: 480px)": "10px",
     },
+    // padding: "12px",
   },
 
   
@@ -125,14 +137,16 @@ trainingTitle: {
 
   
 trainingTitleMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "1.25rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 768px)": "1.25rem",
     },
   },
 
   trainingTitleSmallMobile: {
-    "@media (max-width: 480px)": {
-      fontSize: "1.1rem",
+    fontSize: {
+      default: null,
+      "@media (max-width: 480px)": "1.1rem",
     },
   },
 });
