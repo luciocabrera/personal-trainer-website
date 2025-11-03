@@ -33,9 +33,11 @@ export const styles = stylex.create({
   contactSection: {
     background:
       "linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05))",
-    border: "1px solid rgba(255, 107, 107, 0.1)",
     borderBottomLeftRadius: "15px",
     borderBottomRightRadius: "15px",
+ borderColor: "rgba(255, 107, 107, 0.1)",
+ borderStyle: "solid",
+    borderWidth: "1px",
     marginTop: "2rem",
     padding: "1.5rem",
   },
@@ -59,8 +61,7 @@ export const styles = stylex.create({
   },
 
   errorMessage: {
-    backgroundColor: "rgba(244, 67, 54, 0.1)",
-    border: "1px solid rgba(244, 67, 54, 0.3)",
+    backgroundColor: "rgba(244, 67, 54, 0.1)", borderColor: "rgba(244, 67, 54, 0.3)", borderStyle: "solid",    borderWidth: "1px",
     color: "#c62828",
   },
 
@@ -80,10 +81,11 @@ export const styles = stylex.create({
 
   formButton: {
     background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
-    border: "none",
     borderRadius: "25px",
-    color: "white",
+    borderStyle: "none",
+ borderWidth: 0,
     boxShadow: "0 4px 15px rgba(255, 107, 107, 0.4)",
+    color: "white",
     cursor: "pointer",
     fontWeight: "bold",
     letterSpacing: "1px",
@@ -105,9 +107,10 @@ export const styles = stylex.create({
     },
   },
 
-  formInput: {
-    border: "1px solid #ccc",
+  formInput: { borderColor: "#ccc",
     borderRadius: "3px",
+ borderStyle: "solid",
+    borderWidth: "1px",
     boxSizing: "border-box",
     // Prevent mobile zoom on iOS
 fontFamily: "inherit",
@@ -117,7 +120,7 @@ fontSize: "16px",
 
     
 
-    lineHeight: "1.4",
+    lineHeight: 1.4,
     padding: "0.5rem",
 width: "100%",
     ":focus": {
@@ -126,23 +129,25 @@ width: "100%",
       outline: "none",
     },
     // Mobile-specific improvements
-"@media (max-width: 768px)": {
-      border: "2px solid #ddd",
+"@media (max-width: 768px)": { borderColor: "#ddd",
       borderRadius: "8px",
+ borderStyle: "solid",
+      borderWidth: "2px",
       fontSize: "16px", // Critical: prevents zoom on iOS Safari
       padding: "0.75rem",
       transition: "border-color 0.3s ease",
     },
   },
 
-  formTextarea: {
-    border: "1px solid #ccc",
+  formTextarea: { borderColor: "#ccc",
     borderRadius: "3px",
+ borderStyle: "solid",
+    borderWidth: "1px",
     boxSizing: "border-box",
     // Prevent mobile zoom on iOS
 fontFamily: "inherit", 
     fontSize: "16px",
-    lineHeight: "1.4",
+    lineHeight: 1.4,
     minHeight: "100px",
     padding: "0.5rem",
 
@@ -155,9 +160,10 @@ fontFamily: "inherit",
       outline: "none",
     },
     // Mobile-specific improvements
-    "@media (max-width: 768px)": { 
-      border: "2px solid #ddd",
+    "@media (max-width: 768px)": { borderColor: "#ddd",
       borderRadius: "8px",
+  borderStyle: "solid",
+      borderWidth: "2px",
       fontSize: "16px",
       minHeight: "120px",
       // Critical: prevents zoom on iOS Safari
@@ -168,11 +174,12 @@ padding: "0.75rem",
 
   signup: {
     backdropFilter: "blur(10px)",
-    background: "rgba(255, 255, 255, 0.95)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    background: "rgba(255, 255, 255, 0.95)", borderColor: "rgba(255, 255, 255, 0.3)",
     
     
 borderRadius: "20px",
+ borderStyle: "solid",
+    borderWidth: "1px",
     
 boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     display: "flex",
@@ -221,8 +228,7 @@ padding: 0,
     alignItems: "center",
     backdropFilter: "blur(10px)",
     background:
-      "linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))",
-    border: "1px solid rgba(255, 107, 107, 0.2)",
+      "linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))", borderColor: "rgba(255, 107, 107, 0.2)", borderStyle: "solid",    borderWidth: "1px",
     display: "flex",
     height: "250px",
     justifyContent: "center",
@@ -276,15 +282,15 @@ padding: 0,
     backgroundRepeat: "no-repeat, repeat",
     backgroundSize: "cover, 100px 100px",
     borderRadius: "20px 20px 0 0",
-    // margin: "-2rem -2rem 2rem -2rem",
-    padding: "2rem",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
-    textAlign: "center",
     color: "white",
     fontSize: "2.2rem",
     fontWeight: "bold",
     margin: 0,
+    // margin: "-2rem -2rem 2rem -2rem",
+    padding: "2rem",
     position: "relative",
+    textAlign: "center",
   },
 
   
@@ -332,8 +338,7 @@ signupMobile: {
 
   
 successMessage: {
-    backgroundColor: "rgba(76, 175, 80, 0.1)",
-    border: "1px solid rgba(76, 175, 80, 0.3)",
+    backgroundColor: "rgba(76, 175, 80, 0.1)", borderColor: "rgba(76, 175, 80, 0.3)", borderStyle: "solid",    borderWidth: "1px",
     color: "#2e7d32",
   },
 });
