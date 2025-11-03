@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys, sort-keys-fix/sort-keys-fix */
 import { useCallback, useEffect, useState } from 'react';
 import * as stylex from '@stylexjs/stylex';
 
@@ -47,11 +48,21 @@ const slideOutFixed = stylex.keyframes({
 
 const styles = stylex.create({
   dismissButton: {
+    alignItems: 'center',
+
+    background: 'none',
+
+    border: 'none',
+
+    borderRadius: '50%',
+
+    color: 'inherit',
     ':hover': {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       opacity: 1,
     },
-    alignItems: 'center',
+
+    cursor: 'pointer',
     '@media (max-width: 480px)': {
       fontSize: '1.4rem',
       height: '32px',
@@ -59,34 +70,6 @@ const styles = stylex.create({
       top: '0.375rem',
       width: '32px',
     },
-
-    
-    
-    
-
-
-
-
-
-
-
-background: 'none',
-// Mobile responsive styles for better touch targets
-'@media (max-width: 768px)': {
-      right: '0.5rem',
-      height: '28px',
-      top: '0.5rem',
-      fontSize: '1.3rem',
-      width: '28px',
-    },
-
-    border: 'none',
-
-    borderRadius: '50%',
-
-    color: 'inherit',
-
-    cursor: 'pointer',
 
     display: 'flex',
 
@@ -96,6 +79,14 @@ background: 'none',
 
     opacity: 0.7,
     padding: '0.25rem',
+    // Mobile responsive styles for better touch targets
+    '@media (max-width: 768px)': {
+      right: '0.5rem',
+      height: '28px',
+      top: '0.5rem',
+      fontSize: '1.3rem',
+      width: '28px',
+    },
     position: 'absolute',
     right: '0.75rem',
     top: '0.5rem',
@@ -106,65 +97,35 @@ background: 'none',
   },
 
   errorMessage: {
-    '@media (max-width: 480px)': {
-      fontSize: '0.85rem',
-      padding: '0.75rem 0.875rem',
-      marginBottom: '0.875rem',
-      borderRadius: '6px',
-      lineHeight: '1.25',
-      maxWidth: '100%',
-      wordWrap: 'break-word',
-    },
     backgroundColor: 'rgba(244, 67, 54, 0.1)',
 
-    
-    
-    
-
-
-
-
-
-
-
-border: '1px solid rgba(244, 67, 54, 0.3)',
-// Mobile responsive styles for error messages
-'@media (max-width: 768px)': {
-      fontSize: '0.9rem',
-      marginBottom: '1rem',
-      backgroundColor: 'rgba(244, 67, 54, 0.08)',
-      padding: '0.875rem 1rem',
-      border: '1px solid rgba(244, 67, 54, 0.4)',
-      lineHeight: '1.3',
-    },
+    border: '1px solid rgba(244, 67, 54, 0.3)',
 
     color: '#c62828',
+    '@media (max-width: 480px)': {
+      borderRadius: '6px',
+      fontSize: '0.85rem',
+      lineHeight: '1.25',
+      marginBottom: '0.875rem',
+      maxWidth: '100%',
+      padding: '0.75rem 0.875rem',
+      wordWrap: 'break-word',
+    },
+    // Mobile responsive styles for error messages
+    '@media (max-width: 768px)': {
+      backgroundColor: 'rgba(244, 67, 54, 0.08)',
+      border: '1px solid rgba(244, 67, 54, 0.4)',
+      fontSize: '0.9rem',
+      lineHeight: '1.3',
+      marginBottom: '1rem',
+      padding: '0.875rem 1rem',
+    },
   },
 
   messageBox: {
-    
-    
-    
-
-
-
-
-
-
-
-animationDuration: '0.3s',
-// Mobile responsive base styles
-'@media (max-width: 768px)': {
-      // Better readability on mobile
-      lineHeight: '1.4',
-      textAlign: 'left',
-    },
+    animationDuration: '0.3s',
 
     animationFillMode: 'forwards',
-    '@media (max-width: 480px)': {
-      fontWeight: '600', // Slightly lighter weight for better mobile readability
-      textAlign: 'left',
-    },
 
     animationTimingFunction: 'ease-out',
 
@@ -173,8 +134,18 @@ animationDuration: '0.3s',
     fontSize: '1rem',
 
     fontWeight: 'bold',
+    // Mobile responsive base styles
+    '@media (max-width: 768px)': {
+      // Better readability on mobile
+      lineHeight: '1.4',
+      textAlign: 'left',
+    },
 
     hyphens: 'auto',
+    '@media (max-width: 480px)': {
+      fontWeight: '600', // Slightly lighter weight for better mobile readability
+      textAlign: 'left',
+    },
     marginBottom: '1rem',
     overflowWrap: 'break-word',
 
@@ -187,40 +158,30 @@ animationDuration: '0.3s',
   },
 
   messageBoxFixed: {
-    
-    
-    
-
-
-
-
-
-
-
-backgroundColor: 'rgba(76, 175, 80, 0.15)',
-// Mobile responsive styles
-'@media (max-width: 768px)': {
-      fontSize: '1rem',
-      padding: '1rem 1.5rem',
-      marginBottom: '1.5rem',
-      border: '1px solid rgba(76, 175, 80, 0.6)',
-      boxShadow: '0 4px 16px rgba(76, 175, 80, 0.3)',
-    },
+    backgroundColor: 'rgba(76, 175, 80, 0.15)',
 
     border: '2px solid rgba(76, 175, 80, 0.6)',
-    '@media (max-width: 480px)': {
-      fontSize: '0.95rem',
-      marginBottom: '1rem',
-      padding: '0.875rem 1rem',
-      borderRadius: '6px',
-    },
 
     boxShadow: '0 8px 32px rgba(76, 175, 80, 0.3)',
 
     fontSize: '1.1rem',
     fontWeight: '600',
     left: '0',
+    // Mobile responsive styles
+    '@media (max-width: 768px)': {
+      border: '1px solid rgba(76, 175, 80, 0.6)',
+      fontSize: '1rem',
+      boxShadow: '0 4px 16px rgba(76, 175, 80, 0.3)',
+      marginBottom: '1.5rem',
+      padding: '1rem 1.5rem',
+    },
     marginBottom: '2rem',
+    '@media (max-width: 480px)': {
+      borderRadius: '6px',
+      fontSize: '0.95rem',
+      marginBottom: '1rem',
+      padding: '0.875rem 1rem',
+    },
 
     marginTop: '0',
     maxWidth: '100%',
@@ -251,30 +212,20 @@ backgroundColor: 'rgba(76, 175, 80, 0.15)',
 
   successMessage: {
     backgroundColor: 'rgba(76, 175, 80, 0.1)',
+
+
+    border: '1px solid rgba(76, 175, 80, 0.3)',
+
+    color: '#2e7d32',
     '@media (max-width: 480px)': {
       fontSize: '0.9rem',
       lineHeight: '1.25',
     },
-
-
-    
-    
-    
-
-
-
-
-
-
-// Mobile responsive styles for success messages (when not using messageBoxFixed)
-'@media (max-width: 768px)': {
+    // Mobile responsive styles for success messages (when not using messageBoxFixed)
+    '@media (max-width: 768px)': {
       fontSize: '0.95rem',
       lineHeight: '1.3',
     },
-
-border: '1px solid rgba(76, 175, 80, 0.3)',
-
-    color: '#2e7d32',
   },
 });
 

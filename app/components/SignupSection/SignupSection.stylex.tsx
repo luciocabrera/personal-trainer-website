@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys, sort-keys-fix/sort-keys-fix */
 import * as stylex from '@stylexjs/stylex';
 
 const floatAnimation = stylex.keyframes({
@@ -50,13 +51,17 @@ export const styles = stylex.create({
   },
 
   emailLink: {
-    background: 'linear-gradient(135deg, #ff6b6b, #ff9500)',
-    boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
+    background: {
+      default: 'linear-gradient(135deg, #ff6b6b, #ff9500)',
+      ':hover': 'linear-gradient(135deg, #ff5252, #ff8500)',
+    },
+    boxShadow: {
+      default: '0 4px 15px rgba(255, 107, 107, 0.3)',
+      ':hover': '0 6px 20px rgba(255, 107, 107, 0.5)',
+    },
     color: 'white',
-    ':hover': {
-      background: 'linear-gradient(135deg, #ff5252, #ff8500)',
-      boxShadow: '0 6px 20px rgba(255, 107, 107, 0.5)',
-      transform: 'translateY(-2px)',
+    transform: {
+      ':hover': 'translateY(-2px)',
     },
   },
 
@@ -75,104 +80,143 @@ export const styles = stylex.create({
   },
 
   contactLinksMobile: {
-    '@media (max-width: 768px)': {
-      alignItems: 'center',
-      flexDirection: 'column',
-      gap: '1rem',
+    alignItems: {
+      '@media (max-width: 768px)': 'center',
+    },
+    flexDirection: {
+      '@media (max-width: 768px)': 'column',
+    },
+    gap: {
+      '@media (max-width: 768px)': '1rem',
     },
   },
 
   formButton: {
-    background: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
+    background: {
+      default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
+      ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
+    },
     borderRadius: '25px',
     borderStyle: 'none',
     borderWidth: 0,
-    boxShadow: '0 4px 15px rgba(255, 107, 107, 0.4)',
+    boxShadow: {
+      default: '0 4px 15px rgba(255, 107, 107, 0.4)',
+      ':hover': '0 8px 25px rgba(255, 107, 107, 0.6)',
+    },
     color: 'white',
     cursor: 'pointer',
     fontWeight: 'bold',
     letterSpacing: '1px',
     padding: '0.8rem 1.5rem',
     textTransform: 'uppercase',
-    transition: 'all 0.3s ease',
-    ':hover': {
-      background: 'linear-gradient(135deg, #ff5252, #26a69a)',
-      boxShadow: '0 8px 25px rgba(255, 107, 107, 0.6)',
-      transform: 'translateY(-2px)',
+    transform: {
+      ':hover': 'translateY(-2px)',
     },
+    transition: 'all 0.3s ease',
   },
 
   contactLinkMobile: {
-    '@media (max-width: 768px)': {
-      justifyContent: 'center',
-      maxWidth: '250px',
-      width: '100%',
+    justifyContent: {
+      '@media (max-width: 768px)': 'center',
+    },
+    maxWidth: {
+      '@media (max-width: 768px)': '250px',
+    },
+    width: {
+      '@media (max-width: 768px)': '100%',
     },
   },
 
   formInput: {
-    borderColor: '#ccc',
-    borderRadius: '3px',
-    borderStyle: 'solid',
-    borderWidth: '1px',
+    borderColor: {
+      default: '#ccc',
+      ':focus': '#4ecdc4',
+      '@media (max-width: 768px)': '#ddd',
+    },
+    borderRadius: {
+      default: '3px',
+      '@media (max-width: 768px)': '8px',
+    },
+    borderStyle: {
+      default: 'solid',
+      '@media (max-width: 768px)': 'solid',
+    },
+    borderWidth: {
+      default: '1px',
+      '@media (max-width: 768px)': '2px',
+    },
+    boxShadow: {
+      ':focus': '0 0 0 3px rgba(78, 205, 196, 0.1)',
+    },
     boxSizing: 'border-box',
     // Prevent mobile zoom on iOS
     fontFamily: 'inherit',
 
-    fontSize: '16px',
+    fontSize: {
+      default: '16px',
+      '@media (max-width: 768px)': '16px', // Critical: prevents zoom on iOS Safari
+    },
 
     lineHeight: 1.4,
-    padding: '0.5rem',
+    outline: {
+      ':focus': 'none',
+    },
+    padding: {
+      default: '0.5rem',
+      '@media (max-width: 768px)': '0.75rem',
+    },
+    transition: {
+      '@media (max-width: 768px)': 'border-color 0.3s ease',
+    },
     width: '100%',
-    ':focus': {
-      borderColor: '#4ecdc4',
-      boxShadow: '0 0 0 3px rgba(78, 205, 196, 0.1)',
-      outline: 'none',
-    },
-    // Mobile-specific improvements
-    '@media (max-width: 768px)': {
-      borderColor: '#ddd',
-      borderRadius: '8px',
-      borderStyle: 'solid',
-      borderWidth: '2px',
-      fontSize: '16px', // Critical: prevents zoom on iOS Safari
-      padding: '0.75rem',
-      transition: 'border-color 0.3s ease',
-    },
   },
 
   formTextarea: {
-    borderColor: '#ccc',
-    borderRadius: '3px',
-    borderStyle: 'solid',
-    borderWidth: '1px',
+    borderColor: {
+      default: '#ccc',
+      ':focus': '#4ecdc4',
+      '@media (max-width: 768px)': '#ddd',
+    },
+    borderRadius: {
+      default: '3px',
+      '@media (max-width: 768px)': '8px',
+    },
+    borderStyle: {
+      default: 'solid',
+      '@media (max-width: 768px)': 'solid',
+    },
+    borderWidth: {
+      default: '1px',
+      '@media (max-width: 768px)': '2px',
+    },
+    boxShadow: {
+      ':focus': '0 0 0 3px rgba(78, 205, 196, 0.1)',
+    },
     boxSizing: 'border-box',
     // Prevent mobile zoom on iOS
     fontFamily: 'inherit',
-    fontSize: '16px',
+    fontSize: {
+      default: '16px',
+      '@media (max-width: 768px)': '16px',
+    },
     lineHeight: 1.4,
-    minHeight: '100px',
-    padding: '0.5rem',
+    minHeight: {
+      default: '100px',
+      '@media (max-width: 768px)': '120px',
+    },
+    outline: {
+      ':focus': 'none',
+    },
+    padding: {
+      default: '0.5rem',
+      '@media (max-width: 768px)': '0.75rem',
+    },
 
     resize: 'vertical',
+    transition: {
+      '@media (max-width: 768px)': 'border-color 0.3s ease',
+    },
     width: '100%',
-    ':focus': {
-      borderColor: '#4ecdc4',
-      boxShadow: '0 0 0 3px rgba(78, 205, 196, 0.1)',
-      outline: 'none',
-    },
-    // Mobile-specific improvements
-    '@media (max-width: 768px)': {
-      borderColor: '#ddd',
-      borderRadius: '8px',
-      borderStyle: 'solid',
-      borderWidth: '2px',
-      fontSize: '16px',
-      minHeight: '120px',
-      // Critical: prevents zoom on iOS Safari
-      padding: '0.75rem',
-      transition: 'border-color 0.3s ease',
-    },
   },
 
   signup: {
@@ -192,24 +236,33 @@ export const styles = stylex.create({
 
     gap: 0,
     margin: 0,
+    minHeight: {
+      '@media (max-width: 768px)': 'auto',
+    },
+    overflow: {
+      '@media (max-width: 768px)': 'visible',
+    },
     padding: 0,
-    // Prevent form expansion on mobile input focus
-    '@media (max-width: 768px)': {
-      minHeight: 'auto',
-      overflow: 'visible',
-      transform: 'translateZ(0)', // Hardware acceleration
-      willChange: 'auto',
+    transform: {
+      '@media (max-width: 768px)': 'translateZ(0)', // Hardware acceleration
+    },
+    willChange: {
+      '@media (max-width: 768px)': 'auto',
     },
   },
 
   instagramLink: {
-    background: 'linear-gradient(135deg, #e91e63, #9c27b0)',
-    boxShadow: '0 4px 15px rgba(233, 30, 99, 0.3)',
+    background: {
+      default: 'linear-gradient(135deg, #e91e63, #9c27b0)',
+      ':hover': 'linear-gradient(135deg, #d81b60, #8e24aa)',
+    },
+    boxShadow: {
+      default: '0 4px 15px rgba(233, 30, 99, 0.3)',
+      ':hover': '0 6px 20px rgba(233, 30, 99, 0.5)',
+    },
     color: 'white',
-    ':hover': {
-      background: 'linear-gradient(135deg, #d81b60, #8e24aa)',
-      boxShadow: '0 6px 20px rgba(233, 30, 99, 0.5)',
-      transform: 'translateY(-2px)',
+    transform: {
+      ':hover': 'translateY(-2px)',
     },
   },
 
@@ -245,20 +298,20 @@ export const styles = stylex.create({
   signupFormElement: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: {
+      default: '1rem',
+      '@media (max-width: 480px)': '1rem',
+      '@media (max-width: 768px)': '1.25rem',
+    },
     margin: '0 auto',
 
-    maxWidth: '400px',
-    '@media (max-width: 480px)': {
-      gap: '1rem',
-      padding: '0 0.5rem',
+    maxWidth: {
+      default: '400px',
+      '@media (max-width: 768px)': '100%',
     },
-
-    // Mobile-specific form container improvements
-    '@media (max-width: 768px)': {
-      gap: '1.25rem',
-      maxWidth: '100%',
-      padding: '0 1rem',
+    padding: {
+      '@media (max-width: 480px)': '0 0.5rem',
+      '@media (max-width: 768px)': '0 1rem',
     },
   },
 
@@ -267,13 +320,13 @@ export const styles = stylex.create({
   },
 
   signupFormMobile: {
-    '@media (max-width: 480px)': {
-      marginTop: '1rem',
-      padding: '0 0.5rem',
+    marginTop: {
+      '@media (max-width: 480px)': '1rem',
+      '@media (max-width: 768px)': '1.5rem',
     },
-    '@media (max-width: 768px)': {
-      marginTop: '1.5rem',
-      padding: '0 1rem',
+    padding: {
+      '@media (max-width: 480px)': '0 0.5rem',
+      '@media (max-width: 768px)': '0 1rem',
     },
   },
 
@@ -297,11 +350,17 @@ export const styles = stylex.create({
   },
 
   signupIconContainerMobile: {
-    '@media (max-width: 768px)': {
-      height: '250px',
-      margin: 0,
-      maxWidth: '100%',
-      width: '100%',
+    height: {
+      '@media (max-width: 768px)': '250px',
+    },
+    margin: {
+      '@media (max-width: 768px)': 0,
+    },
+    maxWidth: {
+      '@media (max-width: 768px)': '100%',
+    },
+    width: {
+      '@media (max-width: 768px)': '100%',
     },
   },
 
@@ -316,22 +375,26 @@ export const styles = stylex.create({
   },
 
   signupIconSvgMobile: {
-    '@media (max-width: 768px)': {
-      height: 'auto',
-      maxWidth: '300px',
-      width: '90%',
+    height: {
+      '@media (max-width: 768px)': 'auto',
+    },
+    maxWidth: {
+      '@media (max-width: 768px)': '300px',
+    },
+    width: {
+      '@media (max-width: 768px)': '90%',
     },
   },
 
   // Mobile responsive styles
   signupMobile: {
-    '@media (max-width: 480px)': {
-      borderRadius: '12px',
-      margin: '0 0.5rem',
+    borderRadius: {
+      '@media (max-width: 480px)': '12px',
+      '@media (max-width: 768px)': '15px',
     },
-    '@media (max-width: 768px)': {
-      borderRadius: '15px',
-      margin: '0 1rem',
+    margin: {
+      '@media (max-width: 480px)': '0 0.5rem',
+      '@media (max-width: 768px)': '0 1rem',
     },
   },
 
