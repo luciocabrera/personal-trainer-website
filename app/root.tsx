@@ -197,15 +197,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               },
               {
                 "@type": "City",
-                "name": "Leidschendam"
-              },
-              {
-                "@type": "City",
                 "name": "Rijswijk"
-              },
-              {
-                "@type": "City",
-                "name": "Wassenaar"
               }
             ],
             "serviceType": ["Personal Training", "Outdoor Fitness", "Group Training", "HIIT Training", "Strength Training"],
