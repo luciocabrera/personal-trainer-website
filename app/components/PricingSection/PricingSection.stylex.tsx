@@ -9,11 +9,13 @@ const pulseAnimation = stylex.keyframes({
 export const styles = stylex.create({
   disclaimer: {
     background: "rgba(255, 107, 107, 0.1)",
-    border: "1px solid rgba(255, 107, 107, 0.2)",
+    borderColor: "rgba(255, 107, 107, 0.2)",
     borderRadius: "8px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     color: "#ff6b6b",
     fontSize: "1.1rem",
-    fontWeight: "600",
+    fontWeight: 600,
     marginBottom: "0",
     padding: "1rem",
     textAlign: "center",
@@ -21,16 +23,21 @@ export const styles = stylex.create({
   price: {
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
-    border: "1px solid rgba(78, 205, 196, 0.3)",
+    borderColor: "rgba(78, 205, 196, 0.3)",
     borderRadius: "15px",
-    boxShadow: "0 5px 25px rgba(78, 205, 196, 0.2)",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    boxShadow: {
+      default: "0 5px 25px rgba(78, 205, 196, 0.2)",
+      ":hover": "0 10px 40px rgba(78, 205, 196, 0.4)",
+    },
     marginBottom: "1rem",
     padding: "1.5rem",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    ":hover": {
-      boxShadow: "0 10px 40px rgba(78, 205, 196, 0.4)",
-      transform: "translateY(-5px)",
+    transform: {
+      default: null,
+      ":hover": "translateY(-5px)",
     },
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
   },
 
   priceTitle: {
@@ -45,8 +52,10 @@ export const styles = stylex.create({
   pricing: {
     backdropFilter: "blur(10px)",
     background: "rgba(255, 255, 255, 0.95)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
     borderRadius: "20px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     gap: 0,
     margin: 0,
@@ -67,8 +76,9 @@ export const styles = stylex.create({
 //   },
 // },
 pricingGridMobile: {
-    "@media (max-width: 768px)": {
-      gridTemplateColumns: "1fr",
+    gridTemplateColumns: {
+      default: null,
+      "@media (max-width: 768px)": "1fr",
     },
   },
 
@@ -83,7 +93,9 @@ pricingIconContainer: {
     backdropFilter: "blur(10px)",
     background:
       "linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(78, 205, 196, 0.1))",
-    border: "1px solid rgba(255, 149, 0, 0.2)",
+    borderColor: "rgba(255, 149, 0, 0.2)",
+    borderStyle: "solid",
+    borderWidth: "1px",
     display: "flex",
     height: "250px",
     justifyContent: "center",
@@ -99,11 +111,21 @@ pricingIconContainer: {
 
 
 pricingIconContainerMobile: {
-    "@media (max-width: 768px)": {
-      height: "250px",
-      margin: 0,
-      maxWidth: "100%",
-      width: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "250px",
+    },
+    margin: {
+      default: null,
+      "@media (max-width: 768px)": 0,
+    },
+    maxWidth: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
+    },
+    width: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
     },
   },
 
@@ -129,10 +151,17 @@ pricingIconSvg: {
   
 
   pricingIconSvgMobile: {
-    "@media (max-width: 768px)": {
-      height: "auto",
-      maxWidth: "300px",
-      width: "90%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "auto",
+    },
+    maxWidth: {
+      default: null,
+      "@media (max-width: 768px)": "300px",
+    },
+    width: {
+      default: null,
+      "@media (max-width: 768px)": "90%",
     },
   },
 
@@ -154,18 +183,18 @@ pricingIconSvg: {
     fontWeight: "bold",
     margin: 0,
     padding: "2rem",
-    "::after": {
-      content: "",
-      position: "absolute",
-      bottom: "-8px",
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "80px",
-      height: "4px",
-      background: "rgba(255, 255, 255, 0.4)",
-      borderRadius: "2px",
-    },
     position: "relative",
     textAlign: "center",
+    "::after": {
+      background: "rgba(255, 255, 255, 0.4)",
+      borderRadius: "2px",
+      bottom: "-8px",
+      content: "",
+      height: "4px",
+      left: "50%",
+      position: "absolute",
+      transform: "translateX(-50%)",
+      width: "80px",
+    },
   },
 });

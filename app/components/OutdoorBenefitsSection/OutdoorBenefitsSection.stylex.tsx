@@ -4,21 +4,29 @@ export const styles = stylex.create({
   benefitCard: {
     background:
       "linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1))",
-    border: "1px solid rgba(78, 205, 196, 0.2)",
-    borderRadius: "12px",
-    padding: "1.5rem",
-    transition: "all 0.3s ease",
-    ":hover": {
-      borderColor: "rgba(78, 205, 196, 0.4)",
-      boxShadow: "0 4px 15px rgba(78, 205, 196, 0.2)",
-      transform: "translateX(5px)",
+    borderColor: {
+      default: "rgba(78, 205, 196, 0.2)",
+      ":hover": "rgba(78, 205, 196, 0.4)",
     },
+    borderRadius: "12px",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    boxShadow: {
+      default: null,
+      ":hover": "0 4px 15px rgba(78, 205, 196, 0.2)",
+    },
+    padding: "1.5rem",
+    transform: {
+      default: null,
+      ":hover": "translateX(5px)",
+    },
+    transition: "all 0.3s ease",
   },
 
   benefitDescription: {
     color: "#666",
     fontSize: "1rem",
-    lineHeight: "1.6",
+    lineHeight: 1.6,
     margin: 0,
   },
 
@@ -42,8 +50,9 @@ export const styles = stylex.create({
     display: "grid",
     gap: "1.5rem",
     gridTemplateColumns: "1fr",
-    "@media (max-width: 968px)": {
-      order: 2,
+    order: {
+      default: null,
+      "@media (max-width: 968px)": 2,
     },
   },
 
@@ -55,11 +64,13 @@ export const styles = stylex.create({
   content: {
     alignItems: "center",
     display: "grid",
-    gap: "3rem",
-    gridTemplateColumns: "1fr 1fr",
-    "@media (max-width: 968px)": {
-      gap: "2rem",
-      gridTemplateColumns: "1fr",
+    gap: {
+      default: "3rem",
+      "@media (max-width: 968px)": "2rem",
+    },
+    gridTemplateColumns: {
+      default: "1fr 1fr",
+      "@media (max-width: 968px)": "1fr",
     },
   },
 
@@ -67,28 +78,32 @@ export const styles = stylex.create({
     borderRadius: "15px",
     display: "block",
     height: "auto",
+    transform: {
+      default: null,
+      ":hover": "scale(1.02)",
+    },
     transition: "transform 0.3s ease",
     width: "100%",
-    ":hover": {
-      transform: "scale(1.02)",
-    },
   },
 
   imageContainer: {
     borderRadius: "15px",
     boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
+    order: {
+      default: null,
+      "@media (max-width: 968px)": 1,
+    },
     overflow: "hidden",
     position: "relative",
-    "@media (max-width: 968px)": {
-      order: 1,
-    },
   },
 
   section: {
     backdropFilter: "blur(10px)",
     background: "rgba(255, 255, 255, 0.95)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
     borderRadius: "20px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     marginBottom: "2rem",
     padding: "0 2rem 2rem 2rem",
@@ -97,7 +112,7 @@ export const styles = stylex.create({
   subtitle: {
     color: "#555",
     fontSize: "1.2rem",
-    lineHeight: "1.6",
+    lineHeight: 1.6,
     margin: "0 auto 3rem",
     marginBottom: "3rem",
     maxWidth: "800px",
@@ -121,15 +136,15 @@ export const styles = stylex.create({
     position: "relative",
     textAlign: "center",
     "::after": {
-      content: "",
-      bottom: "-8px",
-      position: "absolute",
-      left: "50%",
-      transform: "translateX(-50%)",
-      height: "4px",
-      width: "80px",
       background: "rgba(255, 255, 255, 0.4)",
       borderRadius: "2px",
+      bottom: "-8px",
+      content: "",
+      height: "4px",
+      left: "50%",
+      position: "absolute",
+      transform: "translateX(-50%)",
+      width: "80px",
     },
   },
 });
