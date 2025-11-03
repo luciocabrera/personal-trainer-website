@@ -17,29 +17,25 @@ export const styles = stylex.create({
 
   // Main content area
   main: {
-    
-// Mobile screens - much smaller header
-"@media (max-width: 768px)": {
+
+    display: "flex",
+
+    // Header height + content padding
+    flex: 1,
+
+    flexDirection: "column",
+
+    gap: "2rem",
+
+    justifyContent: "center",
+
+    padding: "2rem",
+
+    paddingTop: "calc(80px + 2rem)",
+    // Mobile screens - much smaller header
+    "@media (max-width: 768px)": {
       padding: "1rem",
       paddingTop: "calc(60px + 1rem)", // Mobile header height + content padding
     },
-    
-
-
-display: "flex",
-    
-
-// Header height + content padding
-flex: 1, 
-    
-flexDirection: "column",
-    
-gap: "2rem",
-    
-justifyContent: "center",
-    
-padding: "2rem",
-    
-    paddingTop: "calc(80px + 2rem)",
   },
 });

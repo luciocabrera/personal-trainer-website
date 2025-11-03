@@ -21,16 +21,16 @@ export const styles = stylex.create({
   price: {
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
-    borderRadius: "15px",
     border: "1px solid rgba(78, 205, 196, 0.3)",
+    borderRadius: "15px",
+    boxShadow: "0 5px 25px rgba(78, 205, 196, 0.2)",
     marginBottom: "1rem",
+    padding: "1.5rem",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
     ":hover": {
       boxShadow: "0 10px 40px rgba(78, 205, 196, 0.4)",
       transform: "translateY(-5px)",
     },
-    padding: "1.5rem",
-    boxShadow: "0 5px 25px rgba(78, 205, 196, 0.2)",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
   },
 
   priceTitle: {
@@ -38,8 +38,8 @@ export const styles = stylex.create({
     WebkitTextFillColor: "transparent",
     background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
     backgroundClip: "text",
-    marginTop: 0,
     fontWeight: "bold",
+    marginTop: 0,
   },
 
   pricing: {
@@ -83,10 +83,10 @@ pricingIconContainer: {
     backdropFilter: "blur(10px)",
     background:
       "linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(78, 205, 196, 0.1))",
-    display: "flex",
     border: "1px solid rgba(255, 149, 0, 0.2)",
-    justifyContent: "center",
+    display: "flex",
     height: "250px",
+    justifyContent: "center",
     margin: "0 auto",
     maxWidth: "100%",
     width: "100%",
@@ -141,8 +141,6 @@ pricingIconSvg: {
   },
 
   pricingTitle: {
-    padding: "2rem",
-    textAlign: "center",
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 10c16.569 0 30 13.431 30 30s-13.431 30-30 30S10 56.569 10 40 23.431 10 40 10zm0 4c-14.359 0-26 11.641-26 26s11.641 26 26 26 26-11.641 26-26S54.359 14 40 14z'/%3E%3Cpath d='M30 30h20v20H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
@@ -150,10 +148,12 @@ pricingIconSvg: {
     backgroundRepeat: "no-repeat, repeat",
     backgroundSize: "cover, 80px 80px",
     borderRadius: "20px 20px 0 0",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
     color: "white",
     fontSize: "2.2rem",
-    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
     fontWeight: "bold",
+    margin: 0,
+    padding: "2rem",
     "::after": {
       content: "",
       position: "absolute",
@@ -166,6 +166,6 @@ pricingIconSvg: {
       borderRadius: "2px",
     },
     position: "relative",
-    margin: 0,
+    textAlign: "center",
   },
 });

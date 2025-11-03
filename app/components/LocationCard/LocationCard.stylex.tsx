@@ -1,13 +1,25 @@
 import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
-  locationCard: {
-    ":hover": {
-      boxShadow: "0 12px 40px rgba(78, 205, 196, 0.4)",
-      transform: "translateY(-5px)",
-      willChange: "transform",
-      zIndex: 1,
+  comingSoon: {
+    background: "rgba(233, 30, 99, 0.1)",
+    borderRadius: "15px",
+    color: "#e91e63",
+    display: "inline-block",
+    fontSize: "0.8rem",
+    fontWeight: "bold",
+    letterSpacing: "0.5px",
+    padding: "0.2rem 0.8rem",
+    textTransform: "uppercase",
+  },
+
+  comingSoonMobile: {
+    "@media (max-width: 768px)": {
+      fontSize: "0.75rem",
     },
+  },
+
+  locationCard: {
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(78, 205, 196, 0.1))",
     border: "1px solid rgba(78, 205, 196, 0.3)",
@@ -18,18 +30,12 @@ export const styles = stylex.create({
     minHeight: "400px",
     padding: "1.5rem",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
-  },
-
-  comingSoon: {
-    color: "#e91e63",
-    background: "rgba(233, 30, 99, 0.1)",
-    fontWeight: "bold",
-    borderRadius: "15px",
-    padding: "0.2rem 0.8rem",
-    display: "inline-block",
-    fontSize: "0.8rem",
-    letterSpacing: "0.5px",
-    textTransform: "uppercase",
+    ":hover": {
+      boxShadow: "0 12px 40px rgba(78, 205, 196, 0.4)",
+      transform: "translateY(-5px)",
+      willChange: "transform",
+      zIndex: 1,
+    },
   },
 
   locationCardParagraph: {
@@ -53,13 +59,15 @@ export const styles = stylex.create({
     margin: "1rem 0",
   },
 
-  locationDetailsDiv: {
+  
+locationDetailsDiv: {
     fontSize: "0.9rem",
     lineHeight: 1.4,
     margin: "0.5rem 0",
   },
 
-  // Mobile responsive styles
+  
+// Mobile responsive styles
 locationDetailsDivMobile: {
     "@media (max-width: 768px)": {
       fontSize: "0.85rem",
@@ -81,13 +89,6 @@ mapIframe: {
   },
 
   
-comingSoonMobile: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.75rem",
-    },
-  },
-
-  
 trainingCapacity: {
     color: "#ff9500",
     fontWeight: 500,
@@ -95,14 +96,14 @@ trainingCapacity: {
 
   
 trainingDates: {
-    color: "#9c27b0",
-    fontSize: "0.85rem",
     background: "rgba(156, 39, 176, 0.1)",
-    fontWeight: 500,
     borderRadius: "12px",
+    color: "#9c27b0",
     display: "inline-block",
-    padding: "0.3rem 0.6rem",
+    fontSize: "0.85rem",
+    fontWeight: 500,
     marginTop: "0.3rem",
+    padding: "0.3rem 0.6rem",
   },
 
   
@@ -132,8 +133,8 @@ trainingDatesMobile: {
 
   trainingType: {
     color: "#4ecdc4",
-    fontWeight: 600,
     fontSize: "0.95rem",
+    fontWeight: 600,
   },
 
   trainingTypeMobile: {

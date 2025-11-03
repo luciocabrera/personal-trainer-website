@@ -13,15 +13,14 @@ export const styles = stylex.create({
     padding: 0,
   },
   html: {
+    overflowX: "hidden",
+
+    scrollBehavior: "smooth",
+
+    scrollPaddingTop: "100px",
     // Mobile screens
-"@media (max-width: 768px)": {
+    "@media (max-width: 768px)": {
       scrollPaddingTop: "80px",
     },
-    
-overflowX: "hidden",
-    
-scrollBehavior: "smooth",
-    
-    scrollPaddingTop: "100px",
   },
 });

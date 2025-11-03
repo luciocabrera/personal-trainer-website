@@ -2,10 +2,6 @@ import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
   training: {
-    ":hover": {
-      transform: "translateY(-5px)",
-      boxShadow: "0 10px 40px rgba(78, 205, 196, 0.4)",
-    },
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
     border: "1px solid rgba(78, 205, 196, 0.3)",
@@ -17,6 +13,10 @@ export const styles = stylex.create({
     gap: "16px",
     marginBottom: "1rem",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    ":hover": {
+      boxShadow: "0 10px 40px rgba(78, 205, 196, 0.4)",
+      transform: "translateY(-5px)",
+    },
   },
   trainingBody: { padding: "1.5rem" },
 
@@ -34,6 +34,12 @@ export const styles = stylex.create({
     },
   },
 
+  trainingDescriptionSmallMobile: {
+    "@media (max-width: 480px)": {
+      fontSize: "0.85rem",
+    },
+  },
+
   trainingImage: {
     background: "#f0f0f0",
     borderTopLeftRadius: "8px",
@@ -44,6 +50,7 @@ export const styles = stylex.create({
     width: "100%",
   },
 
+  
   trainingImageImg: {
     backgroundColor: "#f0f0f0",
     borderTopLeftRadius: "8px",
@@ -55,16 +62,9 @@ export const styles = stylex.create({
   },
 
   
-  trainingImageImgMobile: {
+trainingImageImgMobile: {
     "@media (max-width: 768px)": {
       height: "100%",
-    },
-  },
-
-  
-trainingDescriptionSmallMobile: {
-    "@media (max-width: 480px)": {
-      fontSize: "0.85rem",
     },
   },
 
@@ -112,15 +112,15 @@ trainingSmallMobile: {
   
 
 trainingTitle: {
-    marginBottom: "0.5rem",
-    marginTop: 0,
     WebkitBackgroundClip: "text",
-    background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
     WebkitTextFillColor: "transparent",
+    background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
     backgroundClip: "text",
     fontSize: "1.4rem",
     fontWeight: "bold",
     lineHeight: 1.3,
+    marginBottom: "0.5rem",
+    marginTop: 0,
   },
 
   

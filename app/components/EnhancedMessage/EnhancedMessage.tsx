@@ -47,51 +47,66 @@ const slideOutFixed = stylex.keyframes({
 
 const styles = stylex.create({
   dismissButton: {
-    position: "absolute",
-    right: "0.75rem",
-    background: "none",
-    top: "0.5rem",
-    border: "none",
-    cursor: "pointer",
-    color: "inherit",
-    fontSize: "1.2rem",
-    opacity: 0.7,
-    padding: "0.25rem",
-    borderRadius: "50%",
-    transition: "opacity 0.2s ease",
-    alignItems: "center",
-    display: "flex",
-    height: "24px",
-    justifyContent: "center",
     ":hover": {
       backgroundColor: "rgba(0, 0, 0, 0.1)",
       opacity: 1,
     },
-
-    width: "24px",
-
-    
+    alignItems: "center",
     "@media (max-width: 480px)": {
+      fontSize: "1.4rem",
+      height: "32px",
       right: "0.375rem",
       top: "0.375rem",
-      height: "32px",
       width: "32px",
-      fontSize: "1.4rem",
     },
-
-    // Mobile responsive styles for better touch targets
+    
+    
+background: "none",
+// Mobile responsive styles for better touch targets
 "@media (max-width: 768px)": {
       right: "0.5rem",
-      top: "0.5rem",
       height: "28px",
-      width: "28px",
+      top: "0.5rem",
       fontSize: "1.3rem",
+      width: "28px",
     },
+    
+border: "none",
+    
+borderRadius: "50%",
+    
+color: "inherit",
+    
+cursor: "pointer",
+    
+display: "flex",
+    
+    
+    
+    
+fontSize: "1.2rem",
+height: "24px",
+justifyContent: "center",
+    
+    
+    
+
+    
+opacity: 0.7,
+padding: "0.25rem",
+position: "absolute",
+right: "0.75rem",
+top: "0.5rem",
+
+    
+    
+transition: "opacity 0.2s ease",
+
+    
+width: "24px",
   },
 
   errorMessage: {
-    backgroundColor: "rgba(244, 67, 54, 0.1)",
-    border: "1px solid rgba(244, 67, 54, 0.3)",
     "@media (max-width: 480px)": {
       fontSize: "0.85rem",
       padding: "0.75rem 0.875rem",
@@ -101,48 +116,73 @@ const styles = stylex.create({
       maxWidth: "100%",
       wordWrap: "break-word",
     },
+    backgroundColor: "rgba(244, 67, 54, 0.1)",
 
     
-    color: "#c62828",
+    
+    
 
-    // Mobile responsive styles for error messages
+
+
+
+
+
+
+border: "1px solid rgba(244, 67, 54, 0.3)",
+// Mobile responsive styles for error messages
 "@media (max-width: 768px)": {
       fontSize: "0.9rem",
       marginBottom: "1rem",
-      padding: "0.875rem 1rem",
       backgroundColor: "rgba(244, 67, 54, 0.08)",
+      padding: "0.875rem 1rem",
       border: "1px solid rgba(244, 67, 54, 0.4)",
       lineHeight: "1.3",
     },
+
+    
+color: "#c62828",
   },
 
   messageBox: {
-    borderRadius: "8px",
-    animationDuration: "0.3s",
-    fontSize: "1rem",
-    animationFillMode: "forwards",
-    fontWeight: "bold",
-    animationTimingFunction: "ease-out",
-    marginBottom: "1rem",
-    // Mobile responsive base styles
+    
+    
+
+
+
+
+
+animationDuration: "0.3s",
+// Mobile responsive base styles
 "@media (max-width: 768px)": {
       // Better readability on mobile
 lineHeight: "1.4", 
       textAlign: "left",
     },
     
-padding: "1rem 1.5rem",
     
+animationFillMode: "forwards",
 "@media (max-width: 480px)": {
       fontWeight: "600", // Slightly lighter weight for better mobile readability
       textAlign: "left",
     },
     
+animationTimingFunction: "ease-out",
+    
+borderRadius: "8px",
+    
+fontSize: "1rem",
+    
+fontWeight: "bold",
+    
+    
+    
 hyphens: "auto",
-    
-position: "relative",
-    
+marginBottom: "1rem",
 overflowWrap: "break-word",
+    
+    
+padding: "1rem 1.5rem",
+position: "relative",
 
     
     textAlign: "center",
@@ -151,14 +191,15 @@ overflowWrap: "break-word",
   },
 
   messageBoxFixed: {
-    left: "0",
-    boxShadow: "0 8px 32px rgba(76, 175, 80, 0.3)",
-    marginBottom: "2rem",
-    backgroundColor: "rgba(76, 175, 80, 0.15)",
-    maxWidth: "100%",
-    border: "2px solid rgba(76, 175, 80, 0.6)",
-    position: "relative",
-    // Mobile responsive styles
+    
+    
+
+
+
+
+
+backgroundColor: "rgba(76, 175, 80, 0.15)",
+// Mobile responsive styles
 "@media (max-width: 768px)": {
       fontSize: "1rem",
       padding: "1rem 1.5rem",
@@ -167,8 +208,8 @@ overflowWrap: "break-word",
       boxShadow: "0 4px 16px rgba(76, 175, 80, 0.3)",
     },
     
-top: "0",
     
+border: "2px solid rgba(76, 175, 80, 0.6)",
 "@media (max-width: 480px)": {
       fontSize: "0.95rem",
       marginBottom: "1rem",
@@ -176,20 +217,32 @@ top: "0",
       borderRadius: "6px",
     },
     
-transform: "none",
+boxShadow: "0 8px 32px rgba(76, 175, 80, 0.3)",
+    
+    
+    
+    
+    
+    
     
 fontSize: "1.1rem",
-    
-zIndex: 100,
-    
 fontWeight: "600",
+left: "0",
+marginBottom: "2rem",
     
-width: "100%",
+    
+    
 
     
     marginTop: "0",
+maxWidth: "100%",
+padding: "1.5rem 2rem",
+position: "relative",
+top: "0",
+transform: "none",
 
-    padding: "1.5rem 2rem",
+    width: "100%",
+zIndex: 100,
   },
 
   messageBoxSlideIn: {
@@ -209,20 +262,29 @@ width: "100%",
   },
 
   successMessage: {
-    "@media (max-width: 480px)": {
+    
+    backgroundColor: "rgba(76, 175, 80, 0.1)",
+"@media (max-width: 480px)": {
       fontSize: "0.9rem",
       lineHeight: "1.25",
     },
-    // Mobile responsive styles for success messages (when not using messageBoxFixed)
+
+    
+    
+    
+
+
+
+
+
+
+
+// Mobile responsive styles for success messages (when not using messageBoxFixed)
 "@media (max-width: 768px)": {
       fontSize: "0.95rem",
       lineHeight: "1.3",
     },
-    
-backgroundColor: "rgba(76, 175, 80, 0.1)",
 
-    
-    
 border: "1px solid rgba(76, 175, 80, 0.3)",
 
     

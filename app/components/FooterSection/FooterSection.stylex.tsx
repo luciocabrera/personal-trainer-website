@@ -12,14 +12,14 @@ export const styles = stylex.create({
   footerBottom: {
     alignItems: "center",
     display: "flex",
-    "@media (max-width: 768px)": {
-      flexDirection: "column",
-      gap: "0.25rem",
-    },
     flexWrap: "wrap",
     gap: "1rem",
 
     justifyContent: "center",
+    "@media (max-width: 768px)": {
+      flexDirection: "column",
+      gap: "0.25rem",
+    },
   },
 
   
@@ -52,11 +52,6 @@ footerContent: {
     alignItems: "center",
     background: "rgba(255, 255, 255, 0.1)",
     borderRadius: "20px",
-    ":hover": {
-      background: "rgba(255, 255, 255, 0.2)",
-      transform: "translateY(-2px)",
-      willChange: "transform",
-    },
     color: "white",
     display: "flex",
     fontSize: "0.9rem",
@@ -64,6 +59,11 @@ footerContent: {
     padding: "0.5rem 1rem",
     textDecoration: "none",
     transition: "all 0.3s ease",
+    ":hover": {
+      background: "rgba(255, 255, 255, 0.2)",
+      transform: "translateY(-2px)",
+      willChange: "transform",
+    },
   },
 
   footerLinkIcon: {
@@ -79,13 +79,13 @@ footerContent: {
   },
 
   version: {
-    "@media (max-width: 768px)": {
-      fontSize: "0.65rem",
-    },
     fontFamily: "monospace",
     fontSize: "0.7rem",
     margin: 0,
 
     opacity: 0.6,
+    "@media (max-width: 768px)": {
+      fontSize: "0.65rem",
+    },
   },
 });

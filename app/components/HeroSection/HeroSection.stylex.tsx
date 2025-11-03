@@ -12,8 +12,8 @@ export const styles = stylex.create({
     flexWrap: "wrap",
     gap: 0,
     margin: 0,
-    textAlign: "center",
     padding: 0,
+    textAlign: "center",
   },
 
   heroContent: {
@@ -40,15 +40,15 @@ export const styles = stylex.create({
 
   
 heroImageImgMobile: {
-    "@container (max-width: 870px)": {
-      // height: "300px",
-      // width: "100%",
-      width: "100cqw",
-    },
     "@media (max-width: 870px)": {
       // height: "300px",
       // width: "100%",
       maxHeight: 520,
+      width: "100cqw",
+    },
+    "@container (max-width: 870px)": {
+      // height: "300px",
+      // width: "100%",
       width: "100cqw",
     },
   },
@@ -99,10 +99,10 @@ heroMobile: {
   },
 
   heroSubtitleMobile: {
-    "@container (max-width: 768px)": {
+    "@media (max-width: 768px)": {
       fontSize: "1.5rem",
     },
-    "@media (max-width: 768px)": {
+    "@container (max-width: 768px)": {
       fontSize: "1.5rem",
     },
   },
@@ -113,10 +113,10 @@ heroMobile: {
   },
 
   heroTitleMobile: {
-    "@container (max-width: 768px)": {
+    "@media (max-width: 768px)": {
       fontSize: "2rem",
     },
-    "@media (max-width: 768px)": {
+    "@container (max-width: 768px)": {
       fontSize: "2rem",
     },
   },
