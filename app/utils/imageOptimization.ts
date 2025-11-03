@@ -18,13 +18,13 @@ export const lazyLoadImage = (
   src: string,
   placeholder?: string
 ) => {
-  if ("IntersectionObserver" in window) {
+  if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const target = entry.target as HTMLImageElement;
           target.src = src;
-          target.classList.remove("lazy");
+          target.classList.remove('lazy');
           observer.unobserve(target);
         }
       });
@@ -33,7 +33,7 @@ export const lazyLoadImage = (
     if (placeholder) {
       img.src = placeholder;
     }
-    img.classList.add("lazy");
+    img.classList.add('lazy');
     observer.observe(img);
   } else {
     // Fallback for browsers without IntersectionObserver
@@ -43,8 +43,8 @@ export const lazyLoadImage = (
 
 // Generate responsive image sources
 export const generateResponsiveImages = (baseSrc: string) => {
-  const extension = baseSrc.split(".").pop();
-  const baseName = baseSrc.replace(`.${extension}`, "");
+  const extension = baseSrc.split('.').pop();
+  const baseName = baseSrc.replace(`.${extension}`, '');
 
   return {
     desktop: baseSrc,

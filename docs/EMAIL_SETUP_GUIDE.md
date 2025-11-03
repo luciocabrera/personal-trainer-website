@@ -60,11 +60,11 @@ SEND_AUTO_REPLY=true
 The email service includes a test function. You can test it by temporarily adding this to your route:
 
 ```typescript
-import { testEmailConfig } from "@/services/emailService";
+import { testEmailConfig } from '@/services/emailService';
 
 // Add this to test email config (remove after testing)
 const isEmailConfigValid = await testEmailConfig();
-console.log("Email config valid:", isEmailConfigValid);
+console.log('Email config valid:', isEmailConfigValid);
 ```
 
 ## Features

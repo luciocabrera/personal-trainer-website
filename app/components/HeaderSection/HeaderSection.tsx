@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import * as stylex from "@stylexjs/stylex";
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import * as stylex from '@stylexjs/stylex';
 
-import { BRAND } from "@/constants/brand";
-import i18n from "@/i18n";
+import { BRAND } from '@/constants/brand';
+import i18n from '@/i18n';
 
-import { styles } from "./HeaderSection.stylex";
+import { styles } from './HeaderSection.stylex';
 
 const HeaderSection = () => {
   const { i18n: i18nInstance, t } = useTranslation();
@@ -18,73 +18,76 @@ const HeaderSection = () => {
   };
 
   const handleMenuClick = (scrollToId: string) => {
-    document.getElementById(scrollToId)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(scrollToId)?.scrollIntoView({ behavior: 'smooth' });
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
   return (
     <header {...stylex.props(styles.header)}>
       <nav
-        aria-label="Main navigation"
-        role="navigation"
+        aria-label='Main navigation'
+        role='navigation'
         {...stylex.props(styles.nav)}
       >
         <div {...stylex.props(styles.logo)}>{BRAND.name}</div>
 
         {/* Desktop Navigation */}
-        <ul role="menubar" {...stylex.props(styles.menuList)}>
-          <li role="none">
+        <ul
+          role='menubar'
+          {...stylex.props(styles.menuList)}
+        >
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("hero")}
+              onClick={() => handleMenuClick('hero')}
             >
-              {t("nav.home")}
+              {t('nav.home')}
             </button>
           </li>
-          <li role="none">
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("trainings")}
+              onClick={() => handleMenuClick('trainings')}
             >
-              {t("nav.trainings")}
+              {t('nav.trainings')}
             </button>
           </li>
-          <li role="none">
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("outdoor-benefits")}
+              onClick={() => handleMenuClick('outdoor-benefits')}
             >
-              {t("nav.outdoorBenefits")}
+              {t('nav.outdoorBenefits')}
             </button>
           </li>
-          <li role="none">
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("schedule")}
+              onClick={() => handleMenuClick('schedule')}
             >
-              {t("nav.schedule")}
+              {t('nav.schedule')}
             </button>
           </li>
-          <li role="none">
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("pricing")}
+              onClick={() => handleMenuClick('pricing')}
             >
-              {t("nav.pricing")}
+              {t('nav.pricing')}
             </button>
           </li>
-          <li role="none">
+          <li role='none'>
             <button
-              role="menuitem"
+              role='menuitem'
               {...stylex.props(styles.menuLink)}
-              onClick={() => handleMenuClick("signup")}
+              onClick={() => handleMenuClick('signup')}
             >
-              {t("nav.contact")}
+              {t('nav.contact')}
             </button>
           </li>
         </ul>
@@ -92,38 +95,38 @@ const HeaderSection = () => {
         {/* Desktop Language Selector */}
         <div
           {...stylex.props(styles.languageSelector)}
-          aria-label="Language selection"
-          role="group"
+          aria-label='Language selection'
+          role='group'
         >
           <button
-            aria-label="Switch to English"
-            type="button"
-            onClick={() => changeLanguage("en")}
+            aria-label='Switch to English'
+            type='button'
+            onClick={() => changeLanguage('en')}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === "en" && styles.languageButtonActive
+              currentLanguage === 'en' && styles.languageButtonActive
             )}
           >
             EN
           </button>
           <button
-            aria-label="Switch to Dutch"
-            type="button"
-            onClick={() => changeLanguage("nl")}
+            aria-label='Switch to Dutch'
+            type='button'
+            onClick={() => changeLanguage('nl')}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === "nl" && styles.languageButtonActive
+              currentLanguage === 'nl' && styles.languageButtonActive
             )}
           >
             NL
           </button>
           <button
-            aria-label="Switch to Spanish"
-            type="button"
-            onClick={() => changeLanguage("es")}
+            aria-label='Switch to Spanish'
+            type='button'
+            onClick={() => changeLanguage('es')}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === "es" && styles.languageButtonActive
+              currentLanguage === 'es' && styles.languageButtonActive
             )}
           >
             ES
@@ -134,8 +137,8 @@ const HeaderSection = () => {
         <button
           {...stylex.props(styles.hamburger)}
           aria-expanded={isMobileMenuOpen}
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          type="button"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          type='button'
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span
@@ -143,19 +146,19 @@ const HeaderSection = () => {
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive1
             )}
-           />
+          />
           <span
             {...stylex.props(
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive2
             )}
-           />
+          />
           <span
             {...stylex.props(
               styles.hamburgerLine,
               isMobileMenuOpen && styles.hamburgerLineActive3
             )}
-           />
+          />
         </button>
       </nav>
 
@@ -172,38 +175,38 @@ const HeaderSection = () => {
             {/* Mobile Language Selector */}
             <div
               {...stylex.props(styles.mobileLanguageSelector)}
-              aria-label="Language selection"
-              role="group"
+              aria-label='Language selection'
+              role='group'
             >
               <button
-                aria-label="Switch to English"
-                type="button"
-                onClick={() => changeLanguage("en")}
+                aria-label='Switch to English'
+                type='button'
+                onClick={() => changeLanguage('en')}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === "en" && styles.mobileLanguageButtonActive
+                  currentLanguage === 'en' && styles.mobileLanguageButtonActive
                 )}
               >
                 EN
               </button>
               <button
-                aria-label="Switch to Dutch"
-                type="button"
-                onClick={() => changeLanguage("nl")}
+                aria-label='Switch to Dutch'
+                type='button'
+                onClick={() => changeLanguage('nl')}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === "nl" && styles.mobileLanguageButtonActive
+                  currentLanguage === 'nl' && styles.mobileLanguageButtonActive
                 )}
               >
                 NL
               </button>
               <button
-                aria-label="Switch to Spanish"
-                type="button"
-                onClick={() => changeLanguage("es")}
+                aria-label='Switch to Spanish'
+                type='button'
+                onClick={() => changeLanguage('es')}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === "es" && styles.mobileLanguageButtonActive
+                  currentLanguage === 'es' && styles.mobileLanguageButtonActive
                 )}
               >
                 ES
@@ -211,59 +214,62 @@ const HeaderSection = () => {
             </div>
 
             {/* Mobile Navigation Links */}
-            <ul role="menubar" {...stylex.props(styles.mobileMenuList)}>
-              <li role="none">
+            <ul
+              role='menubar'
+              {...stylex.props(styles.mobileMenuList)}
+            >
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("hero")}
+                  onClick={() => handleMenuClick('hero')}
                 >
-                  {t("nav.home")}
+                  {t('nav.home')}
                 </button>
               </li>
-              <li role="none">
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("trainings")}
+                  onClick={() => handleMenuClick('trainings')}
                 >
-                  {t("nav.trainings")}
+                  {t('nav.trainings')}
                 </button>
               </li>
-              <li role="none">
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("outdoor-benefits")}
+                  onClick={() => handleMenuClick('outdoor-benefits')}
                 >
-                  {t("nav.outdoorBenefits")}
+                  {t('nav.outdoorBenefits')}
                 </button>
               </li>
-              <li role="none">
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("schedule")}
+                  onClick={() => handleMenuClick('schedule')}
                 >
-                  {t("nav.schedule")}
+                  {t('nav.schedule')}
                 </button>
               </li>
-              <li role="none">
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("pricing")}
+                  onClick={() => handleMenuClick('pricing')}
                 >
-                  {t("nav.pricing")}
+                  {t('nav.pricing')}
                 </button>
               </li>
-              <li role="none">
+              <li role='none'>
                 <button
-                  role="menuitem"
+                  role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={() => handleMenuClick("signup")}
+                  onClick={() => handleMenuClick('signup')}
                 >
-                  {t("nav.contact")}
+                  {t('nav.contact')}
                 </button>
               </li>
             </ul>

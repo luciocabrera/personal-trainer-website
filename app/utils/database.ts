@@ -1,5 +1,5 @@
-import type { PoolClient, QueryResult } from "pg";
-import { Pool } from "pg";
+import type { PoolClient, QueryResult } from 'pg';
+import { Pool } from 'pg';
 
 // Database connection pool
 let pool: Pool | null = null;
@@ -9,24 +9,22 @@ export const getPool = (): Pool => {
   if (!pool) {
     pool = new Pool({
       connectionTimeoutMillis: 2000,
-      database: process.env.POSTGRES_DB || "personal_trainer",
-      host: process.env.POSTGRES_HOST || "localhost",
+      database: process.env.POSTGRES_DB || 'personal_trainer',
+      host: process.env.POSTGRES_HOST || 'localhost',
       idleTimeoutMillis: 30000,
       // Connection pool settings
-max: 20,
-      
-      
-password: process.env.POSTGRES_PASSWORD || "admin123",
-      
+      max: 20,
 
-port: parseInt(process.env.POSTGRES_PORT || "5432"),
-      
-user: process.env.POSTGRES_USER || "admin",
+      password: process.env.POSTGRES_PASSWORD || 'admin123',
+
+      port: parseInt(process.env.POSTGRES_PORT || '5432'),
+
+      user: process.env.POSTGRES_USER || 'admin',
     });
 
     // Handle pool errors
-    pool.on("error", (err) => {
-      console.error("Unexpected error on idle client", err);
+    pool.on('error', (err) => {
+      console.error('Unexpected error on idle client', err);
       process.exit(-1);
     });
   }
@@ -65,11 +63,11 @@ export const closePool = async (): Promise<void> => {
 // Test database connection
 export const testConnection = async (): Promise<boolean> => {
   try {
-    await query("SELECT NOW()");
-    console.log("✅ Database connection successful");
+    await query('SELECT NOW()');
+    console.log('✅ Database connection successful');
     return true;
   } catch (error) {
-    console.error("❌ Database connection failed:", error);
+    console.error('❌ Database connection failed:', error);
     return false;
   }
 };

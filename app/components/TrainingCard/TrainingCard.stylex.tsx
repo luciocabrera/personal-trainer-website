@@ -1,33 +1,33 @@
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   training: {
     background:
-      "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))",
-    borderColor: "rgba(78, 205, 196, 0.3)",
-    borderRadius: "15px",
-    borderStyle: "solid",
-    borderWidth: "1px",
+      'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))',
+    borderColor: 'rgba(78, 205, 196, 0.3)',
+    borderRadius: '15px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
     boxShadow: {
-      default: "0 5px 25px rgba(78, 205, 196, 0.2)",
-      ":hover": "0 10px 40px rgba(78, 205, 196, 0.4)",
+      default: '0 5px 25px rgba(78, 205, 196, 0.2)',
+      ':hover': '0 10px 40px rgba(78, 205, 196, 0.4)',
     },
-    display: "flex",
-    flexDirection: "column",
-    gap: "16px",
-    marginBottom: "1rem",
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+    marginBottom: '1rem',
     transform: {
       default: null,
-      ":hover": "translateY(-5px)",
+      ':hover': 'translateY(-5px)',
     },
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   },
-  trainingBody: { padding: "1.5rem" },
+  trainingBody: { padding: '1.5rem' },
 
   trainingDescription: {
-    color: "#666",
+    color: '#666',
     flexGrow: 1,
-    fontSize: "1rem",
+    fontSize: '1rem',
     lineHeight: 1.6,
     margin: 0,
   },
@@ -35,118 +35,106 @@ export const styles = stylex.create({
   trainingDescriptionMobile: {
     fontSize: {
       default: null,
-      "@media (max-width: 768px)": "0.9rem",
+      '@media (max-width: 768px)': '0.9rem',
     },
   },
 
   trainingDescriptionSmallMobile: {
     fontSize: {
       default: null,
-      "@media (max-width: 480px)": "0.85rem",
+      '@media (max-width: 480px)': '0.85rem',
     },
   },
 
   trainingImage: {
-    background: "#f0f0f0",
-    borderTopLeftRadius: "8px",
-    borderTopRightRadius: "8px",
-    height: "250px",
-    marginBottom: "1rem",
-    overflow: "hidden",
-    width: "100%",
+    background: '#f0f0f0',
+    borderTopLeftRadius: '8px',
+    borderTopRightRadius: '8px',
+    height: '250px',
+    marginBottom: '1rem',
+    overflow: 'hidden',
+    width: '100%',
   },
 
-  
   trainingImageImg: {
-    backgroundColor: "#f0f0f0",
-    borderTopLeftRadius: "8px",
-    borderTopRightRadius: "8px",
-    display: "block",
-    height: "250px",
-    objectFit: "cover",
-    width: "100%",
+    backgroundColor: '#f0f0f0',
+    borderTopLeftRadius: '8px',
+    borderTopRightRadius: '8px',
+    display: 'block',
+    height: '250px',
+    objectFit: 'cover',
+    width: '100%',
   },
 
-  
-trainingImageImgMobile: {
+  trainingImageImgMobile: {
     height: {
       default: null,
-      "@media (max-width: 768px)": "100%",
+      '@media (max-width: 768px)': '100%',
     },
   },
 
-  
-trainingImageImgSmallMobile: {
+  trainingImageImgSmallMobile: {
     height: {
       default: null,
-      "@media (max-width: 480px)": "100%",
+      '@media (max-width: 480px)': '100%',
     },
   },
 
-  
-trainingImageMobile: {
+  trainingImageMobile: {
     height: {
       default: null,
-      "@media (max-width: 768px)": "100%",
+      '@media (max-width: 768px)': '100%',
     },
   },
 
-  
-trainingImageSmallMobile: {
+  trainingImageSmallMobile: {
     height: {
       default: null,
-      "@media (max-width: 480px)": "100%",
+      '@media (max-width: 480px)': '100%',
     },
   },
 
-  
-  
-// Mobile responsive styles
-trainingMobile: {
+  // Mobile responsive styles
+  trainingMobile: {
     gap: {
       default: null,
-      "@media (max-width: 768px)": "12px",
+      '@media (max-width: 768px)': '12px',
     },
     // padding: "16px",
   },
 
-  
-
-// Small mobile styles
-trainingSmallMobile: {
+  // Small mobile styles
+  trainingSmallMobile: {
     gap: {
       default: null,
-      "@media (max-width: 480px)": "10px",
+      '@media (max-width: 480px)': '10px',
     },
     // padding: "12px",
   },
 
-  
-
-trainingTitle: {
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    background: "linear-gradient(135deg, #ff9500, #ff6b6b)",
-    backgroundClip: "text",
-    fontSize: "1.4rem",
-    fontWeight: "bold",
+  trainingTitle: {
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    background: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
+    backgroundClip: 'text',
+    fontSize: '1.4rem',
+    fontWeight: 'bold',
     lineHeight: 1.3,
-    marginBottom: "0.5rem",
+    marginBottom: '0.5rem',
     marginTop: 0,
   },
 
-  
-trainingTitleMobile: {
+  trainingTitleMobile: {
     fontSize: {
       default: null,
-      "@media (max-width: 768px)": "1.25rem",
+      '@media (max-width: 768px)': '1.25rem',
     },
   },
 
   trainingTitleSmallMobile: {
     fontSize: {
       default: null,
-      "@media (max-width: 480px)": "1.1rem",
+      '@media (max-width: 480px)': '1.1rem',
     },
   },
 });

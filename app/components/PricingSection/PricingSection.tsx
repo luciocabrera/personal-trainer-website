@@ -1,17 +1,23 @@
-import { useTranslation } from "react-i18next";
-import * as stylex from "@stylexjs/stylex";
+import { useTranslation } from 'react-i18next';
+import * as stylex from '@stylexjs/stylex';
 
-import { PricingIcon } from "@/components/Icons";
+import { PricingIcon } from '@/components/Icons';
 
-import { styles } from "./PricingSection.stylex";
+import { styles } from './PricingSection.stylex';
 
 const PricingSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="pricing" {...stylex.props(styles.pricing)}>
-      <h2 {...stylex.props(styles.pricingTitle)}>{t("pricing.title")}</h2>
-      <div id="pricing-image" {...stylex.props(styles.pricingImage)}>
+    <section
+      id='pricing'
+      {...stylex.props(styles.pricing)}
+    >
+      <h2 {...stylex.props(styles.pricingTitle)}>{t('pricing.title')}</h2>
+      <div
+        id='pricing-image'
+        {...stylex.props(styles.pricingImage)}
+      >
         <div
           {...stylex.props(
             styles.pricingIconContainer,
@@ -31,30 +37,30 @@ const PricingSection = () => {
       <div {...stylex.props(styles.pricingGrid, styles.pricingGridMobile)}>
         <div {...stylex.props(styles.price)}>
           <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.strip10.title")}
+            {t('pricing.strip10.title')}
           </h3>
-          <p>{t("pricing.strip10.desc")}</p>
+          <p>{t('pricing.strip10.desc')}</p>
           <p {...stylex.props(styles.disclaimer)}>
-            {t("pricing.strip10.disclaimer")}
+            {t('pricing.strip10.disclaimer')}
           </p>
         </div>
         <div {...stylex.props(styles.price)}>
           <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.single.title")}
+            {t('pricing.single.title')}
           </h3>
-          <p>{t("pricing.single.desc")}</p>
+          <p>{t('pricing.single.desc')}</p>
         </div>
         <div {...stylex.props(styles.price)}>
           <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.tryout.title")}
+            {t('pricing.tryout.title')}
           </h3>
-          <p>{t("pricing.tryout.desc")}</p>
+          <p>{t('pricing.tryout.desc')}</p>
         </div>
         <div {...stylex.props(styles.price)}>
           <h3 {...stylex.props(styles.priceTitle)}>
-            {t("pricing.ptduo.title")}
+            {t('pricing.ptduo.title')}
           </h3>
-          <p>{t("pricing.ptduo.desc")}</p>
+          <p>{t('pricing.ptduo.desc')}</p>
         </div>
       </div>
     </section>

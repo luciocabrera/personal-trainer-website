@@ -5,45 +5,45 @@
 
 // Simple network test without dependencies
 const testSMTPConnectivity = async () => {
-  console.log("🔍 Railway Network Diagnostics for SMTP");
-  console.log("=====================================");
+  console.log('🔍 Railway Network Diagnostics for SMTP');
+  console.log('=====================================');
 
   // Test environment variables first
-  console.log("📧 Environment Variables:");
-  console.log("EMAIL_PROVIDER:", process.env.EMAIL_PROVIDER);
-  console.log("GMAIL_USER:", process.env.GMAIL_USER);
+  console.log('📧 Environment Variables:');
+  console.log('EMAIL_PROVIDER:', process.env.EMAIL_PROVIDER);
+  console.log('GMAIL_USER:', process.env.GMAIL_USER);
   console.log(
-    "GMAIL_APP_PASSWORD:",
-    process.env.GMAIL_APP_PASSWORD ? "✅ Set" : "❌ Missing"
+    'GMAIL_APP_PASSWORD:',
+    process.env.GMAIL_APP_PASSWORD ? '✅ Set' : '❌ Missing'
   );
 
-  console.log("\n🌐 Testing SMTP Connectivity...");
+  console.log('\n🌐 Testing SMTP Connectivity...');
 
   try {
     // Test different SMTP configurations
     const configs = [
       {
-        host: "smtp.gmail.com",
-        name: "Gmail SMTP (Port 587 - TLS)",
+        host: 'smtp.gmail.com',
+        name: 'Gmail SMTP (Port 587 - TLS)',
         port: 587,
         secure: false,
       },
       {
-        host: "smtp.gmail.com",
-        name: "Gmail SMTP (Port 465 - SSL)",
+        host: 'smtp.gmail.com',
+        name: 'Gmail SMTP (Port 465 - SSL)',
         port: 465,
         secure: true,
       },
       {
-        host: "smtp.gmail.com",
-        name: "Gmail SMTP (Port 25 - Plain)",
+        host: 'smtp.gmail.com',
+        name: 'Gmail SMTP (Port 25 - Plain)',
         port: 25,
         secure: false,
       },
     ];
 
     // Dynamic import
-    const nodemailer = (await import("nodemailer")).default;
+    const nodemailer = (await import('nodemailer')).default;
 
     for (const config of configs) {
       console.log(`\n⏳ Testing ${config.name}...`);
@@ -57,13 +57,13 @@ const testSMTPConnectivity = async () => {
           connectionTimeout: 10000,
           debug: true,
           // 10 seconds
-greetingTimeout: 10000,
-          
-host: config.host, 
-          
-logger: false,
-          
-port: config.port,
+          greetingTimeout: 10000,
+
+          host: config.host,
+
+          logger: false,
+
+          port: config.port,
           secure: config.secure,
           socketTimeout: 10000, // Reduce noise
         });
@@ -72,16 +72,16 @@ port: config.port,
         console.log(`✅ ${config.name} - SUCCESS!`);
 
         // If this works, try sending a test email
-        console.log("📤 Sending test email...");
+        console.log('📤 Sending test email...');
         await transporter.sendMail({
           from: process.env.EMAIL_FROM || process.env.GMAIL_USER,
           html: `
             <h2>🚀 Railway SMTP Test</h2>
             <p>This email was sent successfully using <strong>${config.name}</strong> from Railway production environment.</p>
             <p><strong>Time:</strong> ${new Date().toISOString()}</p>
-            <p><strong>Environment:</strong> ${process.env.NODE_ENV || "unknown"}</p>
+            <p><strong>Environment:</strong> ${process.env.NODE_ENV || 'unknown'}</p>
           `,
-          subject: `🚀 Railway SMTP Test - ${  config.name}`,
+          subject: `🚀 Railway SMTP Test - ${config.name}`,
           text: `This email was sent successfully using ${config.name} from Railway production environment.`,
           to: process.env.EMAIL_TO,
         });
@@ -89,11 +89,11 @@ port: config.port,
         return; // Success! Exit after first working config
       } catch (error: any) {
         console.log(`❌ ${config.name} - FAILED:`);
-        if (error.code === "ETIMEDOUT") {
+        if (error.code === 'ETIMEDOUT') {
           console.log(
             `   Connection timeout - Port ${config.port} may be blocked`
           );
-        } else if (error.code === "ECONNREFUSED") {
+        } else if (error.code === 'ECONNREFUSED') {
           console.log(`   Connection refused - Port ${config.port} is blocked`);
         } else {
           console.log(`   Error: ${error.message || error}`);
@@ -101,19 +101,19 @@ port: config.port,
       }
     }
 
-    console.log("\n❌ All SMTP configurations failed!");
+    console.log('\n❌ All SMTP configurations failed!');
     console.log(
-      "🔍 This indicates Railway is blocking outbound SMTP connections."
+      '🔍 This indicates Railway is blocking outbound SMTP connections.'
     );
   } catch (error) {
-    console.error("❌ Failed to load nodemailer:", error);
+    console.error('❌ Failed to load nodemailer:', error);
   }
 };
 
 // Alternative: Test basic TCP connectivity
 const testTCPConnection = async (host, port) => {
   return new Promise((resolve) => {
-    const net = require("net");
+    const net = require('net');
     const socket = new net.Socket();
 
     const timeout = setTimeout(() => {
@@ -127,7 +127,7 @@ const testTCPConnection = async (host, port) => {
       resolve(true);
     });
 
-    socket.on("error", () => {
+    socket.on('error', () => {
       clearTimeout(timeout);
       resolve(false);
     });
@@ -135,13 +135,13 @@ const testTCPConnection = async (host, port) => {
 };
 
 const testBasicConnectivity = async () => {
-  console.log("\n🔌 Testing Basic TCP Connectivity...");
+  console.log('\n🔌 Testing Basic TCP Connectivity...');
 
   const ports = [25, 465, 587];
   for (const port of ports) {
-    const canConnect = await testTCPConnection("smtp.gmail.com", port);
+    const canConnect = await testTCPConnection('smtp.gmail.com', port);
     console.log(
-      `Port ${port}: ${canConnect ? "✅ Open" : "❌ Blocked/Timeout"}`
+      `Port ${port}: ${canConnect ? '✅ Open' : '❌ Blocked/Timeout'}`
     );
   }
 };
@@ -151,11 +151,11 @@ const runDiagnostics = async () => {
   await testSMTPConnectivity();
   await testBasicConnectivity();
 
-  console.log("\n💡 Solutions if SMTP is blocked:");
+  console.log('\n💡 Solutions if SMTP is blocked:');
   console.log("1. Use Railway's SendGrid add-on");
-  console.log("2. Use a webhook-based email service (Resend, Postmark)");
+  console.log('2. Use a webhook-based email service (Resend, Postmark)');
   console.log("3. Use Railway's email service integration");
-  console.log("4. Proxy through a different service");
+  console.log('4. Proxy through a different service');
 };
 
 runDiagnostics().catch(console.error);

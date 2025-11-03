@@ -1,12 +1,12 @@
-import { useTranslation } from "react-i18next";
-import * as stylex from "@stylexjs/stylex";
+import { useTranslation } from 'react-i18next';
+import * as stylex from '@stylexjs/stylex';
 
-import { EmailIcon, InstagramIcon } from "@/components/Icons";
-import { BRAND } from "@/constants/brand";
+import { EmailIcon, InstagramIcon } from '@/components/Icons';
+import { BRAND } from '@/constants/brand';
 
-import packageJson from "../../../package.json";
+import packageJson from '../../../package.json';
 
-import { styles } from "./FooterSection.stylex";
+import { styles } from './FooterSection.stylex';
 
 const FooterSection = () => {
   const { t } = useTranslation();
@@ -21,21 +21,27 @@ const FooterSection = () => {
             href={`mailto:${BRAND.email}`}
             {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
           >
-            <EmailIcon height={18} width={18} />
+            <EmailIcon
+              height={18}
+              width={18}
+            />
             {BRAND.email}
           </a>
           <a
             href={BRAND.instagram.url}
-            rel="noopener noreferrer"
-            target="_blank"
+            rel='noopener noreferrer'
+            target='_blank'
             {...stylex.props(styles.footerLink, styles.footerLinkMobile)}
           >
-            <InstagramIcon height={18} width={18} />
+            <InstagramIcon
+              height={18}
+              width={18}
+            />
             {BRAND.instagram.handle}
           </a>
         </div>
         <div {...stylex.props(styles.footerBottom)}>
-          <p>{t("footer.copyright")}</p>
+          <p>{t('footer.copyright')}</p>
           <p {...stylex.props(styles.version)}>v{packageJson.version}</p>
         </div>
       </div>

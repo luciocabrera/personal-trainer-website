@@ -60,15 +60,24 @@ Your website already has these meta tags configured:
 
 ```html
 <!-- Open Graph -->
-<meta property="og:image" content="https://desi4fit.nl/og-image.jpg" />
+<meta
+  property="og:image"
+  content="https://desi4fit.nl/og-image.jpg"
+/>
 <meta
   property="og:image:alt"
   content="Desi4Fit - Outdoor fitness training session"
 />
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://desi4fit.nl/og-image.jpg" />
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+/>
+<meta
+  name="twitter:image"
+  content="https://desi4fit.nl/og-image.jpg"
+/>
 ```
 
 ## 🧪 Testing Your OG Image:

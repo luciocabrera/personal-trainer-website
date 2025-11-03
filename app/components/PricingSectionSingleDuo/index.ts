@@ -1,1 +1,1 @@
-export { default as PricingSectionSingleDuo } from "./PricingSectionSingleDuo";
+export { default as PricingSectionSingleDuo } from './PricingSectionSingleDuo';

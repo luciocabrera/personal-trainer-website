@@ -1,31 +1,34 @@
-import { useTranslation } from "react-i18next";
-import * as stylex from "@stylexjs/stylex";
+import { useTranslation } from 'react-i18next';
+import * as stylex from '@stylexjs/stylex';
 
-import { styles } from "./HeroSection.stylex";
+import { styles } from './HeroSection.stylex';
 
 const HeroSection = () => {
   const { t } = useTranslation();
   return (
-    <section id="hero" {...stylex.props(styles.hero, styles.heroMobile)}>
+    <section
+      id='hero'
+      {...stylex.props(styles.hero, styles.heroMobile)}
+    >
       <div {...stylex.props(styles.heroContent)}>
         <h1 {...stylex.props(styles.heroTitle, styles.heroTitleMobile)}>
-          {t("hero.title")}
+          {t('hero.title')}
         </h1>
         <h2 {...stylex.props(styles.heroSubtitle, styles.heroSubtitleMobile)}>
-          {t("hero.subtitle")}
+          {t('hero.subtitle')}
         </h2>
-        <p {...stylex.props(styles.heroParagraph)}>{t("hero.tagline")}</p>
-        <p {...stylex.props(styles.heroParagraph)}>{t("hero.description")}</p>
+        <p {...stylex.props(styles.heroParagraph)}>{t('hero.tagline')}</p>
+        <p {...stylex.props(styles.heroParagraph)}>{t('hero.description')}</p>
       </div>
       <div {...stylex.props(styles.heroImage, styles.heroImageMobile)}>
         {/* LCP Image: Optimized for Largest Contentful Paint using local image */}
         <img
-          alt="Professional strength training session outdoors"
-          decoding="sync"
-          fetchPriority="high"
-          height="600"
-          src="/images/hero.jpeg"
-          width="800"
+          alt='Professional strength training session outdoors'
+          decoding='sync'
+          fetchPriority='high'
+          height='600'
+          src='/images/hero.jpeg'
+          width='800'
           {...stylex.props(styles.heroImageImg, styles.heroImageImgMobile)}
         />
       </div>

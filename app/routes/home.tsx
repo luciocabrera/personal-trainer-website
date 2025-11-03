@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import type { ActionFunctionArgs } from "react-router";
-import { useActionData,useLocation } from "react-router";
+import { useEffect, useState } from 'react';
+import type { ActionFunctionArgs } from 'react-router';
+import { useActionData, useLocation } from 'react-router';
 
-import CenteredNotification from "@/components/CenteredNotification/CenteredNotification";
-import Confetti from "@/components/Confetti/Confetti";
-import { HeroSection } from "@/components/HeroSection";
-import { OutdoorBenefitsSection } from "@/components/OutdoorBenefitsSection";
-import { PricingSection } from "@/components/PricingSection";
-import { ScheduleSection } from "@/components/ScheduleSection";
-import { SignupSection } from "@/components/SignupSection";
-import { TrainingsSection } from "@/components/TrainingsSection";
-import { handleContactSubmission } from "@/services/contactService";
+import CenteredNotification from '@/components/CenteredNotification/CenteredNotification';
+import Confetti from '@/components/Confetti/Confetti';
+import { HeroSection } from '@/components/HeroSection';
+import { OutdoorBenefitsSection } from '@/components/OutdoorBenefitsSection';
+import { PricingSection } from '@/components/PricingSection';
+import { ScheduleSection } from '@/components/ScheduleSection';
+import { SignupSection } from '@/components/SignupSection';
+import { TrainingsSection } from '@/components/TrainingsSection';
+import { handleContactSubmission } from '@/services/contactService';
 import {
   getLanguageFromRequest,
   getServerTranslation,
-} from "@/utils/serverI18n";
+} from '@/utils/serverI18n';
 
 export async function action({ request }: ActionFunctionArgs) {
   // Get user's language preference
@@ -22,14 +22,14 @@ export async function action({ request }: ActionFunctionArgs) {
   const { t } = getServerTranslation(language);
 
   const formData = await request.formData();
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const message = formData.get("message");
+  const name = formData.get('name');
+  const email = formData.get('email');
+  const message = formData.get('message');
 
   // Basic validation
   if (!name || !email || !message) {
     return {
-      error: t("form.validation.required"),
+      error: t('form.validation.required'),
       success: false,
     };
   }
@@ -38,7 +38,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email.toString())) {
     return {
-      error: t("form.validation.invalidEmail"),
+      error: t('form.validation.invalidEmail'),
       success: false,
     };
   }
@@ -46,20 +46,20 @@ export async function action({ request }: ActionFunctionArgs) {
   try {
     // Prepare email translations
     const emailTranslations = {
-      adminEmailLabel: t("email.adminEmailLabel"),
-      adminFooter: t("email.adminFooter"),
-      adminMessageLabel: t("email.adminMessageLabel"),
-      adminNameLabel: t("email.adminNameLabel"),
-      adminSubject: t("email.adminSubject"),
-      adminTitle: t("email.adminTitle"),
-      autoReplyClosing: t("email.autoReplyClosing"),
-      autoReplyDisclaimer: t("email.autoReplyDisclaimer"),
-      autoReplyGreeting: t("email.autoReplyGreeting"),
-      autoReplySubject: t("email.autoReplySubject"),
-      autoReplyTeam: t("email.autoReplyTeam"),
-      autoReplyThankYou: t("email.autoReplyThankYou"),
-      autoReplyTitle: t("email.autoReplyTitle"),
-      autoReplyYourMessage: t("email.autoReplyYourMessage"),
+      adminEmailLabel: t('email.adminEmailLabel'),
+      adminFooter: t('email.adminFooter'),
+      adminMessageLabel: t('email.adminMessageLabel'),
+      adminNameLabel: t('email.adminNameLabel'),
+      adminSubject: t('email.adminSubject'),
+      adminTitle: t('email.adminTitle'),
+      autoReplyClosing: t('email.autoReplyClosing'),
+      autoReplyDisclaimer: t('email.autoReplyDisclaimer'),
+      autoReplyGreeting: t('email.autoReplyGreeting'),
+      autoReplySubject: t('email.autoReplySubject'),
+      autoReplyTeam: t('email.autoReplyTeam'),
+      autoReplyThankYou: t('email.autoReplyThankYou'),
+      autoReplyTitle: t('email.autoReplyTitle'),
+      autoReplyYourMessage: t('email.autoReplyYourMessage'),
     };
 
     // Process contact submission (database-first approach)
@@ -73,22 +73,22 @@ export async function action({ request }: ActionFunctionArgs) {
     );
 
     // Log successful submission
-    console.log("Contact form submission successful:", {
+    console.log('Contact form submission successful:', {
       email: email.toString(),
       name: name.toString(),
       timestamp: new Date().toISOString(),
     });
 
     return {
-      message: t("form.success.message"),
+      message: t('form.success.message'),
       success: true,
     };
   } catch (error) {
-    console.error("Form submission error:", error);
+    console.error('Form submission error:', error);
 
     // Since email is non-blocking, this error is only for database failures
     return {
-      error: t("form.error.general"),
+      error: t('form.error.general'),
       success: false,
     };
   }
@@ -103,13 +103,13 @@ export default function Home() {
   // Smooth scroll to section based on hash
   useEffect(() => {
     const scrollToSection = () => {
-      const hash = location.hash.replace("#", "");
+      const hash = location.hash.replace('#', '');
       if (hash) {
         const element = document.getElementById(hash);
         if (element) {
           element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
       }
@@ -144,7 +144,7 @@ export default function Home() {
           autoHideDelay={actionData.success ? 10000 : 6000}
           isVisible={Boolean(showNotification)}
           message={actionData.success ? actionData.message! : actionData.error!}
-          type={actionData.success ? "success" : "error"}
+          type={actionData.success ? 'success' : 'error'}
           onClose={handleCloseNotification}
         />
       )}

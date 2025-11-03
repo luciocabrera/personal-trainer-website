@@ -1,8 +1,8 @@
-import { renderToPipeableStream } from "react-dom/server";
-import type { AppLoadContext, EntryContext } from "react-router";
-import { ServerRouter } from "react-router";
-import { createReadableStreamFromReadable } from "@react-router/node";
-import { PassThrough } from "node:stream";
+import { renderToPipeableStream } from 'react-dom/server';
+import type { AppLoadContext, EntryContext } from 'react-router';
+import { ServerRouter } from 'react-router';
+import { createReadableStreamFromReadable } from '@react-router/node';
+import { PassThrough } from 'node:stream';
 
 export default function handleRequest(
   request: Request,
@@ -15,7 +15,10 @@ export default function handleRequest(
 ) {
   return new Promise((resolve, reject) => {
     const { abort, pipe } = renderToPipeableStream(
-      <ServerRouter context={routerContext} url={request.url} />,
+      <ServerRouter
+        context={routerContext}
+        url={request.url}
+      />,
       {
         onError(error: unknown) {
           console.error(error);
@@ -28,9 +31,9 @@ export default function handleRequest(
           const body = new PassThrough();
           const stream = createReadableStreamFromReadable(body);
 
-          responseHeaders.set("Content-Type", "text/html");
-          responseHeaders.delete("Expires");
-          responseHeaders.delete("Pragma");
+          responseHeaders.set('Content-Type', 'text/html');
+          responseHeaders.delete('Expires');
+          responseHeaders.delete('Pragma');
 
           resolve(
             new Response(stream, {

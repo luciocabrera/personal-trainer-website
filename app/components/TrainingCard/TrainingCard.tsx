@@ -1,7 +1,7 @@
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 
-import { styles } from "./TrainingCard.stylex";
-import type { TrainingCardProps } from "./TrainingCard.types";
+import { styles } from './TrainingCard.stylex';
+import type { TrainingCardProps } from './TrainingCard.types';
 
 const TrainingCard = ({
   children,
@@ -27,11 +27,11 @@ const TrainingCard = ({
       >
         <img
           alt={imageAlt}
-          decoding="async"
-          height="600"
-          loading="lazy"
+          decoding='async'
+          height='600'
+          loading='lazy'
           src={imageSrc}
-          width="800"
+          width='800'
           {...stylex.props(
             styles.trainingImageImg,
             styles.trainingImageImgMobile,

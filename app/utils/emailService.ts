@@ -1,5 +1,5 @@
-import nodemailer from "nodemailer";
-import { Resend } from "resend";
+import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export interface EmailData {
   email: string;
@@ -34,7 +34,7 @@ const createTransporter = () => {
       pass: process.env.GMAIL_APP_PASSWORD,
       user: process.env.GMAIL_USER,
     },
-    service: "gmail",
+    service: 'gmail',
   });
 };
 
@@ -43,28 +43,28 @@ export const sendContactEmail = async (
   data: EmailData,
   translations: EmailTranslations
 ): Promise<void> => {
-  const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() || "resend";
+  const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() || 'resend';
 
   try {
     console.log(`📧 Preparing to send contact email via ${emailProvider}...`);
 
-    if (emailProvider === "resend") {
+    if (emailProvider === 'resend') {
       await sendWithResend(data, translations);
-    } else if (emailProvider === "gmail") {
+    } else if (emailProvider === 'gmail') {
       await sendWithGmail(data, translations);
     } else {
       throw new Error(`Unsupported email provider: ${emailProvider}`);
     }
   } catch (error) {
-    console.error("❌ Error sending email:", error);
+    console.error('❌ Error sending email:', error);
     // If Resend fails, try Gmail as fallback
-    if (emailProvider === "resend") {
-      console.log("🔄 Resend failed, trying Gmail fallback...");
+    if (emailProvider === 'resend') {
+      console.log('🔄 Resend failed, trying Gmail fallback...');
       try {
         await sendWithGmail(data, translations);
-        console.log("✅ Gmail fallback successful");
+        console.log('✅ Gmail fallback successful');
       } catch (fallbackError) {
-        console.error("❌ Gmail fallback also failed:", fallbackError);
+        console.error('❌ Gmail fallback also failed:', fallbackError);
         throw fallbackError;
       }
     } else {
@@ -80,34 +80,34 @@ const sendWithResend = async (
 ): Promise<void> => {
   // 1️⃣ Send notification to admin
   await resend.emails.send({
-    from: process.env.EMAIL_FROM || "Contact Form <noreply@desi4fit.nl>",
+    from: process.env.EMAIL_FROM || 'Contact Form <noreply@desi4fit.nl>',
     html: `
       <h2>${translations.adminTitle}</h2>
       <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
       <p><strong>${translations.adminEmailLabel}:</strong> ${data.email}</p>
       <p><strong>${translations.adminMessageLabel}:</strong></p>
       <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
-        ${data.message.replace(/\n/g, "<br>")}
+        ${data.message.replace(/\n/g, '<br>')}
       </p>
       <hr>
       <p><em>${translations.adminFooter}</em></p>
     `,
     subject: `${translations.adminSubject} ${data.name}`,
-    to: process.env.EMAIL_TO || "info@desi4fit.nl",
+    to: process.env.EMAIL_TO || 'info@desi4fit.nl',
   });
-  console.log("✅ Admin notification email sent via Resend");
+  console.log('✅ Admin notification email sent via Resend');
 
   // 2️⃣ Send auto-reply to user (if enabled)
-  if (process.env.SEND_AUTO_REPLY === "true") {
+  if (process.env.SEND_AUTO_REPLY === 'true') {
     await resend.emails.send({
-      from: process.env.EMAIL_FROM || "Desi4Fit <noreply@desi4fit.nl>",
+      from: process.env.EMAIL_FROM || 'Desi4Fit <noreply@desi4fit.nl>',
       html: `
         <h2>${translations.autoReplyTitle}</h2>
         <p>${translations.autoReplyGreeting} ${data.name},</p>
         <p>${translations.autoReplyThankYou}</p>
         <p><strong>${translations.autoReplyYourMessage}:</strong></p>
         <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
-          ${data.message.replace(/\n/g, "<br>")}
+          ${data.message.replace(/\n/g, '<br>')}
         </p>
         <p>${translations.autoReplyClosing}<br>${translations.autoReplyTeam}</p>
         <hr>
@@ -116,7 +116,7 @@ const sendWithResend = async (
       subject: translations.autoReplySubject,
       to: data.email,
     });
-    console.log("✅ Auto-reply email sent via Resend");
+    console.log('✅ Auto-reply email sent via Resend');
   }
 };
 
@@ -136,7 +136,7 @@ const sendWithGmail = async (
       <p><strong>${translations.adminEmailLabel}:</strong> ${data.email}</p>
       <p><strong>${translations.adminMessageLabel}:</strong></p>
       <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
-        ${data.message.replace(/\n/g, "<br>")}
+        ${data.message.replace(/\n/g, '<br>')}
       </p>
       <hr>
       <p><em>${translations.adminFooter}</em></p>
@@ -146,10 +146,10 @@ const sendWithGmail = async (
   };
 
   await transporter.sendMail(adminMailOptions);
-  console.log("✅ Admin notification email sent via Gmail");
+  console.log('✅ Admin notification email sent via Gmail');
 
   // Auto-reply to user (if enabled)
-  if (process.env.SEND_AUTO_REPLY === "true") {
+  if (process.env.SEND_AUTO_REPLY === 'true') {
     const autoReplyOptions = {
       from: process.env.EMAIL_FROM,
       html: `
@@ -158,7 +158,7 @@ const sendWithGmail = async (
         <p>${translations.autoReplyThankYou}</p>
         <p><strong>${translations.autoReplyYourMessage}:</strong></p>
         <p style="background-color: #f5f5f5; padding: 15px; border-left: 4px solid #4ecdc4; margin: 15px 0;">
-          ${data.message.replace(/\n/g, "<br>")}
+          ${data.message.replace(/\n/g, '<br>')}
         </p>
         <p>${translations.autoReplyClosing}<br>${translations.autoReplyTeam}</p>
         <hr>
@@ -169,6 +169,6 @@ const sendWithGmail = async (
     };
 
     await transporter.sendMail(autoReplyOptions);
-    console.log("✅ Auto-reply email sent via Gmail");
+    console.log('✅ Auto-reply email sent via Gmail');
   }
 };

@@ -58,8 +58,8 @@ server {
 3. **Node.js HTTP/2 with Express** (requires SSL):
 
 ```javascript
-import spdy from "spdy";
-import express from "express";
+import spdy from 'spdy';
+import express from 'express';
 
 const app = express();
 const server = spdy.createServer(options, app);

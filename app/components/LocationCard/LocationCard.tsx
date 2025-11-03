@@ -1,11 +1,11 @@
-import * as stylex from "@stylexjs/stylex";
+import * as stylex from '@stylexjs/stylex';
 
-import { styles } from "./LocationCard.stylex";
-import type { LocationCardProps } from "./LocationCard.types";
+import { styles } from './LocationCard.stylex';
+import type { LocationCardProps } from './LocationCard.types';
 
 const LocationCard = ({
   capacity,
-  comingSoonText = "*COMING SOON*",
+  comingSoonText = '*COMING SOON*',
   dates,
   isComingSoon = false,
   location,
@@ -81,14 +81,14 @@ const LocationCard = ({
       <div {...stylex.props(styles.mapContainer)}>
         <iframe
           aria-label={`Map for ${title} location`}
-          height="200"
+          height='200'
           src={mapSrc}
           title={`Interactive map showing location of ${title} training sessions at ${location}`}
-          width="100%"
+          width='100%'
           {...stylex.props(styles.mapIframe)}
           allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          loading='lazy'
+          referrerPolicy='no-referrer-when-downgrade'
           tabIndex={0}
         />
       </div>

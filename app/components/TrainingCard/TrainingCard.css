@@ -1,4 +1,4 @@
-@import "../ImageWithSkeleton/ImageWithSkeleton.css";
+@import '../ImageWithSkeleton/ImageWithSkeleton.css';
 
 /* TrainingCard component styles - overrides App.css styles */
 .training {
@@ -15,7 +15,9 @@
   border-radius: 15px !important;
   box-shadow: 0 5px 25px rgba(78, 205, 196, 0.2) !important;
   border: 1px solid rgba(78, 205, 196, 0.3) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
 }
 
 .training:hover {

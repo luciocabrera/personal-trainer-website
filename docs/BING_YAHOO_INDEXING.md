@@ -44,7 +44,10 @@ Sitemap: https://desi4fit.nl/sitemap.xml
    **Option A: HTML Meta Tag (Easiest)**
    - Bing will give you a meta tag like:
      ```html
-     <meta name="msvalidate.01" content="YOUR_CODE_HERE" />
+     <meta
+       name="msvalidate.01"
+       content="YOUR_CODE_HERE"
+     />
      ```
    - Add this to `app/root.tsx` in the `<head>` section
 
@@ -71,7 +74,10 @@ I'll update your `root.tsx` with a placeholder for the Bing verification tag:
 {
   /* Bing Webmaster Verification */
 }
-<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />;
+<meta
+  name='msvalidate.01'
+  content='YOUR_BING_VERIFICATION_CODE'
+/>;
 ```
 
 **To add it:**
