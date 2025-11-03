@@ -3,11 +3,13 @@ import * as stylex from "@stylexjs/stylex";
 export const styles = stylex.create({
   contactInfo: {
     background: "rgba(255, 107, 107, 0.1)",
-    border: "1px solid rgba(255, 107, 107, 0.2)",
+    borderColor: "rgba(255, 107, 107, 0.2)",
     borderRadius: "8px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     color: "#ff6b6b",
     fontSize: "1.1rem",
-    fontWeight: "600",
+    fontWeight: 600,
     marginBottom: "0",
     padding: "1rem",
     textAlign: "center",
@@ -15,8 +17,10 @@ export const styles = stylex.create({
 
   locationNote: {
     background: "rgba(78, 205, 196, 0.1)",
-    border: "1px solid rgba(78, 205, 196, 0.2)",
+    borderColor: "rgba(78, 205, 196, 0.2)",
     borderRadius: "8px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     color: "#666",
     fontSize: "0.95rem",
     fontStyle: "italic",
@@ -46,8 +50,9 @@ export const styles = stylex.create({
   },
 
   locationsGridMobile: {
-    "@media (max-width: 768px)": {
-      gridTemplateColumns: "1fr",
+    gridTemplateColumns: {
+      default: null,
+      "@media (max-width: 768px)": "1fr",
     },
   },
   locationsSection: {
@@ -66,15 +71,15 @@ export const styles = stylex.create({
     position: "relative",
     textAlign: "center",
     "::after": {
-      bottom: "-5px",
-      content: "",
-      position: "absolute",
-      left: "50%",
-      height: "3px",
-      transform: "translateX(-50%)",
-      width: "60px",
       background: "rgba(255, 255, 255, 0.3)",
       borderRadius: "2px",
+      bottom: "-5px",
+      content: "",
+      height: "3px",
+      left: "50%",
+      position: "absolute",
+      transform: "translateX(-50%)",
+      width: "60px",
     },
   },
 
@@ -85,14 +90,16 @@ export const styles = stylex.create({
   },
 
   mapIframe: {
-    border: "none",
+    borderColor: "transparent",
     borderRadius: "10px",
+    borderStyle: "none",
+    borderWidth: 0,
   },
 
   onDemandDesc: {
     color: "#555",
     fontSize: "1.1rem",
-    lineHeight: "1.6",
+    lineHeight: 1.6,
     marginBottom: "1.5rem",
     textAlign: "center",
   },
@@ -109,13 +116,13 @@ export const styles = stylex.create({
     position: "relative",
     textAlign: "center",
     "::after": {
+      background: "rgba(255, 255, 255, 0.3)",
+      borderRadius: "2px",
       bottom: "-5px",
       content: "",
       height: "3px",
-      background: "rgba(255, 255, 255, 0.3)",
       left: "50%",
       position: "absolute",
-      borderRadius: "2px",
       transform: "translateX(-50%)",
       width: "60px",
     },
@@ -124,8 +131,10 @@ export const styles = stylex.create({
   schedule: {
     backdropFilter: "blur(10px)",
     background: "rgba(255, 255, 255, 0.95)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
     borderRadius: "20px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     boxShadow: "0 8px 32px rgba(78, 205, 196, 0.2)",
     gap: 0,
     margin: 0,
@@ -139,7 +148,9 @@ export const styles = stylex.create({
     background:
       "linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(255, 107, 107, 0.1))",
 
-    border: "1px solid rgba(102, 126, 234, 0.2)",
+    borderColor: "rgba(102, 126, 234, 0.2)",
+    borderStyle: "solid",
+    borderWidth: "1px",
     display: "flex",
     height: "250px",
     justifyContent: "center",
@@ -149,11 +160,21 @@ export const styles = stylex.create({
   },
 
   scheduleIconContainerMobile: {
-    "@media (max-width: 768px)": {
-      height: "250px",
-      margin: 0,
-      maxWidth: "100%",
-      width: "100%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "250px",
+    },
+    margin: {
+      default: null,
+      "@media (max-width: 768px)": 0,
+    },
+    maxWidth: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
+    },
+    width: {
+      default: null,
+      "@media (max-width: 768px)": "100%",
     },
   },
 
@@ -164,10 +185,17 @@ export const styles = stylex.create({
   },
 
   scheduleIconSvgMobile: {
-    "@media (max-width: 768px)": {
-      height: "auto",
-      maxWidth: "300px",
-      width: "90%",
+    height: {
+      default: null,
+      "@media (max-width: 768px)": "auto",
+    },
+    maxWidth: {
+      default: null,
+      "@media (max-width: 768px)": "300px",
+    },
+    width: {
+      default: null,
+      "@media (max-width: 768px)": "90%",
     },
   },
 
@@ -176,14 +204,14 @@ export const styles = stylex.create({
   },
 
   // Mobile responsive styles
-scheduleMobile: {
-    "@media (max-width: 768px)": {
-      padding: "1rem",
+  scheduleMobile: {
+    padding: {
+      default: null,
+      "@media (max-width: 768px)": "1rem",
     },
   },
 
-  
-scheduleTitle: {
+  scheduleTitle: {
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M35 5L45 25H25L35 5ZM65 35L55 15H75L65 35ZM5 35L15 55H-5L5 35ZM35 65L25 45H45L35 65Z'/%3E%3Crect x='30' y='30' width='10' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
@@ -193,58 +221,58 @@ scheduleTitle: {
     borderRadius: "20px 20px 0 0",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
     color: "white",
-    padding: "2rem",
     fontSize: "2.2rem",
-    textAlign: "center",
     fontWeight: "bold",
     margin: 0,
+    padding: "2rem",
     position: "relative",
+    textAlign: "center",
     "::after": {
+      background: "rgba(255, 255, 255, 0.4)",
+      borderRadius: "2px",
       bottom: "-8px",
       content: "",
       height: "4px",
       left: "50%",
-      background: "rgba(255, 255, 255, 0.4)",
       position: "absolute",
       transform: "translateX(-50%)",
-      borderRadius: "2px",
       width: "80px",
     },
   },
 
-  
-sessionCard: {
+  sessionCard: {
     background: "linear-gradient(135deg, #ff6b6b1a, #4ecdc41a)",
-    border: "1px solid rgba(78, 205, 196, 0.3)",
+    borderColor: "rgba(78, 205, 196, 0.3)",
     borderRadius: "10px",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    boxShadow: {
+      default: null,
+      ":hover": "0 6px 25px rgba(78, 205, 196, 0.2)",
+    },
     padding: "1.5rem",
     textAlign: "center",
-    transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    ":hover": {
-      boxShadow: "0 6px 25px rgba(78, 205, 196, 0.2)",
-      transform: "translateY(-2px)",
+    transform: {
+      default: null,
+      ":hover": "translateY(-2px)",
     },
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
   },
 
-  
-sessionDay: {
+  sessionDay: {
     color: "#333",
     fontSize: "1.2rem",
     fontWeight: "bold",
     marginBottom: "0.5rem",
   },
 
-  
-  
-sessionDescription: {
+  sessionDescription: {
     color: "#666",
     fontSize: "0.9rem",
     fontStyle: "italic",
   },
 
-  
-
-sessionTime: {
+  sessionTime: {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     background: "linear-gradient(135deg, #ff6b6b, #4ecdc4)",
@@ -254,20 +282,19 @@ sessionTime: {
     marginBottom: "0.5rem",
   },
 
-  
-
-sessionsGrid: {
+  sessionsGrid: {
     display: "grid",
     gap: "1rem",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
     marginBottom: "2rem",
   },
 
-  
-singleLocationCard: {
+  singleLocationCard: {
     background: "rgba(255, 255, 255, 0.9)",
-    border: "1px solid rgba(78, 205, 196, 0.2)",
+    borderColor: "rgba(78, 205, 196, 0.2)",
     borderRadius: "15px",
+    borderStyle: "solid",
+    borderWidth: "1px",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
     marginBottom: "2rem",
     overflow: "visible",
