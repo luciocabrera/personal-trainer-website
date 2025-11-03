@@ -10,6 +10,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import perfectionist from "eslint-plugin-perfectionist";
+import stylexPlugin from "@stylexjs/eslint-plugin";
 
 export default [
   // Global ignores
@@ -71,6 +72,7 @@ export default [
       "sort-keys-fix": sortKeys,
       react: eslintReact,
       perfectionist,
+      "@stylexjs": stylexPlugin,
     },
     rules: {
       // TypeScript strict rules
@@ -218,6 +220,15 @@ export default [
         {
           type: "alphabetical",
           order: "asc",
+        },
+      ],
+
+      // StyleX rules
+      "@stylexjs/valid-styles": "error",
+      "@stylexjs/sort-keys": [
+        "warn",
+        {
+          validImports: ["stylex", "@stylexjs/stylex"],
         },
       ],
 
