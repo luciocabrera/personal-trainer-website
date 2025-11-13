@@ -299,7 +299,7 @@ const EnhancedMessage = ({
   useEffect(() => {
     if (autoHide && isVisible) {
       const timer = setTimeout(() => {
-        if (isVisible && !isAnimatingOut) {
+        if (isAnimatingOut === false) {
           handleDismiss();
         }
       }, autoHideDelay);
@@ -310,19 +310,24 @@ const EnhancedMessage = ({
 
   if (!isVisible) return null;
 
+  // Determine animation style based on position and state
+  const getAnimationStyle = () => {
+    if (showAtTop) {
+      return isAnimatingOut
+        ? styles.messageBoxSlideOutFixed
+        : styles.messageBoxSlideInFixed;
+    }
+    return isAnimatingOut
+      ? styles.messageBoxSlideOut
+      : styles.messageBoxSlideIn;
+  };
+
   return (
     <div
       {...stylex.props(
         styles.messageBox,
-        showAtTop && styles.messageBoxFixed,
-        // Use different animations for fixed vs regular positioning
-        showAtTop
-          ? isAnimatingOut
-            ? styles.messageBoxSlideOutFixed
-            : styles.messageBoxSlideInFixed
-          : isAnimatingOut
-            ? styles.messageBoxSlideOut
-            : styles.messageBoxSlideIn,
+        showAtTop ? styles.messageBoxFixed : null,
+        getAnimationStyle(),
         type === 'success' ? styles.successMessage : styles.errorMessage
       )}
     >

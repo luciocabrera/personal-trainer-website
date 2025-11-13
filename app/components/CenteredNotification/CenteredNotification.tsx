@@ -333,7 +333,7 @@ const CenteredNotification = ({
           onClick={handleClose}
           {...stylex.props(
             styles.closeButton,
-            type === 'error' && styles.errorCloseButton
+            type === 'error' ? styles.errorCloseButton : null
           )}
         >
           OK

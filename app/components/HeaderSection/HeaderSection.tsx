@@ -119,7 +119,7 @@ const HeaderSection = () => {
             onClick={handleEnglishClick}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === 'en' && styles.languageButtonActive
+              currentLanguage === 'en' ? styles.languageButtonActive : null
             )}
           >
             EN
@@ -130,7 +130,7 @@ const HeaderSection = () => {
             onClick={handleDutchClick}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === 'nl' && styles.languageButtonActive
+              currentLanguage === 'nl' ? styles.languageButtonActive : null
             )}
           >
             NL
@@ -141,7 +141,7 @@ const HeaderSection = () => {
             onClick={handleSpanishClick}
             {...stylex.props(
               styles.languageButton,
-              currentLanguage === 'es' && styles.languageButtonActive
+              currentLanguage === 'es' ? styles.languageButtonActive : null
             )}
           >
             ES
@@ -159,26 +159,26 @@ const HeaderSection = () => {
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen && styles.hamburgerLineActive1
+              isMobileMenuOpen ? styles.hamburgerLineActive1 : null
             )}
           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen && styles.hamburgerLineActive2
+              isMobileMenuOpen ? styles.hamburgerLineActive2 : null
             )}
           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen && styles.hamburgerLineActive3
+              isMobileMenuOpen ? styles.hamburgerLineActive3 : null
             )}
           />
         </button>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
+      {isMobileMenuOpen ? (
         <div
           {...stylex.props(styles.mobileMenuOverlay)}
           onClick={handleCloseMobileMenu}
@@ -199,7 +199,9 @@ const HeaderSection = () => {
                 onClick={handleEnglishClick}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === 'en' && styles.mobileLanguageButtonActive
+                  currentLanguage === 'en'
+                    ? styles.mobileLanguageButtonActive
+                    : null
                 )}
               >
                 EN
@@ -210,7 +212,9 @@ const HeaderSection = () => {
                 onClick={handleDutchClick}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === 'nl' && styles.mobileLanguageButtonActive
+                  currentLanguage === 'nl'
+                    ? styles.mobileLanguageButtonActive
+                    : null
                 )}
               >
                 NL
@@ -221,7 +225,9 @@ const HeaderSection = () => {
                 onClick={handleSpanishClick}
                 {...stylex.props(
                   styles.mobileLanguageButton,
-                  currentLanguage === 'es' && styles.mobileLanguageButtonActive
+                  currentLanguage === 'es'
+                    ? styles.mobileLanguageButtonActive
+                    : null
                 )}
               >
                 ES
@@ -290,7 +296,7 @@ const HeaderSection = () => {
             </ul>
           </div>
         </div>
-      )}
+      ) : null}
     </header>
   );
 };

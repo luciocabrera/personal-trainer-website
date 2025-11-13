@@ -8,6 +8,12 @@ export interface ContactFormData {
   name: string;
 }
 
+// Database result interface
+interface ContactMessageRecord {
+  created_at: Date;
+  id: number;
+}
+
 export const handleContactSubmission = async (
   data: ContactFormData,
   emailTranslations: EmailTranslations
@@ -27,7 +33,7 @@ export const handleContactSubmission = async (
       [data.name, data.email, data.message, 'new']
     );
 
-    const insertedRecord = result.rows[0];
+    const insertedRecord = result.rows[0] as ContactMessageRecord;
 
     console.log('💾 Contact message saved to database:', {
       created_at: insertedRecord.created_at,
@@ -41,11 +47,10 @@ export const handleContactSubmission = async (
       .then(() => {
         console.log('📧 Email notification sent successfully!');
       })
-      .catch((emailError) => {
-        console.error(
-          '⚠️ Email sending failed (non-critical):',
-          emailError?.message || emailError
-        );
+      .catch((emailError: unknown) => {
+        const errorMessage =
+          emailError instanceof Error ? emailError.message : String(emailError);
+        console.error('⚠️ Email sending failed (non-critical):', errorMessage);
         // Email failure doesn't affect user experience - just log it
       });
 

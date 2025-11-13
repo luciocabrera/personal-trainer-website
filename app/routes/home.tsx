@@ -16,7 +16,16 @@ import {
   getServerTranslation,
 } from '@/utils/serverI18n';
 
-export async function action({ request }: ActionFunctionArgs) {
+// Define the action response type
+export interface ActionResponse {
+  error?: string;
+  message?: string;
+  success: boolean;
+}
+
+export async function action({
+  request,
+}: ActionFunctionArgs): Promise<ActionResponse> {
   // Get user's language preference
   const language = getLanguageFromRequest(request);
   const { t } = getServerTranslation(language);
@@ -26,8 +35,15 @@ export async function action({ request }: ActionFunctionArgs) {
   const email = formData.get('email');
   const message = formData.get('message');
 
-  // Basic validation
-  if (!name || !email || !message) {
+  // Basic validation - ensure values are strings, not Files
+  if (
+    name === null ||
+    email === null ||
+    message === null ||
+    typeof name !== 'string' ||
+    typeof email !== 'string' ||
+    typeof message !== 'string'
+  ) {
     return {
       error: t('form.validation.required'),
       success: false,
@@ -36,7 +52,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   // Email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email.toString())) {
+  if (!emailRegex.test(email)) {
     return {
       error: t('form.validation.invalidEmail'),
       success: false,
@@ -96,7 +112,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function Home() {
   const location = useLocation();
-  const actionData = useActionData();
+  const actionData = useActionData<ActionResponse>();
 
   const [notificationDismissed, setNotificationDismissed] = useState(false);
 
@@ -104,9 +120,9 @@ export default function Home() {
   useEffect(() => {
     const scrollToSection = () => {
       const hash = location.hash.replace('#', '');
-      if (hash) {
+      if (hash !== '') {
         const element = document.getElementById(hash);
-        if (element) {
+        if (element !== null) {
           element.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -126,7 +142,7 @@ export default function Home() {
   };
 
   // Show notification if we have actionData and it hasn't been dismissed
-  const showNotification = actionData && !notificationDismissed;
+  const showNotification = actionData !== undefined && !notificationDismissed;
 
   return (
     <>
@@ -138,19 +154,25 @@ export default function Home() {
       <SignupSection />
 
       {/* Centered Success/Error Notification */}
-      {showNotification && (
+      {showNotification === true && (
         <CenteredNotification
           autoHide
-          autoHideDelay={actionData.success ? 10000 : 6000}
-          isVisible={Boolean(showNotification)}
-          message={actionData.success ? actionData.message! : actionData.error!}
-          type={actionData.success ? 'success' : 'error'}
+          autoHideDelay={actionData.success === true ? 10000 : 6000}
+          isVisible={showNotification}
+          message={
+            actionData.success === true
+              ? (actionData.message ?? '')
+              : (actionData.error ?? '')
+          }
+          type={actionData.success === true ? 'success' : 'error'}
           onClose={handleCloseNotification}
         />
       )}
 
       {/* Confetti for successful submissions */}
-      {showNotification && actionData?.success && <Confetti isActive />}
+      {showNotification === true && actionData.success === true ? (
+        <Confetti isActive />
+      ) : null}
     </>
   );
 }

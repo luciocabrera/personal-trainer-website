@@ -22,8 +22,7 @@ export const styles = stylex.create({
     },
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   },
-  trainingBody: { padding: '1.5rem' },
-
+  trainingBody: { minHeight: 362, padding: '1.5rem' },
   trainingDescription: {
     color: '#666',
     flexGrow: 1,
@@ -31,21 +30,18 @@ export const styles = stylex.create({
     lineHeight: 1.6,
     margin: 0,
   },
-
   trainingDescriptionMobile: {
     fontSize: {
       default: null,
       '@media (max-width: 768px)': '0.9rem',
     },
   },
-
   trainingDescriptionSmallMobile: {
     fontSize: {
       default: null,
       '@media (max-width: 480px)': '0.85rem',
     },
   },
-
   trainingImage: {
     background: '#f0f0f0',
     borderTopLeftRadius: '8px',
@@ -55,7 +51,6 @@ export const styles = stylex.create({
     overflow: 'hidden',
     width: '100%',
   },
-
   trainingImageImg: {
     backgroundColor: '#f0f0f0',
     borderTopLeftRadius: '8px',
@@ -65,53 +60,42 @@ export const styles = stylex.create({
     objectFit: 'cover',
     width: '100%',
   },
-
   trainingImageImgMobile: {
     height: {
       default: null,
       '@media (max-width: 768px)': '100%',
     },
   },
-
   trainingImageImgSmallMobile: {
     height: {
       default: null,
       '@media (max-width: 480px)': '100%',
     },
   },
-
   trainingImageMobile: {
     height: {
       default: null,
       '@media (max-width: 768px)': '100%',
     },
   },
-
   trainingImageSmallMobile: {
     height: {
       default: null,
       '@media (max-width: 480px)': '100%',
     },
   },
-
-  // Mobile responsive styles
   trainingMobile: {
     gap: {
       default: null,
       '@media (max-width: 768px)': '12px',
     },
-    // padding: "16px",
   },
-
-  // Small mobile styles
   trainingSmallMobile: {
     gap: {
       default: null,
       '@media (max-width: 480px)': '10px',
     },
-    // padding: "12px",
   },
-
   trainingTitle: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
@@ -123,14 +107,12 @@ export const styles = stylex.create({
     marginBottom: '0.5rem',
     marginTop: 0,
   },
-
   trainingTitleMobile: {
     fontSize: {
       default: null,
       '@media (max-width: 768px)': '1.25rem',
     },
   },
-
   trainingTitleSmallMobile: {
     fontSize: {
       default: null,

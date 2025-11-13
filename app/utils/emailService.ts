@@ -24,8 +24,18 @@ export interface EmailTranslations {
   autoReplyYourMessage: string;
 }
 
-// Create Resend instance
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization of Resend instance
+let resendInstance: Resend | null = null;
+const getResend = () => {
+  if (resendInstance === null) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (apiKey === undefined || apiKey === '') {
+      throw new Error('RESEND_API_KEY environment variable is not set');
+    }
+    resendInstance = new Resend(apiKey);
+  }
+  return resendInstance;
+};
 
 // Create email transporter (for Gmail fallback)
 const createTransporter = () => {
@@ -78,6 +88,8 @@ const sendWithResend = async (
   data: EmailData,
   translations: EmailTranslations
 ): Promise<void> => {
+  const resend = getResend();
+
   // 1️⃣ Send notification to admin
   await resend.emails.send({
     from: process.env.EMAIL_FROM || 'Contact Form <noreply@desi4fit.nl>',

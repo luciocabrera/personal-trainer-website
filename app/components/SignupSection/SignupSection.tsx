@@ -5,12 +5,13 @@ import * as stylex from '@stylexjs/stylex';
 
 import { EmailIcon, InstagramIcon, SignupIcon } from '@/components/Icons';
 import { BRAND } from '@/constants/brand';
+import type { ActionResponse } from '@/routes/home';
 
 import { styles } from './SignupSection.stylex';
 
 const SignupSection = () => {
   const { t } = useTranslation();
-  const actionData = useActionData();
+  const actionData = useActionData<ActionResponse>();
   const navigation = useNavigation();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -19,7 +20,7 @@ const SignupSection = () => {
 
   // Handle successful form submission - clear form only
   useEffect(() => {
-    if (actionData?.success && formRef.current) {
+    if (actionData?.success === true && formRef.current !== null) {
       // Clear the form
       formRef.current.reset();
     }

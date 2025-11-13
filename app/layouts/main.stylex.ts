@@ -13,6 +13,8 @@ export const styles = stylex.create({
     width: '100%',
   },
   main: {
+    containerName: 'mainContentContainer',
+    containerType: 'inline-size',
     display: 'flex',
     flex: '1 1 0%',
     flexDirection: 'column',

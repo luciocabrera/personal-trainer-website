@@ -11,7 +11,7 @@ const TrainingsSection = () => {
   return (
     <section
       id='trainings'
-      {...stylex.props(styles.trainings, styles.trainingsMobile)}
+      {...stylex.props(styles.trainings)}
     >
       <h2 {...stylex.props(styles.trainingsTitle)}>{t('trainings.title')}</h2>
       <div {...stylex.props(styles.trainingsGrid, styles.trainingsGridMobile)}>
