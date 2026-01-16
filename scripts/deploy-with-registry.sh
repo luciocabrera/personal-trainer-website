@@ -46,7 +46,7 @@ echo ""
 # Build the Docker image locally
 echo -e "${YELLOW}Step 2: Building Docker image locally...${NC}"
 echo "Image: ${FULL_IMAGE}"
-docker build -t ${FULL_IMAGE} .
+docker build -t ${FULL_IMAGE} -f docker/Dockerfile .
 echo -e "${GREEN}✓ Image built successfully${NC}"
 echo ""
 
