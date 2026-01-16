@@ -21,10 +21,12 @@ echo ""
 GITHUB_USER="luciocabrera"
 REPO_NAME="personal-trainer"
 IMAGE_NAME="ghcr.io/${GITHUB_USER}/${REPO_NAME}"
-IMAGE_TAG="latest"
-FULL_IMAGE="${IMAGE_NAME}:${IMAGE_TAG}"
+VERSION=$(node -p "require('./package.json').version")
 SERVER="root@142.93.139.242"
 SERVER_PATH="/root/personal-trainer-website"
+
+echo -e "${BLUE}Version: ${VERSION}${NC}"
+echo ""
 
 # Check if logged into GitHub Container Registry
 echo -e "${YELLOW}Step 1: Checking GitHub Container Registry login...${NC}"
@@ -45,15 +47,16 @@ echo ""
 
 # Build the Docker image locally
 echo -e "${YELLOW}Step 2: Building Docker image locally...${NC}"
-echo "Image: ${FULL_IMAGE}"
-docker build -t ${FULL_IMAGE} -f docker/Dockerfile .
+echo "Building: ${IMAGE_NAME}:${VERSION} and ${IMAGE_NAME}:latest"
+docker build -t ${IMAGE_NAME}:${VERSION} -t ${IMAGE_NAME}:latest -f docker/Dockerfile .
 echo -e "${GREEN}✓ Image built successfully${NC}"
 echo ""
 
 # Push to GitHub Container Registry
-echo -e "${YELLOW}Step 3: Pushing image to GitHub Container Registry...${NC}"
-docker push ${FULL_IMAGE}
-echo -e "${GREEN}✓ Image pushed successfully${NC}"
+echo -e "${YELLOW}Step 3: Pushing images to GitHub Container Registry...${NC}"
+docker push ${IMAGE_NAME}:${VERSION}
+docker push ${IMAGE_NAME}:latest
+echo -e "${GREEN}✓ Images pushed successfully (${VERSION} and latest)${NC}"
 echo ""
 
 # Deploy to production server
