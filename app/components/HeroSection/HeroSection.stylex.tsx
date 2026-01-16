@@ -5,10 +5,16 @@ export const styles = stylex.create({
     background: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     margin: 0,
     padding: 0,
-    borderRadius: '15px',
+    borderRadius: {
+      default: '15px',
+      '@media (max-width: 768px)': '0',
+    },
     gap: 0,
     alignItems: 'center',
-    boxShadow: '0 8px 30px rgba(255, 107, 107, 0.4)',
+    boxShadow: {
+      default: '0 8px 30px rgba(255, 107, 107, 0.4)',
+      '@media (max-width: 768px)': 'none',
+    },
     color: 'white',
     containerType: 'inline-size',
     display: 'flex',
@@ -66,11 +72,11 @@ export const styles = stylex.create({
     },
     borderBottomLeftRadius: {
       default: null,
-      '@container (max-width: 902px)': '15px',
+      '@container (max-width: 902px)': '0',
     },
     borderBottomRightRadius: {
       default: 15,
-      '@container (max-width: 902px)': '15px',
+      '@container (max-width: 902px)': '0',
     },
     borderTopLeftRadius: {
       default: null,

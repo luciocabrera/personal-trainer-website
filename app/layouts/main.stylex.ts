@@ -15,10 +15,13 @@ export const styles = stylex.create({
   main: {
     padding: {
       default: '2rem',
-      '@media (max-width: 768px)': '1rem', // Mobile screens - much smaller header
+      '@media (max-width: 768px)': '0',
     },
     flex: '1 1 0%',
-    gap: '2rem',
+    gap: {
+      default: '2rem',
+      '@media (max-width: 768px)': '0',
+    },
     containerName: 'mainContentContainer',
     containerType: 'inline-size',
     display: 'flex',
@@ -26,7 +29,7 @@ export const styles = stylex.create({
     justifyContent: 'center',
     paddingTop: {
       default: 'calc(80px + 2rem)',
-      '@media (max-width: 768px)': 'calc(60px + 1rem)', // Mobile header height + content padding
+      '@media (max-width: 768px)': '60px',
     },
   },
 });

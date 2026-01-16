@@ -17,14 +17,6 @@ const Blog = () => {
       readTime: '5 min',
     },
     {
-      category: t('blog.posts.nutrition_tips.category'),
-      date: '2026-01-05',
-      id: 'nutrition-tips',
-      image:
-        'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=500&fit=crop',
-      readTime: '7 min',
-    },
-    {
       category: t('blog.posts.motivation_goals.category'),
       date: '2025-12-28',
       id: 'motivation-goals',

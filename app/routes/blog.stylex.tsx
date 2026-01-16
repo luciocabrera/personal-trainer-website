@@ -2,7 +2,10 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   blogSection: {
-    padding: '4rem 2rem',
+    padding: {
+      default: '4rem 2rem',
+      '@media (max-width: 768px)': '1.5rem 0',
+    },
     backgroundColor: '#f8f9fa',
     minHeight: '100vh',
   },
@@ -15,19 +18,31 @@ export const styles = stylex.create({
     WebkitTextFillColor: 'transparent',
     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     backgroundClip: 'text',
-    fontSize: '3rem',
+    fontSize: {
+      default: '3rem',
+      '@media (max-width: 768px)': '2rem',
+    },
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   },
   subtitle: {
     color: '#666',
-    fontSize: '1.2rem',
+    fontSize: {
+      default: '1.2rem',
+      '@media (max-width: 768px)': '1rem',
+    },
     textAlign: 'center',
-    marginBottom: '3rem',
+    marginBottom: {
+      default: '3rem',
+      '@media (max-width: 768px)': '1.5rem',
+    },
   },
   blogGrid: {
-    gap: '2rem',
+    gap: {
+      default: '2rem',
+      '@media (max-width: 768px)': '1.5rem',
+    },
     display: 'grid',
     gridTemplateColumns: {
       default: 'repeat(auto-fit, minmax(350px, 1fr))',
@@ -36,18 +51,25 @@ export const styles = stylex.create({
   },
   blogCard: {
     background: 'white',
-    borderRadius: '20px',
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     overflow: 'hidden',
     transition: 'box-shadow 0.3s ease',
     boxShadow: {
       default: '0 5px 25px rgba(0, 0, 0, 0.1)',
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.3)',
+      '@media (max-width: 768px)': 'none',
     },
   },
   imageContainer: {
     overflow: 'hidden',
     position: 'relative',
-    height: '250px',
+    height: {
+      default: '250px',
+      '@media (max-width: 768px)': '200px',
+    },
   },
   image: {
     transition: 'transform 0.3s ease',
@@ -71,15 +93,21 @@ export const styles = stylex.create({
     top: '1rem',
   },
   content: {
-    padding: '1.5rem',
+    padding: {
+      default: '1.5rem',
+      '@media (max-width: 768px)': '1rem',
+    },
   },
   meta: {
     gap: '1rem',
     alignItems: 'center',
     color: '#999',
     display: 'flex',
-    fontSize: '0.9rem',
-    marginBottom: '1rem',
+    fontSize: {
+      default: '0.9rem',
+      '@media (max-width: 768px)': '0.85rem',
+    },
+    marginBottom: '0.75rem',
   },
   date: {
     color: '#999',
@@ -89,15 +117,21 @@ export const styles = stylex.create({
   },
   postTitle: {
     color: '#333',
-    fontSize: '1.5rem',
+    fontSize: {
+      default: '1.5rem',
+      '@media (max-width: 768px)': '1.25rem',
+    },
     fontWeight: 'bold',
-    marginBottom: '1rem',
+    marginBottom: '0.75rem',
   },
   excerpt: {
     color: '#666',
-    fontSize: '1rem',
+    fontSize: {
+      default: '1rem',
+      '@media (max-width: 768px)': '0.9rem',
+    },
     lineHeight: 1.6,
-    marginBottom: '1.5rem',
+    marginBottom: '1.25rem',
   },
   readMore: {
     background: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',

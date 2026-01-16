@@ -14,16 +14,28 @@ export const styles = stylex.create({
     marginBottom: '2rem',
   },
   container: {
-    padding: '4rem 2rem',
+    padding: {
+      default: '4rem 2rem',
+      '@media (max-width: 768px)': '1rem 0',
+    },
     backgroundColor: '#f8f9fa',
     minHeight: '100vh',
   },
   content: {
     margin: '0 auto',
-    padding: '3rem',
-    borderRadius: '20px',
+    padding: {
+      default: '3rem',
+      '@media (max-width: 768px)': '1.5rem 1rem',
+    },
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundColor: 'white',
-    boxShadow: '0 5px 25px rgba(0, 0, 0, 0.1)',
+    boxShadow: {
+      default: '0 5px 25px rgba(0, 0, 0, 0.1)',
+      '@media (max-width: 768px)': 'none',
+    },
     maxWidth: '800px',
   },
   loading: {
@@ -34,7 +46,10 @@ export const styles = stylex.create({
   },
   markdown: {
     color: '#333',
-    fontSize: '1.1rem',
+    fontSize: {
+      default: '1.1rem',
+      '@media (max-width: 768px)': '1rem',
+    },
     lineHeight: 1.8,
   },
 });
