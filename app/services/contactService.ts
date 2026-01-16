@@ -17,10 +17,15 @@ type ContactMessageRecord = {
   id: number;
 };
 
-export const handleContactSubmission = async (
-  data: ContactFormData,
-  emailTranslations: EmailTranslations
-): Promise<void> => {
+type HandleContactSubmissionParams = {
+  data: ContactFormData;
+  emailTranslations: EmailTranslations;
+};
+
+export const handleContactSubmission = async ({
+  data,
+  emailTranslations,
+}: HandleContactSubmissionParams): Promise<void> => {
   console.log('📝 Processing contact form submission');
   console.log('Name:', data.name);
   console.log('Email:', data.email);

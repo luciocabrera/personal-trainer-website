@@ -80,14 +80,14 @@ export async function action({
     };
 
     // Process contact submission (database-first approach)
-    await handleContactSubmission(
-      {
+    await handleContactSubmission({
+      data: {
         email,
         message,
         name,
       },
-      emailTranslations
-    );
+      emailTranslations,
+    });
 
     return {
       message: t('form.success.message'),

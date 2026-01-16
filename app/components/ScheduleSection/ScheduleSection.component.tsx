@@ -10,21 +10,25 @@ const ScheduleSection = () => {
     {
       day: t('schedule.sessions.tuesday.day'),
       description: t('schedule.sessions.tuesday.description'),
+      id: 'tuesday',
       time: t('schedule.sessions.tuesday.time'),
     },
     {
       day: t('schedule.sessions.wednesdayMorning.day'),
       description: t('schedule.sessions.wednesdayMorning.description'),
+      id: 'wednesday-morning',
       time: t('schedule.sessions.wednesdayMorning.time'),
     },
     {
       day: t('schedule.sessions.wednesdayLate.day'),
       description: t('schedule.sessions.wednesdayLate.description'),
+      id: 'wednesday-late',
       time: t('schedule.sessions.wednesdayLate.time'),
     },
     {
       day: t('schedule.sessions.friday.day'),
       description: t('schedule.sessions.friday.description'),
+      id: 'friday',
       time: t('schedule.sessions.friday.time'),
     },
   ];
@@ -45,9 +49,9 @@ const ScheduleSection = () => {
         </p>
 
         <div {...stylex.props(styles.sessionsGrid)}>
-          {sessions.map((session, index) => (
+          {sessions.map((session) => (
             <div
-              key={index}
+              key={session.id}
               {...stylex.props(styles.sessionCard)}
             >
               <div {...stylex.props(styles.sessionDay)}>{session.day}</div>
