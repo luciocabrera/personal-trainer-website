@@ -5,6 +5,7 @@
     "outdoorBenefits": "Outdoor Voordelen",
     "schedule": "Rooster",
     "pricing": "Prijzen",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -153,5 +154,30 @@
     "autoReplyClosing": "🤝 Met vriendelijke groet,",
     "autoReplyTeam": "🏆 Het Desi4Fit Team",
     "autoReplyDisclaimer": "🤖 Dit is een automatische bevestiging. Gelieve niet te antwoorden op deze email."
+  },
+  "blog": {
+    "title": "Fitness Tips & Inspiratie 💡",
+    "subtitle": "Ontdek praktische tips, motivatie en inzichten om jouw fitnessdoelen te bereiken!",
+    "readMore": "Lees meer",
+    "posts": {
+      "outdoor_training_winter": {
+        "title": "Blijf Fit Deze Winter: Waarom Outdoor Training Perfect is voor Koud Weer",
+        "category": "Trainingstips",
+        "imageAlt": "Outdoor winter training sessie",
+        "excerpt": "Denk je dat winter betekent binnen blijven? Denk nog eens na! Ontdek waarom buitentraining in de kou je fitness routine kan superchargen en je immuunsysteem versterkt."
+      },
+      "nutrition_tips": {
+        "title": "Brandstof voor je Workouts: Simpele Voedingstips voor Betere Prestaties",
+        "category": "Voeding",
+        "imageAlt": "Gezonde maaltijdbereiding voor fitness",
+        "excerpt": "Wat je eet maakt uit! Leer eenvoudige voedingsstrategieën om je workout resultaten te maximaliseren, energieniveaus te verhogen en je geweldig te voelen de hele dag door."
+      },
+      "motivation_goals": {
+        "title": "Fitnessdoelen Stellen Die Echt Werken: Jouw 2026 Gameplan",
+        "category": "Motivatie",
+        "imageAlt": "Persoon die fitnessdoelen behaalt",
+        "excerpt": "Nieuw jaar, nieuwe jij? Laten we ervoor zorgen dat het blijft! Ontdek bewezen strategieën om realistische fitnessdoelen te stellen en het hele jaar gemotiveerd te blijven."
+      }
+    }
   }
 }

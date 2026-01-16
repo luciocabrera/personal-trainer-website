@@ -9,17 +9,17 @@ export const getPool = (): Pool => {
   if (!pool) {
     pool = new Pool({
       connectionTimeoutMillis: 2000,
-      database: process.env.POSTGRES_DB || 'personal_trainer',
-      host: process.env.POSTGRES_HOST || 'localhost',
+      database: process.env.POSTGRES_DB ?? 'personal_trainer',
+      host: process.env.POSTGRES_HOST ?? 'localhost',
       idleTimeoutMillis: 30000,
       // Connection pool settings
       max: 20,
 
-      password: process.env.POSTGRES_PASSWORD || 'admin123',
+      password: process.env.POSTGRES_PASSWORD ?? 'admin123',
 
-      port: parseInt(process.env.POSTGRES_PORT || '5432'),
+      port: parseInt(process.env.POSTGRES_PORT ?? '5432'),
 
-      user: process.env.POSTGRES_USER || 'admin',
+      user: process.env.POSTGRES_USER ?? 'admin',
     });
 
     // Handle pool errors

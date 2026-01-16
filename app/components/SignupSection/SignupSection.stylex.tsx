@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys, sort-keys-fix/sort-keys-fix */
 import * as stylex from '@stylexjs/stylex';
 
 const floatAnimation = stylex.keyframes({
@@ -9,14 +8,14 @@ const floatAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   contactLink: {
-    alignItems: 'center',
-    borderRadius: '25px',
-    display: 'flex',
-    fontWeight: 500,
-    gap: '0.5rem',
     padding: '0.8rem 1.2rem',
+    borderRadius: '25px',
+    gap: '0.5rem',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    alignItems: 'center',
+    display: 'flex',
+    fontWeight: 500,
   },
 
   contactLinkIcon: {
@@ -25,8 +24,8 @@ export const styles = stylex.create({
   },
 
   contactLinks: {
-    display: 'flex',
     gap: '2rem',
+    display: 'flex',
     justifyContent: 'center',
     marginBottom: '1rem',
   },
@@ -34,13 +33,13 @@ export const styles = stylex.create({
   contactSection: {
     background:
       'linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05))',
-    borderBottomLeftRadius: '15px',
-    borderBottomRightRadius: '15px',
+    padding: '1.5rem',
     borderColor: 'rgba(255, 107, 107, 0.1)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    borderBottomLeftRadius: '15px',
+    borderBottomRightRadius: '15px',
     marginTop: '2rem',
-    padding: '1.5rem',
   },
 
   contactTitle: {
@@ -66,28 +65,28 @@ export const styles = stylex.create({
   },
 
   errorMessage: {
-    backgroundColor: 'rgba(244, 67, 54, 0.1)',
     borderColor: 'rgba(244, 67, 54, 0.3)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(244, 67, 54, 0.1)',
     color: '#c62828',
   },
 
   followText: {
     color: '#666',
     fontStyle: 'italic',
-    marginTop: '1rem',
+    marginTop: '0.5rem',
   },
 
   contactLinksMobile: {
+    gap: {
+      '@media (max-width: 768px)': '1rem',
+    },
     alignItems: {
       '@media (max-width: 768px)': 'center',
     },
     flexDirection: {
       '@media (max-width: 768px)': 'column',
-    },
-    gap: {
-      '@media (max-width: 768px)': '1rem',
     },
   },
 
@@ -96,9 +95,11 @@ export const styles = stylex.create({
       default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
       ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
     },
+    padding: '0.8rem 1.5rem',
     borderRadius: '25px',
     borderStyle: 'none',
     borderWidth: 0,
+    transition: 'all 0.3s ease',
     boxShadow: {
       default: '0 4px 15px rgba(255, 107, 107, 0.4)',
       ':hover': '0 8px 25px rgba(255, 107, 107, 0.6)',
@@ -107,12 +108,10 @@ export const styles = stylex.create({
     cursor: 'pointer',
     fontWeight: 'bold',
     letterSpacing: '1px',
-    padding: '0.8rem 1.5rem',
     textTransform: 'uppercase',
     transform: {
       ':hover': 'translateY(-2px)',
     },
-    transition: 'all 0.3s ease',
   },
 
   contactLinkMobile: {
@@ -128,6 +127,10 @@ export const styles = stylex.create({
   },
 
   formInput: {
+    padding: {
+      default: '0.5rem',
+      '@media (max-width: 768px)': '0.75rem',
+    },
     borderColor: {
       default: '#ccc',
       ':focus': '#4ecdc4',
@@ -144,6 +147,12 @@ export const styles = stylex.create({
     borderWidth: {
       default: '1px',
       '@media (max-width: 768px)': '2px',
+    },
+    outline: {
+      ':focus': 'none',
+    },
+    transition: {
+      '@media (max-width: 768px)': 'border-color 0.3s ease',
     },
     boxShadow: {
       ':focus': '0 0 0 3px rgba(78, 205, 196, 0.1)',
@@ -151,27 +160,19 @@ export const styles = stylex.create({
     boxSizing: 'border-box',
     // Prevent mobile zoom on iOS
     fontFamily: 'inherit',
-
     fontSize: {
       default: '16px',
       '@media (max-width: 768px)': '16px', // Critical: prevents zoom on iOS Safari
     },
-
     lineHeight: 1.4,
-    outline: {
-      ':focus': 'none',
-    },
-    padding: {
-      default: '0.5rem',
-      '@media (max-width: 768px)': '0.75rem',
-    },
-    transition: {
-      '@media (max-width: 768px)': 'border-color 0.3s ease',
-    },
     width: '100%',
   },
 
   formTextarea: {
+    padding: {
+      default: '0.5rem',
+      '@media (max-width: 768px)': '0.75rem',
+    },
     borderColor: {
       default: '#ccc',
       ':focus': '#4ecdc4',
@@ -188,6 +189,13 @@ export const styles = stylex.create({
     borderWidth: {
       default: '1px',
       '@media (max-width: 768px)': '2px',
+    },
+    outline: {
+      ':focus': 'none',
+    },
+
+    transition: {
+      '@media (max-width: 768px)': 'border-color 0.3s ease',
     },
     boxShadow: {
       ':focus': '0 0 0 3px rgba(78, 205, 196, 0.1)',
@@ -200,53 +208,39 @@ export const styles = stylex.create({
       '@media (max-width: 768px)': '16px',
     },
     lineHeight: 1.4,
+    resize: 'vertical',
     minHeight: {
       default: '100px',
       '@media (max-width: 768px)': '120px',
-    },
-    outline: {
-      ':focus': 'none',
-    },
-    padding: {
-      default: '0.5rem',
-      '@media (max-width: 768px)': '0.75rem',
-    },
-
-    resize: 'vertical',
-    transition: {
-      '@media (max-width: 768px)': 'border-color 0.3s ease',
     },
     width: '100%',
   },
 
   signup: {
-    backdropFilter: 'blur(10px)',
     background: 'rgba(255, 255, 255, 0.95)',
-    borderColor: 'rgba(255, 255, 255, 0.3)',
 
+    margin: 0,
+    padding: 0,
+    borderColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '20px',
     borderStyle: 'solid',
     borderWidth: '1px',
-
-    boxShadow: '0 8px 32px rgba(78, 205, 196, 0.2)',
-    display: 'flex',
-    flexDirection: 'column',
-
-    flexWrap: 'wrap',
-
     gap: 0,
-    margin: 0,
-    minHeight: {
-      '@media (max-width: 768px)': 'auto',
-    },
     overflow: {
       '@media (max-width: 768px)': 'visible',
     },
-    padding: 0,
+    backdropFilter: 'blur(10px)',
+    boxShadow: '0 8px 32px rgba(78, 205, 196, 0.2)',
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
     transform: {
       '@media (max-width: 768px)': 'translateZ(0)', // Hardware acceleration
     },
     willChange: {
+      '@media (max-width: 768px)': 'auto',
+    },
+    minHeight: {
       '@media (max-width: 768px)': 'auto',
     },
   },
@@ -267,51 +261,52 @@ export const styles = stylex.create({
   },
 
   signupForm: {
-    marginTop: '2rem',
+    padding: '2rem',
     textAlign: 'center',
+    marginTop: '0',
   },
 
   messageBox: {
+    padding: '1rem',
     borderRadius: '8px',
     fontWeight: 'bold',
-    marginBottom: '1rem',
-    padding: '1rem',
     textAlign: 'center',
+    marginBottom: '1rem',
   },
 
   signupIconContainer: {
-    alignItems: 'center',
-    backdropFilter: 'blur(10px)',
     background:
       'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))',
+    margin: '0 auto',
     borderColor: 'rgba(255, 107, 107, 0.2)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    alignItems: 'center',
+    backdropFilter: 'blur(10px)',
     display: 'flex',
-    height: '250px',
     justifyContent: 'center',
-    margin: '0 auto',
+    height: '250px',
     maxWidth: '100%',
     width: '100%',
   },
 
   signupFormElement: {
-    display: 'flex',
-    flexDirection: 'column',
+    margin: '0 auto',
+
+    padding: {
+      '@media (max-width: 480px)': '0 0.5rem',
+      '@media (max-width: 768px)': '0 1rem',
+    },
     gap: {
       default: '1rem',
       '@media (max-width: 480px)': '1rem',
       '@media (max-width: 768px)': '1.25rem',
     },
-    margin: '0 auto',
-
+    display: 'flex',
+    flexDirection: 'column',
     maxWidth: {
       default: '400px',
       '@media (max-width: 768px)': '100%',
-    },
-    padding: {
-      '@media (max-width: 480px)': '0 0.5rem',
-      '@media (max-width: 768px)': '0 1rem',
     },
   },
 
@@ -320,13 +315,13 @@ export const styles = stylex.create({
   },
 
   signupFormMobile: {
-    marginTop: {
-      '@media (max-width: 480px)': '1rem',
-      '@media (max-width: 768px)': '1.5rem',
-    },
     padding: {
       '@media (max-width: 480px)': '0 0.5rem',
       '@media (max-width: 768px)': '0 1rem',
+    },
+    marginTop: {
+      '@media (max-width: 480px)': '1rem',
+      '@media (max-width: 768px)': '1.5rem',
     },
   },
 
@@ -335,26 +330,26 @@ export const styles = stylex.create({
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M50 15L60 35H40L50 15ZM85 50L75 30H95L85 50ZM15 50L25 70H5L15 50ZM50 85L40 65H60L50 85Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
     `,
+    margin: 0,
+    // margin: "-2rem -2rem 2rem -2rem",
+    padding: '2rem',
+    borderRadius: '20px 20px 0 0',
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 100px 100px',
-    borderRadius: '20px 20px 0 0',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
     color: 'white',
     fontSize: '2.2rem',
     fontWeight: 'bold',
-    margin: 0,
-    // margin: "-2rem -2rem 2rem -2rem",
-    padding: '2rem',
     position: 'relative',
     textAlign: 'center',
   },
 
   signupIconContainerMobile: {
-    height: {
-      '@media (max-width: 768px)': '250px',
-    },
     margin: {
       '@media (max-width: 768px)': 0,
+    },
+    height: {
+      '@media (max-width: 768px)': '250px',
     },
     maxWidth: {
       '@media (max-width: 768px)': '100%',
@@ -369,9 +364,9 @@ export const styles = stylex.create({
     animationIterationCount: 'infinite',
     animationName: floatAnimation,
     animationTimingFunction: 'ease-in-out',
+    willChange: 'transform',
     height: 'auto',
     maxWidth: '100%',
-    willChange: 'transform',
   },
 
   signupIconSvgMobile: {
@@ -388,21 +383,21 @@ export const styles = stylex.create({
 
   // Mobile responsive styles
   signupMobile: {
-    borderRadius: {
-      '@media (max-width: 480px)': '12px',
-      '@media (max-width: 768px)': '15px',
-    },
     margin: {
       '@media (max-width: 480px)': '0 0.5rem',
       '@media (max-width: 768px)': '0 1rem',
     },
+    borderRadius: {
+      '@media (max-width: 480px)': '12px',
+      '@media (max-width: 768px)': '15px',
+    },
   },
 
   successMessage: {
-    backgroundColor: 'rgba(76, 175, 80, 0.1)',
     borderColor: 'rgba(76, 175, 80, 0.3)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(76, 175, 80, 0.1)',
     color: '#2e7d32',
   },
 });

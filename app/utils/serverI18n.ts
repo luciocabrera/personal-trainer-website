@@ -4,8 +4,9 @@
 import en from '@/locales/en.json';
 import es from '@/locales/es.json';
 import nl from '@/locales/nl.json';
+import type { Language } from '@/types/language.types';
 
-type Language = 'en' | 'es' | 'nl';
+import { getLanguageFromCookie } from './language-cookie.util';
 
 const translations = {
   en,
@@ -32,9 +33,17 @@ export const getServerTranslation = (language: Language = 'nl') => {
   return { t };
 };
 
-// Get language from request headers
+// Get language from request (cookie first, then Accept-Language header)
 export const getLanguageFromRequest = (request: Request): Language => {
-  const acceptLanguage = request.headers.get('Accept-Language') || '';
+  // First, check cookie
+  const cookieHeader = request.headers.get('Cookie');
+  const cookieLanguage = getLanguageFromCookie(cookieHeader);
+  if (cookieLanguage) {
+    return cookieLanguage;
+  }
+
+  // Fallback to Accept-Language header
+  const acceptLanguage = request.headers.get('Accept-Language') ?? '';
 
   if (acceptLanguage.includes('en')) return 'en';
   if (acceptLanguage.includes('es')) return 'es';

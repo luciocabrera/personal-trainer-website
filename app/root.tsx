@@ -5,26 +5,58 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from 'react-router';
 import * as stylex from '@stylexjs/stylex';
+import i18n from 'i18next';
 
 import { BRAND } from '@/constants/brand';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import type { Language } from '@/types/language.types';
+import { getLanguageFromCookie } from '@/utils/language-cookie.util';
+
+import type { Route } from './+types/root';
 
 import { styles } from './root.stylex';
 
 import './root.css';
 
-// Initialize i18n
+// Initialize i18n - must be imported to set up i18n
 import '@/i18n';
 
+/**
+ * Loader to get language from cookies for SSR hydration
+ * This ensures the server renders with the correct language to avoid hydration mismatch
+ */
+export const loader = async ({ request }: Route.LoaderArgs) => {
+  const cookieHeader = request.headers.get('Cookie');
+  const language = getLanguageFromCookie(cookieHeader) ?? 'nl';
+
+  // Sync i18n to the cookie language BEFORE rendering
+  // This ensures server renders with the correct language
+  if (i18n.language !== language) {
+    await i18n.changeLanguage(language);
+  }
+
+  return { language };
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
+  const loaderData = useLoaderData<typeof loader>();
+  const language = (loaderData?.language ?? 'nl') as Language;
+
   return (
     <html
-      lang='nl'
+      lang={language}
+      translate='no'
       {...stylex.props(styles.html)}
     >
       <head>
         <meta charSet='utf-8' />
+        <meta
+          content='notranslate'
+          name='google'
+        />
         <meta
           content='width=device-width, initial-scale=1'
           name='viewport'
@@ -365,7 +397,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  const { language } = useLoaderData<typeof loader>();
+
+  return (
+    <LanguageProvider
+      defaultLanguage='nl'
+      initialLanguage={language as Language}
+    >
+      <Outlet />
+    </LanguageProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {

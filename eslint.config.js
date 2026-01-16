@@ -223,14 +223,9 @@ export default [
         },
       ],
 
-      // StyleX rules
+      // StyleX rules - only validation, sorting is handled per file type
       '@stylexjs/valid-styles': 'error',
-      '@stylexjs/sort-keys': [
-        'error',
-        {
-          validImports: ['stylex', '@stylexjs/stylex'],
-        },
-      ],
+      '@stylexjs/sort-keys': 'off', // Disabled globally, enabled only for .stylex.tsx files
 
       // General best practices
       'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -255,12 +250,20 @@ export default [
       '**/*.stylex.js',
     ],
     rules: {
-      // Disable general sort-keys rules in favor of StyleX sort-keys
+      // Disable all general sort-keys rules in favor of StyleX sort-keys
       'sort-keys': 'off',
       'sort-keys-fix/sort-keys-fix': 'off',
+      'perfectionist/sort-object-types': 'off',
+      'perfectionist/sort-enums': 'off',
+      'perfectionist/sort-interfaces': 'off',
       // StyleX rules take precedence for CSS-in-JS
       '@stylexjs/valid-styles': 'error',
-      '@stylexjs/sort-keys': 'error',
+      '@stylexjs/sort-keys': [
+        'error',
+        {
+          validImports: ['stylex', '@stylexjs/stylex'],
+        },
+      ],
     },
   },
 ];

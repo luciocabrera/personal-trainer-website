@@ -5,6 +5,7 @@
     "outdoorBenefits": "Beneficios Outdoor",
     "schedule": "Horario",
     "pricing": "Precios",
+    "blog": "Blog",
     "contact": "Contacto"
   },
   "hero": {
@@ -153,5 +154,30 @@
     "autoReplyClosing": "🤝 Saludos cordiales,",
     "autoReplyTeam": "🏆 El Equipo Desi4Fit",
     "autoReplyDisclaimer": "🤖 Esta es una confirmación automática. Por favor no respondas a este correo."
+  },
+  "blog": {
+    "title": "Consejos de Fitness e Inspiración 💡",
+    "subtitle": "¡Descubre consejos prácticos, motivación e ideas para ayudarte a alcanzar tus objetivos de fitness!",
+    "readMore": "Leer más",
+    "posts": {
+      "outdoor_training_winter": {
+        "title": "Mantente en Forma Este Invierno: Por Qué el Entrenamiento Outdoor es Perfecto para el Clima Frío",
+        "category": "Consejos de Entrenamiento",
+        "imageAlt": "Sesión de entrenamiento outdoor en invierno",
+        "excerpt": "¿Crees que invierno significa quedarse adentro? ¡Piénsalo de nuevo! Descubre por qué el entrenamiento outdoor en clima frío puede potenciar tu rutina de fitness y fortalecer tu sistema inmunológico."
+      },
+      "nutrition_tips": {
+        "title": "Alimenta tus Entrenamientos: Consejos Simples de Nutrición para Mejor Rendimiento",
+        "category": "Nutrición",
+        "imageAlt": "Preparación de comida saludable para fitness",
+        "excerpt": "¡Lo que comes importa! Aprende estrategias nutricionales fáciles para maximizar tus resultados de entrenamiento, aumentar niveles de energía y sentirte increíble todo el día."
+      },
+      "motivation_goals": {
+        "title": "Estableciendo Objetivos de Fitness que Realmente Funcionan: Tu Plan de Juego 2026",
+        "category": "Motivación",
+        "imageAlt": "Persona alcanzando objetivos de fitness",
+        "excerpt": "¿Año nuevo, nuevo tú? ¡Hagamos que funcione! Descubre estrategias probadas para establecer objetivos de fitness realistas y mantenerte motivado todo el año."
+      }
+    }
   }
 }

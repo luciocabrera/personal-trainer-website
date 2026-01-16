@@ -48,43 +48,45 @@ const slideOutFixed = stylex.keyframes({
 
 const styles = stylex.create({
   dismissButton: {
-    alignItems: 'center',
 
     background: 'none',
 
-    backgroundColor: {
-      ':hover': 'rgba(0, 0, 0, 0.1)',
-    },
-    borderRadius: '50%',
 
+
+
+
+
+
+    padding: '0.25rem',
+    borderRadius: '50%',
     borderStyle: 'none',
     borderWidth: 0,
 
+    transition: 'opacity 0.2s ease',
+    alignItems: 'center',
+    backgroundColor: {
+      ':hover': 'rgba(0, 0, 0, 0.1)',
+    },
     color: 'inherit',
-
     cursor: 'pointer',
-
     display: 'flex',
-
     fontSize: {
       default: '1.2rem',
       '@media (max-width: 480px)': '1.4rem',
       '@media (max-width: 768px)': '1.3rem',
     },
+    justifyContent: 'center',
+    opacity: {
+      default: 0.7,
+      ':hover': 1,
+    },
+    // Mobile responsive styles for better touch targets
+    position: 'absolute',
     height: {
       default: '24px',
       '@media (max-width: 480px)': '32px',
       '@media (max-width: 768px)': '28px',
     },
-    justifyContent: 'center',
-
-    opacity: {
-      default: 0.7,
-      ':hover': 1,
-    },
-    padding: '0.25rem',
-    // Mobile responsive styles for better touch targets
-    position: 'absolute',
     right: {
       default: '0.75rem',
       '@media (max-width: 480px)': '0.375rem',
@@ -96,8 +98,6 @@ const styles = stylex.create({
       '@media (max-width: 768px)': '0.5rem',
     },
 
-    transition: 'opacity 0.2s ease',
-
     width: {
       default: '24px',
       '@media (max-width: 480px)': '32px',
@@ -106,11 +106,12 @@ const styles = stylex.create({
   },
 
   errorMessage: {
-    backgroundColor: {
-      default: 'rgba(244, 67, 54, 0.1)',
-      '@media (max-width: 768px)': 'rgba(244, 67, 54, 0.08)',
-    },
 
+
+    padding: {
+      '@media (max-width: 480px)': '0.75rem 0.875rem',
+      '@media (max-width: 768px)': '0.875rem 1rem',
+    },
     borderColor: {
       default: 'rgba(244, 67, 54, 0.3)',
       '@media (max-width: 768px)': 'rgba(244, 67, 54, 0.4)',
@@ -120,7 +121,10 @@ const styles = stylex.create({
     },
     borderStyle: 'solid',
     borderWidth: '1px',
-
+    backgroundColor: {
+      default: 'rgba(244, 67, 54, 0.1)',
+      '@media (max-width: 768px)': 'rgba(244, 67, 54, 0.08)',
+    },
     color: '#c62828',
     fontSize: {
       '@media (max-width: 480px)': '0.85rem',
@@ -130,6 +134,9 @@ const styles = stylex.create({
       '@media (max-width: 480px)': 1.25,
       '@media (max-width: 768px)': 1.3,
     },
+    wordWrap: {
+      '@media (max-width: 480px)': 'break-word',
+    },
     marginBottom: {
       '@media (max-width: 480px)': '0.875rem',
       '@media (max-width: 768px)': '1rem',
@@ -137,26 +144,21 @@ const styles = stylex.create({
     maxWidth: {
       '@media (max-width: 480px)': '100%',
     },
-    padding: {
-      '@media (max-width: 480px)': '0.75rem 0.875rem',
-      '@media (max-width: 768px)': '0.875rem 1rem',
-    },
-    wordWrap: {
-      '@media (max-width: 480px)': 'break-word',
-    },
   },
 
   messageBox: {
-    animationDuration: '0.3s',
 
-    animationFillMode: 'forwards',
 
-    animationTimingFunction: 'ease-out',
 
+
+
+
+    padding: '1rem 1.5rem',
     borderRadius: '8px',
-
+    animationDuration: '0.3s',
+    animationFillMode: 'forwards',
+    animationTimingFunction: 'ease-out',
     fontSize: '1rem',
-
     fontWeight: {
       default: 'bold',
       '@media (max-width: 480px)': 600, // Slightly lighter weight for better mobile readability
@@ -166,10 +168,7 @@ const styles = stylex.create({
     lineHeight: {
       '@media (max-width: 768px)': 1.4,
     },
-    marginBottom: '1rem',
     overflowWrap: 'break-word',
-
-    padding: '1rem 1.5rem',
     position: 'relative',
 
     textAlign: {
@@ -179,11 +178,19 @@ const styles = stylex.create({
     },
 
     wordWrap: 'break-word',
+    marginBottom: '1rem',
   },
 
   messageBoxFixed: {
-    backgroundColor: 'rgba(76, 175, 80, 0.15)',
 
+
+
+
+    padding: {
+      default: '1.5rem 2rem',
+      '@media (max-width: 480px)': '0.875rem 1rem',
+      '@media (max-width: 768px)': '1rem 1.5rem',
+    },
     borderColor: {
       default: 'rgba(76, 175, 80, 0.6)',
       '@media (max-width: 768px)': 'rgba(76, 175, 80, 0.6)',
@@ -196,18 +203,21 @@ const styles = stylex.create({
       default: '2px',
       '@media (max-width: 768px)': '1px',
     },
-
+    backgroundColor: 'rgba(76, 175, 80, 0.15)',
     boxShadow: {
       default: '0 8px 32px rgba(76, 175, 80, 0.3)',
       '@media (max-width: 768px)': '0 4px 16px rgba(76, 175, 80, 0.3)',
     },
-
     fontSize: {
       default: '1.1rem',
       '@media (max-width: 480px)': '0.95rem',
       '@media (max-width: 768px)': '1rem',
     },
     fontWeight: 600,
+    position: 'relative',
+    transform: 'none',
+
+    zIndex: 100,
     left: '0',
     // Mobile responsive styles
     marginBottom: {
@@ -215,20 +225,10 @@ const styles = stylex.create({
       '@media (max-width: 480px)': '1rem',
       '@media (max-width: 768px)': '1.5rem',
     },
-
     marginTop: '0',
     maxWidth: '100%',
-    padding: {
-      default: '1.5rem 2rem',
-      '@media (max-width: 480px)': '0.875rem 1rem',
-      '@media (max-width: 768px)': '1rem 1.5rem',
-    },
-    position: 'relative',
     top: '0',
-    transform: 'none',
-
     width: '100%',
-    zIndex: 100,
   },
 
   messageBoxSlideIn: {
@@ -248,11 +248,11 @@ const styles = stylex.create({
   },
 
   successMessage: {
-    backgroundColor: 'rgba(76, 175, 80, 0.1)',
 
     borderColor: 'rgba(76, 175, 80, 0.3)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(76, 175, 80, 0.1)',
 
     color: '#2e7d32',
     fontSize: {

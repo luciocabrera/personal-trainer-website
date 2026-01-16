@@ -40,10 +40,9 @@ const FooterSection = () => {
             {BRAND.instagram.handle}
           </a>
         </div>
-        <div {...stylex.props(styles.footerBottom)}>
-          <p>{t('footer.copyright')}</p>
-          <p {...stylex.props(styles.version)}>v{packageJson.version}</p>
-        </div>
+        <p {...stylex.props(styles.footerBottom)}>
+          {t('footer.copyright')} <span {...stylex.props(styles.version)}>v{packageJson.version}</span>
+        </p>
       </div>
     </footer>
   );

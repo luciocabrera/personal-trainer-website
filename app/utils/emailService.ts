@@ -53,7 +53,7 @@ export const sendContactEmail = async (
   data: EmailData,
   translations: EmailTranslations
 ): Promise<void> => {
-  const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() || 'resend';
+  const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() ?? 'resend';
 
   try {
     console.log(`📧 Preparing to send contact email via ${emailProvider}...`);
@@ -92,7 +92,7 @@ const sendWithResend = async (
 
   // 1️⃣ Send notification to admin
   await resend.emails.send({
-    from: process.env.EMAIL_FROM || 'Contact Form <noreply@desi4fit.nl>',
+    from: process.env.EMAIL_FROM ?? 'Contact Form <noreply@desi4fit.nl>',
     html: `
       <h2>${translations.adminTitle}</h2>
       <p><strong>${translations.adminNameLabel}:</strong> ${data.name}</p>
@@ -105,14 +105,14 @@ const sendWithResend = async (
       <p><em>${translations.adminFooter}</em></p>
     `,
     subject: `${translations.adminSubject} ${data.name}`,
-    to: process.env.EMAIL_TO || 'info@desi4fit.nl',
+    to: process.env.EMAIL_TO ?? 'info@desi4fit.nl',
   });
   console.log('✅ Admin notification email sent via Resend');
 
   // 2️⃣ Send auto-reply to user (if enabled)
   if (process.env.SEND_AUTO_REPLY === 'true') {
     await resend.emails.send({
-      from: process.env.EMAIL_FROM || 'Desi4Fit <noreply@desi4fit.nl>',
+      from: process.env.EMAIL_FROM ?? 'Desi4Fit <noreply@desi4fit.nl>',
       html: `
         <h2>${translations.autoReplyTitle}</h2>
         <p>${translations.autoReplyGreeting} ${data.name},</p>

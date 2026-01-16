@@ -2,9 +2,12 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   hero: {
-    alignItems: 'center',
     background: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
+    margin: 0,
+    padding: 0,
     borderRadius: '15px',
+    gap: 0,
+    alignItems: 'center',
     boxShadow: '0 8px 30px rgba(255, 107, 107, 0.4)',
     color: 'white',
     containerType: 'inline-size',
@@ -14,39 +17,36 @@ export const styles = stylex.create({
       default: 'nowrap',
       '@container (max-width: 902px)': 'wrap',
     },
-    gap: 0,
-    margin: 0,
-    minHeight: 728,
-    padding: 0,
     textAlign: 'center',
+    minHeight: 728,
   },
   heroContent: {
+    padding: '3rem',
+    flex: '1 1 0%',
     alignContent: 'start',
     alignItems: 'center',
     display: 'flex',
-    flex: '1 1 0%',
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'start',
     minHeight: 261,
     minWidth: 300,
-    padding: '3rem',
   },
   heroImage: {
+    flex: '1 1 0%',
+    overflow: 'hidden',
     // borderBottomRightRadius: '15px',
     // borderTopRightRadius: '15px',
     display: 'flex',
-    flex: '1 1 0%',
     maxHeight: 728,
-    overflow: 'hidden',
     width: '100cqw',
   },
   heroImageImg: {
     // borderBottomLeftRadius: '15px',
     // borderBottomRightRadius: '15px',
     display: 'block',
-    height: '100%',
     objectFit: 'cover',
+    height: '100%',
     // width: '100cqw',
   },
   heroImageImgMobile: {
@@ -60,6 +60,10 @@ export const styles = stylex.create({
     },
   },
   heroImageMobile: {
+    flex: {
+      default: null,
+      '@container (max-width: 902px)': '0 0 auto',
+    },
     borderBottomLeftRadius: {
       default: null,
       '@container (max-width: 902px)': '15px',
@@ -75,10 +79,6 @@ export const styles = stylex.create({
     borderTopRightRadius: {
       default: 15,
       '@container (max-width: 902px)': '0px',
-    },
-    flex: {
-      default: null,
-      '@container (max-width: 902px)': '0 0 auto',
     },
   },
   heroMobile: {
@@ -96,12 +96,12 @@ export const styles = stylex.create({
     },
   },
   heroParagraph: {
-    fontSize: '1.2rem',
     margin: '1rem 0',
+    fontSize: '1.2rem',
   },
   heroSubtitle: {
-    fontSize: '2rem',
     margin: '0.5rem 0',
+    fontSize: '2rem',
   },
   heroSubtitleMobile: {
     fontSize: {
@@ -111,8 +111,8 @@ export const styles = stylex.create({
     },
   },
   heroTitle: {
-    fontSize: '2.5rem',
     margin: 0,
+    fontSize: '2.5rem',
   },
   heroTitleMobile: {
     fontSize: {

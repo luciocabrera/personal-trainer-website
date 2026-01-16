@@ -51,7 +51,10 @@ const SignupSection = () => {
         </div>
       </div>
 
-      <div {...stylex.props(styles.signupForm, styles.signupFormMobile)}>
+      <div
+        suppressHydrationWarning
+        {...stylex.props(styles.signupForm, styles.signupFormMobile)}
+      >
         <p>{t('signup.signupNow')}</p>
         <p>{t('signup.nice')}</p>
 
@@ -61,33 +64,39 @@ const SignupSection = () => {
           {...stylex.props(styles.signupFormElement)}
         >
           <input
+            suppressHydrationWarning
             required
+            disabled={isSubmitting}
             name='name'
             placeholder={t('form.name')}
+            translate='no'
             type='text'
             {...stylex.props(styles.formInput)}
-            disabled={isSubmitting}
           />
           <input
+            suppressHydrationWarning
             required
+            disabled={isSubmitting}
             name='email'
             placeholder={t('form.email')}
+            translate='no'
             type='email'
             {...stylex.props(styles.formInput)}
-            disabled={isSubmitting}
           />
           <textarea
             required
+            disabled={isSubmitting}
             name='message'
             placeholder={t('form.message')}
             rows={4}
+            translate='no'
             {...stylex.props(styles.formTextarea)}
-            disabled={isSubmitting}
           />
           <button
+            disabled={isSubmitting}
+            translate='no'
             type='submit'
             {...stylex.props(styles.formButton)}
-            disabled={isSubmitting}
           >
             {isSubmitting ? t('form.submitting') : t('form.submit')}
           </button>

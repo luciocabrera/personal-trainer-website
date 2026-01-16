@@ -4,6 +4,7 @@ export const styles = stylex.create({
   // Hamburger Menu Button
   hamburger: {
     background: 'transparent',
+    padding: 0,
     borderStyle: 'none',
     cursor: 'pointer',
     display: {
@@ -11,19 +12,18 @@ export const styles = stylex.create({
       '@media (max-width: 768px)': 'flex',
     },
     flexDirection: 'column',
-    height: '24px',
     justifyContent: 'space-around',
-    padding: 0,
-    width: '24px',
     zIndex: 1001,
+    height: '24px',
+    width: '24px',
   },
 
   hamburgerLine: {
     background: 'white',
     borderRadius: '2px',
-    height: '2px',
-    transformOrigin: 'center',
     transition: 'all 0.3s ease',
+    transformOrigin: 'center',
+    height: '2px',
     width: '24px',
   },
 
@@ -40,46 +40,43 @@ export const styles = stylex.create({
   },
 
   header: {
-    alignItems: 'center',
-    backdropFilter: 'blur(5px)',
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 50%, rgba(255, 107, 107, 0.95) 100%),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Cpath d='M15 15h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M37 37h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M20 5h3v10h-3z' fill-opacity='0.03'/%3E%3Cpath d='M37 45h3v10h-3z' fill-opacity='0.03'/%3E%3Cpolygon points='30,8 34,16 26,16' fill-opacity='0.05'/%3E%3Cpolygon points='30,52 34,44 26,44' fill-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
     `,
+    padding: {
+      default: '1rem 2rem',
+      '@media (max-width: 768px)': '1rem',
+    },
+    alignItems: 'center',
+    backdropFilter: 'blur(5px)',
     // Single consistent header height
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 60px 60px',
-    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
-    borderBottomStyle: 'solid',
-    borderBottomWidth: '1px',
     boxShadow:
       '0 4px 25px rgba(102, 126, 234, 0.4), 0 2px 10px rgba(255, 107, 107, 0.2)',
     boxSizing: 'border-box',
     color: 'white',
     display: 'flex',
     justifyContent: 'center',
+    position: 'fixed',
+    zIndex: 1000,
+    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
+    borderBottomStyle: 'solid',
+    borderBottomWidth: '1px',
     left: 0,
     minHeight: {
       default: '80px',
       // Much smaller mobile header
       '@media (max-width: 768px)': '60px',
     },
-    padding: {
-      default: '1rem 2rem',
-      '@media (max-width: 768px)': '1rem',
-    },
-    position: 'fixed',
     right: 0,
     top: 0,
     width: '100%',
-    zIndex: 1000,
   },
 
   languageButton: {
-    backgroundColor: {
-      default: 'rgba(255, 255, 255, 0.1)',
-      ':hover': 'rgba(255, 255, 255, 0.2)',
-    },
+    padding: '0.4rem 0.8rem',
     borderColor: {
       default: 'rgba(255, 255, 255, 0.3)',
       ':hover': 'rgba(255, 255, 255, 0.5)',
@@ -87,20 +84,23 @@ export const styles = stylex.create({
     borderRadius: '6px',
     borderStyle: 'solid',
     borderWidth: '1px',
+    transition: 'all 0.3s ease',
+    backgroundColor: {
+      default: 'rgba(255, 255, 255, 0.1)',
+      ':hover': 'rgba(255, 255, 255, 0.2)',
+    },
     color: 'white',
     cursor: 'pointer',
     flexShrink: 0,
     fontSize: '0.875rem',
     fontWeight: 500,
-    minWidth: '3rem',
-    padding: '0.4rem 0.8rem',
     textAlign: 'center',
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     transform: {
       default: null,
       ':hover': 'translateY(-1px)',
     },
-    transition: 'all 0.3s ease',
+    minWidth: '3rem',
   },
 
   languageButtonActive: {
@@ -111,6 +111,7 @@ export const styles = stylex.create({
 
   // Desktop Language Selector
   languageSelector: {
+    gap: '0.5rem',
     alignItems: 'center',
     display: {
       default: 'flex',
@@ -118,7 +119,74 @@ export const styles = stylex.create({
       '@media (max-width: 768px)': 'none',
     },
     flexShrink: 0,
-    gap: '0.5rem',
+  },
+
+  languageSelect: {
+    appearance: 'none',
+    background: 'rgba(255, 255, 255, 0.15)',
+    padding: '0.6rem 2rem 0.6rem 1rem',
+    backgroundImage:
+      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
+    backgroundPosition: 'calc(100% - 15px) center, calc(100% - 10px) center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '5px 5px, 5px 5px',
+    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderRadius: '8px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    color: 'white',
+    cursor: 'pointer',
+    flexShrink: 0,
+    fontSize: '0.875rem',
+    fontWeight: 500,
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+    transition: 'all 0.3s ease',
+    backgroundColor: {
+      default: 'rgba(255, 255, 255, 0.15)',
+      ':hover': 'rgba(255, 255, 255, 0.25)',
+    },
+    transform: {
+      default: null,
+      ':hover': 'translateY(-1px)',
+    },
+    display: {
+      default: 'block',
+      '@media (max-width: 768px)': 'none',
+    },
+  },
+
+  // Style for select options (dropdown items)
+  // Note: browsers have limited option styling - we use dark text since browser forces white background
+  languageOption: {
+    backgroundColor: '#667eea',
+    color: '#333333',
+  },
+
+  mobileLanguageSelect: {
+    appearance: 'none',
+    background: 'transparent',
+    padding: '1rem 2.5rem 1rem 1rem',
+    backgroundImage:
+      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
+    backgroundPosition: 'calc(100% - 20px) center, calc(100% - 14px) center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '6px 6px, 6px 6px',
+    borderColor: 'rgba(255, 255, 255, 0.3)',
+    borderRadius: '8px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    color: 'white',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    fontWeight: 500,
+    marginTop: '1.5rem',
+    textAlign: 'center',
+    transition: 'all 0.3s ease',
+    width: '100%',
+    backgroundColor: {
+      default: 'transparent',
+      ':hover': 'rgba(255, 255, 255, 0.1)',
+    },
   },
 
   logo: {
@@ -134,53 +202,90 @@ export const styles = stylex.create({
 
   menuLink: {
     background: 'none',
-    backgroundColor: {
-      default: 'transparent',
-      ':hover': 'rgba(255, 255, 255, 0.15)',
-    },
+    padding: '0.75rem 1rem',
     borderColor: 'transparent',
     borderRadius: '8px',
     borderStyle: 'none',
     borderWidth: 0,
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    backgroundColor: {
+      default: 'transparent',
+      ':hover': 'rgba(255, 255, 255, 0.15)',
+    },
     boxShadow: {
       default: 'none',
       ':hover': '0 2px 8px rgba(0, 0, 0, 0.15)',
     },
+    boxSizing: 'border-box',
     color: 'white',
     cursor: 'pointer',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     fontFamily: 'inherit',
     fontSize: 'inherit',
     fontWeight: 500,
-    padding: '0.75rem 1rem',
-    textDecoration: 'none',
+    height: 'auto',
+    lineHeight: 'normal',
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     transform: {
       default: null,
       ':hover': 'translateY(-1px)',
     },
+    verticalAlign: 'middle',
+    whiteSpace: 'nowrap',
+  },
+
+  ctaButton: {
+    background: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',
+    padding: '0.75rem 1.5rem',
+    borderColor: 'transparent',
+    borderRadius: '25px',
+    borderStyle: 'none',
+    borderWidth: 0,
+    textDecoration: 'none',
     transition: 'all 0.3s ease',
+    backgroundColor: 'transparent',
+    boxShadow: {
+      default: '0 4px 15px rgba(78, 205, 196, 0.3)',
+      ':hover': '0 6px 20px rgba(78, 205, 196, 0.5)',
+    },
+    color: 'white',
+    cursor: 'pointer',
+    fontFamily: 'inherit',
+    fontSize: 'inherit',
+    fontWeight: 600,
+    textShadow: 'none',
+    transform: {
+      default: null,
+      ':hover': 'translateY(-2px)',
+    },
     whiteSpace: 'nowrap',
   },
 
   // Desktop Navigation
   menuList: {
+    margin: 0,
+    padding: 0,
+    gap: '1rem',
+    listStyle: 'none',
     alignItems: 'center',
     display: {
       default: 'flex',
       '@media (max-width: 768px)': 'none', // Hide desktop menu on mobile
     },
-    gap: '1rem',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
+  },
+
+  // Style for menu list items to ensure consistent alignment
+  menuItem: {
+    display: 'flex',
+    alignItems: 'center',
   },
 
   mobileLanguageButton: {
     background: 'none',
-    backgroundColor: {
-      default: 'transparent',
-      ':hover': 'rgba(255, 255, 255, 0.1)',
-    },
+    padding: '0.5rem 1rem',
     borderColor: {
       default: 'rgba(255, 255, 255, 0.3)',
       ':hover': 'rgba(255, 255, 255, 0.5)',
@@ -188,53 +293,56 @@ export const styles = stylex.create({
     borderRadius: '6px',
     borderStyle: 'solid',
     borderWidth: '1px',
+    transition: 'all 0.3s ease',
+    backgroundColor: {
+      default: 'transparent',
+      ':hover': 'rgba(255, 255, 255, 0.1)',
+    },
     color: 'white',
     cursor: 'pointer',
     fontSize: '0.875rem',
     fontWeight: 500,
-    minWidth: '3rem',
-    padding: '0.5rem 1rem',
     textAlign: 'center',
-    transition: 'all 0.3s ease',
+    minWidth: '3rem',
   },
 
   mobileLanguageButtonActive: {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     fontWeight: 600,
   },
 
   // Mobile Language Selector
   mobileLanguageSelector: {
+    gap: '0.5rem',
+    display: 'flex',
+    justifyContent: 'center',
     borderBottomColor: 'rgba(255, 255, 255, 0.2)',
     borderBottomStyle: 'solid',
     borderBottomWidth: '1px',
-    display: 'flex',
-    gap: '0.5rem',
-    justifyContent: 'center',
     marginBottom: '1.5rem',
     paddingBottom: '1rem',
   },
 
   mobileMenu: {
-    backdropFilter: 'blur(10px)',
     background: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 50%, rgba(255, 107, 107, 0.95) 100%),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Cpath d='M15 15h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M37 37h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M20 5h3v10h-3z' fill-opacity='0.03'/%3E%3Cpath d='M37 45h3v10h-3z' fill-opacity='0.03'/%3E%3Cpolygon points='30,8 34,16 26,16' fill-opacity='0.05'/%3E%3Cpolygon points='30,52 34,44 26,44' fill-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
     `,
+    padding: '1.5rem',
+    backdropFilter: 'blur(10px)',
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 60px 60px',
-    borderTopColor: 'rgba(255, 255, 255, 0.1)',
-    borderTopStyle: 'solid',
-    borderTopWidth: '1px',
     boxShadow:
       '0 8px 30px rgba(102, 126, 234, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)',
     boxSizing: 'border-box',
     color: 'white',
+    position: 'absolute',
+    borderTopColor: 'rgba(255, 255, 255, 0.1)',
+    borderTopStyle: 'solid',
+    borderTopWidth: '1px',
     // Start below header
     left: 0,
-    padding: '1.5rem',
-    position: 'absolute',
     right: 0,
     top: '60px',
     width: '100%',
@@ -242,62 +350,63 @@ export const styles = stylex.create({
 
   mobileMenuLink: {
     background: 'none',
-    backgroundColor: {
-      default: 'transparent',
-      ':active': 'rgba(255, 255, 255, 0.25)',
-      ':hover': 'rgba(255, 255, 255, 0.15)',
-    },
+    padding: '1rem',
     borderColor: 'transparent',
     borderRadius: '8px',
     borderStyle: 'none',
     borderWidth: 0,
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    backgroundColor: {
+      default: 'transparent',
+      ':hover': 'rgba(255, 255, 255, 0.15)',
+      ':active': 'rgba(255, 255, 255, 0.25)',
+    },
     color: 'white',
     cursor: 'pointer',
     display: 'block',
     fontFamily: 'inherit',
     fontSize: '1.1rem',
     fontWeight: 500,
-    padding: '1rem',
     textAlign: 'center',
-    textDecoration: 'none',
-    transition: 'background-color 0.3s ease',
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     width: '100%',
   },
 
   // Mobile Menu List
   mobileMenuList: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '0.5rem',
-    listStyle: 'none',
     margin: 0,
     padding: 0,
+    gap: '0.5rem',
+    listStyle: 'none',
+    display: 'flex',
+    flexDirection: 'column',
   },
 
   // Mobile Menu Overlay
   mobileMenuOverlay: {
     background: 'rgba(0, 0, 0, 0.5)',
-    bottom: 0,
     display: {
       default: 'none',
       '@media (max-width: 768px)': 'block',
     },
-    left: 0,
     position: 'fixed',
+    zIndex: 999,
+    bottom: 0,
+    left: 0,
     right: 0,
     top: 0,
-    zIndex: 999,
   },
 
   nav: {
+    margin: '0 auto',
+    padding: '0 1rem',
     alignItems: 'center',
     boxSizing: 'border-box',
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '0 auto',
-    maxWidth: '1200px',
-    padding: '0 1rem',
     position: 'relative',
+    maxWidth: '1200px',
     width: '100%',
   },
 });

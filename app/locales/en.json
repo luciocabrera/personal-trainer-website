@@ -5,6 +5,7 @@
     "outdoorBenefits": "Outdoor Benefits",
     "schedule": "Schedule",
     "pricing": "Pricing",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -153,5 +154,30 @@
     "autoReplyClosing": "🤝 Best regards,",
     "autoReplyTeam": "🏆 The Desi4Fit Team",
     "autoReplyDisclaimer": "🤖 This is an automated confirmation. Please do not reply to this email."
+  },
+  "blog": {
+    "title": "Fitness Tips & Inspiration 💡",
+    "subtitle": "Discover practical tips, motivation, and insights to help you reach your fitness goals!",
+    "readMore": "Read more",
+    "posts": {
+      "outdoor_training_winter": {
+        "title": "Stay Fit This Winter: Why Outdoor Training is Perfect for Cold Weather",
+        "category": "Training Tips",
+        "imageAlt": "Outdoor winter training session",
+        "excerpt": "Think winter means staying indoors? Think again! Discover why cold-weather outdoor training can supercharge your fitness routine and boost your immune system."
+      },
+      "nutrition_tips": {
+        "title": "Fuel Your Workouts: Simple Nutrition Tips for Better Performance",
+        "category": "Nutrition",
+        "imageAlt": "Healthy meal prep for fitness",
+        "excerpt": "What you eat matters! Learn easy nutrition strategies to maximize your workout results, increase energy levels, and feel amazing throughout the day."
+      },
+      "motivation_goals": {
+        "title": "Setting Fitness Goals That Actually Work: Your 2026 Game Plan",
+        "category": "Motivation",
+        "imageAlt": "Person achieving fitness goals",
+        "excerpt": "New year, new you? Let's make it stick! Discover proven strategies to set realistic fitness goals and stay motivated all year long."
+      }
+    }
   }
 }

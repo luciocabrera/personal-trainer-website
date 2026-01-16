@@ -30,12 +30,17 @@ const styles = stylex.create({
       default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
       ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
     },
+    padding: {
+      default: '0.8rem 1.5rem',
+      '@media (max-width: 480px)': '0.7rem 1.25rem',
+    },
     borderRadius: {
       default: '25px',
       '@media (max-width: 480px)': '25px',
     },
     borderStyle: 'none',
     borderWidth: 0,
+    transition: 'all 0.3s ease',
     boxShadow: {
       default: '0 4px 15px rgba(255, 107, 107, 0.4)',
       ':hover': '0 8px 25px rgba(255, 107, 107, 0.6)',
@@ -51,32 +56,30 @@ const styles = stylex.create({
       default: '1px',
       '@media (max-width: 480px)': '0.5px',
     },
+    textTransform: 'uppercase',
+    transform: {
+      default: 'translateY(0)',
+      ':hover': 'translateY(-2px)',
+      ':active': 'translateY(0)',
+    },
     minWidth: {
       default: '100px',
       '@media (max-width: 480px)': '80px',
     },
-    padding: {
-      default: '0.8rem 1.5rem',
-      '@media (max-width: 480px)': '0.7rem 1.25rem',
-    },
-    textTransform: 'uppercase',
-    transform: {
-      default: 'translateY(0)',
-      ':active': 'translateY(0)',
-      ':hover': 'translateY(-2px)',
-    },
-    transition: 'all 0.3s ease',
   },
 
   dismissButton: {
-    alignItems: 'center',
     background: 'none',
-    backgroundColor: {
-      ':hover': 'rgba(0, 0, 0, 0.1)',
-    },
+    padding: '0.25rem',
     borderRadius: '50%',
     borderStyle: 'none',
     borderWidth: 0,
+
+    transition: 'all 0.2s ease',
+    alignItems: 'center',
+    backgroundColor: {
+      ':hover': 'rgba(0, 0, 0, 0.1)',
+    },
     color: '#666',
     cursor: 'pointer',
     display: 'flex',
@@ -85,18 +88,20 @@ const styles = stylex.create({
       '@media (max-width: 480px)': '1.3rem',
       '@media (max-width: 768px)': '1.3rem',
     },
-    height: {
-      default: '32px',
-      '@media (max-width: 480px)': '28px',
-      '@media (max-width: 768px)': '28px',
-    },
     justifyContent: 'center',
     opacity: {
       default: 0.7,
       ':hover': 1,
     },
-    padding: '0.25rem',
     position: 'absolute',
+    transform: {
+      ':hover': 'rotate(90deg)',
+    },
+    height: {
+      default: '32px',
+      '@media (max-width: 480px)': '28px',
+      '@media (max-width: 768px)': '28px',
+    },
     right: {
       default: '0.75rem',
       '@media (max-width: 480px)': '0.5rem',
@@ -107,11 +112,6 @@ const styles = stylex.create({
       '@media (max-width: 480px)': '0.5rem',
       '@media (max-width: 768px)': '0.5rem',
     },
-
-    transform: {
-      ':hover': 'rotate(90deg)',
-    },
-    transition: 'all 0.2s ease',
 
     width: {
       default: '32px',
@@ -135,11 +135,17 @@ const styles = stylex.create({
     color: '#c62828',
   },
   errorNotification: {
-    backgroundColor: 'rgba(244, 67, 54, 0.25)',
     borderColor: 'rgba(244, 67, 54, 1)',
+    backgroundColor: 'rgba(244, 67, 54, 0.25)',
   },
 
   message: {
+
+    margin: {
+      default: '0 0 1.5rem 0',
+      '@media (max-width: 480px)': '0 0 1rem 0',
+      '@media (max-width: 768px)': '0 0 1.25rem 0',
+    },
     fontSize: {
       default: '1.1rem',
       '@media (max-width: 480px)': '0.95rem',
@@ -147,16 +153,14 @@ const styles = stylex.create({
     },
     fontWeight: 600,
     lineHeight: 1.5,
-
-    margin: {
-      default: '0 0 1.5rem 0',
-      '@media (max-width: 480px)': '0 0 1rem 0',
-      '@media (max-width: 768px)': '0 0 1.25rem 0',
-    },
   },
 
   notification: {
-    backgroundColor: 'white',
+    padding: {
+      default: '2rem',
+      '@media (max-width: 480px)': '1.25rem',
+      '@media (max-width: 768px)': '1.5rem',
+    },
     borderColor: 'rgba(76, 175, 80, 0.6)',
     borderRadius: {
       default: '12px',
@@ -165,50 +169,46 @@ const styles = stylex.create({
     },
     borderStyle: 'solid',
     borderWidth: '3px',
+    backgroundColor: 'white',
     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
     boxSizing: 'border-box',
+    position: 'relative',
+
+    textAlign: 'center',
+
+    wordWrap: 'break-word',
     maxWidth: {
       default: '500px',
       '@media (max-width: 480px)': '98vw',
       '@media (max-width: 768px)': '95vw',
     },
-    padding: {
-      default: '2rem',
-      '@media (max-width: 480px)': '1.25rem',
-      '@media (max-width: 768px)': '1.5rem',
-    },
-    position: 'relative',
-
-    textAlign: 'center',
     width: '100%',
-
-    wordWrap: 'break-word',
   },
 
   overlay: {
-    alignItems: 'center',
-    animationDuration: '0.3s',
 
-    animationFillMode: 'forwards',
-    animationTimingFunction: 'ease-out',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    bottom: 0,
 
-    boxSizing: 'border-box',
-    display: 'flex',
-    height: '100%',
-    justifyContent: 'center',
-    left: 0,
     padding: {
       default: '1rem',
       '@media (max-width: 480px)': '0.5rem',
       '@media (max-width: 768px)': '0.75rem',
     },
+    alignItems: 'center',
+    animationDuration: '0.3s',
+    animationFillMode: 'forwards',
+    animationTimingFunction: 'ease-out',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
     position: 'fixed',
+    zIndex: 9999,
+    bottom: 0,
+    height: '100%',
+    left: 0,
     right: 0,
     top: 0,
     width: '100%',
-    zIndex: 9999,
   },
 
   overlayFadeIn: {
@@ -224,8 +224,8 @@ const styles = stylex.create({
   },
 
   successNotification: {
-    backgroundColor: 'rgba(245, 247, 248, 1)',
     borderColor: 'rgba(76, 175, 80, 1)',
+    backgroundColor: 'rgba(245, 247, 248, 1)',
   },
 });
 

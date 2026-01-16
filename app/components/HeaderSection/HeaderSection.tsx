@@ -1,37 +1,55 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation, useNavigate } from 'react-router';
 import * as stylex from '@stylexjs/stylex';
 
 import { BRAND } from '@/constants/brand';
-import i18n from '@/i18n';
+import { useLanguage } from '@/hooks/useLanguage.hook';
+import type { Language } from '@/types/language.types';
+
+import { LanguageSelector } from '../LanguageSelector';
 
 import { styles } from './HeaderSection.stylex';
 
 const HeaderSection = () => {
-  const { i18n: i18nInstance, t } = useTranslation();
-  const currentLanguage = i18nInstance.language;
+  const { t } = useTranslation();
+  const { changeLanguage, language: currentLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const changeLanguage = (lng: string) => {
-    void i18n.changeLanguage(lng);
+  const handleLanguageChange = (lng: Language) => {
+    console.log('handleLanguageChange called with:', lng);
+    changeLanguage(lng);
     setIsMobileMenuOpen(false); // Close mobile menu when changing language
   };
 
   const handleMenuClick = (scrollToId: string) => {
-    document.getElementById(scrollToId)?.scrollIntoView({ behavior: 'smooth' });
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      void navigate('/');
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        document.getElementById(scrollToId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(scrollToId)?.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
-  const handleHomeClick = () => handleMenuClick('hero');
+  const handleHomeClick = () => {
+    if (location.pathname !== '/') {
+      void navigate('/');
+    } else {
+      handleMenuClick('hero');
+    }
+    setIsMobileMenuOpen(false);
+  };
   const handleTrainingsClick = () => handleMenuClick('trainings');
-  const handleOutdoorBenefitsClick = () => handleMenuClick('outdoor-benefits');
   const handleScheduleClick = () => handleMenuClick('schedule');
   const handlePricingClick = () => handleMenuClick('pricing');
   const handleSignupClick = () => handleMenuClick('signup');
-
-  const handleEnglishClick = () => changeLanguage('en');
-  const handleDutchClick = () => changeLanguage('nl');
-  const handleSpanishClick = () => changeLanguage('es');
 
   const handleToggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const handleCloseMobileMenu = () => setIsMobileMenuOpen(false);
@@ -51,7 +69,10 @@ const HeaderSection = () => {
           role='menubar'
           {...stylex.props(styles.menuList)}
         >
-          <li role='none'>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
             <button
               role='menuitem'
               {...stylex.props(styles.menuLink)}
@@ -60,7 +81,10 @@ const HeaderSection = () => {
               {t('nav.home')}
             </button>
           </li>
-          <li role='none'>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
             <button
               role='menuitem'
               {...stylex.props(styles.menuLink)}
@@ -69,16 +93,10 @@ const HeaderSection = () => {
               {t('nav.trainings')}
             </button>
           </li>
-          <li role='none'>
-            <button
-              role='menuitem'
-              {...stylex.props(styles.menuLink)}
-              onClick={handleOutdoorBenefitsClick}
-            >
-              {t('nav.outdoorBenefits')}
-            </button>
-          </li>
-          <li role='none'>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
             <button
               role='menuitem'
               {...stylex.props(styles.menuLink)}
@@ -87,7 +105,10 @@ const HeaderSection = () => {
               {t('nav.schedule')}
             </button>
           </li>
-          <li role='none'>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
             <button
               role='menuitem'
               {...stylex.props(styles.menuLink)}
@@ -96,7 +117,22 @@ const HeaderSection = () => {
               {t('nav.pricing')}
             </button>
           </li>
-          <li role='none'>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
+            <Link
+              role='menuitem'
+              to='/blog'
+              {...stylex.props(styles.menuLink)}
+            >
+              {t('nav.blog')}
+            </Link>
+          </li>
+          <li
+            role='none'
+            {...stylex.props(styles.menuItem)}
+          >
             <button
               role='menuitem'
               {...stylex.props(styles.menuLink)}
@@ -108,45 +144,11 @@ const HeaderSection = () => {
         </ul>
 
         {/* Desktop Language Selector */}
-        <div
-          {...stylex.props(styles.languageSelector)}
-          aria-label='Language selection'
-          role='group'
-        >
-          <button
-            aria-label='Switch to English'
-            type='button'
-            onClick={handleEnglishClick}
-            {...stylex.props(
-              styles.languageButton,
-              currentLanguage === 'en' ? styles.languageButtonActive : null
-            )}
-          >
-            EN
-          </button>
-          <button
-            aria-label='Switch to Dutch'
-            type='button'
-            onClick={handleDutchClick}
-            {...stylex.props(
-              styles.languageButton,
-              currentLanguage === 'nl' ? styles.languageButtonActive : null
-            )}
-          >
-            NL
-          </button>
-          <button
-            aria-label='Switch to Spanish'
-            type='button'
-            onClick={handleSpanishClick}
-            {...stylex.props(
-              styles.languageButton,
-              currentLanguage === 'es' ? styles.languageButtonActive : null
-            )}
-          >
-            ES
-          </button>
-        </div>
+        <LanguageSelector
+          currentLanguage={currentLanguage}
+          onLanguageChange={handleLanguageChange}
+          variant='desktop'
+        />
 
         {/* Mobile Hamburger Button */}
         <button
@@ -187,53 +189,6 @@ const HeaderSection = () => {
             {...stylex.props(styles.mobileMenu)}
             onClick={handleMobileMenuClick}
           >
-            {/* Mobile Language Selector */}
-            <div
-              {...stylex.props(styles.mobileLanguageSelector)}
-              aria-label='Language selection'
-              role='group'
-            >
-              <button
-                aria-label='Switch to English'
-                type='button'
-                onClick={handleEnglishClick}
-                {...stylex.props(
-                  styles.mobileLanguageButton,
-                  currentLanguage === 'en'
-                    ? styles.mobileLanguageButtonActive
-                    : null
-                )}
-              >
-                EN
-              </button>
-              <button
-                aria-label='Switch to Dutch'
-                type='button'
-                onClick={handleDutchClick}
-                {...stylex.props(
-                  styles.mobileLanguageButton,
-                  currentLanguage === 'nl'
-                    ? styles.mobileLanguageButtonActive
-                    : null
-                )}
-              >
-                NL
-              </button>
-              <button
-                aria-label='Switch to Spanish'
-                type='button'
-                onClick={handleSpanishClick}
-                {...stylex.props(
-                  styles.mobileLanguageButton,
-                  currentLanguage === 'es'
-                    ? styles.mobileLanguageButtonActive
-                    : null
-                )}
-              >
-                ES
-              </button>
-            </div>
-
             {/* Mobile Navigation Links */}
             <ul
               role='menubar'
@@ -261,15 +216,6 @@ const HeaderSection = () => {
                 <button
                   role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
-                  onClick={handleOutdoorBenefitsClick}
-                >
-                  {t('nav.outdoorBenefits')}
-                </button>
-              </li>
-              <li role='none'>
-                <button
-                  role='menuitem'
-                  {...stylex.props(styles.mobileMenuLink)}
                   onClick={handleScheduleClick}
                 >
                   {t('nav.schedule')}
@@ -285,6 +231,16 @@ const HeaderSection = () => {
                 </button>
               </li>
               <li role='none'>
+                <Link
+                  role='menuitem'
+                  to='/blog'
+                  {...stylex.props(styles.mobileMenuLink)}
+                  onClick={handleCloseMobileMenu}
+                >
+                  {t('nav.blog')}
+                </Link>
+              </li>
+              <li role='none'>
                 <button
                   role='menuitem'
                   {...stylex.props(styles.mobileMenuLink)}
@@ -294,6 +250,13 @@ const HeaderSection = () => {
                 </button>
               </li>
             </ul>
+
+            {/* Mobile Language Selector */}
+            <LanguageSelector
+              currentLanguage={currentLanguage}
+              onLanguageChange={handleLanguageChange}
+              variant='mobile'
+            />
           </div>
         </div>
       ) : null}
