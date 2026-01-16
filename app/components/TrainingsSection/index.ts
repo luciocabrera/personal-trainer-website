@@ -1,1 +1,1 @@
-export { default as TrainingsSection } from './TrainingsSection';
+export { default as TrainingsSection } from './TrainingsSection.component';

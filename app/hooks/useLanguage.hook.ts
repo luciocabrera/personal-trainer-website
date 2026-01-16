@@ -9,7 +9,7 @@ import { LanguageContext } from '@/contexts/LanguageContext';
 export const useLanguage = () => {
   const context = use(LanguageContext);
 
-  if (context === null) {
+  if (context === undefined) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
 

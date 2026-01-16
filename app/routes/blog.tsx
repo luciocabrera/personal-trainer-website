@@ -1,6 +1,6 @@
+import * as stylex from '@stylexjs/stylex';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import * as stylex from '@stylexjs/stylex';
 
 import { styles } from './blog.stylex';
 
@@ -43,7 +43,7 @@ const Blog = () => {
             >
               <div {...stylex.props(styles.imageContainer)}>
                 <img
-                  alt={t(`blog.posts.${post.id.replace(/-/g, '_')}.imageAlt`)}
+                  alt={t(`blog.posts.${post.id.replaceAll('-', '_')}.imageAlt`)}
                   loading='lazy'
                   src={post.image}
                   {...stylex.props(styles.image)}
@@ -60,11 +60,11 @@ const Blog = () => {
                 </div>
 
                 <h2 {...stylex.props(styles.postTitle)}>
-                  {t(`blog.posts.${post.id.replace(/-/g, '_')}.title`)}
+                  {t(`blog.posts.${post.id.replaceAll('-', '_')}.title`)}
                 </h2>
 
                 <p {...stylex.props(styles.excerpt)}>
-                  {t(`blog.posts.${post.id.replace(/-/g, '_')}.excerpt`)}
+                  {t(`blog.posts.${post.id.replaceAll('-', '_')}.excerpt`)}
                 </p>
 
                 <Link

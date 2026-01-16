@@ -1,10 +1,11 @@
-import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+import type { Language } from '@/types/language.types';
 
 import en from '@/locales/en.json';
 import es from '@/locales/es.json';
 import nl from '@/locales/nl.json';
-import type { Language } from '@/types/language.types';
 
 /**
  * Read language from cookie (client-side only)
@@ -17,11 +18,9 @@ const getLanguageFromCookie = (): Language | undefined => {
   const cookies = document.cookie.split(';');
   for (const cookie of cookies) {
     const [name, value] = cookie.trim().split('=');
-    if (name === 'language') {
-      if (value === 'en' || value === 'nl' || value === 'es') {
+    if (name === 'language' && (value === 'en' || value === 'nl' || value === 'es')) {
         return value;
       }
-    }
   }
 
   return undefined;

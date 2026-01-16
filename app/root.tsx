@@ -1,3 +1,5 @@
+import * as stylex from '@stylexjs/stylex';
+import i18n from 'i18next';
 import {
   isRouteErrorResponse,
   Links,
@@ -7,16 +9,14 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from 'react-router';
-import * as stylex from '@stylexjs/stylex';
-import i18n from 'i18next';
 
 import { BRAND } from '@/constants/brand';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { getLanguageFromCookie } from '@/utils/language-cookie.util';
 
 import type { Route } from './+types/root';
-import { styles } from './root.stylex';
 
+import { styles } from './root.stylex';
 import './root.css';
 
 // Initialize i18n - must be imported to set up i18n
@@ -39,9 +39,61 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
   return { language };
 };
 
+export default function App() {
+  const { language } = useLoaderData<typeof loader>();
+
+  return (
+    <LanguageProvider
+      defaultLanguage='nl'
+      initialLanguage={language}
+    >
+      <Outlet />
+    </LanguageProvider>
+  );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  let message = 'Oops!';
+  let details = 'An unexpected error occurred.';
+  let stack: string | undefined;
+
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? '404' : 'Error';
+    details =
+      error.status === 404
+        ? 'The requested page could not be found.'
+        : error.statusText || details;
+  } else if (error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
+
+  return (
+    <main style={{ padding: '2rem', textAlign: 'center' }}>
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack && (
+        <pre
+          style={{
+            background: 'hsla(10, 50%, 50%, 0.1)',
+            color: 'red',
+            maxWidth: '100%',
+            overflow: 'auto',
+            padding: '2rem',
+          }}
+        >
+          {stack}
+        </pre>
+      )}
+    </main>
+  );
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const loaderData = useLoaderData<typeof loader>();
-  const language = (loaderData?.language ?? 'nl');
+  // loaderData can be undefined in error boundary scenarios
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const language = loaderData?.language ?? 'nl';
 
   return (
     <html
@@ -391,55 +443,5 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  );
-}
-
-export default function App() {
-  const { language } = useLoaderData<typeof loader>();
-
-  return (
-    <LanguageProvider
-      defaultLanguage='nl'
-      initialLanguage={language}
-    >
-      <Outlet />
-    </LanguageProvider>
-  );
-}
-
-export function ErrorBoundary({ error }: { error: Error }) {
-  let message = 'Oops!';
-  let details = 'An unexpected error occurred.';
-  let stack: string | undefined;
-
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? '404' : 'Error';
-    details =
-      error.status === 404
-        ? 'The requested page could not be found.'
-        : error.statusText || details;
-  } else if (error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
-  }
-
-  return (
-    <main style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre
-          style={{
-            background: 'hsla(10, 50%, 50%, 0.1)',
-            color: 'red',
-            maxWidth: '100%',
-            overflow: 'auto',
-            padding: '2rem',
-          }}
-        >
-          {stack}
-        </pre>
-      )}
-    </main>
   );
 }

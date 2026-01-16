@@ -23,7 +23,7 @@ const parseCookies = (cookieHeader: string): Record<string, string> => {
  * Get language from cookie header (for server-side use)
  */
 export const getLanguageFromCookie = (
-  cookieHeader: string | null
+  cookieHeader: null | string
 ): Language | undefined => {
   if (cookieHeader === null || cookieHeader === '') {
     return undefined;

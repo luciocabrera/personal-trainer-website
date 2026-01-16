@@ -1,16 +1,17 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
 import i18n from 'i18next';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { Language } from '@/types/language.types';
+
 import { setLanguageCookie } from '@/utils/language-cookie.util';
 
 import { LanguageContext } from './LanguageContext.context';
 
-interface LanguageProviderProps {
+type LanguageProviderProps = {
   children: React.ReactNode;
   defaultLanguage?: Language;
   initialLanguage?: Language;
-}
+};
 
 /**
  * LanguageProvider component that manages language state and persistence

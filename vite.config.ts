@@ -1,31 +1,13 @@
 import { reactRouter } from '@react-router/dev/vite';
+import path from 'node:path';
 import { defineConfig } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import babel from 'vite-plugin-babel';
 import styleX from 'vite-plugin-stylex';
-import path from 'node:path';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './app'),
-    },
-  },
-  plugins: [
-    reactRouter(),
-    babel({
-      filter: /\.[jt]sx?$/,
-      babelConfig: {
-        presets: ['@babel/preset-typescript'], // if you use TypeScript
-        plugins: [['babel-plugin-react-compiler']],
-      },
-    }),
-    tsconfigPaths(),
-    // StyleX plugin - version warning is acceptable
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    styleX() as any,
-  ],
   build: {
+    minify: 'esbuild',
     // Optimize chunk splitting
     rollupOptions: {
       output: {
@@ -48,10 +30,28 @@ export default defineConfig({
     sourcemap: false,
     // Optimize build performance
     target: 'es2022',
-    minify: 'esbuild',
   },
   // Optimize dependency pre-bundling
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router', 'i18next', 'react-i18next'],
+  },
+  plugins: [
+    reactRouter(),
+    babel({
+      babelConfig: {
+        plugins: [['babel-plugin-react-compiler']],
+        presets: ['@babel/preset-typescript'], // if you use TypeScript
+      },
+      filter: /\.[jt]sx?$/,
+    }),
+    tsconfigPaths(),
+    // StyleX plugin - version warning is acceptable
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    styleX() as any,
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './app'),
+    },
   },
 });

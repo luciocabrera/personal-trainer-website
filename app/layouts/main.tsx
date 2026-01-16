@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router';
 import * as stylex from '@stylexjs/stylex';
+import { Outlet } from 'react-router';
 
 import { FooterSection } from '@/components/FooterSection';
 import { HeaderSection } from '@/components/HeaderSection';

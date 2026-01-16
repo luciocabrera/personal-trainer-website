@@ -1,18 +1,21 @@
-import { query } from '@/utils/database';
-import { type EmailTranslations, sendContactEmail } from '@/utils/emailService';
+import { query } from '@/utils/database.util';
+import {
+  type EmailTranslations,
+  sendContactEmail,
+} from '@/utils/emailService.util';
 
 // Simple contact form handler - database first approach
-interface ContactFormData {
+type ContactFormData = {
   email: string;
   message: string;
   name: string;
-}
+};
 
-// Database result interface
-interface ContactMessageRecord {
+// Database result type
+type ContactMessageRecord = {
   created_at: Date;
   id: number;
-}
+};
 
 export const handleContactSubmission = async (
   data: ContactFormData,
@@ -55,13 +58,13 @@ export const handleContactSubmission = async (
       });
 
     console.log('✅ Contact form submission processed successfully!');
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('❌ Database error saving contact message:', error);
 
     // Log the contact for debugging even if DB fails
     console.log('📋 Contact details (DB save failed):', {
       email: data.email,
-      message: `${data.message.substring(0, 100)}...`,
+      message: `${data.message.slice(0, 100)}...`,
       name: data.name,
       timestamp: new Date().toISOString(),
     });

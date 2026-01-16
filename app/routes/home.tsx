@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
 import type { ActionFunctionArgs } from 'react-router';
+
+import { useEffect, useState } from 'react';
 import { useActionData, useLocation } from 'react-router';
 
-import CenteredNotification from '@/components/CenteredNotification/CenteredNotification';
-import Confetti from '@/components/Confetti/Confetti';
+import { CenteredNotification } from '@/components/CenteredNotification';
+import { Confetti } from '@/components/Confetti';
 import { HeroSection } from '@/components/HeroSection';
 import { OutdoorBenefitsSection } from '@/components/OutdoorBenefitsSection';
 import { PricingSection } from '@/components/PricingSection';
@@ -14,14 +15,14 @@ import { handleContactSubmission } from '@/services/contactService';
 import {
   getLanguageFromRequest,
   getServerTranslation,
-} from '@/utils/serverI18n';
+} from '@/utils/serverI18n.util';
 
 // Define the action response type
-export interface ActionResponse {
+export type ActionResponse = {
   error?: string;
   message?: string;
   success: boolean;
-}
+};
 
 export async function action({
   request,
@@ -81,25 +82,18 @@ export async function action({
     // Process contact submission (database-first approach)
     await handleContactSubmission(
       {
-        email: email.toString(),
-        message: message.toString(),
-        name: name.toString(),
+        email,
+        message,
+        name,
       },
       emailTranslations
     );
-
-    // Log successful submission
-    console.log('Contact form submission successful:', {
-      email: email.toString(),
-      name: name.toString(),
-      timestamp: new Date().toISOString(),
-    });
 
     return {
       message: t('form.success.message'),
       success: true,
     };
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Form submission error:', error);
 
     // Since email is non-blocking, this error is only for database failures
@@ -114,14 +108,15 @@ export default function Home() {
   const location = useLocation();
   const actionData = useActionData<ActionResponse>();
 
-  const [notificationDismissed, setNotificationDismissed] = useState(false);
+  const [isNotificationDismissed, setIsNotificationDismissed] = useState(false);
 
   // Smooth scroll to section based on hash
   useEffect(() => {
     const scrollToSection = () => {
       const hash = location.hash.replace('#', '');
+      // eslint-disable-next-line security/detect-possible-timing-attacks -- hash is from URL, not a secret
       if (hash !== '') {
-        const element = document.getElementById(hash);
+        const element = document.querySelector(`#${hash}`);
         if (element !== null) {
           element.scrollIntoView({
             behavior: 'smooth',
@@ -134,15 +129,15 @@ export default function Home() {
     // Small delay to ensure the page is rendered
     const timeoutId = setTimeout(scrollToSection, 100);
 
-    return () => clearTimeout(timeoutId);
+    return () => { clearTimeout(timeoutId); };
   }, [location.hash]);
 
   const handleCloseNotification = () => {
-    setNotificationDismissed(true);
+    setIsNotificationDismissed(true);
   };
 
   // Show notification if we have actionData and it hasn't been dismissed
-  const showNotification = actionData !== undefined && !notificationDismissed;
+  const shouldShowNotification = actionData !== undefined && !isNotificationDismissed;
 
   return (
     <>
@@ -154,25 +149,25 @@ export default function Home() {
       <SignupSection />
 
       {/* Centered Success/Error Notification */}
-      {showNotification === true && (
+      {shouldShowNotification && (
         <CenteredNotification
-          autoHide
-          autoHideDelay={actionData.success === true ? 10000 : 6000}
-          isVisible={showNotification}
+          autoHideDelay={actionData.success ? 10_000 : 6000}
+          isAutoHide
+          isVisible={shouldShowNotification}
           message={
-            actionData.success === true
+            actionData.success
               ? (actionData.message ?? '')
               : (actionData.error ?? '')
           }
-          type={actionData.success === true ? 'success' : 'error'}
           onClose={handleCloseNotification}
+          type={actionData.success ? 'success' : 'error'}
         />
       )}
 
       {/* Confetti for successful submissions */}
-      {showNotification === true && actionData.success === true ? (
+      {shouldShowNotification && actionData.success ? (
         <Confetti isActive />
-      ) : null}
+      ) : undefined}
     </>
   );
 }

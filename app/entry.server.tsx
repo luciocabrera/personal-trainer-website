@@ -1,8 +1,9 @@
-import { renderToPipeableStream } from 'react-dom/server';
 import type { AppLoadContext, EntryContext } from 'react-router';
-import { ServerRouter } from 'react-router';
+
 import { createReadableStreamFromReadable } from '@react-router/node';
 import { PassThrough } from 'node:stream';
+import { renderToPipeableStream } from 'react-dom/server';
+import { ServerRouter } from 'react-router';
 
 export default function handleRequest(
   request: Request,
@@ -10,8 +11,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext,
   // This is ignored so we can keep it here to match the expected signature
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  loadContext: AppLoadContext
+  _loadContext: AppLoadContext
 ) {
   return new Promise((resolve, reject) => {
     const { abort, pipe } = renderToPipeableStream(
@@ -47,6 +47,6 @@ export default function handleRequest(
       }
     );
 
-    setTimeout(abort, 10000);
+    setTimeout(abort, 10_000);
   });
 }

@@ -1,1 +1,1 @@
-export { default as OutdoorBenefitsSection } from './OutdoorBenefitsSection';
+export { default as OutdoorBenefitsSection } from './OutdoorBenefitsSection.component';
