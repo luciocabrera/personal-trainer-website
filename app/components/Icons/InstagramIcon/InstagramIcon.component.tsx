@@ -1,10 +1,6 @@
 import type { IconProps } from '../Icons.types';
 
-const InstagramIcon = ({
-  className,
-  height = 24,
-  width = 24,
-}: IconProps) => {
+const InstagramIcon = ({ className, height = 24, width = 24 }: IconProps) => {
   return (
     <svg
       className={className}

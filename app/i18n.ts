@@ -18,9 +18,12 @@ const getLanguageFromCookie = (): Language | undefined => {
   const cookies = document.cookie.split(';');
   for (const cookie of cookies) {
     const [name, value] = cookie.trim().split('=');
-    if (name === 'language' && (value === 'en' || value === 'nl' || value === 'es')) {
-        return value;
-      }
+    if (
+      name === 'language' &&
+      (value === 'en' || value === 'nl' || value === 'es')
+    ) {
+      return value;
+    }
   }
 
   return undefined;

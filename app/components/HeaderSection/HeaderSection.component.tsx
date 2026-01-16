@@ -30,12 +30,16 @@ const HeaderSection = () => {
   const handleMenuClick = (scrollToId: string) => {
     // If not on home page, navigate to home first
     if (location.pathname === '/') {
-      document.querySelector(`#${scrollToId}`)?.scrollIntoView({ behavior: 'smooth' });
+      document
+        .querySelector(`#${scrollToId}`)
+        ?.scrollIntoView({ behavior: 'smooth' });
     } else {
       void navigate('/');
       // Wait for navigation to complete before scrolling
       setTimeout(() => {
-        document.querySelector(`#${scrollToId}`)?.scrollIntoView({ behavior: 'smooth' });
+        document
+          .querySelector(`#${scrollToId}`)
+          ?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
     setIsMobileMenuOpen(false); // Close mobile menu after navigation
@@ -49,13 +53,25 @@ const HeaderSection = () => {
     }
     setIsMobileMenuOpen(false);
   };
-  const handleTrainingsClick = () => { handleMenuClick('trainings'); };
-  const handleScheduleClick = () => { handleMenuClick('schedule'); };
-  const handlePricingClick = () => { handleMenuClick('pricing'); };
-  const handleSignupClick = () => { handleMenuClick('signup'); };
+  const handleTrainingsClick = () => {
+    handleMenuClick('trainings');
+  };
+  const handleScheduleClick = () => {
+    handleMenuClick('schedule');
+  };
+  const handlePricingClick = () => {
+    handleMenuClick('pricing');
+  };
+  const handleSignupClick = () => {
+    handleMenuClick('signup');
+  };
 
-  const handleToggleMobileMenu = () => { setIsMobileMenuOpen(!isMobileMenuOpen); };
-  const handleCloseMobileMenu = () => { setIsMobileMenuOpen(false); };
+  const handleToggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+  const handleCloseMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header {...stylex.props(styles.header)}>

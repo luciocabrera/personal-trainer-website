@@ -22,7 +22,12 @@ export const styles = stylex.create({
     top: 0,
     width: '100%',
   },
-  confettiPiece: (color: string, delay: string, duration: string, leftPosition: number) => ({
+  confettiPiece: (
+    color: string,
+    delay: string,
+    duration: string,
+    leftPosition: number
+  ) => ({
     animationDelay: delay,
     animationDuration: duration,
     animationFillMode: 'forwards',

@@ -1,10 +1,6 @@
 import type { IconProps } from '../Icons.types';
 
-const SignupIcon = ({
-  className,
-  height = 200,
-  width = 220,
-}: IconProps) => {
+const SignupIcon = ({ className, height = 200, width = 220 }: IconProps) => {
   return (
     <svg
       className={className}

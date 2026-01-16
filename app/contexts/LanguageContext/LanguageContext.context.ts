@@ -7,4 +7,6 @@ type LanguageContextValue = {
   language: Language;
 };
 
-export const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextValue | undefined>(
+  undefined
+);

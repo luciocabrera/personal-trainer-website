@@ -31,7 +31,12 @@ export const LanguageProvider = ({
   useEffect(() => {
     // Only update if i18n language differs from our resolved language
     if (i18n.language !== resolvedLanguage) {
-      console.log('LanguageProvider syncing i18n from', i18n.language, 'to', resolvedLanguage);
+      console.log(
+        'LanguageProvider syncing i18n from',
+        i18n.language,
+        'to',
+        resolvedLanguage
+      );
       void i18n.changeLanguage(resolvedLanguage);
     }
   }, [resolvedLanguage]);

@@ -18,7 +18,7 @@ export const styles = stylex.create({
     flexDirection: 'column',
     marginBottom: '1rem',
   },
-  trainingBody: { padding: '1.5rem', minHeight: 200, },
+  trainingBody: { padding: '1.5rem', minHeight: 200 },
   trainingDescription: {
     margin: 0,
     color: '#666',

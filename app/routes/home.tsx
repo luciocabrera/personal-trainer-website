@@ -129,7 +129,9 @@ export default function Home() {
     // Small delay to ensure the page is rendered
     const timeoutId = setTimeout(scrollToSection, 100);
 
-    return () => { clearTimeout(timeoutId); };
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [location.hash]);
 
   const handleCloseNotification = () => {
@@ -137,7 +139,8 @@ export default function Home() {
   };
 
   // Show notification if we have actionData and it hasn't been dismissed
-  const shouldShowNotification = actionData !== undefined && !isNotificationDismissed;
+  const shouldShowNotification =
+    actionData !== undefined && !isNotificationDismissed;
 
   return (
     <>

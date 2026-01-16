@@ -118,12 +118,16 @@ export const LanguageSelector = ({
             >
               <button
                 aria-selected={currentLanguage === lang.value}
-                onClick={() => { handleSelect(lang.value); }}
+                onClick={() => {
+                  handleSelect(lang.value);
+                }}
                 role='option'
                 type='button'
                 {...stylex.props(
                   styles.option,
-                  currentLanguage === lang.value ? styles.optionActive : undefined
+                  currentLanguage === lang.value
+                    ? styles.optionActive
+                    : undefined
                 )}
               >
                 {lang.label}

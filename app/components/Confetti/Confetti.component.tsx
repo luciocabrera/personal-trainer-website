@@ -14,7 +14,12 @@ const Confetti = ({ isActive }: ConfettiProps) => {
         <div
           key={piece.id}
           {...stylex.props(
-            styles.confettiPiece(piece.color, piece.delay, piece.duration, piece.left)
+            styles.confettiPiece(
+              piece.color,
+              piece.delay,
+              piece.duration,
+              piece.left
+            )
           )}
         />
       ))}

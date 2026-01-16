@@ -34,7 +34,9 @@ const CenteredNotification = ({
         handleClose();
       }, autoHideDelay);
 
-      return () => { clearTimeout(timer); };
+      return () => {
+        clearTimeout(timer);
+      };
     }
   }, [isAutoHide, autoHideDelay, isVisible, isAnimatingOut, handleClose]);
 

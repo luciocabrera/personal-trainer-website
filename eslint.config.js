@@ -209,12 +209,7 @@ export default defineConfig(
             'are',
             'does',
           ],
-          selector: [
-            'variable',
-            'classProperty',
-            'typeProperty',
-            'parameter',
-          ],
+          selector: ['variable', 'classProperty', 'typeProperty', 'parameter'],
           types: ['boolean'],
         },
         {
@@ -615,5 +610,5 @@ export default defineConfig(
       'unicorn/no-null': 'off', // Database connections can be null
       'unicorn/no-process-exit': 'off', // Allow process.exit in database setup
     },
-  },
+  }
 );

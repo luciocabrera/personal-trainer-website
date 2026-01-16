@@ -30,7 +30,7 @@ const rule: Rule.RuleModule = {
       Program(node: any) {
         // Collect all import declarations
         const imports = node.body.filter(
-          (stmt: any) => stmt.type === 'ImportDeclaration',
+          (stmt: any) => stmt.type === 'ImportDeclaration'
         );
 
         // Group by source
@@ -47,7 +47,7 @@ const rule: Rule.RuleModule = {
           if (importNodes.length > 1) {
             // Check if they're all the same kind (all value imports or all type imports)
             const allSameKind = importNodes.every(
-              (node: any) => node.importKind === importNodes[0]!.importKind,
+              (node: any) => node.importKind === importNodes[0]!.importKind
             );
 
             if (allSameKind) {
@@ -72,14 +72,14 @@ const rule: Rule.RuleModule = {
                             allSpecifiers.push(specifier.imported.name);
                           } else {
                             allSpecifiers.push(
-                              `${specifier.imported.name} as ${specifier.local.name}`,
+                              `${specifier.imported.name} as ${specifier.local.name}`
                             );
                           }
                         } else if (
                           specifier.type === 'ImportDefaultSpecifier'
                         ) {
                           allSpecifiers.push(
-                            `default as ${specifier.local.name}`,
+                            `default as ${specifier.local.name}`
                           );
                         } else if (
                           specifier.type === 'ImportNamespaceSpecifier'
@@ -96,7 +96,7 @@ const rule: Rule.RuleModule = {
                     const importKeyword =
                       importKind === 'type' ? 'import type' : 'import';
                     const fromClause = sourceCode.getText(
-                      importNodes[0]!.source,
+                      importNodes[0]!.source
                     );
                     const mergedImport = `${importKeyword} { ${uniqueSpecifiers.join(', ')} } from ${fromClause};`;
 

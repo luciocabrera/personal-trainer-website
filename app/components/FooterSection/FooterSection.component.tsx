@@ -40,7 +40,8 @@ const FooterSection = () => {
           </a>
         </div>
         <p {...stylex.props(styles.footerBottom)}>
-          {t('footer.copyright')} <span {...stylex.props(styles.version)}>v{packageJson.version}</span>
+          {t('footer.copyright')}{' '}
+          <span {...stylex.props(styles.version)}>v{packageJson.version}</span>
         </p>
       </div>
     </footer>
