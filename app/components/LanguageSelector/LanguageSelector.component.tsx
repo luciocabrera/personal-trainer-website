@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { Language } from '@/types/language.types';
 
@@ -24,17 +24,14 @@ export const LanguageSelector = ({
   const currentLabel =
     LANGUAGES.find((lang) => lang.value === currentLanguage)?.label ?? 'NL';
 
-  const handleToggle = useCallback(() => {
+  const handleToggle = () => {
     setIsOpen((isOpen) => !isOpen);
-  }, []);
+  };
 
-  const handleSelect = useCallback(
-    (language: Language) => {
-      onLanguageChange(language);
-      setIsOpen(false);
-    },
-    [onLanguageChange]
-  );
+  const handleSelect = (language: Language) => {
+    onLanguageChange(language);
+    setIsOpen(false);
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {

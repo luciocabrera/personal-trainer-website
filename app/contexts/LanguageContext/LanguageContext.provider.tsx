@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import type { Language } from '@/types/language.types';
 
@@ -41,22 +41,19 @@ export const LanguageProvider = ({
     }
   }, [resolvedLanguage]);
 
-  const changeLanguage = useCallback((newLanguage: Language) => {
+  const changeLanguage = (newLanguage: Language) => {
     console.log('LanguageProvider changeLanguage:', newLanguage);
     setLanguageState(newLanguage);
     // Sync to cookie for SSR
     setLanguageCookie(newLanguage);
     // Sync i18n
     void i18n.changeLanguage(newLanguage);
-  }, []);
+  };
 
-  const value = useMemo(
-    () => ({
-      changeLanguage,
-      language,
-    }),
-    [language, changeLanguage]
-  );
+  const value = {
+    changeLanguage,
+    language,
+  };
 
   return <LanguageContext value={value}>{children}</LanguageContext>;
 };

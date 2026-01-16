@@ -1,8 +1,9 @@
 import { reactRouter } from '@react-router/dev/vite';
+import stylex from '@stylexjs/unplugin';
 import path from 'node:path';
+import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import babel from 'vite-plugin-babel';
-import styleX from 'vite-plugin-stylex';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
@@ -36,6 +37,13 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react-router', 'i18next', 'react-i18next'],
   },
   plugins: [
+    stylex.vite({
+      aliases: {
+        '@/*': [fileURLToPath(new URL('app/*', import.meta.url))],
+      },
+      dev: process.env.NODE_ENV === 'development',
+      useCSSLayers: true,
+    }),
     reactRouter(),
     babel({
       babelConfig: {
@@ -45,9 +53,6 @@ export default defineConfig({
       filter: /\.[jt]sx?$/,
     }),
     tsconfigPaths(),
-    // StyleX plugin - version warning is acceptable
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    styleX() as any,
   ],
   resolve: {
     alias: {
