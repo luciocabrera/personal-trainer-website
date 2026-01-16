@@ -202,6 +202,7 @@ export const styles = stylex.create({
 
   menuLink: {
     background: 'none',
+    margin: 0,
     padding: '0.75rem 1rem',
     borderColor: 'transparent',
     borderRadius: '8px',
@@ -223,10 +224,10 @@ export const styles = stylex.create({
     cursor: 'pointer',
     display: 'inline-flex',
     fontFamily: 'inherit',
-    fontSize: 'inherit',
+    fontSize: '1rem',
     fontWeight: 500,
     justifyContent: 'center',
-    lineHeight: 'normal',
+    lineHeight: 1.2,
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     transform: {
       default: null,
@@ -234,7 +235,7 @@ export const styles = stylex.create({
     },
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
-    height: 'auto',
+    height: '40px',
   },
 
   ctaButton: {
@@ -350,6 +351,7 @@ export const styles = stylex.create({
 
   mobileMenuLink: {
     background: 'none',
+    margin: 0,
     padding: '1rem',
     borderColor: 'transparent',
     borderRadius: '8px',
@@ -357,19 +359,24 @@ export const styles = stylex.create({
     borderWidth: 0,
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    alignItems: 'center',
     backgroundColor: {
       default: 'transparent',
       ':hover': 'rgba(255, 255, 255, 0.15)',
       ':active': 'rgba(255, 255, 255, 0.25)',
     },
+    boxSizing: 'border-box',
     color: 'white',
     cursor: 'pointer',
-    display: 'block',
+    display: 'flex',
     fontFamily: 'inherit',
     fontSize: '1.1rem',
     fontWeight: 500,
+    justifyContent: 'center',
+    lineHeight: 1.2,
     textAlign: 'center',
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+    height: '52px',
     width: '100%',
   },
 
