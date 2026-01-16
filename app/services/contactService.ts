@@ -2,7 +2,7 @@ import { query } from '@/utils/database';
 import { type EmailTranslations, sendContactEmail } from '@/utils/emailService';
 
 // Simple contact form handler - database first approach
-export interface ContactFormData {
+interface ContactFormData {
   email: string;
   message: string;
   name: string;
@@ -69,9 +69,4 @@ export const handleContactSubmission = async (
     // Re-throw error so the form can show appropriate error message
     throw new Error('Failed to save contact message to database');
   }
-};
-
-export const testContactService = (): boolean => {
-  console.log('📞 Contact service is ready');
-  return true;
 };

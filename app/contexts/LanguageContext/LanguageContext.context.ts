@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 import type { Language } from '@/types/language.types';
 
-export interface LanguageContextValue {
+interface LanguageContextValue {
   changeLanguage: (language: Language) => void;
   language: Language;
 }

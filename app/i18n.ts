@@ -62,5 +62,3 @@ void i18n.use(initReactI18next).init({
     nl: { translation: nl },
   },
 });
-
-export default i18n;

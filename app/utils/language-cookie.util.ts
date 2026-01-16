@@ -6,7 +6,7 @@ const COOKIE_MAX_AGE_DAYS = 365; // 1 year
 /**
  * Parse cookies from a cookie header string
  */
-export const parseCookies = (cookieHeader: string): Record<string, string> => {
+const parseCookies = (cookieHeader: string): Record<string, string> => {
   const cookies: Record<string, string> = {};
 
   for (const cookie of cookieHeader.split(';')) {

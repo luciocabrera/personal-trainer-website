@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import { Resend } from 'resend';
 
-export interface EmailData {
+interface EmailData {
   email: string;
   message: string;
   name: string;

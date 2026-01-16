@@ -5,7 +5,7 @@ import { Pool } from 'pg';
 let pool: Pool | null = null;
 
 // Create database connection pool
-export const getPool = (): Pool => {
+const getPool = (): Pool => {
   if (!pool) {
     pool = new Pool({
       connectionTimeoutMillis: 2000,
@@ -33,7 +33,7 @@ export const getPool = (): Pool => {
 };
 
 // Get a database client from the pool
-export const getClient = async (): Promise<PoolClient> => {
+const getClient = async (): Promise<PoolClient> => {
   const pool = getPool();
   return await pool.connect();
 };
@@ -49,25 +49,5 @@ export const query = async (
     return result;
   } finally {
     client.release();
-  }
-};
-
-// Close the database pool
-export const closePool = async (): Promise<void> => {
-  if (pool) {
-    await pool.end();
-    pool = null;
-  }
-};
-
-// Test database connection
-export const testConnection = async (): Promise<boolean> => {
-  try {
-    await query('SELECT NOW()');
-    console.log('✅ Database connection successful');
-    return true;
-  } catch (error) {
-    console.error('❌ Database connection failed:', error);
-    return false;
   }
 };
