@@ -79,7 +79,7 @@ echo "Pulling latest code..."
 git pull origin main
 
 echo "Pulling Docker image from registry..."
-docker pull ${FULL_IMAGE}
+docker pull ${IMAGE_NAME}:latest
 
 echo "Stopping old containers..."
 docker compose -f docker/docker-compose.prod.yml down app nginx
