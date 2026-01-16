@@ -42,11 +42,7 @@ export const styles = stylex.create({
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.3)',
     },
     overflow: 'hidden',
-    transform: {
-      default: null,
-      ':hover': 'translateY(-5px)',
-    },
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    transition: 'box-shadow 0.3s ease',
   },
   imageContainer: {
     height: '250px',

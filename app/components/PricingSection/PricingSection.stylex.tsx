@@ -28,14 +28,10 @@ export const styles = stylex.create({
     borderRadius: '15px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    transition: 'box-shadow 0.3s ease',
     boxShadow: {
       default: '0 5px 25px rgba(78, 205, 196, 0.2)',
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.4)',
-    },
-    transform: {
-      default: null,
-      ':hover': 'translateY(-5px)',
     },
     marginBottom: '1rem',
   },

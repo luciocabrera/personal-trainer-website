@@ -28,25 +28,13 @@ export const styles = stylex.create({
     borderRadius: '15px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    transition: 'box-shadow 0.3s ease',
     boxShadow: {
       default: '0 8px 30px rgba(78, 205, 196, 0.2)',
       ':hover': '0 12px 40px rgba(78, 205, 196, 0.4)',
     },
     display: 'flex',
     flexDirection: 'column',
-    transform: {
-      default: null,
-      ':hover': 'translateY(-5px)',
-    },
-    willChange: {
-      default: null,
-      ':hover': 'transform',
-    },
-    zIndex: {
-      default: null,
-      ':hover': 1,
-    },
     minHeight: '400px',
   },
 
