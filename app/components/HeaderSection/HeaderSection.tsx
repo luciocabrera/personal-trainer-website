@@ -146,8 +146,8 @@ const HeaderSection = () => {
         {/* Desktop Language Selector */}
         <LanguageSelector
           currentLanguage={currentLanguage}
-          onLanguageChange={handleLanguageChange}
           variant='desktop'
+          onLanguageChange={handleLanguageChange}
         />
 
         {/* Mobile Hamburger Button */}
@@ -254,8 +254,8 @@ const HeaderSection = () => {
             {/* Mobile Language Selector */}
             <LanguageSelector
               currentLanguage={currentLanguage}
-              onLanguageChange={handleLanguageChange}
               variant='mobile'
+              onLanguageChange={handleLanguageChange}
             />
           </div>
         </div>

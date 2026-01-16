@@ -82,4 +82,4 @@ No dejes que el clima frío sea una excusa. ¡Únete a Desi4Fit y descubre qué 
 
 ---
 
-*¿Listo para comenzar? [Revisa nuestro horario](/schedule) o [contáctanos](/contact) hoy!*
+*¿Listo para comenzar? [Revisa nuestro horario](/#schedule) o [contáctanos](/#signup) hoy!*

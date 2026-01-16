@@ -133,4 +133,4 @@ Stop met wachten op perfect. Begin vandaag.
 
 **Laten we dit samen doen!** 💪
 
-*[Bekijk ons trainingsrooster](/schedule) | [Neem contact op om te beginnen](/contact)*
+*[Bekijk ons trainingsrooster](/#schedule) | [Neem contact op om te beginnen](/#signup)*

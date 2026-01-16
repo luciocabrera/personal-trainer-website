@@ -64,8 +64,8 @@ const SignupSection = () => {
           {...stylex.props(styles.signupFormElement)}
         >
           <input
-            suppressHydrationWarning
             required
+            suppressHydrationWarning
             disabled={isSubmitting}
             name='name'
             placeholder={t('form.name')}
@@ -74,8 +74,8 @@ const SignupSection = () => {
             {...stylex.props(styles.formInput)}
           />
           <input
-            suppressHydrationWarning
             required
+            suppressHydrationWarning
             disabled={isSubmitting}
             name='email'
             placeholder={t('form.email')}

@@ -133,4 +133,4 @@ Deja de esperar perfección. Comienza hoy.
 
 **¡Hagamos esto juntos!** 💪
 
-*[Ver nuestro horario de entrenamiento](/schedule) | [Contáctanos para comenzar](/contact)*
+*[Ver nuestro horario de entrenamiento](/#schedule) | [Contáctanos para comenzar](/#signup)*

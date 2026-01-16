@@ -147,4 +147,4 @@ Je lichaam is je voertuig—tank het met premium ingrediënten voor premium pres
 📧 **Email**: desi4fit@gmail.com  
 📱 **Instagram**: @desi4fit
 
-*[Bekijk ons trainingsrooster](/schedule) | [Begin vandaag](/contact)*
+*[Bekijk ons trainingsrooster](/#schedule) | [Begin vandaag](/#signup)*

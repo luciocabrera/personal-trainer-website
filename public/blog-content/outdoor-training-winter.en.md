@@ -82,4 +82,4 @@ Winter is not the off-season—it's your chance to get ahead! 💪
 
 ---
 
-*Ready to start? [Check our schedule](/schedule) or [contact us](/contact) today!*
+*Ready to start? [Check our schedule](/#schedule) or [contact us](/#signup) today!*

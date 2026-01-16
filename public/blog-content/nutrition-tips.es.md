@@ -147,4 +147,4 @@ Entre comidas, elige snacks que proporcionen energía sin el bajón:
 📧 **Email**: desi4fit@gmail.com  
 📱 **Instagram**: @desi4fit
 
-*[Revisa nuestro horario de entrenamiento](/schedule) | [Comienza hoy](/contact)*
+*[Revisa nuestro horario de entrenamiento](/#schedule) | [Comienza hoy](/#signup)*

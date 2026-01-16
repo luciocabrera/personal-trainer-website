@@ -67,16 +67,16 @@ const BlogPost = () => {
     // Italic
     html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
 
-    // Lists
+    // Horizontal rules (must be before paragraphs)
+    html = html.replace(/^---$/gm, '<hr />');
+
+    // Lists - wrap consecutive <li> elements in <ul>
     html = html.replace(/^- (.+)$/gim, '<li>$1</li>');
-    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    html = html.replace(/((?:<li>.*?<\/li>\n?)+)/g, '<ul>$1</ul>');
 
     // Paragraphs
     html = html.replace(/\n\n/g, '</p><p>');
     html = `<p>${html}</p>`;
-
-    // Horizontal rules
-    html = html.replace(/^---$/gm, '<hr />');
 
     return html;
   };

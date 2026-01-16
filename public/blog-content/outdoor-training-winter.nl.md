@@ -82,4 +82,4 @@ Winter is niet het off-season—het is je kans om voorop te lopen! 💪
 
 ---
 
-*Klaar om te beginnen? [Bekijk ons rooster](/schedule) of [neem contact op](/contact) vandaag!*
+*Klaar om te beginnen? [Bekijk ons rooster](/#schedule) of [neem contact op](/#signup) vandaag!*

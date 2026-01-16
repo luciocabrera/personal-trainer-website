@@ -122,36 +122,36 @@ export const styles = stylex.create({
   },
 
   languageSelect: {
-    appearance: 'none',
     background: 'rgba(255, 255, 255, 0.15)',
     padding: '0.6rem 2rem 0.6rem 1rem',
-    backgroundImage:
-      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
     backgroundPosition: 'calc(100% - 15px) center, calc(100% - 10px) center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '5px 5px, 5px 5px',
     borderColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '8px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    color: 'white',
-    cursor: 'pointer',
-    flexShrink: 0,
-    fontSize: '0.875rem',
-    fontWeight: 500,
-    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     transition: 'all 0.3s ease',
+    appearance: 'none',
     backgroundColor: {
       default: 'rgba(255, 255, 255, 0.15)',
       ':hover': 'rgba(255, 255, 255, 0.25)',
     },
-    transform: {
-      default: null,
-      ':hover': 'translateY(-1px)',
-    },
+    backgroundImage:
+      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '5px 5px, 5px 5px',
+    color: 'white',
+    cursor: 'pointer',
     display: {
       default: 'block',
       '@media (max-width: 768px)': 'none',
+    },
+    flexShrink: 0,
+    fontSize: '0.875rem',
+    fontWeight: 500,
+    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+    transform: {
+      default: null,
+      ':hover': 'translateY(-1px)',
     },
   },
 
@@ -163,30 +163,30 @@ export const styles = stylex.create({
   },
 
   mobileLanguageSelect: {
-    appearance: 'none',
     background: 'transparent',
     padding: '1rem 2.5rem 1rem 1rem',
-    backgroundImage:
-      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
     backgroundPosition: 'calc(100% - 20px) center, calc(100% - 14px) center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '6px 6px, 6px 6px',
     borderColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '8px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    color: 'white',
-    cursor: 'pointer',
-    fontSize: '1rem',
-    fontWeight: 500,
-    marginTop: '1.5rem',
-    textAlign: 'center',
     transition: 'all 0.3s ease',
-    width: '100%',
+    appearance: 'none',
     backgroundColor: {
       default: 'transparent',
       ':hover': 'rgba(255, 255, 255, 0.1)',
     },
+    backgroundImage:
+      'linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%)',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '6px 6px, 6px 6px',
+    color: 'white',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    fontWeight: 500,
+    textAlign: 'center',
+    marginTop: '1.5rem',
+    width: '100%',
   },
 
   logo: {
@@ -209,6 +209,7 @@ export const styles = stylex.create({
     borderWidth: 0,
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    alignItems: 'center',
     backgroundColor: {
       default: 'transparent',
       ':hover': 'rgba(255, 255, 255, 0.15)',
@@ -221,12 +222,10 @@ export const styles = stylex.create({
     color: 'white',
     cursor: 'pointer',
     display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     fontFamily: 'inherit',
     fontSize: 'inherit',
     fontWeight: 500,
-    height: 'auto',
+    justifyContent: 'center',
     lineHeight: 'normal',
     textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
     transform: {
@@ -235,6 +234,7 @@ export const styles = stylex.create({
     },
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    height: 'auto',
   },
 
   ctaButton: {
@@ -279,8 +279,8 @@ export const styles = stylex.create({
 
   // Style for menu list items to ensure consistent alignment
   menuItem: {
-    display: 'flex',
     alignItems: 'center',
+    display: 'flex',
   },
 
   mobileLanguageButton: {

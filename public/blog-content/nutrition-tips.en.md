@@ -207,4 +207,4 @@ Your body is your vehicle—fuel it with premium ingredients for premium perform
 📧 **Email**: desi4fit@gmail.com  
 📱 **Instagram**: @desi4fit
 
-*[Check our training schedule](/schedule) | [Get started today](/contact)*
+*[Check our training schedule](/#schedule) | [Get started today](/#signup)*

@@ -12,11 +12,9 @@ import i18n from 'i18next';
 
 import { BRAND } from '@/constants/brand';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import type { Language } from '@/types/language.types';
 import { getLanguageFromCookie } from '@/utils/language-cookie.util';
 
 import type { Route } from './+types/root';
-
 import { styles } from './root.stylex';
 
 import './root.css';
@@ -43,7 +41,7 @@ export const loader = async ({ request }: Route.LoaderArgs) => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const loaderData = useLoaderData<typeof loader>();
-  const language = (loaderData?.language ?? 'nl') as Language;
+  const language = (loaderData?.language ?? 'nl');
 
   return (
     <html
@@ -402,7 +400,7 @@ export default function App() {
   return (
     <LanguageProvider
       defaultLanguage='nl'
-      initialLanguage={language as Language}
+      initialLanguage={language}
     >
       <Outlet />
     </LanguageProvider>

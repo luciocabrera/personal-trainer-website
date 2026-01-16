@@ -211,4 +211,4 @@ Stop waiting for perfect. Start today.
 
 **Let's do this together!** 💪
 
-*[View our training schedule](/schedule) | [Contact us to get started](/contact)*
+*[View our training schedule](/#schedule) | [Contact us to get started](/#signup)*
