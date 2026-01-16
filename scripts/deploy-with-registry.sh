@@ -28,7 +28,7 @@ SERVER_PATH="/root/personal-trainer-website"
 
 # Check if logged into GitHub Container Registry
 echo -e "${YELLOW}Step 1: Checking GitHub Container Registry login...${NC}"
-if ! docker login ghcr.io -u ${GITHUB_USER} --password-stdin < /dev/null 2>/dev/null; then
+if ! grep -q "ghcr.io" ~/.docker/config.json 2>/dev/null; then
     echo -e "${RED}Not logged in to GitHub Container Registry${NC}"
     echo ""
     echo "Please login first:"
