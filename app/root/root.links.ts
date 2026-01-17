@@ -12,7 +12,12 @@ export const links: Route.LinksFunction = () => [
   // Favicon - Multiple formats for maximum compatibility
   { href: '/favicon.ico', rel: 'icon', sizes: '48x48' },
   { href: '/favicon.svg', rel: 'icon', type: 'image/svg+xml' },
-  { href: '/favicon-96x96.png', rel: 'icon', sizes: '96x96', type: 'image/png' },
+  {
+    href: '/favicon-96x96.png',
+    rel: 'icon',
+    sizes: '96x96',
+    type: 'image/png',
+  },
   { href: '/apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180' },
 
   // PWA Manifest

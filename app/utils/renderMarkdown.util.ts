@@ -7,7 +7,7 @@ export const renderMarkdown = (markdown: string) => {
   // Images
   html = html.replaceAll(
     /!\[(.*?)\]\((.*?)\)/g,
-    '<img src="$2" alt="$1" class="blog-image" />'
+    '<img src="$2" alt="$1" class="blog-image" />',
   );
 
   // Links

@@ -41,7 +41,7 @@ const SignupSection = () => {
         <div
           {...stylex.props(
             styles.signupIconContainer,
-            styles.signupIconContainerMobile
+            styles.signupIconContainerMobile,
           )}
         >
           <div
@@ -114,7 +114,7 @@ const SignupSection = () => {
               {...stylex.props(
                 styles.contactLink,
                 styles.emailLink,
-                styles.contactLinkMobile
+                styles.contactLinkMobile,
               )}
             >
               <div {...stylex.props(styles.contactLinkIcon)}>
@@ -130,7 +130,7 @@ const SignupSection = () => {
               {...stylex.props(
                 styles.contactLink,
                 styles.instagramLink,
-                styles.contactLinkMobile
+                styles.contactLinkMobile,
               )}
             >
               <div {...stylex.props(styles.contactLinkIcon)}>

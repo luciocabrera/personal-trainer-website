@@ -29,8 +29,6 @@ export const styles = stylex.create({
   },
 
   dropdown: {
-    background:
-      'linear-gradient(135deg, rgba(102, 126, 234, 0.98) 0%, rgba(118, 75, 162, 0.98) 100%)',
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -40,6 +38,8 @@ export const styles = stylex.create({
     listStyle: 'none',
     overflow: 'hidden',
     backdropFilter: 'blur(10px)',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(102, 126, 234, 0.98) 0%, rgba(118, 75, 162, 0.98) 100%)',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
     position: 'absolute',
     marginTop: '4px',
@@ -56,7 +56,6 @@ export const styles = stylex.create({
   },
 
   option: {
-    background: 'none',
     padding: '0.75rem 1rem',
     borderStyle: 'none',
     borderWidth: 0,
@@ -81,7 +80,6 @@ export const styles = stylex.create({
   },
 
   trigger: {
-    background: 'rgba(255, 255, 255, 0.15)',
     padding: '0.6rem 1rem',
     borderColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: '8px',

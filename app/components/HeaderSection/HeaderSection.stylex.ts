@@ -3,9 +3,9 @@ import * as stylex from '@stylexjs/stylex';
 export const styles = stylex.create({
   // Hamburger Menu Button
   hamburger: {
-    background: 'transparent',
     padding: 0,
     borderStyle: 'none',
+    backgroundColor: 'transparent',
     cursor: 'pointer',
     display: {
       default: 'none',
@@ -19,9 +19,9 @@ export const styles = stylex.create({
   },
 
   hamburgerLine: {
-    background: 'white',
     borderRadius: '2px',
     transition: 'all 0.3s ease',
+    backgroundColor: 'white',
     transformOrigin: 'center',
     height: '2px',
     width: '24px',
@@ -40,16 +40,16 @@ export const styles = stylex.create({
   },
 
   header: {
-    background: `
-      linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 50%, rgba(255, 107, 107, 0.95) 100%),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Cpath d='M15 15h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M37 37h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M20 5h3v10h-3z' fill-opacity='0.03'/%3E%3Cpath d='M37 45h3v10h-3z' fill-opacity='0.03'/%3E%3Cpolygon points='30,8 34,16 26,16' fill-opacity='0.05'/%3E%3Cpolygon points='30,52 34,44 26,44' fill-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-    `,
     padding: {
       default: '1rem 2rem',
       '@media (max-width: 768px)': '1rem',
     },
     alignItems: 'center',
     backdropFilter: 'blur(5px)',
+    backgroundImage: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 50%, rgba(255, 107, 107, 0.95) 100%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Cpath d='M15 15h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M37 37h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M20 5h3v10h-3z' fill-opacity='0.03'/%3E%3Cpath d='M37 45h3v10h-3z' fill-opacity='0.03'/%3E%3Cpolygon points='30,8 34,16 26,16' fill-opacity='0.05'/%3E%3Cpolygon points='30,52 34,44 26,44' fill-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
     // Single consistent header height
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 60px 60px',
@@ -122,7 +122,6 @@ export const styles = stylex.create({
   },
 
   languageSelect: {
-    background: 'rgba(255, 255, 255, 0.15)',
     padding: '0.6rem 2rem 0.6rem 1rem',
     backgroundPosition: 'calc(100% - 15px) center, calc(100% - 10px) center',
     borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -163,7 +162,6 @@ export const styles = stylex.create({
   },
 
   mobileLanguageSelect: {
-    background: 'transparent',
     padding: '1rem 2.5rem 1rem 1rem',
     backgroundPosition: 'calc(100% - 20px) center, calc(100% - 14px) center',
     borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -201,7 +199,6 @@ export const styles = stylex.create({
   },
 
   menuLink: {
-    background: 'none',
     margin: 0,
     padding: '0.75rem 1rem',
     borderColor: 'transparent',
@@ -210,7 +207,6 @@ export const styles = stylex.create({
     borderWidth: 0,
     textDecoration: 'none',
     transition: 'all 0.3s ease',
-    alignItems: 'center',
     backgroundColor: {
       default: 'transparent',
       ':hover': 'rgba(255, 255, 255, 0.15)',
@@ -239,7 +235,6 @@ export const styles = stylex.create({
   },
 
   ctaButton: {
-    background: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',
     padding: '0.75rem 1.5rem',
     borderColor: 'transparent',
     borderRadius: '25px',
@@ -248,6 +243,7 @@ export const styles = stylex.create({
     textDecoration: 'none',
     transition: 'all 0.3s ease',
     backgroundColor: 'transparent',
+    backgroundImage: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',
     boxShadow: {
       default: '0 4px 15px rgba(78, 205, 196, 0.3)',
       ':hover': '0 6px 20px rgba(78, 205, 196, 0.5)',
@@ -285,7 +281,6 @@ export const styles = stylex.create({
   },
 
   mobileLanguageButton: {
-    background: 'none',
     padding: '0.5rem 1rem',
     borderColor: {
       default: 'rgba(255, 255, 255, 0.3)',
@@ -326,12 +321,12 @@ export const styles = stylex.create({
   },
 
   mobileMenu: {
-    background: `
+    padding: '1.5rem',
+    backdropFilter: 'blur(10px)',
+    backgroundImage: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 50%, rgba(255, 107, 107, 0.95) 100%),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3Ccircle cx='50' cy='50' r='1.5'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Cpath d='M15 15h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M37 37h8v8h-8z' fill-opacity='0.04'/%3E%3Cpath d='M20 5h3v10h-3z' fill-opacity='0.03'/%3E%3Cpath d='M37 45h3v10h-3z' fill-opacity='0.03'/%3E%3Cpolygon points='30,8 34,16 26,16' fill-opacity='0.05'/%3E%3Cpolygon points='30,52 34,44 26,44' fill-opacity='0.05'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
     `,
-    padding: '1.5rem',
-    backdropFilter: 'blur(10px)',
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 60px 60px',
     boxShadow:
@@ -350,7 +345,6 @@ export const styles = stylex.create({
   },
 
   mobileMenuLink: {
-    background: 'none',
     margin: 0,
     padding: '1rem',
     borderColor: 'transparent',
@@ -392,7 +386,7 @@ export const styles = stylex.create({
 
   // Mobile Menu Overlay
   mobileMenuOverlay: {
-    background: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: {
       default: 'none',
       '@media (max-width: 768px)': 'block',

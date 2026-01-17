@@ -8,12 +8,12 @@ const pulseAnimation = stylex.keyframes({
 
 export const styles = stylex.create({
   disclaimer: {
-    background: 'rgba(255, 107, 107, 0.1)',
     padding: '1rem',
     borderColor: 'rgba(255, 107, 107, 0.2)',
     borderRadius: '8px',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(255, 107, 107, 0.1)',
     color: '#ff6b6b',
     fontSize: '1.1rem',
     fontWeight: 600,
@@ -21,14 +21,14 @@ export const styles = stylex.create({
     marginBottom: '0',
   },
   price: {
-    background:
-      'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))',
     padding: '1.5rem',
     borderColor: 'rgba(78, 205, 196, 0.3)',
     borderRadius: '15px',
     borderStyle: 'solid',
     borderWidth: '1px',
     transition: 'box-shadow 0.3s ease',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))',
     boxShadow: {
       default: '0 5px 25px rgba(78, 205, 196, 0.2)',
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.4)',
@@ -39,14 +39,13 @@ export const styles = stylex.create({
   priceTitle: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    background: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     backgroundClip: 'text',
+    backgroundImage: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     fontWeight: 'bold',
     marginTop: 0,
   },
 
   pricing: {
-    background: 'rgba(255, 255, 255, 0.95)',
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -55,6 +54,7 @@ export const styles = stylex.create({
     borderWidth: '1px',
     gap: 0,
     backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     boxShadow: '0 8px 32px rgba(78, 205, 196, 0.2)',
   },
 
@@ -79,14 +79,14 @@ export const styles = stylex.create({
   },
 
   pricingIconContainer: {
-    background:
-      'linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(78, 205, 196, 0.1))',
     margin: '0 auto',
     borderColor: 'rgba(255, 149, 0, 0.2)',
     borderStyle: 'solid',
     borderWidth: '1px',
     alignItems: 'center',
     backdropFilter: 'blur(10px)',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(255, 149, 0, 0.1), rgba(78, 205, 196, 0.1))',
     display: 'flex',
     justifyContent: 'center',
     height: '250px',
@@ -141,13 +141,13 @@ export const styles = stylex.create({
   },
 
   pricingTitle: {
-    background: `
-      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
-      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 10c16.569 0 30 13.431 30 30s-13.431 30-30 30S10 56.569 10 40 23.431 10 40 10zm0 4c-14.359 0-26 11.641-26 26s11.641 26 26 26 26-11.641 26-26S54.359 14 40 14z'/%3E%3Cpath d='M30 30h20v20H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-    `,
     margin: 0,
     padding: '2rem',
     borderRadius: '20px 20px 0 0',
+    backgroundImage: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 10c16.569 0 30 13.431 30 30s-13.431 30-30 30S10 56.569 10 40 23.431 10 40 10zm0 4c-14.359 0-26 11.641-26 26s11.641 26 26 26 26-11.641 26-26S54.359 14 40 14z'/%3E%3Cpath d='M30 30h20v20H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 80px 80px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
@@ -157,8 +157,8 @@ export const styles = stylex.create({
     position: 'relative',
     textAlign: 'center',
     '::after': {
-      background: 'rgba(255, 255, 255, 0.4)',
       borderRadius: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.4)',
       content: '',
       position: 'absolute',
       transform: 'translateX(-50%)',

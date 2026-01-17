@@ -21,13 +21,13 @@ const PricingSection = () => {
         <div
           {...stylex.props(
             styles.pricingIconContainer,
-            styles.pricingIconContainerMobile
+            styles.pricingIconContainerMobile,
           )}
         >
           <div
             {...stylex.props(
               styles.pricingIconSvg,
-              styles.pricingIconSvgMobile
+              styles.pricingIconSvgMobile,
             )}
           >
             <PricingIcon />

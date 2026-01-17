@@ -8,7 +8,10 @@ export const Root = () => {
   const { language } = useLoaderData<typeof loader>();
 
   return (
-    <LanguageProvider defaultLanguage={language} initialLanguage={language}>
+    <LanguageProvider
+      defaultLanguage={language}
+      initialLanguage={language}
+    >
       <Outlet />
     </LanguageProvider>
   );

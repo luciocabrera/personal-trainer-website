@@ -2,13 +2,13 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   blogCard: {
-    background: 'white',
     borderRadius: {
       default: '20px',
       '@media (max-width: 768px)': '0',
     },
     overflow: 'hidden',
     transition: 'box-shadow 0.3s ease',
+    backgroundColor: 'white',
     boxShadow: {
       default: '0 5px 25px rgba(0, 0, 0, 0.1)',
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.3)',
@@ -35,9 +35,9 @@ export const styles = stylex.create({
     minHeight: '100vh',
   },
   category: {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     padding: '0.5rem 1rem',
     borderRadius: '20px',
+    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     color: 'white',
     fontSize: '0.85rem',
     fontWeight: 'bold',
@@ -106,11 +106,11 @@ export const styles = stylex.create({
     marginBottom: '0.75rem',
   },
   readMore: {
-    background: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',
     padding: '0.75rem 1.5rem',
     borderRadius: '25px',
     textDecoration: 'none',
     transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    backgroundImage: 'linear-gradient(135deg, #4ecdc4 0%, #44a3a0 100%)',
     boxShadow: {
       default: null,
       ':hover': '0 5px 15px rgba(78, 205, 196, 0.4)',
@@ -141,8 +141,8 @@ export const styles = stylex.create({
   title: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     backgroundClip: 'text',
+    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     fontSize: {
       default: '3rem',
       '@media (max-width: 768px)': '2rem',

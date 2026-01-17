@@ -42,7 +42,7 @@ const getClient = async (): Promise<PoolClient> => {
 // Execute a query with automatic client release
 export const query = async (
   text: string,
-  params?: unknown[]
+  params?: unknown[],
 ): Promise<QueryResult> => {
   const client = await getClient();
   try {

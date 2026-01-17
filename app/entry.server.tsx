@@ -11,7 +11,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext,
   // This is ignored so we can keep it here to match the expected signature
-  _loadContext: AppLoadContext
+  _loadContext: AppLoadContext,
 ) {
   return new Promise((resolve, reject) => {
     const { abort, pipe } = renderToPipeableStream(
@@ -39,12 +39,12 @@ export default function handleRequest(
             new Response(stream, {
               headers: responseHeaders,
               status: responseStatusCode,
-            })
+            }),
           );
 
           pipe(body);
         },
-      }
+      },
     );
 
     setTimeout(abort, 10_000);

@@ -10,8 +10,20 @@ export const DevStyleXInject = ({ cssHref }: DevStyleXInjectProps) => {
   }, []);
 
   if (import.meta.env.DEV) {
-    return <link href='/virtual:stylex.css' rel='stylesheet' />;
+    return (
+      <link
+        href='/virtual:stylex.css'
+        rel='stylesheet'
+      />
+    );
   }
 
-  return cssHref && <link href={cssHref} rel='stylesheet' />;
+  return (
+    cssHref && (
+      <link
+        href={cssHref}
+        rel='stylesheet'
+      />
+    )
+  );
 };

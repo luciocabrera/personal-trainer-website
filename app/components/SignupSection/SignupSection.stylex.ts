@@ -31,12 +31,12 @@ export const styles = stylex.create({
   },
 
   contactSection: {
-    background:
-      'linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05))',
     padding: '1.5rem',
     borderColor: 'rgba(255, 107, 107, 0.1)',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05))',
     borderBottomLeftRadius: '15px',
     borderBottomRightRadius: '15px',
     marginTop: '2rem',
@@ -50,7 +50,7 @@ export const styles = stylex.create({
   },
 
   emailLink: {
-    background: {
+    backgroundImage: {
       default: 'linear-gradient(135deg, #ff6b6b, #ff9500)',
       ':hover': 'linear-gradient(135deg, #ff5252, #ff8500)',
     },
@@ -91,15 +91,15 @@ export const styles = stylex.create({
   },
 
   formButton: {
-    background: {
-      default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
-      ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
-    },
     padding: '0.8rem 1.5rem',
     borderRadius: '25px',
     borderStyle: 'none',
     borderWidth: 0,
     transition: 'all 0.3s ease',
+    backgroundImage: {
+      default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
+      ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
+    },
     boxShadow: {
       default: '0 4px 15px rgba(255, 107, 107, 0.4)',
       ':hover': '0 8px 25px rgba(255, 107, 107, 0.6)',
@@ -217,8 +217,6 @@ export const styles = stylex.create({
   },
 
   signup: {
-    background: 'rgba(255, 255, 255, 0.95)',
-
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -230,6 +228,7 @@ export const styles = stylex.create({
       '@media (max-width: 768px)': 'visible',
     },
     backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     boxShadow: '0 8px 32px rgba(78, 205, 196, 0.2)',
     display: 'flex',
     flexDirection: 'column',
@@ -246,7 +245,7 @@ export const styles = stylex.create({
   },
 
   instagramLink: {
-    background: {
+    backgroundImage: {
       default: 'linear-gradient(135deg, #e91e63, #9c27b0)',
       ':hover': 'linear-gradient(135deg, #d81b60, #8e24aa)',
     },
@@ -275,14 +274,14 @@ export const styles = stylex.create({
   },
 
   signupIconContainer: {
-    background:
-      'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))',
     margin: '0 auto',
     borderColor: 'rgba(255, 107, 107, 0.2)',
     borderStyle: 'solid',
     borderWidth: '1px',
     alignItems: 'center',
     backdropFilter: 'blur(10px)',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1))',
     display: 'flex',
     justifyContent: 'center',
     height: '250px',
@@ -326,14 +325,14 @@ export const styles = stylex.create({
   },
 
   signupTitle: {
-    background: `
-      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
-      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M50 15L60 35H40L50 15ZM85 50L75 30H95L85 50ZM15 50L25 70H5L15 50ZM50 85L40 65H60L50 85Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-    `,
     margin: 0,
     // margin: "-2rem -2rem 2rem -2rem",
     padding: '2rem',
     borderRadius: '20px 20px 0 0',
+    backgroundImage: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M50 15L60 35H40L50 15ZM85 50L75 30H95L85 50ZM15 50L25 70H5L15 50ZM50 85L40 65H60L50 85Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 100px 100px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',

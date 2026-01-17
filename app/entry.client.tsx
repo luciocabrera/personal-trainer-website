@@ -8,5 +8,5 @@ hydrateRoot(
   document,
   <StrictMode>
     <HydratedRouter />
-  </StrictMode>
+  </StrictMode>,
 );

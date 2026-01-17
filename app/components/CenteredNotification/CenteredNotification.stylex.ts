@@ -24,10 +24,6 @@ const fadeOut = stylex.keyframes({
 
 export const styles = stylex.create({
   closeButton: {
-    background: {
-      default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
-      ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
-    },
     padding: {
       default: '0.8rem 1.5rem',
       '@media (max-width: 480px)': '0.7rem 1.25rem',
@@ -39,6 +35,10 @@ export const styles = stylex.create({
     borderStyle: 'none',
     borderWidth: 0,
     transition: 'all 0.3s ease',
+    backgroundImage: {
+      default: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
+      ':hover': 'linear-gradient(135deg, #ff5252, #26a69a)',
+    },
     boxShadow: {
       default: '0 4px 15px rgba(255, 107, 107, 0.4)',
       ':hover': '0 8px 25px rgba(255, 107, 107, 0.6)',
@@ -67,7 +67,6 @@ export const styles = stylex.create({
   },
 
   dismissButton: {
-    background: 'none',
     padding: '0.25rem',
     borderRadius: '50%',
     borderStyle: 'none',
@@ -75,7 +74,9 @@ export const styles = stylex.create({
 
     transition: 'all 0.2s ease',
     alignItems: 'center',
+
     backgroundColor: {
+      default: 'none',
       ':hover': 'rgba(0, 0, 0, 0.1)',
     },
     color: '#666',
@@ -119,7 +120,7 @@ export const styles = stylex.create({
   },
 
   errorCloseButton: {
-    background: {
+    backgroundImage: {
       default: 'linear-gradient(135deg, #f44336, #ff6b6b)',
       ':hover': 'linear-gradient(135deg, #d32f2f, #ff5252)',
     },

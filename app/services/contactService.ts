@@ -38,7 +38,7 @@ export const handleContactSubmission = async ({
       `INSERT INTO contact_messages (name, email, message, status, created_at, updated_at) 
        VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) 
        RETURNING id, created_at`,
-      [data.name, data.email, data.message, 'new']
+      [data.name, data.email, data.message, 'new'],
     );
 
     const insertedRecord = result.rows[0] as ContactMessageRecord;

@@ -35,7 +35,7 @@ export const LanguageProvider = ({
         'LanguageProvider syncing i18n from',
         i18n.language,
         'to',
-        resolvedLanguage
+        resolvedLanguage,
       );
       void i18n.changeLanguage(resolvedLanguage);
     }

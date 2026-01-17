@@ -66,7 +66,7 @@ const CenteredNotification = ({
     <div
       {...stylex.props(
         styles.overlay,
-        isAnimatingOut ? styles.overlayFadeOut : styles.overlayFadeIn
+        isAnimatingOut ? styles.overlayFadeOut : styles.overlayFadeIn,
       )}
       onClick={handleClose}
     >
@@ -75,7 +75,7 @@ const CenteredNotification = ({
           styles.notification,
           type === 'success'
             ? styles.successNotification
-            : styles.errorNotification
+            : styles.errorNotification,
         )}
         onClick={handleNotificationClick}
       >
@@ -91,7 +91,7 @@ const CenteredNotification = ({
         <div
           {...stylex.props(
             styles.message,
-            type === 'success' ? styles.successMessage : styles.errorMessage
+            type === 'success' ? styles.successMessage : styles.errorMessage,
           )}
         >
           {message}
@@ -102,7 +102,7 @@ const CenteredNotification = ({
           type='button'
           {...stylex.props(
             styles.closeButton,
-            type === 'error' ? styles.errorCloseButton : undefined
+            type === 'error' ? styles.errorCloseButton : undefined,
           )}
         >
           OK

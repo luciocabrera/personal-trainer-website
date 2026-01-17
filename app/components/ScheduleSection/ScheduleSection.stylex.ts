@@ -2,12 +2,12 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   contactInfo: {
-    background: 'rgba(255, 107, 107, 0.1)',
     padding: '1rem',
     borderColor: 'rgba(255, 107, 107, 0.2)',
     borderRadius: '8px',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(255, 107, 107, 0.1)',
     color: '#ff6b6b',
     fontSize: '1.1rem',
     fontWeight: 600,
@@ -16,12 +16,12 @@ export const styles = stylex.create({
   },
 
   locationNote: {
-    background: 'rgba(78, 205, 196, 0.1)',
     padding: '0.75rem',
     borderColor: 'rgba(78, 205, 196, 0.2)',
     borderRadius: '8px',
     borderStyle: 'solid',
     borderWidth: '1px',
+    backgroundColor: 'rgba(78, 205, 196, 0.1)',
     color: '#666',
     fontSize: '0.95rem',
     fontStyle: 'italic',
@@ -32,8 +32,8 @@ export const styles = stylex.create({
   locationTitle: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    background: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     backgroundClip: 'text',
+    backgroundImage: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     fontSize: '1.8rem',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -60,10 +60,10 @@ export const styles = stylex.create({
   },
 
   locationsSectionTitle: {
-    background: 'linear-gradient(135deg, #4ecdc4, #45b7b8)',
     margin: '-2rem -2rem 1.5rem -2rem',
     padding: '1.5rem 2rem',
     borderRadius: '15px 15px 0 0',
+    backgroundImage: 'linear-gradient(135deg, #4ecdc4, #45b7b8)',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     color: 'white',
     fontSize: '2rem',
@@ -71,8 +71,8 @@ export const styles = stylex.create({
     position: 'relative',
     textAlign: 'center',
     '::after': {
-      background: 'rgba(255, 255, 255, 0.3)',
       borderRadius: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.3)',
       content: '',
       position: 'absolute',
       transform: 'translateX(-50%)',
@@ -105,10 +105,10 @@ export const styles = stylex.create({
   },
 
   onDemandTitle: {
-    background: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     margin: '-2rem -2rem 1.5rem -2rem',
     padding: '1.5rem 2rem',
     borderRadius: '15px 15px 0 0',
+    backgroundImage: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     color: 'white',
     fontSize: '2rem',
@@ -116,8 +116,8 @@ export const styles = stylex.create({
     position: 'relative',
     textAlign: 'center',
     '::after': {
-      background: 'rgba(255, 255, 255, 0.3)',
       borderRadius: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.3)',
       content: '',
       position: 'absolute',
       transform: 'translateX(-50%)',
@@ -129,7 +129,6 @@ export const styles = stylex.create({
   },
 
   schedule: {
-    background: 'rgba(255, 255, 255, 0.95)',
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
@@ -139,19 +138,19 @@ export const styles = stylex.create({
     gap: 0,
     overflow: 'visible',
     backdropFilter: 'blur(10px)',
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
     boxShadow: '0 8px 32px rgba(78, 205, 196, 0.2)',
   },
 
   scheduleIconContainer: {
-    background:
-      'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(255, 107, 107, 0.1))',
-
     margin: '0 auto',
     borderColor: 'rgba(102, 126, 234, 0.2)',
     borderStyle: 'solid',
     borderWidth: '1px',
     alignItems: 'center',
     backdropFilter: 'blur(10px)',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(255, 107, 107, 0.1))',
     display: 'flex',
     justifyContent: 'center',
     height: '250px',
@@ -212,13 +211,13 @@ export const styles = stylex.create({
   },
 
   scheduleTitle: {
-    background: `
-      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
-      url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M35 5L45 25H25L35 5ZM65 35L55 15H75L65 35ZM5 35L15 55H-5L5 35ZM35 65L25 45H45L35 65Z'/%3E%3Crect x='30' y='30' width='10' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-    `,
     margin: 0,
     padding: '2rem',
     borderRadius: '20px 20px 0 0',
+    backgroundImage: `
+      linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
+      url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M35 5L45 25H25L35 5ZM65 35L55 15H75L65 35ZM5 35L15 55H-5L5 35ZM35 65L25 45H45L35 65Z'/%3E%3Crect x='30' y='30' width='10' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    `,
     backgroundRepeat: 'no-repeat, repeat',
     backgroundSize: 'cover, 70px 70px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
@@ -228,8 +227,8 @@ export const styles = stylex.create({
     position: 'relative',
     textAlign: 'center',
     '::after': {
-      background: 'rgba(255, 255, 255, 0.4)',
       borderRadius: '2px',
+      backgroundColor: 'rgba(255, 255, 255, 0.4)',
       content: '',
       position: 'absolute',
       transform: 'translateX(-50%)',
@@ -241,13 +240,13 @@ export const styles = stylex.create({
   },
 
   sessionCard: {
-    background: 'linear-gradient(135deg, #ff6b6b1a, #4ecdc41a)',
     padding: '1.5rem',
     borderColor: 'rgba(78, 205, 196, 0.3)',
     borderRadius: '10px',
     borderStyle: 'solid',
     borderWidth: '1px',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    backgroundImage: 'linear-gradient(135deg, #ff6b6b1a, #4ecdc41a)',
     boxShadow: {
       default: null,
       ':hover': '0 6px 25px rgba(78, 205, 196, 0.2)',
@@ -275,8 +274,8 @@ export const styles = stylex.create({
   sessionTime: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    background: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     backgroundClip: 'text',
+    backgroundImage: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     fontSize: '1.5rem',
     fontWeight: 'bold',
     marginBottom: '0.5rem',
@@ -290,13 +289,13 @@ export const styles = stylex.create({
   },
 
   singleLocationCard: {
-    background: 'rgba(255, 255, 255, 0.9)',
     padding: '2rem',
     borderColor: 'rgba(78, 205, 196, 0.2)',
     borderRadius: '15px',
     borderStyle: 'solid',
     borderWidth: '1px',
     overflow: 'visible',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
     position: 'relative',
     marginBottom: '2rem',

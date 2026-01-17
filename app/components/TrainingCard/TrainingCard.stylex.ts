@@ -2,14 +2,14 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   training: {
-    background:
-      'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))',
     borderColor: 'rgba(78, 205, 196, 0.3)',
     borderRadius: '15px',
     borderStyle: 'solid',
     borderWidth: '1px',
     gap: '16px',
     transition: 'box-shadow 0.3s ease',
+    backgroundImage:
+      'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(78, 205, 196, 0.1))',
     boxShadow: {
       default: '0 5px 25px rgba(78, 205, 196, 0.2)',
       ':hover': '0 10px 40px rgba(78, 205, 196, 0.4)',
@@ -39,8 +39,8 @@ export const styles = stylex.create({
     },
   },
   trainingImage: {
-    background: '#f0f0f0',
     overflow: 'hidden',
+    backgroundColor: '#f0f0f0',
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
     height: '350px',
@@ -95,8 +95,8 @@ export const styles = stylex.create({
   trainingTitle: {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    background: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     backgroundClip: 'text',
+    backgroundImage: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     fontSize: '1.4rem',
     fontWeight: 'bold',
     lineHeight: 1.3,

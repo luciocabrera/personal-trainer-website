@@ -39,7 +39,7 @@ export const loader = async ({
       process.cwd(),
       'public',
       'blog-content',
-      `${postId}.${language}.md`
+      `${postId}.${language}.md`,
     );
 
     const content = await fs.readFile(filePath, 'utf8');
@@ -57,7 +57,7 @@ export const loader = async ({
         process.cwd(),
         'public',
         'blog-content',
-        `${postId}.nl.md`
+        `${postId}.nl.md`,
       );
 
       const content = await fs.readFile(filePath, 'utf8');

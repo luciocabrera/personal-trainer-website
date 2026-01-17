@@ -8,5 +8,5 @@ type LanguageContextValue = {
 };
 
 export const LanguageContext = createContext<LanguageContextValue | undefined>(
-  undefined
+  undefined,
 );

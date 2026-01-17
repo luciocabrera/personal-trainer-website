@@ -10,8 +10,7 @@ export const styles = stylex.create({
     },
     gap: 0,
     alignItems: 'center',
-        //  backgroundColor: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
-    backgroundColor: '#ff6b6b',
+    backgroundImage: 'linear-gradient(135deg, #ff9500, #ff6b6b)',
     boxShadow: {
       default: '0 8px 30px rgba(255, 107, 107, 0.4)',
       '@media (max-width: 768px)': 'none',

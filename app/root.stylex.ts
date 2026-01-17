@@ -2,9 +2,9 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   body: {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     margin: 0,
     padding: 0,
+    backgroundImage: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     color: '#333',
     display: 'flex',
     flexDirection: 'column',

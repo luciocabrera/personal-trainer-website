@@ -51,7 +51,7 @@ const createTransporter = () => {
 // Send contact form email using Resend (with Gmail fallback)
 export const sendContactEmail = async (
   data: EmailData,
-  translations: EmailTranslations
+  translations: EmailTranslations,
 ): Promise<void> => {
   const emailProvider = process.env.EMAIL_PROVIDER?.toLowerCase() ?? 'resend';
 
@@ -86,7 +86,7 @@ export const sendContactEmail = async (
 // Send emails using Resend SDK
 const sendWithResend = async (
   data: EmailData,
-  translations: EmailTranslations
+  translations: EmailTranslations,
 ): Promise<void> => {
   const resend = getResend();
 
@@ -135,7 +135,7 @@ const sendWithResend = async (
 // Send emails using Gmail (fallback method)
 const sendWithGmail = async (
   data: EmailData,
-  translations: EmailTranslations
+  translations: EmailTranslations,
 ): Promise<void> => {
   const transporter = createTransporter();
 

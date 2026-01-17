@@ -179,19 +179,19 @@ const HeaderSection = () => {
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen ? styles.hamburgerLineActive1 : undefined
+              isMobileMenuOpen ? styles.hamburgerLineActive1 : undefined,
             )}
           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen ? styles.hamburgerLineActive2 : undefined
+              isMobileMenuOpen ? styles.hamburgerLineActive2 : undefined,
             )}
           />
           <span
             {...stylex.props(
               styles.hamburgerLine,
-              isMobileMenuOpen ? styles.hamburgerLineActive3 : undefined
+              isMobileMenuOpen ? styles.hamburgerLineActive3 : undefined,
             )}
           />
         </button>

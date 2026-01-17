@@ -33,7 +33,7 @@ const rule: Rule.RuleModule = {
           const hasRedundantInlineTypes = node.specifiers.some(
             (specifier: any) =>
               specifier.type === 'ImportSpecifier' &&
-              specifier.importKind === 'type'
+              specifier.importKind === 'type',
           );
 
           if (hasRedundantInlineTypes) {
@@ -41,7 +41,7 @@ const rule: Rule.RuleModule = {
               .filter(
                 (specifier: any) =>
                   specifier.type === 'ImportSpecifier' &&
-                  specifier.importKind === 'type'
+                  specifier.importKind === 'type',
               )
               .map((specifier: any) => specifier.imported.name)
               .join(', ');
@@ -63,7 +63,7 @@ const rule: Rule.RuleModule = {
                     }
                   })
                   .filter(
-                    (name: string | null): name is string => name !== null
+                    (name: string | null): name is string => name !== null,
                   )
                   .join(', ');
 
@@ -83,7 +83,7 @@ const rule: Rule.RuleModule = {
         const hasInlineTypes = node.specifiers.some(
           (specifier: any) =>
             specifier.type === 'ImportSpecifier' &&
-            specifier.importKind === 'type'
+            specifier.importKind === 'type',
         );
 
         if (!hasInlineTypes) {
@@ -94,7 +94,7 @@ const rule: Rule.RuleModule = {
         const allTypes = node.specifiers.every(
           (specifier: any) =>
             specifier.type === 'ImportSpecifier' &&
-            specifier.importKind === 'type'
+            specifier.importKind === 'type',
         );
 
         if (!allTypes) {

@@ -77,7 +77,7 @@ export const LanguageSelector = ({
       ref={dropdownRef}
       {...stylex.props(
         styles.container,
-        isMobile ? styles.containerMobile : styles.containerDesktop
+        isMobile ? styles.containerMobile : styles.containerDesktop,
       )}
     >
       <button
@@ -88,7 +88,7 @@ export const LanguageSelector = ({
         type='button'
         {...stylex.props(
           styles.trigger,
-          isMobile ? styles.triggerMobile : undefined
+          isMobile ? styles.triggerMobile : undefined,
         )}
       >
         <span>{currentLabel}</span>
@@ -105,7 +105,7 @@ export const LanguageSelector = ({
           role='listbox'
           {...stylex.props(
             styles.dropdown,
-            isMobile ? styles.dropdownMobile : undefined
+            isMobile ? styles.dropdownMobile : undefined,
           )}
         >
           {LANGUAGES.map((lang) => (
@@ -124,7 +124,7 @@ export const LanguageSelector = ({
                   styles.option,
                   currentLanguage === lang.value
                     ? styles.optionActive
-                    : undefined
+                    : undefined,
                 )}
               >
                 {lang.label}

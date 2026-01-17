@@ -26,7 +26,7 @@ export const styles = stylex.create({
     color: string,
     delay: string,
     duration: string,
-    leftPosition: number
+    leftPosition: number,
   ) => ({
     animationDelay: delay,
     animationDuration: duration,

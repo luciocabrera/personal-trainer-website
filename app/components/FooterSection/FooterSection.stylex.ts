@@ -2,8 +2,8 @@ import * as stylex from '@stylexjs/stylex';
 
 export const styles = stylex.create({
   footer: {
-    background: 'linear-gradient(135deg, #667eea, #764ba2)',
     padding: '1.5rem',
+    backgroundImage: 'linear-gradient(135deg, #667eea, #764ba2)',
     boxShadow: '0 -4px 20px rgba(102, 126, 234, 0.3)',
     color: 'white',
     textAlign: 'center',
@@ -45,16 +45,16 @@ export const styles = stylex.create({
   },
 
   footerLink: {
-    background: {
-      default: 'rgba(255, 255, 255, 0.1)',
-      ':hover': 'rgba(255, 255, 255, 0.2)',
-    },
     padding: '0.5rem 1rem',
     borderRadius: '20px',
     gap: '0.5rem',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
     alignItems: 'center',
+    backgroundImage: {
+      default: 'rgba(255, 255, 255, 0.1)',
+      ':hover': 'rgba(255, 255, 255, 0.2)',
+    },
     color: 'white',
     display: 'flex',
     fontSize: '0.9rem',

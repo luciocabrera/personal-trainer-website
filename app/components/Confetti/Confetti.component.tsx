@@ -18,8 +18,8 @@ const Confetti = ({ isActive }: ConfettiProps) => {
               piece.color,
               piece.delay,
               piece.duration,
-              piece.left
-            )
+              piece.left,
+            ),
           )}
         />
       ))}

@@ -1,5 +1,11 @@
 import * as stylex from '@stylexjs/stylex';
-import { Links, Meta, Scripts, ScrollRestoration, useLoaderData } from 'react-router';
+import {
+  Links,
+  Meta,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+} from 'react-router';
 
 import type { LayoutProps } from '@/types/ui.types';
 
@@ -18,10 +24,17 @@ export const Layout = ({ children }: LayoutProps) => {
   const language = loaderData?.language ?? 'nl';
 
   return (
-    <html lang={language} translate='no' {...stylex.props(styles.html)}>
+    <html
+      lang={language}
+      translate='no'
+      {...stylex.props(styles.html)}
+    >
       <head>
         <meta charSet='utf-8' />
-        <meta content='width=device-width, initial-scale=1' name='viewport' />
+        <meta
+          content='width=device-width, initial-scale=1'
+          name='viewport'
+        />
 
         {/* Bing Webmaster Verification - Get your code from https://www.bing.com/webmasters */}
         {/* <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" /> */}
@@ -148,7 +161,10 @@ export const Layout = ({ children }: LayoutProps) => {
         `}</style>
       </head>
       <body {...stylex.props(styles.body)}>
-        <a className='skip-link' href='#main-content'>
+        <a
+          className='skip-link'
+          href='#main-content'
+        >
           Skip to main content
         </a>
         {children}

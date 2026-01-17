@@ -16,14 +16,14 @@ const TrainingCard = ({
       {...stylex.props(
         styles.training,
         styles.trainingMobile,
-        styles.trainingSmallMobile
+        styles.trainingSmallMobile,
       )}
     >
       <div
         {...stylex.props(
           styles.trainingImage,
           styles.trainingImageMobile,
-          styles.trainingImageSmallMobile
+          styles.trainingImageSmallMobile,
         )}
       >
         <img
@@ -36,7 +36,7 @@ const TrainingCard = ({
           {...stylex.props(
             styles.trainingImageImg,
             styles.trainingImageImgMobile,
-            styles.trainingImageImgSmallMobile
+            styles.trainingImageImgSmallMobile,
           )}
         />
       </div>
@@ -45,7 +45,7 @@ const TrainingCard = ({
           {...stylex.props(
             styles.trainingTitle,
             styles.trainingTitleMobile,
-            styles.trainingTitleSmallMobile
+            styles.trainingTitleSmallMobile,
           )}
         >
           {title}
@@ -54,7 +54,7 @@ const TrainingCard = ({
           {...stylex.props(
             styles.trainingDescription,
             styles.trainingDescriptionMobile,
-            styles.trainingDescriptionSmallMobile
+            styles.trainingDescriptionSmallMobile,
           )}
         >
           {description}
