@@ -135,7 +135,7 @@ const HeaderSection = () => {
               {t('nav.pricing')}
             </button>
           </li>
-          <li
+          {/* <li
             role='none'
             {...stylex.props(styles.menuItem)}
           >
@@ -146,7 +146,7 @@ const HeaderSection = () => {
             >
               {t('nav.blog')}
             </Link>
-          </li>
+          </li> */}
           <li
             role='none'
             {...stylex.props(styles.menuItem)}
