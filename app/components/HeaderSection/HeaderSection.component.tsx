@@ -248,7 +248,7 @@ const HeaderSection = () => {
                   {t('nav.pricing')}
                 </button>
               </li>
-              <li role='none'>
+              {/* <li role='none'>
                 <Link
                   role='menuitem'
                   to='/blog'
@@ -257,7 +257,7 @@ const HeaderSection = () => {
                 >
                   {t('nav.blog')}
                 </Link>
-              </li>
+              </li> */}
               <li role='none'>
                 <button
                   role='menuitem'
