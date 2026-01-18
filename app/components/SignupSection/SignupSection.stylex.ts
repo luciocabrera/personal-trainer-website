@@ -37,8 +37,14 @@ export const styles = stylex.create({
     borderWidth: '1px',
     backgroundImage:
       'linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05))',
-    borderBottomLeftRadius: '15px',
-    borderBottomRightRadius: '15px',
+    borderBottomLeftRadius: {
+      default: '15px',
+      '@media (max-width: 768px)': '0',
+    },
+    borderBottomRightRadius: {
+      default: '15px',
+      '@media (max-width: 768px)': '0',
+    },
     marginTop: '2rem',
   },
 
@@ -220,7 +226,10 @@ export const styles = stylex.create({
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: '20px',
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     borderStyle: 'solid',
     borderWidth: '1px',
     gap: 0,
@@ -260,7 +269,7 @@ export const styles = stylex.create({
   },
 
   signupForm: {
-    padding: '2rem',
+    // padding: '2rem',
     textAlign: 'center',
     marginTop: '0',
   },
@@ -328,7 +337,10 @@ export const styles = stylex.create({
     margin: 0,
     // margin: "-2rem -2rem 2rem -2rem",
     padding: '2rem',
-    borderRadius: '20px 20px 0 0',
+    borderRadius: {
+      default: '20px 20px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M50 15L60 35H40L50 15ZM85 50L75 30H95L85 50ZM15 50L25 70H5L15 50ZM50 85L40 65H60L50 85Z'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
@@ -382,10 +394,11 @@ export const styles = stylex.create({
 
   // Mobile responsive styles
   signupMobile: {
-    margin: {
-      '@media (max-width: 480px)': '0 0.5rem',
-      '@media (max-width: 768px)': '0 1rem',
-    },
+    margin:0,
+    // margin: {
+    //   '@media (max-width: 480px)': '0 0.5rem',
+    //   '@media (max-width: 768px)': '0 1rem',
+    // },
     borderRadius: {
       '@media (max-width: 480px)': '12px',
       '@media (max-width: 768px)': '15px',

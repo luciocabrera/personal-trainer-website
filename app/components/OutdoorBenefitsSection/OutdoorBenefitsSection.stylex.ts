@@ -100,7 +100,10 @@ export const styles = stylex.create({
   section: {
     padding: '0 2rem 2rem 2rem',
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: '20px',
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     borderStyle: 'solid',
     borderWidth: '1px',
     backdropFilter: 'blur(10px)',
@@ -122,7 +125,10 @@ export const styles = stylex.create({
   title: {
     margin: '0 -2rem 2rem -2rem',
     padding: '2rem',
-    borderRadius: '20px 20px 0 0',
+    borderRadius: {
+      default: '20px 20px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Cpath d='M20 20h10v10H20zM40 40h10v10H40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")

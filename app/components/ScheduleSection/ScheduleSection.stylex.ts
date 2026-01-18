@@ -62,7 +62,10 @@ export const styles = stylex.create({
   locationsSectionTitle: {
     margin: '-2rem -2rem 1.5rem -2rem',
     padding: '1.5rem 2rem',
-    borderRadius: '15px 15px 0 0',
+    borderRadius: {
+      default: '15px 15px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: 'linear-gradient(135deg, #4ecdc4, #45b7b8)',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     color: 'white',
@@ -107,7 +110,10 @@ export const styles = stylex.create({
   onDemandTitle: {
     margin: '-2rem -2rem 1.5rem -2rem',
     padding: '1.5rem 2rem',
-    borderRadius: '15px 15px 0 0',
+    borderRadius: {
+      default: '15px 15px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: 'linear-gradient(135deg, #ff6b6b, #4ecdc4)',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     color: 'white',
@@ -132,7 +138,10 @@ export const styles = stylex.create({
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: '20px',
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     borderStyle: 'solid',
     borderWidth: '1px',
     gap: 0,
@@ -213,7 +222,10 @@ export const styles = stylex.create({
   scheduleTitle: {
     margin: 0,
     padding: '2rem',
-    borderRadius: '20px 20px 0 0',
+    borderRadius: {
+      default: '20px 20px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.09'%3E%3Cpath d='M35 5L45 25H25L35 5ZM65 35L55 15H75L65 35ZM5 35L15 55H-5L5 35ZM35 65L25 45H45L35 65Z'/%3E%3Crect x='30' y='30' width='10' height='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")

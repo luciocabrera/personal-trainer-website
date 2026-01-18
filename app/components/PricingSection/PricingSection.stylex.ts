@@ -49,7 +49,10 @@ export const styles = stylex.create({
     margin: 0,
     padding: 0,
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRadius: '20px',
+    borderRadius: {
+      default: '20px',
+      '@media (max-width: 768px)': '0',
+    },
     borderStyle: 'solid',
     borderWidth: '1px',
     gap: 0,
@@ -143,7 +146,10 @@ export const styles = stylex.create({
   pricingTitle: {
     margin: 0,
     padding: '2rem',
-    borderRadius: '20px 20px 0 0',
+    borderRadius: {
+      default: '20px 20px 0 0',
+      '@media (max-width: 768px)': '0',
+    },
     backgroundImage: `
       linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 50%, rgba(255, 107, 107, 0.9) 100%),
       url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M40 10c16.569 0 30 13.431 30 30s-13.431 30-30 30S10 56.569 10 40 23.431 10 40 10zm0 4c-14.359 0-26 11.641-26 26s11.641 26 26 26 26-11.641 26-26S54.359 14 40 14z'/%3E%3Cpath d='M30 30h20v20H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
